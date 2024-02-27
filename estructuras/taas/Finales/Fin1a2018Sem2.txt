@@ -1,0 +1,34 @@
+21 de noviembre del 2018 - Primer final de Estructura
+
+Tema 1 (Eran todos cita y completa)
+Cita:
+- Factores que determinan el costo segun sebesta
+-6 Razones para estudiar estructura de los lenguajes
+-Cuestiones de diseño de setencias de elección doble
+-Cuestiones de diseño de punteros
+
+Completa:
+-El primer lenguaje orientado a objetos fue....... cumplio con todas las caracteristicas de POO las cuales son ......, ....... y ........ .Desarrollado
+principalmente por ........ en la decada de ....
+-Las ...... son estructuras similares a los registros pero los campos no tienen nombre
+-Las uniones pueden clasificarle en ........ y ........
+-Metodos de recoleccion de basura en los lenguaje de programación pueden ser .... y..... que funcionan .............. y
+ ....... respectivamente(este tema valía 4 puntos)
+-El display es una alternativa a ............
+ 
+Es todo lo que recuerdo del tema 1, los temas valían en su mayoría 2 puntos.
+
+Tema 2
+Explique brevemente las características de las funciones (5 puntos)
+Tema 3
+Defina formalmente un lenguaje regular (3 puntos)
+Tema 4
+Explique detalladamente el proceso de llamada y retorno de una función (5 puntos)
+Tema 5
+Diseñe un dfa para el un lenguaje (a,b) de todas las cadenas que no contengan dos b´s consecutivas (8 puntos)
+Tema 6
+Diseñe un dfa para cadenas que tengan multiplo de 7 de a´s  seguido de multiplo de 2 de b´s (8 puntos)
+Tema 7
+Diseñe un dfa para cadenas (0,1,2..,9) de manera a que todos los 2's se presenten primero antes que los 9´s y la cantidad de 9´s sea impar (8 puntos)
+
+

@@ -1,0 +1,156 @@
+¿Cuáles son las 3 características generales de los subprogramas? (4 puntos)
+
+Cada subprograma tiene un único punto de entrada.
+La unidad de programa llamante es suspendida durante la ejecución del subprograma llamado.
+El control siempre retorna al llamante cuando la ejecución de subprograma termina.
+
+
+
+Describe correctamente el problema de pasar arrays multidimensionales como parámetros. (4 puntos)
+
+No permite que un programador escriba una función que pueda aceptar matrices con diferentes números de columnas; 
+se debe escribir una nueva función para cada matriz con un número diferente de columnas. Es por eso que los programadores en algunos lenguajes utilizan los punteros para poder pasar estas matrices multidimencionales.
+
+
+
+¿Cómo se representan las referencias a las variables en el método static-chain? (2 puntos)
+
+Las referencias a las variables se representan mediante chain_offset, que es la profundidad en la que 
+esta la variable en el programa, y local_offset que representa su ubicacion en el registro de activacion.
+
+
+
+Explique qué es la dirección de una variable (2 puntos)
+
+Cuando decimos que es la direccion de una variable decimos que es la direccion de memoria a la que esta
+asociada. Pero eso no significa que va a estar siempre asociada con una direccion durante toda la ejecucion del programa,
+ya que una variable puede estar asociada con diferentes direcciones de memoria dependiendo de lo que se quiera.
+
+
+
+Define conversión narrowing y conversión widening. Mencione un ejemplo de cada conversión. (4 puntos)
+
+conversión narrowing
+	Una conversion de tipo narrowing es cuando el valor al que se quiere convertir no puede almacenar 
+todos los valores del tipo original. Ej de esto es cuando se quiere pasar de un tipo double al float.
+
+conversión widening
+	Una conversion de tipo widening es cuando el valor al que se quiere convertir puede incluir todos los
+valores del tipo original. Ej de de esto es cuando se quiere pasar de un tipo in a float
+	
+
+
+¿Qué es una definición de subprograma? (2 puntos)
+
+	La definicion de un subprograma describe tanto su interfaz y las acciones de la abstraccion, es decir,
+de acuedo al nombre y parametros se puede tener una idea de que acciones va a cumplir esa funcion con los 
+parametros pasados. Cuando se hace una llamada a un subprograma especifico, este tiene solicitud explicita 
+que se tiene que ejecutar 
+	
+
+	
+Describe correctamente el método shallow-access para implementar el alcance dinámico. (4 puntos)
+
+	El metodo shallow-access las variables declaradas en subprogramas no se almacenan en los registros de 
+activacion de esos subprogramas. Este método asigna espacio para cada nombre de variable que está en el subprograma
+en una tabla global. Se guarda un espacio para cada variable, aunque estas tengas el mismo nombre en diferentes metodos.
+	Cuando se llama a una subrutina, guarda el valor actual de la variable y lo reemplaza con el valor en su alcance actual y restaura el valor de la variable al salir.
+
+
+
+¿Cuál es la forma general de un selector de dos vías? (2 puntos)
+
+	if control_expression
+		then clause
+		else clause
+
+
+Qué es subtipo de polimorfismo? (2 puntos)
+	El subtipo de polimorfismo en cuando una variable de un tipo en particular
+puede acceder a cualquier objeto del tipo de la cual es derivado
+
+
+
+¿Qué es un ancestor estático de un subprograma? ¿Qué es un ancestor dinámico de un subprograma? (4 puntos)
+
+	Para el caso del antecesor estatico supongamos que se quiere hacer referencia a una variable dentro de un subprograma,
+empezamos buscando esa variable dentro del subprograma, y una vez que no se haya encontrado la referencia a esa variable 
+se busca esa declaracion en el subprograma que llamo a este(padre estatico). La busca sigue hasta encontrar la referencia
+a la variable. La busqueda para cuando se haya encontrado la variable, o cuando estando en la unidad mas grande no se la haya encontrado, tirando asi un error de falta de declaracion. A este conjunto de sub programas se lo denomia ancestor estatico
+
+	Para el caso del antecesor dinamico la primera parte es igual que el estatico, pero cuando falla la busqueda esta pasa 
+a buscar en las declaraciones dinamicas o funciones de llamada. Si no se encuentra su declaracion la busqueda pasa al padre 
+dinamico de esa funcion, y asi sucesivamente. La busqueda para hasta que se encuentre la declaracion o hasta que no encuentre 
+ningun antecesor dinamico, por lo que tira un error en tiempo de ejecucion
+
+
+¿Qué es el enlace ad hoc? (2 puntos)
+
+	Se refiere al enlace ad hoc cuando el subprograma que declara un subprograma
+también pasa ese subprograma como parámetro.
+
+
+¿Qué mecanismo sigue un compilador cuando el número de casos en una declaración de selección es 10 o más para optimizar el tiempo requerido de ejecución? (4 puntos)
+
+	Cuando se presenta este caso el compilador puede construir una tabla hash de las etiquetas de segmento. 
+Lo que resulta en un tiempo casi igual para elegir cualquiera de los segmentos seleccionables.
+
+
+
+¿Qué mecanismo se utilizan para almacenar enteros negativos en una computadora? (2 puntos)
+
+	Un mecanismo que se podria utilizar es la notacion llamada dos complementos. Esta notacion 
+puede representar un numero negativo tomando el complemento logico de la version positiva del numero y sumandole
+uno. Como se puede ver esta notacion es conveniente para la suma y la resta
+
+
+
+¿Cuáles son los problemas de diseño para las declaraciones de bucle controladas lógicamente? (4 puntos)
+	
+	Al depender del cambio logico de una variable para que el bucle pueda terminarse, y al ser estos mas
+simples que los bucles del tipo contador se pueden presentar algunos problemas de disenho que son
+¿Debería el control ser pretest o posttest?
+¿Debería el ciclo controlado lógicamente ser una forma especial de un ciclo de conteo o una
+declaración separada?
+
+
+¿Cuáles son dos lenguajes que incluyen asignaciones múltiples? (2 puntos)
+
+	Dos lenguajes que permiten asignaciones multiple son Perl y Ruby
+
+
+
+¿Cuál es la diferencia entre un registro de activación y una instancia de registro de activación? (2 puntos) cap 10
+
+	El registro de activacion contiene los datos relevantes solo durante la activacion o ejecucion del subprograma, mientras que 
+una intancia de registro de actovacion es en concreto un ejemplo de un registro de activacion, es decir, una recopilacion de datos 
+en forma de registro de activacion.
+
+
+
+¿Cómo un lenguaje funcional implementa la repetición? (4 puntos)
+
+	La repetición en un lenguaje funcional se puede implementar con recursividad, ya que estos no tienen estructuras de repetición por sí mismas. Por lo que se puede implementar de la siguiente manera: primeramente como en todo bucle básico se necesita un contador, este puede ser un parámetro de la función que ejecutará repetitivamente el cuerpo del bucle, que a su vez se puede especificar en una segunda función enviada a la función de principal en donde esta el bucle como parámetro. Entonces la función de bucle toma la función del cuerpo y el número de repeticiones como parámetros simulando así un bucle.
+
+
+
+¿Qué debe almacenarse para la vinculación (linkage) a un subprograma? (2 puntos)
+	
+	Para la vinculacion a un subprograma debe almacenarse el estado de ejecucion de la unidad del programa
+que lo llamo
+
+
+
+¿Qué es un tipo de dato abstracto? (2 puntos)
+	
+	El tipo de dato abstracto tiene como principal caracteristica que su interfaz pueda ser visible para el usuario,
+pero a su vez separada de su representacion y conjunto de operaciones. Los valores de ese tipo se caracterizan por estar
+ocultas para el usuario.
+
+
+
+¿Cuál es el problema de diseño en arrays asociativos? (4 puntos)
+	
+	El problema de diseño que es específico para arrays asociativos es la forma de referenciar a
+sus elementos.
+

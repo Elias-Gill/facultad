@@ -1,0 +1,13 @@
+Cada tema debera ser explicado en minimo 300 palabras
+
+1 - ¿Por qué piensa Usted que es importante que los lenguajes de programación contengan un conjunto enriquecido de sentencias? Explicar claramente en qué consiste, ventajas y desventajas. Proveer ejemplos significativos. (5 puntos)
+
+2 - ¿Por qué piensa Usted que es importante que los lenguajes de programación provean un conjunto de tipos de datos? Proporcione ejemplos significativos. (5 puntos)
+
+3 - ¿Qué argumentos puede presentar para la idea de un lenguaje único para todos los dominios de programación? Fundamente su opinión. (5 puntos)
+
+4 - Escribe una evaluación comparativa sobre la sentencia iterativa de los lenguajes Python y R, utilizando los criterios de evaluación indicados por Sebesta. Explicar claramente en base a todos los criterios, ventajas y desventajas. Proveer ejemplos significativos. (5 puntos)
+
+5 - Explique detalladamente cómo las reglas de coerción pueden disminuir los beneficios del tipado fuerte. Explicar claramente en qué consiste, ventajas y desventajas. Proveer ejemplos significativos. (5 puntos)
+
+6 - No se copio pero habia 6 temas

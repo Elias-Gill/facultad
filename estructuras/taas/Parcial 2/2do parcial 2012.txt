@@ -1,0 +1,8 @@
+2do Parcial del 2010
+precedencia y asociatividad de operadores
+side-effect de una funcion. ejemplo
+sobrecarga de operadores por parte de los usuarios mejora la legibilidad o la empeora? justifique
+por que los disenhadores de los lenguajes no estan de acuerdo con respecto a la coercion en expresiones aritmeticas?
+cuales son las unicas estructuras de control necesarias
+cuales son las sentencias break de java y c++
+cuestiones de disenho para el manejo de excepciones...

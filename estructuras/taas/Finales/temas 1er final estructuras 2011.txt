@@ -1,0 +1,61 @@
+Temas del primer final de Estructuras 2011
+
+Tema 1: Hacer derivación por la izquierda y el árbol de
+assing => id = expr
+id => A|B|C
+expr=> (expr)| id+expr| id| id* expr
+
+A=A*(A+(B*C)) (de esta parte no me acuerdo bien cuales eran las letras exactamente, pero esa la estructura)
+
+Tema 2: En caso que se pueda hacer un DFA, sino explicar porque no se puede
+a. Todas las cadenas de a y b que contengan exactamente tantas a como b
+b. Todas las cadenas de a y b que contengan un número par de a y un número par de b.
+
+Tema 3
+Definición formal de expresión regular.
+
+Tema 4
+Citar y Explicar. Criterios de evaluación de un lenguaje según Sebesta, y cuales son las características que se espera tenga un lenguaje.
+
+Tema 5
+Citar los 6atributos de una variable según el Sebesta
+
+Tema 6
+Citar y explicar al menos tres ventajas de la utilización de BNF
+
+Tema 7
+Citar y Explicar detalladamente. Métodos de compatibilidad de tipos.
+
+Tema 8 
+Método de Evaluación del alcance estático.
+
+Ahora sobre los lenguajes, no anote todos:
+Scala
+1. Explique la diferencia entre val y var.
+2. Se puede eliminar "bears"?
+    val aminals = Set("lions", "tiger", "bears")
+
+Ruby
+1. Imprimer 3 veces "Hola" con el iterador times.
+2. Utiliza herencia? si utiliza, se le parece a C++? si no, en que se parece a Java? Citar elementos similares a Java.
+
+IO
+1. Que es DSL?
+2. Pasos del fuljo de control cuando se envía un mensaje a un objeo
+
+Prolog.
+1. Que se necesita para cargar (no me acuerdo que cosa) y como se ve el prompt.
+2. Que significa unificación? y daba un código y no me acuerdo que quería que se haga.
+
+Erlang
+1. algo con códido era.
+2. Es un lenguaje con tipos dinámicos o estáticos?
+3. 31>one=1. que se muestra al ejecutar esto?
+
+Clojure
+1. Que es agent? que es future? que es Lazy Evaluation?
+
+Haskell
+1 Cual es el operador básico para la contrucción de listas?
+
+y había un tema bonus: quien era el malo malísimo de Star Wars? y quien fue el que descubrió el problema con él?

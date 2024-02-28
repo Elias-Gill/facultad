@@ -13,3 +13,4 @@ Existen dos tipos de indice:
 
 Criterios para elegir una tecnica: timpo de acceso, tipo de acceso(valor concreto, grupo de valores), 
 tiempo de insercion, tiempo de borrado, espacio adicional requerido.
+

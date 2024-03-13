@@ -27,14 +27,19 @@ Cada NFA se puede transformar en un DFA y todo DFA tiene representacion en un NF
 ## Deterministas (DFA)
 
 - Es como seguir un camino fijo en el juego.
-- Cada vez que estás en un estado (una situación), sabes exactamente qué hacer a continuación. No hay opciones, solo una ruta clara.
+- Cada vez que estás en un estado (una situación), sabes exactamente qué hacer a continuación. 
+No hay opciones, solo una ruta clara.
 - Es como un juego con reglas estrictas donde cada decisión lleva a un resultado específico. Sin sorpresas.
 
 ## Deterministas (NFA)
 
+Son simples para expresar lenguajes mas complejos, los cuales serian muy tediosos con los DFA.
+
 - Es como tener varias opciones en un juego y no estar seguro de cuál es la mejor.
 - En un estado, puedes tener múltiples opciones de movimiento. Puedes probar diferentes caminos al mismo tiempo.
 - Es como explorar diferentes rutas sin saber cuál te llevará al final. Puedes probar suerte y ver qué pasa.
+
+El simbolo `λ` representa un nuevo estado sin que la maquina lea un nuevo caracter.
 
 # Pumping Lemma
 Imagina que tienes un lenguaje de palabras en las que las letras son solo 0 y 1. El Pumping Lemma dice que si 

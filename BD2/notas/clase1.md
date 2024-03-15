@@ -30,10 +30,5 @@ _RAID 0_: No existe redundancia.
 
 _RAID 1_: discos de pareado espejados. Discos que trabajan duplicando sus datos en otros discos "espejos".
 
-_RAID 2_: se utiliza con paridad. Se sacrifica parte del almacenamiento de los discos para almacenar "bits de paridad" para los demas discos.
+_RAID 5_: se utiliza con paridad. Se sacrifica parte del almacenamiento de los discos para almacenar "bits de paridad" para los demas discos.
 Esto permite recuperar los datos en casos de fallas. 
-
-_RAID 3_:
-_RAID 4_:
-_RAID 5_:
-_RAID 6_:

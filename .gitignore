@@ -2,4 +2,3 @@ target/
 .obsidian/
 .obsidian*
 .vault/
-/Backend/proyecto/src/main/resources/META-INF/persistence.xml

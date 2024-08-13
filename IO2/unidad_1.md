@@ -12,7 +12,7 @@ Programacion lineal:
 
 Conocemos las funciones objetivo, hacia donde se apunta y las restricciones.
 
-#### Proceso de jerarquia analitica
+### Proceso de jerarquia analitica
 
 - _Alternativas_:
   son las opciones para la toma de decision 
@@ -46,20 +46,67 @@ implica que si `a.ij = K`, entonces `a.ji = 1/k`.
 
 Ademas siempre se tiene que `a.ii = 1`, porque se califica el elemento consigo mismo.
 
-##### Normalizacion de matrices de comparacion
+#### Normalizacion de matrices de comparacion
 
 La normalizacion sirve para estandarizar los pesos en valores que varian entre 0 y 1, de esa
 menera se tendra unan idea cuantitativa mas clara del nivel de importancia asignado.
 
 El proceso requiere **dividir los elementos de cada columna con la sumatoria de la misma**
 
-##### Calculo de pesos relativos
+#### Calculo de pesos relativos
 
 Para poder calcular los pesos relativos de una matriz de comparacion, debemos **promediar los
 pesos de cada fila de la matriz NORMALIZADA**.
 
+#### Analisis de consistencia
+
+Una matriz es consistente si las columnas de su matriz normalizada son iguales.
+En caso contrario la matriz es NO consistente.
+
+NOTA:
+las matrices 2x2 siempre son consistentes
+
+NOTA:
+decimos que _la decision es consistente_ cuando todas sus matrices de comparacion son
+consistentes o inconsistentes tolerables.
+
+_Cuando la matriz es NO consistente_ se debe realizar lo siguiente y calcular la razon de
+consistencia (RC).
+
+Formula:
+$$ A*W = n_{\text{max}}, \ n_{\text{max}} \geq n $$
+
+Donde:
+- _A_:
+  es la matriz de comparacion.
+- _W_:
+  es el vector de pesos.
+- _n_:
+  dimension del vector 
+- _nmax_:
+  la suma de los elementos del vector resultante `A.W`
+
+##### Calculo de la razon de consistencia
+
+_CI_:
+Indice de consistencia
+
+Donde `CI = (nmax - n) / (n-1)`
+
+_RI_:
+Razon de _consistencia aleatoria_
+
+Donde `RI = (1.98 * (n - 2)) / (n)`
+
+_RC_:
+Razon de consistencia
+
+Donde `RC = CI / RI`
+
+> Se dice que el nivel de inconsistencia es tolerable si es que `_RC_ < 0,1`
+
 --- 
-##### Ejemplo
+## Ejemplo
 
 Un estudiane debe decidir entre tres universidades "A, B, C o D".
 Los criterios son:
@@ -126,7 +173,6 @@ Matriz de comparacino de _ubicacion_ normalizada:
 | B   | 1/4  | 2/7  | 5/17 |
 | C   | 5/8  | 4/7  | 10/17|
 
-
 Matriz de comparacino de _prestigio_ normalizada: 
 |     | A    | B    | C    |
 |---- | ---- | ---- | ---- |
@@ -150,7 +196,6 @@ Ahora calculamos los pesos relativos de la matriz de _ubicacion_:
   `59,4%`
 
 Esto nos dice que la universidad C es la mejor ubicada entre las 3, y la peor es la A.
-
 Ahora calculamos los pesos relativos de la matriz de _prestigio_:
 - Peso relativo de A:
   `54%`
@@ -173,3 +218,46 @@ de prestigio)`
   `(0,17 * 0,594) + (0,83 * 0,18) = 0,25`
 
 Por tanto la eleccion sera la universidad A por tener la mejor suma de pesos.
+
+--- 
+Ahora revisamos con el analisis de consisencia de las matrices.
+Podemos deducir que:
+
+- La matriz de comparacion de criterios es consistente
+- La matriz de comparacion de criterios segun ubicacion es NO consistente, dado que las
+  columnas de su matriz normalizada no son iguales.
+- La matriz de comparacion de criterios segun prestigio es consistente
+
+Como la matriz de _ubicacion_ es no consistente entonces tenemos que hacer el analisis de
+inconsistencia:
+
+```
+|------|------|------|      -------
+| 1/8  | 1/7  | 2/17 |      |0,129|
+| 1/4  | 2/7  | 5/17 |  x   |0.277| 
+| 5/8  | 4/7  | 10/17|      |0.594|
+|------|------|------|      -------
+```
+
+Lo que es igual a 
+```
+-------
+|0.386|
+|0.832|
+|1.793|
+-------
+```
+
+Por tanto:
+
+```
+nmax = 3,011 (la sumatoria de las filas del resultado. Como es mayor que n seguimos)
+CI = 5,5 x 10^-3
+RI = 0,66
+RC = 0,0856
+```
+
+Como `RC < 0,1` entonces se dice que la matriz es inconsistente tolerable.
+
+Como todas las matrices de comparacion son consistentes o tolerables, entonces decimos que _la
+decision es consistente_.

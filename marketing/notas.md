@@ -42,3 +42,34 @@ espectativas del comprador.
 
 El mercado es el cojunto de todos los compradores reales y potenciales de un producto o
 servicio.
+
+**RESUMEN**:
+los seres tienen necsidades propias, las necesidades se suplen por los productos y de la oferta
+y las necesidades surgen los deseos.
+
+Para crear los valores para el cliente se debe estudiar el mercado y las necesidades de los
+clientes.
+
+Luego disenhar una estrategia de marketing para crear valor para el cliente
+
+# Como estudiar el mercado
+
+debemos hacer dos preguntas: 
+- A que cliente servir ?
+  (mercado meta)
+- De que forma servirles ?
+  (cual es nuestra propuesta de valor)
+
+Para disehnahr el producto segui las `4P`:
+
+- Producto (crear la oferta que supla la necesidad.
+  Recordar que no solo es el producto fisico, tambien es la experiencia)
+- Precio (determinar cuanto cobrar)
+- Plaza (definir el mercado meta)
+- Promocion (comunicar y convencerlos de sus meritos)
+
+La intuicin ya no basta, se debe realizar un estudio completo de mercado y planificar
+meticulosamente la estrategia.
+
+La planificacion estrategica es crear un proceso y mantener la coherencia entre las metas y las
+capacidades de la organizacion y sus oportunidades sujetas a las situaciones cambiantes.

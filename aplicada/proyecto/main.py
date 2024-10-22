@@ -1,3 +1,6 @@
+# --------------------------------------------------------------------
+# Importación de bibliotecas necesarias
+
 import re
 import time
 
@@ -7,265 +10,282 @@ import pandas as pd
 import skfuzzy as fuzz
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-start = time.time()
+# --------------------------------------------------------------------
+# Carga de datos y configuración inicial
 
-# You can insert path of any dataset with column TweetText for the text and Sentiment for the sentiment labels of text
+inicio_tiempo = time.time()
 
-traindata = pd.read_csv("./dataset/test_data.csv", encoding="ISO-8859-1")
-doc = traindata.Sentence
-print(len(doc))
-sentidoc = traindata.Sentiment
+# Cargar conjunto de datos de entrenamiento
+conjunto_entrenamiento = pd.read_csv("./dataset/test_data.csv", encoding="ISO-8859-1")
 
-# Generate universe variables
-#   * pos and neg on subjective ranges [0, 1]
-#   * op has a range of [0, 10] in units of percentage points
-x_p = np.arange(0, 1, 0.1)
-x_n = np.arange(0, 1, 0.1)
-x_op = np.arange(0, 10, 1)
+# Extraer texto de los tweets y etiquetas de sentimiento
+textos_tweets = conjunto_entrenamiento.Sentence
+etiquetas_sentimiento = conjunto_entrenamiento.Sentiment
 
-# Generate fuzzy membership functions
-p_lo = fuzz.trimf(x_p, [0, 0, 0.5])
-p_md = fuzz.trimf(x_p, [0, 0.5, 1])
-p_hi = fuzz.trimf(x_p, [0.5, 1, 1])
-n_lo = fuzz.trimf(x_n, [0, 0, 0.5])
-n_md = fuzz.trimf(x_n, [0, 0.5, 1])
-n_hi = fuzz.trimf(x_n, [0.5, 1, 1])
-op_Neg = fuzz.trimf(x_op, [0, 0, 5])  # Scale : Neg Neu Pos
-op_Neu = fuzz.trimf(x_op, [0, 5, 10])
-op_Pos = fuzz.trimf(x_op, [5, 10, 10])
+print(f"Número total de tweets: {len(textos_tweets)}")
 
-# Visualize these universes and membership functions
+# --------------------------------------------------------------------
+# Generar variables del universo y funciones de pertenencia difusa
+
+# Rangos para positivo y negativo: [0, 1]
+# Rango para salida: [0, 10] en puntos porcentuales
+x_positivo = np.arange(0, 1, 0.1)
+x_negativo = np.arange(0, 1, 0.1)
+x_salida = np.arange(0, 10, 1)
+
+# Funciones de pertenencia difusa para positivo
+positivo_bajo = fuzz.trimf(x_positivo, [0, 0, 0.5])
+positivo_medio = fuzz.trimf(x_positivo, [0, 0.5, 1])
+positivo_alto = fuzz.trimf(x_positivo, [0.5, 1, 1])
+
+# Funciones de pertenencia difusa para negativo
+negativo_bajo = fuzz.trimf(x_negativo, [0, 0, 0.5])
+negativo_medio = fuzz.trimf(x_negativo, [0, 0.5, 1])
+negativo_alto = fuzz.trimf(x_negativo, [0.5, 1, 1])
+
+# Funciones de pertenencia difusa para salida
+salida_negativa = fuzz.trimf(x_salida, [0, 0, 5])  # Escala: Neg Neu Pos
+salida_neutral = fuzz.trimf(x_salida, [0, 5, 10])
+salida_positiva = fuzz.trimf(x_salida, [5, 10, 10])
+
+# ----------------------------------------------------------------------
+# Visualización de las variables del universo y funciones de pertenencia
+
 fig, (ax0, ax1, ax2) = plt.subplots(nrows=3, figsize=(8, 9))
-#
-ax0.plot(x_p, p_lo, "b", linewidth=1.5, label="Low")
-ax0.plot(x_p, p_md, "g", linewidth=1.5, label="Medium")
-ax0.plot(x_p, p_hi, "r", linewidth=1.5, label="High")
-ax0.set_title("Pos")
+
+# Gráfico para positivo
+ax0.plot(x_positivo, positivo_bajo, "b", linewidth=1.5, label="Bajo")
+ax0.plot(x_positivo, positivo_medio, "g", linewidth=1.5, label="Medio")
+ax0.plot(x_positivo, positivo_alto, "r", linewidth=1.5, label="Alto")
+ax0.set_title("Positivo")
 ax0.legend()
 
-ax1.plot(x_n, n_lo, "b", linewidth=1.5, label="Low")
-ax1.plot(x_n, n_md, "g", linewidth=1.5, label="Medium")
-ax1.plot(x_n, n_hi, "r", linewidth=1.5, label="High")
-ax1.set_title("Neg")
+# Gráfico para negativo
+ax1.plot(x_negativo, negativo_bajo, "b", linewidth=1.5, label="Bajo")
+ax1.plot(x_negativo, negativo_medio, "g", linewidth=1.5, label="Medio")
+ax1.plot(x_negativo, negativo_alto, "r", linewidth=1.5, label="Alto")
+ax1.set_title("Negativo")
 ax1.legend()
 
-ax2.plot(x_op, op_Pos, "b", linewidth=1.5, label="Negative")
-ax2.plot(x_op, op_Neu, "g", linewidth=1.5, label="Neutral")
-ax2.plot(x_op, op_Neg, "r", linewidth=1.5, label="Positive")
-ax2.set_title("Output")
+# Gráfico para salida
+ax2.plot(x_salida, salida_positiva, "b", linewidth=1.5, label="Negativa")
+ax2.plot(x_salida, salida_neutral, "g", linewidth=1.5, label="Neutra")
+ax2.plot(x_salida, salida_positiva, "r", linewidth=1.5, label="Positiva")
+ax2.set_title("Salida")
 ax2.legend()
 
-# Turn off top/right axes
-# for ax in (ax0, ax1, ax2):
-#    ax.spines['top'].set_visible(False)
-#    ax.spines['right'].set_visible(False)
-#    ax.get_xaxis().tick_bottom()
-#    ax.get_yaxis().tick_left()
+# --------------------------------------------------------------------
+# Preprocesamiento de texto y análisis de sentimiento
 
-# plt.tight_layout()
+tweets_procesados = []
+sentimientos = []
+resultados_sentimiento = []
+documentos_sentimiento = []
 
-tweets = []
-senti = []
-sentiment = []
-sentiment_doc = []
-
-for j in range(len(doc)):
-    str1 = traindata.TweetText[j]
-    str2 = str1.lower()
-    tweets.append(str2)  # converted into lower case
-    senti.append(traindata.Sentiment[j])
+for i in range(len(textos_tweets)):
+    tweet_original = conjunto_entrenamiento.TweetText[i]
+    tweet_minusc = tweet_original.lower()
+    tweets_procesados.append(tweet_minusc)  # Convertido a minúsculas
+    sentimientos.append(conjunto_entrenamiento.Sentiment[i])
 
 
-def decontracted(phrase):  # text pre-processing
-    # specific
-    phrase = re.sub(r"won't", "will not", phrase)
-    phrase = re.sub(r"can\'t", "can not", phrase)
-    phrase = re.sub(r"@", "", phrase)  # removal of @
-    phrase = re.sub(r"http\S+", "", phrase)  # removal of URLs
-    phrase = re.sub(r"#", "", phrase)  # hashtag processing
+def descontraccion(frase):  # Preprocesamiento de texto
+    # Específico
+    frase = re.sub(r"won't", "will not", frase)
+    frase = re.sub(r"can\'t", "can not", frase)
+    frase = re.sub(r"@", "", frase)  # Eliminación de @
+    frase = re.sub(r"http\S+", "", frase)  # Eliminación de URLs
+    frase = re.sub(r"#", "", frase)  # Procesamiento de hashtags
 
-    # general
-    phrase = re.sub(r"n\'t", " not", phrase)
-    phrase = re.sub(r"\'re", " are", phrase)
-    phrase = re.sub(r"\'s", " is", phrase)
-    phrase = re.sub(r"\'d", " would", phrase)
-    phrase = re.sub(r"\'ll", " will", phrase)
-    phrase = re.sub(r"\'t", " not", phrase)
-    phrase = re.sub(r"\'ve", " have", phrase)
-    phrase = re.sub(r"\'m", " am", phrase)
-    return phrase
+    # General
+    frase = re.sub(r"n\'t", " not", frase)
+    frase = re.sub(r"\'re", " are", frase)
+    frase = re.sub(r"\'s", " is", frase)
+    frase = re.sub(r"\'d", " would", frase)
+    frase = re.sub(r"\'ll", " will", frase)
+    frase = re.sub(r"\'t", " not", frase)
+    frase = re.sub(r"\'ve", " have", frase)
+    frase = re.sub(r"\'m", " am", frase)
+    return frase
 
 
-for k in range(len(doc)):
-    tweets[k] = decontracted(tweets[k])
+for k in range(len(textos_tweets)):
+    tweets_procesados[k] = descontraccion(tweets_procesados[k])
 
-sid = SentimentIntensityAnalyzer()
+analizador_sentimiento = SentimentIntensityAnalyzer()
 
-for j in range(len(doc)):
-    sentiment_doc.append(senti[j])
-    ss = sid.polarity_scores(tweets[j])
-    posscore = ss["pos"]
-    negscore = ss["neg"]
-    neuscore = ss["neu"]
-    compoundscore = ss["compound"]
+for j in range(len(textos_tweets)):
+    documentos_sentimiento.append(sentimientos[j])
+    puntuaciones = analizador_sentimiento.polarity_scores(tweets_procesados[j])
+    puntuacion_positiva = puntuaciones["pos"]
+    puntuacion_negativa = puntuaciones["neg"]
+    puntuacion_neutral = puntuaciones["neu"]
+    puntuacion_compuesta = puntuaciones["compound"]
 
-    print(str(j + 1) + " {:-<65} {}".format(tweets[j], str(ss)))
+    print(f"{j + 1} {tweets_procesados[j]:-<65} {str(puntuaciones)}")
 
-    print("\nPositive Score for each  tweet :")
-    if posscore == 1:
-        posscore = 0.9
+    print("\nPuntuación positiva para cada tweet:")
+    if puntuacion_positiva == 1:
+        puntuacion_positiva = 0.9
     else:
-        posscore = round(posscore, 1)
-    print(posscore)
+        puntuacion_positiva = round(puntuacion_positiva, 1)
+    print(puntuacion_positiva)
 
-    print("\nNegative Score for each  tweet :")
-    if negscore == 1:
-        negscore = 0.9
+    print("\nPuntuación negativa para cada tweet:")
+    if puntuacion_negativa == 1:
+        puntuacion_negativa = 0.9
     else:
-        negscore = round(negscore, 1)
-    print(negscore)
+        puntuacion_negativa = round(puntuacion_negativa, 1)
+    print(puntuacion_negativa)
 
-    # We need the activation of our fuzzy membership functions at these values.
-    p_level_lo = fuzz.interp_membership(x_p, p_lo, posscore)
-    p_level_md = fuzz.interp_membership(x_p, p_md, posscore)
-    p_level_hi = fuzz.interp_membership(x_p, p_hi, posscore)
+    # Necesitamos la activación de nuestras funciones de pertenencia difusa en estos valores.
+    nivel_positivo_bajo = fuzz.interp_membership(
+        x_positivo, positivo_bajo, puntuacion_positiva
+    )
+    nivel_positivo_medio = fuzz.interp_membership(
+        x_positivo, positivo_medio, puntuacion_positiva
+    )
+    nivel_positivo_alto = fuzz.interp_membership(
+        x_positivo, positivo_alto, puntuacion_positiva
+    )
 
-    n_level_lo = fuzz.interp_membership(x_n, n_lo, negscore)
-    n_level_md = fuzz.interp_membership(x_n, n_md, negscore)
-    n_level_hi = fuzz.interp_membership(x_n, n_hi, negscore)
+    nivel_negativo_bajo = fuzz.interp_membership(
+        x_negativo, negativo_bajo, puntuacion_negativa
+    )
+    nivel_negativo_medio = fuzz.interp_membership(
+        x_negativo, negativo_medio, puntuacion_negativa
+    )
+    nivel_negativo_alto = fuzz.interp_membership(
+        x_negativo, negativo_alto, puntuacion_negativa
+    )
 
-    # Now we take our rules and apply them. Rule 1 concerns bad food OR nice.
-    # The OR operator means we take the maximum of these two.
-    active_rule1 = np.fmin(p_level_lo, n_level_lo)
-    active_rule2 = np.fmin(p_level_md, n_level_lo)
-    active_rule3 = np.fmin(p_level_hi, n_level_lo)
-    active_rule4 = np.fmin(p_level_lo, n_level_md)
-    active_rule5 = np.fmin(p_level_md, n_level_md)
-    active_rule6 = np.fmin(p_level_hi, n_level_md)
-    active_rule7 = np.fmin(p_level_lo, n_level_hi)
-    active_rule8 = np.fmin(p_level_md, n_level_hi)
-    active_rule9 = np.fmin(p_level_hi, n_level_hi)
+    # Ahora aplicamos nuestras reglas y las aplicamos. La regla 1 concierne a comida mala o buena.
+    # El operador OR significa que tomamos el máximo de estas dos.
+    regla_activa_1 = np.fmin(nivel_positivo_bajo, nivel_negativo_bajo)
+    regla_activa_2 = np.fmin(nivel_positivo_medio, nivel_negativo_bajo)
+    regla_activa_3 = np.fmin(nivel_positivo_alto, nivel_negativo_bajo)
+    regla_activa_4 = np.fmin(nivel_positivo_bajo, nivel_negativo_medio)
+    regla_activa_5 = np.fmin(nivel_positivo_medio, nivel_negativo_medio)
+    regla_activa_6 = np.fmin(nivel_positivo_alto, nivel_negativo_medio)
+    regla_activa_7 = np.fmin(nivel_positivo_bajo, nivel_negativo_alto)
+    regla_activa_8 = np.fmin(nivel_positivo_medio, nivel_negativo_alto)
+    regla_activa_9 = np.fmin(nivel_positivo_alto, nivel_negativo_alto)
 
-    # Now we apply this by clipping the top off the corresponding output
-    # membership function with `np.fmin`
+    # Ahora aplicamos esto cortando la parte superior de la función de pertenencia correspondiente con `np.fmin`
 
-    n1 = np.fmax(active_rule4, active_rule7)
-    n2 = np.fmax(n1, active_rule8)
-    op_activation_lo = np.fmin(n2, op_Neg)
+    n1 = np.fmax(regla_activa_4, regla_activa_7)
+    n2 = np.fmax(n1, regla_activa_8)
+    activacion_salida_bajo = np.fmin(n2, salida_negativa)
 
-    neu1 = np.fmax(active_rule1, active_rule5)
-    neu2 = np.fmax(neu1, active_rule9)
-    op_activation_md = np.fmin(neu2, op_Neu)
+    neu1 = np.fmax(regla_activa_1, regla_activa_5)
+    neu2 = np.fmax(neu1, regla_activa_9)
+    activacion_salida_medio = np.fmin(neu2, salida_neutral)
 
-    p1 = np.fmax(active_rule2, active_rule3)
-    p2 = np.fmax(p1, active_rule6)
-    op_activation_hi = np.fmin(p2, op_Pos)
+    p1 = np.fmax(regla_activa_2, regla_activa_3)
+    p2 = np.fmax(p1, regla_activa_6)
+    activacion_salida_alto = np.fmin(p2, salida_positiva)
 
-    op0 = np.zeros_like(x_op)
+    salida_cero = np.zeros_like(x_salida)
 
-    # Aggregate all three output membership functions together
-    aggregated = np.fmax(op_activation_lo, np.fmax(op_activation_md, op_activation_hi))
+    # Agregar todas tres funciones de pertenencia de salida juntas
+    agregada = np.fmax(
+        activacion_salida_bajo, np.fmax(activacion_salida_medio, activacion_salida_alto)
+    )
 
-    # Calculate defuzzified result
-    op = fuzz.defuzz(x_op, aggregated, "centroid")
-    output = round(op, 2)
+    # Calcular resultado desdifuso
+    salida = fuzz.defuzz(x_salida, agregada, "centroid")
+    resultado = round(salida, 2)
 
-    op_activation = fuzz.interp_membership(x_op, aggregated, op)  # for plot
+    activacion_salida = fuzz.interp_membership(
+        x_salida, agregada, salida
+    )  # para gráfico
 
-    #     Visualize Aggregated Membership
-    #    fig, ax0 = plt.subplots(figsize=(8, 3))
-    #
-    #    ax0.plot(x_op, op_Neg, 'b', linewidth=0.5, linestyle='--',label= 'Negative')
-    #    ax0.plot(x_op, op_Neu, 'g', linewidth=0.5, linestyle='--',label= 'Neutral')
-    #    ax0.plot(x_op, op_Pos, 'r', linewidth=0.5, linestyle='--',label= 'Positive')
-    #    ax0.fill_between(x_op, op0, aggregated, facecolor='Orange', alpha=0.7)
-    #    ax0.plot([op, op], [0, op_activation], 'k', linewidth=1.5, alpha=0.9)
-    #    ax0.set_title('Aggregated membership and result (line)')
-    #    ax0.legend()
+    # --------------------------------------------------------------------
+    # Visualización de la actividad de pertenencia de salida
 
-    #    # Turn off top/right axes
-    #    for ax in (ax0,):
-    #        ax.spines['top'].set_visible(False)
-    #        ax.spines['right'].set_visible(False)
-    #        ax.get_xaxis().tick_bottom()
-    #        ax.get_yaxis().tick_left()
-    #
-    #    plt.tight_layout()
-
-    # Visualize Output Membership
     fig, ax0 = plt.subplots(figsize=(8, 3))
 
-    ax0.fill_between(x_op, op0, op_activation_lo, facecolor="b", alpha=0.7)
-    ax0.plot(x_op, op_Neg, "b", linewidth=0.5, linestyle="--", label="Negative")
-    ax0.fill_between(x_op, op0, op_activation_md, facecolor="g", alpha=0.7)
-    ax0.plot(x_op, op_Neu, "g", linewidth=0.5, linestyle="--", label="Neutral")
-    ax0.fill_between(x_op, op0, op_activation_hi, facecolor="r", alpha=0.7)
-    ax0.plot(x_op, op_Pos, "r", linewidth=0.5, linestyle="--", label="Positive")
-    ax0.plot([op, op], [0, op_activation], "k", linewidth=1.5, alpha=0.9)
-    ax0.set_title("Output membership activity")
+    ax0.fill_between(
+        x_salida, salida_cero, activacion_salida_bajo, facecolor="b", alpha=0.7
+    )
+    ax0.plot(
+        x_salida, salida_negativa, "b", linewidth=0.5, linestyle="--", label="Negativa"
+    )
+    ax0.fill_between(
+        x_salida, salida_cero, activacion_salida_medio, facecolor="g", alpha=0.7
+    )
+    ax0.plot(
+        x_salida, salida_neutral, "g", linewidth=0.5, linestyle="--", label="Neutra"
+    )
+    ax0.fill_between(
+        x_salida, salida_cero, activacion_salida_alto, facecolor="r", alpha=0.7
+    )
+    ax0.plot(
+        x_salida, salida_positiva, "r", linewidth=0.5, linestyle="--", label="Positiva"
+    )
+    ax0.plot([salida, salida], [0, activacion_salida], "k", linewidth=1.5, alpha=0.9)
+    ax0.set_title("Actividad de pertenencia de salida")
     ax0.legend()
-    #
-    #    # Turn off top/right axes
-    #    for ax in (ax0,):
-    #        ax.spines['top'].set_visible(False)
-    #        ax.spines['right'].set_visible(False)
-    #        ax.get_xaxis().tick_bottom()
-    #        ax.get_yaxis().tick_left()
-    #
-    #    plt.tight_layout()
 
-    print("\nFiring Strength of Negative (wneg): " + str(round(n2, 4)))
-    print("Firing Strength of Neutral (wneu): " + str(round(neu2, 4)))
-    print("Firing Strength of Positive (wpos): " + str(round(p2, 4)))
+    print("\nFuerza de activación de Negativa (wneg): " + str(round(n2, 4)))
+    print("Fuerza de activación de Neutra (wneu): " + str(round(neu2, 4)))
+    print("Fuerza de activación de Positiva (wpos): " + str(round(p2, 4)))
 
-    print("\nResultant consequents MFs:")
-    print("op_activation_low: " + str(op_activation_lo))
-    print("op_activation_med: " + str(op_activation_md))
-    print("op_activation_high: " + str(op_activation_hi))
+    print("\nConsecuentes MF resultantes:")
+    print("activacion_salida_bajo: " + str(activacion_salida_bajo))
+    print("activacion_salida_medio: " + str(activacion_salida_medio))
+    print("activacion_salida_alto: " + str(activacion_salida_alto))
 
-    print("\nAggregated Output: " + str(aggregated))
+    print("\nSalida agregada: " + str(agregada))
 
-    print("\nDefuzzified Output: " + str(output))
+    print("\nSalida desdifusa: " + str(resultado))
 
-    # Scale : Neg Neu Pos
-    if 0 < (output) < 3.33:  # R
-        print("\nOutput after Defuzzification: Negative")
-        sentiment.append("Negative")
+    # Escala : Neg Neu Pos
+    if 0 < (resultado) < 3.33:  # R
+        print("\nSalida después de la desdifusión: Negativa")
+        resultados_sentimiento.append("Negativa")
 
-    elif 3.34 < (output) < 6.66:
-        print("\nOutput after Defuzzification: Neutral")
-        sentiment.append("Neutral")
+    elif 3.34 < (resultado) < 6.66:
+        print("\nSalida después de la desdifusión: Neutra")
+        resultados_sentimiento.append("Neutra")
 
-    elif 6.67 < (output) < 10:
-        print("\nOutput after Defuzzification: Positive")
-        sentiment.append("Positive")
+    elif 6.67 < (resultado) < 10:
+        print("\nSalida después de la desdifusión: Positiva")
+        resultados_sentimiento.append("Positiva")
 
-    print("Doc sentiment: " + str(senti[j]) + "\n")
+    print("Sentimiento del documento: " + str(sentimientos[j]) + "\n")
 
-count = 0
-for k in range(len(doc)):
-    if sentiment_doc[k] == sentiment[k]:
-        count = count + 1
-print("Accuracy is: " + str(round(count / len(doc) * 100, 2)))
+# --------------------------------------------------------------------
+# Evaluación del rendimiento del modelo
+
+contador = 0
+for k in range(len(textos_tweets)):
+    if documentos_sentimiento[k] == resultados_sentimiento[k]:
+        contador += 1
+
+precision_global = round(contador / len(textos_tweets) * 100, 2)
+print(f"Precisión global: {precision_global}%")
 
 from sklearn.metrics import f1_score, precision_score, recall_score
 
-y_true = sentiment_doc
-y_pred = sentiment
+verdaderos = documentos_sentimiento
+predichos = resultados_sentimiento
 
-p1 = precision_score(y_true, y_pred, average="macro")
+precicion_macro = precision_score(verdaderos, predichos, average="macro")
+print(f"Puntuación de precisión (MACRO): {round(precicion_macro * 100, 2)}%")
 
-print("Precision score (MACRO): " + str(round((p1 * 100), 2)))
+recall_macro = recall_score(verdaderos, predichos, average="macro")
+print(f"Puntuación de recuerdo (MACRO): {round(recall_macro * 100, 2)}%")
 
-r1 = recall_score(y_true, y_pred, average="macro")
+f1_macro = f1_score(verdaderos, predichos, average="macro")
+f1_micro = f1_score(verdaderos, predichos, average="micro")
 
-print("Recall score (MACRO): " + str(round((r1 * 100), 2)))
+print(f"Puntuación F1 (MACRO): {round(f1_macro * 100, 2)}%")
+print(f"Puntuación F1 (MICRO): {round(f1_micro * 100, 2)}%")
 
-f1 = f1_score(y_true, y_pred, average="macro")
-f2 = f1_score(y_true, y_pred, average="micro")
+# --------------------------------------------------------------------
+# Tiempo de ejecución
 
-print("F1 score (MACRO): " + str(round((f1 * 100), 2)))
-print("F1 score (MICRO): " + str(round((f2 * 100), 2)))
-
-end = time.time()
-print("Execution Time: " + str(round((end - start), 3)) + " secs")
+fin_tiempo = time.time()
+tiempo_ejecucion = fin_tiempo - inicio_tiempo
+print(f"Tiempo de ejecución: {round(tiempo_ejecucion, 3)} segundos")

@@ -12,9 +12,9 @@ start = time.time()
 # You can insert path of any dataset with column TweetText for the text and Sentiment for the sentiment labels of text
 
 traindata = pd.read_csv(
-    "C:/MyData/PythonPractice/twitter_nuclear/nuclear.csv", encoding="ISO-8859-1"
+    "./dataset/test_data.csv", encoding="ISO-8859-1"
 )
-doc = traindata.TweetText
+doc = traindata.Sentence
 print(len(doc))
 sentidoc = traindata.Sentiment
 
@@ -72,7 +72,7 @@ sentiment = []
 sentiment_doc = []
 
 for j in range(len(doc)):
-    str1 = traindata.TweetText[j]
+    str1 = traindata.Sentence[j]
     str2 = str1.lower()
     tweets.append(str2)  # converted into lower case
     senti.append(traindata.Sentiment[j])

@@ -9,6 +9,13 @@ import numpy as np
 import pandas as pd
 import skfuzzy as fuzz
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from sklearn.metrics import (accuracy_score, classification_report,
+                             confusion_matrix, f1_score, precision_score,
+                             recall_score)
+
+# NOTE: descomentar estas lineas si es la primera vez que se corre el programa
+# import nltk
+# nltk.download('vader_lexicon')
 
 # --------------------------------------------------------------------
 # Carga de datos y configuración inicial
@@ -83,7 +90,7 @@ resultados_sentimiento = []
 documentos_sentimiento = []
 
 for i in range(len(textos_tweets)):
-    tweet_original = conjunto_entrenamiento.TweetText[i]
+    tweet_original = conjunto_entrenamiento.Sentence[i]
     tweet_minusc = tweet_original.lower()
     tweets_procesados.append(tweet_minusc)  # Convertido a minúsculas
     sentimientos.append(conjunto_entrenamiento.Sentiment[i])
@@ -242,15 +249,15 @@ for j in range(len(textos_tweets)):
 
     # Escala : Neg Neu Pos
     if 0 < (resultado) < 3.33:  # R
-        print("\nSalida después de la desdifusión: Negativa")
+        print("\nSalida después de la defuzzificación: Negativa")
         resultados_sentimiento.append("Negativa")
 
     elif 3.34 < (resultado) < 6.66:
-        print("\nSalida después de la desdifusión: Neutra")
+        print("\nSalida después de la defuzzificación: Neutra")
         resultados_sentimiento.append("Neutra")
 
     elif 6.67 < (resultado) < 10:
-        print("\nSalida después de la desdifusión: Positiva")
+        print("\nSalida después de la defuzzificación: Positiva")
         resultados_sentimiento.append("Positiva")
 
     print("Sentimiento del documento: " + str(sentimientos[j]) + "\n")
@@ -263,24 +270,33 @@ for k in range(len(textos_tweets)):
     if documentos_sentimiento[k] == resultados_sentimiento[k]:
         contador += 1
 
-precision_global = round(contador / len(textos_tweets) * 100, 2)
-print(f"Precisión global: {precision_global}%")
+# Precisión global
+precision_global = accuracy_score(documentos_sentimiento, resultados_sentimiento)
+print(f"Precisión global: {round(precision_global * 100, 2)}%")
 
-from sklearn.metrics import f1_score, precision_score, recall_score
+# Informe de clasificación detallado
+print("\nInforme de clasificación:")
+print(classification_report(documentos_sentimiento, resultados_sentimiento))
 
-verdaderos = documentos_sentimiento
-predichos = resultados_sentimiento
+# Matriz de confusión
+print("\nMatriz de confusión:")
+print(confusion_matrix(documentos_sentimiento, resultados_sentimiento))
 
-precicion_macro = precision_score(verdaderos, predichos, average="macro")
-print(f"Puntuación de precisión (MACRO): {round(precicion_macro * 100, 2)}%")
+# Métricas macro
+precicion_macro = precision_score(
+    documentos_sentimiento, resultados_sentimiento, average="macro"
+)
+recall_macro = recall_score(
+    documentos_sentimiento, resultados_sentimiento, average="macro"
+)
+f1_macro = f1_score(documentos_sentimiento, resultados_sentimiento, average="macro")
 
-recall_macro = recall_score(verdaderos, predichos, average="macro")
+print(f"\nPuntuación de precisión (MACRO): {round(precicion_macro * 100, 2)}%")
 print(f"Puntuación de recuerdo (MACRO): {round(recall_macro * 100, 2)}%")
-
-f1_macro = f1_score(verdaderos, predichos, average="macro")
-f1_micro = f1_score(verdaderos, predichos, average="micro")
-
 print(f"Puntuación F1 (MACRO): {round(f1_macro * 100, 2)}%")
+
+# Métricas micro
+f1_micro = f1_score(documentos_sentimiento, resultados_sentimiento, average="micro")
 print(f"Puntuación F1 (MICRO): {round(f1_micro * 100, 2)}%")
 
 # --------------------------------------------------------------------

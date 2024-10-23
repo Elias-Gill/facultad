@@ -4,7 +4,6 @@
 import re
 import time
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import skfuzzy as fuzz
@@ -54,32 +53,6 @@ negativo_alto = fuzz.trimf(x_negativo, [0.5, 1, 1])
 salida_negativa = fuzz.trimf(x_salida, [0, 0, 5])  # Escala: Neg Neu Pos
 salida_neutral = fuzz.trimf(x_salida, [0, 5, 10])
 salida_positiva = fuzz.trimf(x_salida, [5, 10, 10])
-
-# ----------------------------------------------------------------------
-# Visualización de las variables del universo y funciones de pertenencia
-
-fig, (ax0, ax1, ax2) = plt.subplots(nrows=3, figsize=(8, 9))
-
-# Gráfico para positivo
-ax0.plot(x_positivo, positivo_bajo, "b", linewidth=1.5, label="Bajo")
-ax0.plot(x_positivo, positivo_medio, "g", linewidth=1.5, label="Medio")
-ax0.plot(x_positivo, positivo_alto, "r", linewidth=1.5, label="Alto")
-ax0.set_title("Positivo")
-ax0.legend()
-
-# Gráfico para negativo
-ax1.plot(x_negativo, negativo_bajo, "b", linewidth=1.5, label="Bajo")
-ax1.plot(x_negativo, negativo_medio, "g", linewidth=1.5, label="Medio")
-ax1.plot(x_negativo, negativo_alto, "r", linewidth=1.5, label="Alto")
-ax1.set_title("Negativo")
-ax1.legend()
-
-# Gráfico para salida
-ax2.plot(x_salida, salida_positiva, "b", linewidth=1.5, label="Negativa")
-ax2.plot(x_salida, salida_neutral, "g", linewidth=1.5, label="Neutra")
-ax2.plot(x_salida, salida_positiva, "r", linewidth=1.5, label="Positiva")
-ax2.set_title("Salida")
-ax2.legend()
 
 # --------------------------------------------------------------------
 # Preprocesamiento de texto y análisis de sentimiento
@@ -203,36 +176,8 @@ for j in range(len(textos_tweets)):
     salida = fuzz.defuzz(x_salida, agregada, "centroid")
     resultado = round(salida, 2)
 
-    activacion_salida = fuzz.interp_membership(
-        x_salida, agregada, salida
-    )  # para gráfico
-
     # --------------------------------------------------------------------
     # Visualización de la actividad de pertenencia de salida
-
-    fig, ax0 = plt.subplots(figsize=(8, 3))
-
-    ax0.fill_between(
-        x_salida, salida_cero, activacion_salida_bajo, facecolor="b", alpha=0.7
-    )
-    ax0.plot(
-        x_salida, salida_negativa, "b", linewidth=0.5, linestyle="--", label="Negativa"
-    )
-    ax0.fill_between(
-        x_salida, salida_cero, activacion_salida_medio, facecolor="g", alpha=0.7
-    )
-    ax0.plot(
-        x_salida, salida_neutral, "g", linewidth=0.5, linestyle="--", label="Neutra"
-    )
-    ax0.fill_between(
-        x_salida, salida_cero, activacion_salida_alto, facecolor="r", alpha=0.7
-    )
-    ax0.plot(
-        x_salida, salida_positiva, "r", linewidth=0.5, linestyle="--", label="Positiva"
-    )
-    ax0.plot([salida, salida], [0, activacion_salida], "k", linewidth=1.5, alpha=0.9)
-    ax0.set_title("Actividad de pertenencia de salida")
-    ax0.legend()
 
     print("\nFuerza de activación de Negativa (wneg): " + str(round(n2, 4)))
     print("Fuerza de activación de Neutra (wneu): " + str(round(neu2, 4)))

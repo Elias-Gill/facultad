@@ -1,0 +1,360 @@
+tweet, sentimiento, negativa, neutral, positiva, defuzz, sent_defuzz, t_fuzz, t_defuzz, t_total
+i loooooooovvvvvveee my kindle not that the dx is cool but the is fantastic in its own right, Positiva, 0.0, 0.618, 0.4, 5.87, Neutra, 0.00423121452331543, 0.00036406517028808594, 0.004595279693603516
+reading my kindle love it lee childs is good read, Positiva, 0.0, 0.53, 0.5, 7.67, Positiva, 0.0008425712585449219, 0.0004494190216064453, 0.0012919902801513672
+ok first assesment of the kindle it fucking rocks, Positiva, 0.0, 0.784, 0.2, 4.98, Neutra, 0.0005753040313720703, 0.00027751922607421875, 0.0008528232574462891
+you ll love your kindle i ve had mine for a few months and never looked back the new big one is huge no need for remorse, Positiva, 0.1, 0.66, 0.2, 4.88, Neutra, 0.0012900829315185547, 0.0009598731994628906, 0.0022499561309814453
+fair enough but i have the kindle and i think it s perfect, Positiva, 0.0, 0.544, 0.5, 7.67, Positiva, 0.0007295608520507812, 0.00020313262939453125, 0.0009326934814453125
+no it is too big i m quite happy with the kindle, Positiva, 0.2, 0.564, 0.3, 4.79, Neutra, 0.0007507801055908203, 0.0002694129943847656, 0.001020193099975586
+fuck this economy i hate aig and their non loan given asses, Negativa, 0.4, 0.556, 0.0, 3.09, Negativa, 0.0006859302520751953, 0.0003714561462402344, 0.0010573863983154297
+jquery is my new best friend, Positiva, 0.0, 0.351, 0.6, 7.67, Positiva, 0.0005826950073242188, 0.00021028518676757812, 0.0007929801940917969
+loves twitter, Positiva, 0.0, 0.213, 0.8, 7.6, Positiva, 0.0003304481506347656, 0.00018477439880371094, 0.0005152225494384766
+how can you not love obama he makes jokes about himself, Positiva, 0.2, 0.626, 0.1, 4.52, Neutra, 0.0007352828979492188, 0.00034928321838378906, 0.0010845661163330078
+i firmly believe that obama pelosi have zero desire to be civil it s a charade and a slogan but they want to destroy conservatism, Negativa, 0.2, 0.691, 0.1, 4.52, Neutra, 0.00101470947265625, 0.00027823448181152344, 0.0012929439544677734
+house correspondents dinner was last night whoopi barbara amp sherri went obama got a standing ovation, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0007531642913818359, 0.0004048347473144531, 0.001157999038696289
+watchin espn jus seen this new nike commerical with a puppet lebron sh t was hilarious lmao, Positiva, 0.0, 0.663, 0.3, 5.26, Neutra, 0.0007948875427246094, 0.00025391578674316406, 0.0010488033294677734
+dear nike stop with the flywire that shit is a waste of science and ugly love, Negativa, 0.4, 0.325, 0.2, 3.99, Neutra, 0.0008330345153808594, 0.0002276897430419922, 0.0010607242584228516
+lebron best athlete of our generation if not all time basketball related i don t want to get into inter sport debates about __, Positiva, 0.0, 0.784, 0.2, 4.98, Neutra, 0.0010998249053955078, 0.00029349327087402344, 0.0013933181762695312
+i was talking to this guy last night and he was telling me that he is a die hard spurs fan he also told me that he hates lebron james, Negativa, 0.2, 0.696, 0.1, 4.52, Neutra, 0.0015692710876464844, 0.0003190040588378906, 0.001888275146484375
+i love lebron, Positiva, 0.0, 0.192, 0.8, 7.6, Positiva, 0.00047135353088378906, 0.00022482872009277344, 0.0006961822509765625
+lebron is a beast but i m still cheering the a til the end, Negativa, 0.0, 0.669, 0.3, 5.26, Neutra, 0.0006475448608398438, 0.0002493858337402344, 0.0008969306945800781
+lebron is the boss, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0009007453918457031, 0.0003921985626220703, 0.0012929439544677734
+lebron is a hometown hero to me lol i love the lakers but let s go cavs lol, Positiva, 0.0, 0.512, 0.5, 7.67, Positiva, 0.0009987354278564453, 0.00023794174194335938, 0.0012366771697998047
+lebron and zydrunas are such an awesome duo, Positiva, 0.0, 0.631, 0.4, 5.87, Neutra, 0.0006282329559326172, 0.0004451274871826172, 0.0010733604431152344
+lebron is a beast nobody in the nba comes even close, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005834102630615234, 0.0003364086151123047, 0.0009198188781738281
+downloading apps for my iphone so much fun there literally is an app for just about anything, Positiva, 0.0, 0.817, 0.2, 4.98, Neutra, 0.0008654594421386719, 0.0002651214599609375, 0.0011305809020996094
+good news just had a call from the visa office saying everything is fine what a relief i am sick of scams out there stealing, Positiva, 0.3, 0.462, 0.2, 4.11, Neutra, 0.001340627670288086, 0.0002796649932861328, 0.0016202926635742188
+awesome come back from via, Positiva, 0.0, 0.494, 0.5, 7.67, Positiva, 0.0006723403930664062, 0.0002238750457763672, 0.0008962154388427734
+in montreal for a long weekend of r amp r much needed, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005254745483398438, 0.0002944469451904297, 0.0008199214935302734
+booz allen hamilton has a bad ass homegrown social collaboration platform way cool ttiv, Positiva, 0.0, 0.578, 0.4, 5.87, Neutra, 0.0007970333099365234, 0.00032258033752441406, 0.0011196136474609375
+mluc customer innovation award winner booz allen hamilton, Positiva, 0.0, 0.336, 0.7, 7.6, Positiva, 0.0007927417755126953, 0.000354766845703125, 0.0011475086212158203
+i current use the nikon d and love it but not as much as the canon d d i chose the d for the video feature my mistake, Positiva, 0.1, 0.778, 0.1, 4.81, Neutra, 0.0011227130889892578, 0.0003104209899902344, 0.0014331340789794922
+google is always a good place to look should ve mentioned i worked on the mustang w my dad, Positiva, 0.0, 0.838, 0.2, 4.98, Neutra, 0.0010988712310791016, 0.0003600120544433594, 0.001458883285522461
+played with an android google phone the slide out screen scares me i would break that fucker so fast still prefer my iphone, Negativa, 0.2, 0.676, 0.1, 4.52, Neutra, 0.0010724067687988281, 0.0002834796905517578, 0.001355886459350586
+us planning to resume the military tribunals at guantanamo bay only this time those on trial will be aig execs and chrysler debt holders, Negativa, 0.1, 0.902, 0.0, 4.81, Neutra, 0.0010776519775390625, 0.00029754638671875, 0.0013751983642578125
+omg so bored amp my tattoooos are so itchy help aha, Negativa, 0.3, 0.497, 0.2, 4.11, Neutra, 0.0006721019744873047, 0.00046896934509277344, 0.0011410713195800781
+i m itchy and miserable, Negativa, 0.8, 0.159, 0.0, 1.86, Negativa, 0.0007140636444091797, 0.00023794174194335938, 0.0009520053863525391
+no i m not itchy for now maybe later lol, Negativa, 0.2, 0.423, 0.4, 5.12, Neutra, 0.0006325244903564453, 0.0004215240478515625, 0.0010540485382080078
+rt i love the nerdy stanford human biology videos makes me miss school, Positiva, 0.2, 0.562, 0.3, 4.79, Neutra, 0.000827789306640625, 0.0005888938903808594, 0.0014166831970214844
+has been a bit crazy with steep learning curve but lyx is really good for long docs for anything shorter it would be insane, Positiva, 0.2, 0.677, 0.1, 4.52, Neutra, 0.0012052059173583984, 0.0010783672332763672, 0.0022835731506347656
+i m listening to p y t by danny gokey lt lt lt aww he s so amazing i lt him so much, Positiva, 0.0, 0.755, 0.2, 4.98, Neutra, 0.0008790493011474609, 0.0005939006805419922, 0.0014729499816894531
+is going to sleep then on a bike ride, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005962848663330078, 0.0003504753112792969, 0.0009467601776123047
+cant sleep my tooth is aching, Negativa, 0.4, 0.61, 0.0, 3.09, Negativa, 0.002231597900390625, 0.00033664703369140625, 0.0025682449340820312
+blah blah blah same old same old no plans today going back to sleep i guess, Negativa, 0.4, 0.632, 0.0, 3.09, Negativa, 0.0007805824279785156, 0.0002942085266113281, 0.0010747909545898438
+glad i didnt do bay to breakers today it s freaking degrees in san francisco wtf, Negativa, 0.3, 0.534, 0.1, 3.99, Neutra, 0.0016214847564697266, 0.0002791881561279297, 0.0019006729125976562
+obama administration must stop bonuses to aig ponzi schemers, Negativa, 0.2, 0.547, 0.3, 4.79, Neutra, 0.0006239414215087891, 0.0002224445343017578, 0.0008463859558105469
+started to think that citi is in really deep s amp t are they gonna survive the turmoil or are they gonna be the next aig, Negativa, 0.1, 0.902, 0.0, 4.81, Neutra, 0.0018718242645263672, 0.0006220340728759766, 0.0024938583374023438
+shaunwoo hate n on aig, Negativa, 0.6, 0.448, 0.0, 1.72, Negativa, 0.0009179115295410156, 0.0003185272216796875, 0.0012364387512207031
+you will not regret going to see star trek it was awesome, Positiva, 0.0, 0.609, 0.4, 5.87, Neutra, 0.0009343624114990234, 0.00032019615173339844, 0.0012545585632324219
+annoying new trend on the internets people picking apart michael lewis and malcolm gladwell nobody wants to read that, Negativa, 0.1, 0.87, 0.0, 4.81, Neutra, 0.002107858657836914, 0.00038623809814453125, 0.0024940967559814453
+highly recommend by malcolm gladwell, Positiva, 0.0, 0.589, 0.4, 5.87, Neutra, 0.0004963874816894531, 0.00027251243591308594, 0.0007688999176025391
+blink by malcolm gladwell amazing book and the tipping point, Positiva, 0.0, 0.703, 0.3, 5.26, Neutra, 0.0005986690521240234, 0.0002474784851074219, 0.0008461475372314453
+malcolm gladwell might be my new man crush, Positiva, 0.2, 0.814, 0.0, 4.52, Neutra, 0.0005974769592285156, 0.00024962425231933594, 0.0008471012115478516
+omg the commercials alone on espn are going to drive me nuts, Negativa, 0.3, 0.699, 0.0, 3.99, Neutra, 0.0010502338409423828, 0.0002472400665283203, 0.0012974739074707031
+playing with twitter api sounds fun may need to take a class or find a new friend who like to generate results with api code, Positiva, 0.0, 0.638, 0.4, 5.87, Neutra, 0.0013432502746582031, 0.0004050731658935547, 0.0017483234405517578
+hello twitter api, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.00043463706970214844, 0.0003001689910888672, 0.0007348060607910156
+because the twitter api is slow and most client s aren t good, Negativa, 0.0, 0.76, 0.2, 4.98, Neutra, 0.0012063980102539062, 0.0005772113800048828, 0.001783609390258789
+yahoo answers can be a butt sometimes, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005412101745605469, 0.0005421638488769531, 0.0010833740234375
+is scrapbooking with nic d, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004565715789794922, 0.0004937648773193359, 0.0009503364562988281
+rt five things wolfram alpha does better and vastly different than google, Positiva, 0.0, 0.791, 0.2, 4.98, Neutra, 0.000751495361328125, 0.0005738735198974609, 0.001325368881225586
+just changed my default pic to a nike basketball cause bball is awesome, Positiva, 0.0, 0.728, 0.3, 5.26, Neutra, 0.0007035732269287109, 0.0002574920654296875, 0.0009610652923583984
+rt was just told that nike layoffs started today, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005071163177490234, 0.0003046989440917969, 0.0008118152618408203
+back when i worked for nike we had one fav word just do it, Positiva, 0.0, 0.8, 0.2, 4.98, Neutra, 0.0007112026214599609, 0.00027489662170410156, 0.0009860992431640625
+by the way i m totally inspired by this freaky nike commercial, Positiva, 0.2, 0.572, 0.2, 4.61, Neutra, 0.0009419918060302734, 0.0002498626708984375, 0.001191854476928711
+class the d is supposed to come today, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004668235778808594, 0.00031566619873046875, 0.0007824897766113281
+needs someone to explain lambda calculus to him, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005679130554199219, 0.0003223419189453125, 0.0008902549743652344
+took the graduate field exam for computer science today nothing makes you feel like more of an idiot than lambda calculus, Negativa, 0.1, 0.758, 0.1, 4.81, Neutra, 0.0010151863098144531, 0.00030231475830078125, 0.0013175010681152344
+shout outs to all east palo alto for being in the buildin karizmakaze cal gta also thanks to profits of doom universal hempz cracka, Positiva, 0.1, 0.712, 0.2, 4.88, Neutra, 0.0013957023620605469, 0.000278472900390625, 0.0016741752624511719
+yeahhhhhhhhh i wouldn t really have lived in east palo alto if i could have avoided it i guess it s only for the summer, Negativa, 0.1, 0.888, 0.0, 4.81, Neutra, 0.0008363723754882812, 0.0002856254577636719, 0.0011219978332519531
+great stanford course thanks for making it available to the public really helpful and informative for starting off, Positiva, 0.0, 0.598, 0.4, 5.87, Neutra, 0.0008237361907958984, 0.0003657341003417969, 0.0011894702911376953
+work til pm lets go lakers, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004425048828125, 0.00039196014404296875, 0.0008344650268554688
+damn you north korea, Negativa, 0.5, 0.526, 0.0, 1.67, Negativa, 0.0003859996795654297, 0.00020837783813476562, 0.0005943775177001953
+can we just go ahead and blow north korea off the map already, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006229877471923828, 0.00038123130798339844, 0.0010042190551757812
+north korea please cease this douchebaggery china doesn t even like you anymore, Negativa, 0.0, 0.676, 0.3, 5.26, Neutra, 0.0008502006530761719, 0.00033926963806152344, 0.0011894702911376953
+why the hell is pelosi in freakin china and on whose dime, Negativa, 0.3, 0.705, 0.0, 3.99, Neutra, 0.0008718967437744141, 0.00033092498779296875, 0.0012028217315673828
+are you burning more cash than chrysler and gm stop the financial tsunami where bailout means taking a handout, Negativa, 0.2, 0.816, 0.0, 4.52, Neutra, 0.00106048583984375, 0.00033855438232421875, 0.0013990402221679688
+insects have infected my spinach plant, Negativa, 0.4, 0.61, 0.0, 3.09, Negativa, 0.0006010532379150391, 0.00027179718017578125, 0.0008728504180908203
+wish i could catch every mosquito in the world n burn em slowly they been bitin the shit outta me day mosquitos are the assholes of insects, Negativa, 0.1, 0.677, 0.2, 4.88, Neutra, 0.0011572837829589844, 0.0002849102020263672, 0.0014421939849853516
+just got back from church and i totally hate insects, Negativa, 0.3, 0.667, 0.0, 3.99, Neutra, 0.0006794929504394531, 0.00024700164794921875, 0.0009264945983886719
+just got mcdonalds goddam those eggs make me sick o yeah laker up date go lakers not much of an update well it s true so suck it, Negativa, 0.3, 0.531, 0.2, 4.11, Neutra, 0.0013427734375, 0.0002608299255371094, 0.0016036033630371094
+omgg i ohhdee want mcdonalds damn i wonder if its open lol, Positiva, 0.2, 0.507, 0.3, 4.79, Neutra, 0.0006935596466064453, 0.0002319812774658203, 0.0009255409240722656
+history exam studying ugh, Negativa, 0.5, 0.517, 0.0, 1.67, Negativa, 0.0004532337188720703, 0.00021648406982421875, 0.0006697177886962891
+i hate revision it s so boring i am totally unprepared for my exam tomorrow things are not looking good, Negativa, 0.4, 0.606, 0.0, 3.09, Negativa, 0.0008780956268310547, 0.00037360191345214844, 0.0012516975402832031
+higher physics exam tommorow not lookin forward to it much, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005643367767333984, 0.00031495094299316406, 0.0008792877197265625
+it s a bank holiday yet i m only out of work now exam season sucks, Negativa, 0.2, 0.658, 0.2, 4.61, Neutra, 0.0008280277252197266, 0.00032067298889160156, 0.0011487007141113281
+cheney and bush are the real culprits, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005998611450195312, 0.0003135204315185547, 0.0009133815765380859
+life s a bitch and so is dick cheney p bipart tlot tcot hhrs gop dnc, Negativa, 0.4, 0.599, 0.0, 3.09, Negativa, 0.0007119178771972656, 0.00025463104248046875, 0.0009665489196777344
+dick cheney s dishonest speech about torture terror and obama fred kaplan slate, Negativa, 0.6, 0.359, 0.0, 1.72, Negativa, 0.0006620883941650391, 0.00022268295288085938, 0.0008847713470458984
+the republican party is a bunch of anti abortion zealots who couldn t draw flies to a dump neal boortz just now on the radio, Negativa, 0.2, 0.657, 0.1, 4.52, Neutra, 0.0011539459228515625, 0.0003178119659423828, 0.0014717578887939453
+is twitter s connections api broken some tweets didn t make it to twitter, Negativa, 0.2, 0.78, 0.0, 4.52, Neutra, 0.0006935596466064453, 0.0002474784851074219, 0.0009410381317138672
+i srsly hate the stupid twitter api timeout thing soooo annoying, Negativa, 0.6, 0.417, 0.0, 1.72, Negativa, 0.0006582736968994141, 0.00023102760314941406, 0.0008893013000488281
+i really liked learning jquery book is worth a look too, Positiva, 0.0, 0.584, 0.4, 5.87, Neutra, 0.0007541179656982422, 0.00029921531677246094, 0.0010533332824707031
+very interesting ad from adobe by goodby silverstein amp partners youtube adobe cs le sens propre, Positiva, 0.0, 0.834, 0.2, 4.98, Neutra, 0.0007529258728027344, 0.0002808570861816406, 0.001033782958984375
+goodby silverstein agency new site great, Positiva, 0.0, 0.549, 0.5, 7.67, Positiva, 0.0005309581756591797, 0.00031566619873046875, 0.0008466243743896484
+rt goodby silverstein s new site i enjoy it nice find, Positiva, 0.0, 0.538, 0.5, 7.67, Positiva, 0.0007104873657226562, 0.000232696533203125, 0.0009431838989257812
+the ever amazing psyop and goodby silverstein amp partners for hp have to go play with after effects now, Positiva, 0.0, 0.733, 0.3, 5.26, Neutra, 0.0015270709991455078, 0.0003180503845214844, 0.0018451213836669922
+top ten most watched on viral video chart love the nike mostvaluablepuppets campaign from wieden amp kennedy, Positiva, 0.0, 0.714, 0.3, 5.26, Neutra, 0.0008180141448974609, 0.00026297569274902344, 0.0010809898376464844
+zomg i have a g, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0003688335418701172, 0.00030422210693359375, 0.0006730556488037109
+ok so lots of buzz from io but how lucky are they a free g, Positiva, 0.0, 0.506, 0.5, 7.67, Positiva, 0.0007989406585693359, 0.0002777576446533203, 0.0010766983032226562
+just got a free g android at google i o, Positiva, 0.0, 0.602, 0.4, 5.87, Neutra, 0.0005424022674560547, 0.000274658203125, 0.0008170604705810547
+guess i ll be retiring my g and start using my developer g woot googleio, Positiva, 0.0, 0.797, 0.2, 4.98, Neutra, 0.0006885528564453125, 0.000274658203125, 0.0009632110595703125
+i am happy for philip being at googleio today, Positiva, 0.0, 0.654, 0.3, 5.26, Neutra, 0.000530242919921875, 0.0002961158752441406, 0.0008263587951660156
+lakers played great cannot wait for thursday night lakers vs, Positiva, 0.0, 0.552, 0.4, 5.87, Neutra, 0.0006222724914550781, 0.00030350685119628906, 0.0009257793426513672
+judd apatow creates fake sitcom on nbc com to market his new movie viral marketing at its best, Positiva, 0.1, 0.615, 0.3, 5.12, Neutra, 0.0010411739349365234, 0.00029349327087402344, 0.0013346672058105469
+viral marketing fail this acia pills brand oughta get shut down for hacking into people s messenger s i get msgs in a day arrrgh, Negativa, 0.1, 0.851, 0.0, 4.81, Neutra, 0.0010287761688232422, 0.00030994415283203125, 0.0013387203216552734
+watching night at the museum lmao, Positiva, 0.0, 0.562, 0.4, 5.87, Neutra, 0.0005900859832763672, 0.00028514862060546875, 0.0008752346038818359
+i loved night at the museum, Positiva, 0.0, 0.506, 0.5, 7.67, Positiva, 0.0005009174346923828, 0.00022912025451660156, 0.0007300376892089844
+just got back from the movies went to see the new night at the museum with rachel it was good, Positiva, 0.0, 0.868, 0.1, 4.91, Neutra, 0.0018837451934814453, 0.0003323554992675781, 0.0022161006927490234
+i will take you on a date to see night at the museum whenever you want it looks soooooo good, Positiva, 0.0, 0.792, 0.2, 4.98, Neutra, 0.0009555816650390625, 0.0003345012664794922, 0.0012900829315185547
+no watching the night at the museum getting really good, Positiva, 0.2, 0.597, 0.2, 4.61, Neutra, 0.0007038116455078125, 0.00027370452880859375, 0.0009775161743164062
+night at the museum wolverine and junk food perfect monday, Positiva, 0.0, 0.709, 0.3, 5.26, Neutra, 0.0006656646728515625, 0.0002646446228027344, 0.0009303092956542969
+saw night at the museum last night pretty crazy movie but the cast was awesome so it was well worth it robin williams forever, Positiva, 0.1, 0.561, 0.4, 5.67, Neutra, 0.0013949871063232422, 0.0003101825714111328, 0.001705169677734375
+night at the museum tonite instead of up oh well that yr old better enjoy it lol, Negativa, 0.0, 0.542, 0.5, 7.67, Positiva, 0.00093841552734375, 0.0002257823944091797, 0.0011641979217529297
+it s unfortunate that after the stimulus plan was put in place twice to help gm on the back of the american people has led to the inevitable, Negativa, 0.1, 0.814, 0.1, 4.81, Neutra, 0.001131296157836914, 0.00030112266540527344, 0.0014324188232421875
+tell me again why we are giving more to gm we should use that for all the programs that support the unemployed, Negativa, 0.0, 0.797, 0.2, 4.98, Neutra, 0.0010552406311035156, 0.0002758502960205078, 0.0013310909271240234
+oh yes but if gm dies it will only be worth more boo hahaha, Negativa, 0.0, 0.536, 0.5, 7.67, Positiva, 0.0008869171142578125, 0.00026416778564453125, 0.0011510848999023438
+time warner cable is down again rd time since memorial day bummer, Negativa, 0.2, 0.809, 0.0, 4.52, Neutra, 0.0006997585296630859, 0.0002620220184326172, 0.0009617805480957031
+i would rather pay reasonable yearly taxes for free fast internet than get gouged by time warner for a slow connection, Negativa, 0.1, 0.783, 0.2, 4.88, Neutra, 0.0009512901306152344, 0.000324249267578125, 0.0012755393981933594
+nooooooo my dvr just died and i was only half way through the ea presser hate you time warner, Negativa, 0.3, 0.687, 0.0, 3.99, Neutra, 0.0009443759918212891, 0.00026488304138183594, 0.001209259033203125
+f ck time warner cable you f cking suck balls i have a hd tv amp my damn hd channels hardly ever come in bullshit, Negativa, 0.3, 0.657, 0.0, 3.99, Neutra, 0.0010657310485839844, 0.0002739429473876953, 0.0013396739959716797
+time warner has the worse customer service ever i will never use them again, Negativa, 0.2, 0.795, 0.0, 4.52, Neutra, 0.000804901123046875, 0.00027441978454589844, 0.0010793209075927734
+time warner is the devil worst possible time for the internet to go out, Negativa, 0.4, 0.585, 0.0, 3.09, Negativa, 0.0007905960083007812, 0.00029921531677246094, 0.0010898113250732422
+fuck no internet damn time warner, Negativa, 0.7, 0.263, 0.0, 1.86, Negativa, 0.0005657672882080078, 0.00023746490478515625, 0.0008032321929931641
+time warner really picks the worst time to not work all i want to do is get to mtv com so i can watch the hills wtfffff, Negativa, 0.2, 0.805, 0.0, 4.52, Neutra, 0.001064300537109375, 0.00027871131896972656, 0.0013430118560791016
+i hate time warner soooo wish i had vios cant watch the fricken mets game w o buffering i feel like im watching free internet porn, Negativa, 0.1, 0.582, 0.3, 5.12, Neutra, 0.0010421276092529297, 0.00027680397033691406, 0.0013189315795898438
+ahh got rid of stupid time warner today amp now taking a nap while the roomies cook for me pretty good end for a monday, Negativa, 0.1, 0.678, 0.2, 4.88, Neutra, 0.0011837482452392578, 0.00028252601623535156, 0.0014662742614746094
+time warner s hd line up is crap, Negativa, 0.3, 0.698, 0.0, 3.99, Neutra, 0.0005688667297363281, 0.0002453327178955078, 0.0008141994476318359
+is being fucked by time warner cable didnt know modems could explode and susan boyle sucks too, Negativa, 0.3, 0.685, 0.0, 3.99, Neutra, 0.0008122920989990234, 0.0002663135528564453, 0.0010786056518554688
+time warner cable slogan where calling it a day at pm happens, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0007572174072265625, 0.00036454200744628906, 0.0011217594146728516
+recovering from surgery wishing was here, Negativa, 0.0, 0.725, 0.3, 5.26, Neutra, 0.0007276535034179688, 0.0002841949462890625, 0.0010118484497070312
+my wrist still hurts i have to get it looked at i hate the dr dentist scary places time to watch eagle eye if you want to join txt, Positiva, 0.3, 0.62, 0.1, 3.99, Neutra, 0.0012738704681396484, 0.0002837181091308594, 0.0015575885772705078
+the dentist lied u won t feel any discomort prob won t even need pain pills man u twippin this shit hurt how many pills can i take, Negativa, 0.4, 0.448, 0.2, 3.99, Neutra, 0.0012378692626953125, 0.0002815723419189453, 0.0015194416046142578
+my dentist is great but she s expensive, Negativa, 0.0, 0.702, 0.3, 5.26, Neutra, 0.0006697177886962891, 0.00028014183044433594, 0.000949859619140625
+is studing math tomorrow exam and dentist, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006089210510253906, 0.0003483295440673828, 0.0009572505950927734
+my dentist was wrong wrong, Negativa, 0.7, 0.326, 0.0, 1.86, Negativa, 0.0005540847778320312, 0.0002193450927734375, 0.0007734298706054688
+going to the dentist later, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004057884216308594, 0.0003273487091064453, 0.0007331371307373047
+son has me looking at cars online i hate car shopping would rather go to the dentist anyone with a good car at a good price to sell, Negativa, 0.1, 0.698, 0.2, 4.88, Neutra, 0.0010476112365722656, 0.0003139972686767578, 0.0013616085052490234
+luke and i got stopped walking out of safeway and asked to empty our pockets and lift our shirts how jacked up is that, Negativa, 0.1, 0.85, 0.0, 4.81, Neutra, 0.0010371208190917969, 0.0003027915954589844, 0.0013399124145507812
+safeway is very rock n roll tonight, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004825592041015625, 0.0002989768981933594, 0.0007815361022949219
+the safeway bathroom still smells like ass, Negativa, 0.3, 0.455, 0.2, 4.11, Neutra, 0.0007066726684570312, 0.0002281665802001953, 0.0009348392486572266
+at safeway on elkhorn they move like they re dead, Negativa, 0.3, 0.541, 0.2, 4.11, Neutra, 0.0005939006805419922, 0.0002346038818359375, 0.0008285045623779297
+i love dwight howard s vitamin water commercial now i wish he was with nike and not adidas lol, Positiva, 0.1, 0.512, 0.4, 5.67, Neutra, 0.0009675025939941406, 0.0003218650817871094, 0.00128936767578125
+found nothing at nike factory off to banana republic outlet, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006165504455566406, 0.0003287792205810547, 0.0009453296661376953
+is lovin his nike already and that s only from running on the spot in his bedroom, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0007143020629882812, 0.0003902912139892578, 0.001104593276977539
+i finally got around to using jquery to make my bio collapse yay for slide animations, Positiva, 0.2, 0.663, 0.2, 4.61, Neutra, 0.0007936954498291016, 0.0002593994140625, 0.0010530948638916016
+right lol we ll get there i have high expectations warren buffet style, Positiva, 0.0, 0.797, 0.2, 4.98, Neutra, 0.0006434917449951172, 0.00024318695068359375, 0.0008866786956787109
+rt rt great someone s sitting in the shade today because someone planted a tree a long time ago warren buffet, Positiva, 0.0, 0.806, 0.2, 4.98, Neutra, 0.0007407665252685547, 0.0002753734588623047, 0.0010161399841308594
+warren buffet became for a time the richest man in the united states not by working but investing in big idea which lead to the fortune, Positiva, 0.0, 0.849, 0.2, 4.98, Neutra, 0.001058816909790039, 0.0002872943878173828, 0.0013461112976074219
+according to the create a school notre dame will have receivers in ncaa at or higher rating sweet, Positiva, 0.0, 0.746, 0.3, 5.26, Neutra, 0.0008876323699951172, 0.0003509521484375, 0.0012385845184326172
+it s definitely under warranty amp my experience is the amazon support for kindle is great had to contact them about my kindle, Positiva, 0.0, 0.616, 0.4, 5.87, Neutra, 0.001073598861694336, 0.0003228187561035156, 0.0013964176177978516
+time warner road runner customer support here absolutely blows i hate not having other high speed net options i m ready to go nuclear, Negativa, 0.1, 0.662, 0.2, 4.88, Neutra, 0.0010728836059570312, 0.0002696514129638672, 0.0013425350189208984
+time warner cable phone reps r dumber than nails ugh cable was working mins ago now its not wtf, Negativa, 0.2, 0.642, 0.1, 4.52, Neutra, 0.0009212493896484375, 0.0002856254577636719, 0.0012068748474121094
+we tried but time warner wasn t being nice so we recorded today, Negativa, 0.0, 0.748, 0.3, 5.26, Neutra, 0.0008881092071533203, 0.0003368854522705078, 0.0012249946594238281
+omg time warner f ed up my internet install instead of today its now next saturday another week w o internet amp ehfa v fhg fml, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0010998249053955078, 0.0003771781921386719, 0.0014770030975341797
+wth i have never seen a line this loooong at time warner before ugh, Negativa, 0.4, 0.617, 0.0, 3.09, Negativa, 0.0007603168487548828, 0.00027942657470703125, 0.001039743423461914
+impatiently awaiting the arrival of the time warner guy it s way too pretty to be inside all afternoon, Negativa, 0.1, 0.731, 0.1, 4.81, Neutra, 0.00087738037109375, 0.0002925395965576172, 0.0011699199676513672
+naive bayes using em for text classification really frustrating, Negativa, 0.4, 0.569, 0.0, 3.09, Negativa, 0.0006120204925537109, 0.00026106834411621094, 0.0008730888366699219
+we went to stanford university today got a tour made me want to go back to college it s also decided all of our kids will go there, Positiva, 0.0, 0.951, 0.0, 4.91, Neutra, 0.0009713172912597656, 0.0003101825714111328, 0.0012814998626708984
+if you re being harassed by calls about your car warranty changing your number won t fix that they call every number d bags, Negativa, 0.1, 0.647, 0.2, 4.88, Neutra, 0.0010631084442138672, 0.0002772808074951172, 0.0013403892517089844
+just blocked united blood services using google voice they call more than those car warranty guys, Negativa, 0.1, 0.741, 0.1, 4.81, Neutra, 0.0008327960968017578, 0.0003268718719482422, 0.00115966796875
+at amp t is complete fail, Negativa, 0.5, 0.533, 0.0, 1.67, Negativa, 0.0005660057067871094, 0.0003147125244140625, 0.0008807182312011719
+oh snap you work at at amp t don t you, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005369186401367188, 0.00032019615173339844, 0.0008571147918701172
+i really dont want at amp t phone service they suck when it comes to having a signal, Negativa, 0.3, 0.747, 0.0, 3.99, Neutra, 0.0009026527404785156, 0.0002689361572265625, 0.0011715888977050781
+i say we just cut out the small talk at amp t s new slogan f__k you give us your money apologies to bob geldof, Negativa, 0.1, 0.909, 0.0, 4.81, Neutra, 0.0011670589447021484, 0.0003097057342529297, 0.0014767646789550781
+pissed about at amp t s mid contract upgrade price for the iphone it s more i m not going to pay for something i thought was, Negativa, 0.2, 0.776, 0.1, 4.52, Neutra, 0.0009369850158691406, 0.0002703666687011719, 0.0012073516845703125
+safari is fast even on my shitty at amp t tethering, Negativa, 0.3, 0.714, 0.0, 3.99, Neutra, 0.0006854534149169922, 0.00025916099548339844, 0.0009446144104003906
+what is at amp t fucking up, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.00046825408935546875, 0.0002994537353515625, 0.0007677078247070312
+at amp t dropped the ball and isn t supporting crap with the new iphone fail att sucks, Negativa, 0.4, 0.511, 0.1, 3.09, Negativa, 0.0008976459503173828, 0.00028061866760253906, 0.0011782646179199219
+yay glad you got the phone still damn you at amp t, Negativa, 0.2, 0.468, 0.4, 5.12, Neutra, 0.0008053779602050781, 0.00032782554626464844, 0.0011332035064697266
+talk is cheap bing that i ll stick with google, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005862712860107422, 0.0003204345703125, 0.0009067058563232422
+wtf is the point of deleting tweets if they can still be found in summize and searches twitter please fix that thanks and bye, Negativa, 0.1, 0.7, 0.2, 4.88, Neutra, 0.0010409355163574219, 0.0002760887145996094, 0.0013170242309570312
+i love google translator too d good day mate, Positiva, 0.0, 0.413, 0.6, 7.67, Positiva, 0.0005898475646972656, 0.00021338462829589844, 0.0008032321929931641
+reading on my new kindle, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004191398620605469, 0.0002846717834472656, 0.0007038116455078125
+my kindle came and i love it, Positiva, 0.0, 0.543, 0.5, 7.67, Positiva, 0.0004899501800537109, 0.00018644332885742188, 0.0006763935089111328
+loving my new kindle named her kendra in case u were wondering the cookbook is the tool cuz it tells u all the tricks best gift evr, Positiva, 0.0, 0.627, 0.3, 5.26, Neutra, 0.0010666847229003906, 0.0002777576446533203, 0.001344442367553711
+the real aig scandal, Negativa, 0.5, 0.508, 0.0, 1.67, Negativa, 0.0004909038543701172, 0.00022101402282714844, 0.0007119178771972656
+obama is quite a good comedian check out his dinner speech on cnn very funny jokes, Positiva, 0.0, 0.488, 0.5, 7.67, Positiva, 0.000885009765625, 0.00020837783813476562, 0.0010933876037597656
+barack obama shows his funny side gt gt great speech, Positiva, 0.0, 0.349, 0.7, 7.6, Positiva, 0.0007035732269287109, 0.00021600723266601562, 0.0009195804595947266
+i like this guy barack obama shows his funny side gt gt, Positiva, 0.0, 0.422, 0.6, 7.67, Positiva, 0.0007333755493164062, 0.00022745132446289062, 0.0009608268737792969
+obama s speech was pretty awesome last night, Positiva, 0.0, 0.407, 0.6, 7.67, Positiva, 0.0007424354553222656, 0.0002868175506591797, 0.0010292530059814453
+reading bill clinton fail obama win, Positiva, 0.3, 0.354, 0.3, 4.61, Neutra, 0.0007479190826416016, 0.0002715587615966797, 0.0010194778442382812
+obama more popular than u s among arabs survey president barack obama s popularity in leading arab countries, Positiva, 0.0, 0.677, 0.3, 5.26, Neutra, 0.000827789306640625, 0.0002675056457519531, 0.0010952949523925781
+obama s got jokes haha just got to watch a bit of his after dinner speech from last night i m in love with mr president, Positiva, 0.0, 0.674, 0.3, 5.26, Neutra, 0.0010344982147216797, 0.0002963542938232422, 0.0013308525085449219
+lebron james got in a car accident i guess just heard it on evening news wow i cant believe it will he be ok, Negativa, 0.1, 0.664, 0.2, 4.88, Neutra, 0.0010962486267089844, 0.00028252601623535156, 0.001378774642944336
+is it me or is this the best the playoffs have been in years oh yea lebron and melo in the finals, Positiva, 0.0, 0.833, 0.2, 4.98, Neutra, 0.0009360313415527344, 0.0003368854522705078, 0.0012729167938232422
+no lebron is the best, Positiva, 0.2, 0.319, 0.4, 5.12, Neutra, 0.0005168914794921875, 0.00025916099548339844, 0.0007760524749755859
+lebron is cool i like his personality he has good character, Positiva, 0.0, 0.476, 0.5, 7.67, Positiva, 0.0007510185241699219, 0.00022649765014648438, 0.0009775161743164062
+watching lebron highlights damn that niggas good, Positiva, 0.4, 0.333, 0.2, 3.99, Neutra, 0.0006237030029296875, 0.00031566619873046875, 0.0009393692016601562
+lebron is murdering shit, Positiva, 0.8, 0.202, 0.0, 1.86, Negativa, 0.0004811286926269531, 0.00020933151245117188, 0.000690460205078125
+lebron is a monsta and he is only smh the world ain t ready, Positiva, 0.2, 0.676, 0.2, 4.61, Neutra, 0.0006847381591796875, 0.00024819374084472656, 0.0009329319000244141
+when lebron is done in the nba he will probably be greater than kobe like u said kobe is good but there alot of good players, Positiva, 0.0, 0.693, 0.3, 5.26, Neutra, 0.0011267662048339844, 0.00027108192443847656, 0.001397848129272461
+kobe is good bt lebron has my vote, Positiva, 0.0, 0.707, 0.3, 5.26, Neutra, 0.0005545616149902344, 0.0002541542053222656, 0.0008087158203125
+kobe is the best in the world not lebron, Negativa, 0.0, 0.656, 0.3, 5.26, Neutra, 0.0005624294281005859, 0.0002658367156982422, 0.0008282661437988281
+world cup access damn that s a good look, Positiva, 0.3, 0.472, 0.3, 4.61, Neutra, 0.0006928443908691406, 0.0003204345703125, 0.0010132789611816406
+just bought my tickets for the fifa world cup in south africa its going to be a great summer, Positiva, 0.0, 0.806, 0.2, 4.98, Neutra, 0.0008227825164794922, 0.00030875205993652344, 0.0011315345764160156
+i have to go to booz allen hamilton for a hr meeting but then i get to go home, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0007371902465820312, 0.0003566741943359375, 0.0010938644409179688
+the great indian tamasha truly will unfold from may the result day for indian general election, Positiva, 0.0, 0.667, 0.3, 5.26, Neutra, 0.0008828639984130859, 0.0002732276916503906, 0.0011560916900634766
+i have the kindle i ve seen pictures of the dx but haven t seen it in person i love my kindle i m on it everyday, Positiva, 0.1, 0.696, 0.2, 4.88, Neutra, 0.0008816719055175781, 0.00026345252990722656, 0.0011451244354248047
+such an awesome idea the continual learning program with a kindle, Positiva, 0.0, 0.687, 0.3, 5.26, Neutra, 0.0005795955657958984, 0.00028514862060546875, 0.0008647441864013672
+ooooh what model are you getting i have the d and love love love love it, Positiva, 0.0, 0.373, 0.6, 7.67, Positiva, 0.00091552734375, 0.0002560615539550781, 0.0011715888977050781
+the times of india the wonder that is india s election, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005815029144287109, 0.0003223419189453125, 0.0009038448333740234
+good video from google on using search options, Positiva, 0.0, 0.707, 0.3, 5.26, Neutra, 0.0005578994750976562, 0.00034499168395996094, 0.0009028911590576172
+lol ah my skin is itchy damn lawnmowing, Negativa, 0.4, 0.397, 0.2, 3.99, Neutra, 0.0006418228149414062, 0.00025916099548339844, 0.0009009838104248047
+itchy back dont ya hate it, Negativa, 0.2, 0.44, 0.3, 4.79, Neutra, 0.0005156993865966797, 0.00020694732666015625, 0.0007226467132568359
+stanford charity fashion show a top draw, Positiva, 0.0, 0.465, 0.5, 7.67, Positiva, 0.0005395412445068359, 0.00023603439331054688, 0.0007755756378173828
+stanford university s facebook profile is one of the most popular official university pages, Positiva, 0.0, 0.795, 0.2, 4.98, Neutra, 0.0007851123809814453, 0.0002930164337158203, 0.0010781288146972656
+lyx is cool, Positiva, 0.0, 0.465, 0.5, 7.67, Positiva, 0.0004935264587402344, 0.0002243518829345703, 0.0007178783416748047
+sooo dissapointed they sent danny gokey home you still rock danny my hometown hero yeah milrockee, Positiva, 0.0, 0.707, 0.3, 5.26, Neutra, 0.0008766651153564453, 0.0003311634063720703, 0.0012078285217285156
+rt american idol fashion adam lambert tones down danny gokey cute, Positiva, 0.0, 0.769, 0.2, 4.98, Neutra, 0.0007097721099853516, 0.00026607513427734375, 0.0009758472442626953
+i love you danny gokey, Positiva, 0.0, 0.417, 0.6, 7.67, Positiva, 0.0003781318664550781, 0.00020694732666015625, 0.0005850791931152344
+so tired i didn t sleep well at all last night, Negativa, 0.3, 0.569, 0.2, 4.11, Neutra, 0.0005724430084228516, 0.00021195411682128906, 0.0007843971252441406
+boarding plane for san francisco in hour hr flight blech, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005528926849365234, 0.0003039836883544922, 0.0008568763732910156
+bonjour san francisco my back hurts from last night, Negativa, 0.3, 0.721, 0.0, 3.99, Neutra, 0.0005931854248046875, 0.00024390220642089844, 0.0008370876312255859
+with my best girl for a few more hours in san francisco mmmmmfamily is wonderful, Positiva, 0.0, 0.603, 0.4, 5.87, Neutra, 0.0009000301361083984, 0.0002923011779785156, 0.001192331314086914
+f up big or go home aig, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005936622619628906, 0.0003941059112548828, 0.0009877681732177734
+went to see the star trek movie last night very satisfying, Positiva, 0.0, 0.752, 0.2, 4.98, Neutra, 0.0008394718170166016, 0.0003006458282470703, 0.0011401176452636719
+i can t wait going to see star trek tonight, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005645751953125, 0.00038051605224609375, 0.0009450912475585938
+star trek was as good as everyone said, Positiva, 0.0, 0.707, 0.3, 5.26, Neutra, 0.0005629062652587891, 0.0002505779266357422, 0.0008134841918945312
+am loving new malcolm gladwell book outliers, Positiva, 0.0, 0.606, 0.4, 5.87, Neutra, 0.0005092620849609375, 0.0002720355987548828, 0.0007812976837158203
+i highly recommend malcolm gladwell s the tipping point my next audiobook will probably be one of his as well, Positiva, 0.0, 0.766, 0.2, 4.98, Neutra, 0.00081634521484375, 0.0002589225769042969, 0.0010752677917480469
+malcolm gladwell is a genius at tricking people into not realizing he s a fucking idiot, Negativa, 0.2, 0.701, 0.1, 4.52, Neutra, 0.00072479248046875, 0.00025916099548339844, 0.0009839534759521484
+hey no offense but malcolm gladwell is a pretenious annoying cunt and he brings you down cant read his shit, Negativa, 0.4, 0.486, 0.1, 3.09, Negativa, 0.0009796619415283203, 0.00027251243591308594, 0.0012521743774414062
+rt great article by malcolm gladwell, Positiva, 0.0, 0.549, 0.5, 7.67, Positiva, 0.0004985332489013672, 0.0002682209014892578, 0.000766754150390625
+i seriously underestimated malcolm gladwell i want to meet this dude, Positiva, 0.3, 0.541, 0.1, 3.99, Neutra, 0.0006117820739746094, 0.00025081634521484375, 0.0008625984191894531
+i hate comcast right now everything is down cable internet amp phone ughh what am i to do, Negativa, 0.2, 0.802, 0.0, 4.52, Neutra, 0.0007569789886474609, 0.00027298927307128906, 0.00102996826171875
+comcast sucks, Negativa, 0.7, 0.286, 0.0, 1.86, Negativa, 0.00043654441833496094, 0.00022530555725097656, 0.0006618499755859375
+the day i never have to deal with comcast again will rank as one of the best days of my life, Negativa, 0.0, 0.819, 0.2, 4.98, Neutra, 0.0009167194366455078, 0.0003199577331542969, 0.0012366771697998047
+did comcast fail again, Negativa, 0.5, 0.462, 0.0, 1.67, Negativa, 0.0004971027374267578, 0.00023484230041503906, 0.0007319450378417969
+curses the twitter api limit, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004124641418457031, 0.0002841949462890625, 0.0006966590881347656
+now i can see why dave winer screams about lack of twitter api its limitations and access throttles, Negativa, 0.2, 0.769, 0.0, 4.52, Neutra, 0.0008387565612792969, 0.00025725364685058594, 0.0010960102081298828
+arg twitter api is making me crazy, Negativa, 0.3, 0.714, 0.0, 3.99, Neutra, 0.0005970001220703125, 0.0002574920654296875, 0.0008544921875
+i m really loving the new search site wolfram alpha makes google seem so quaint, Positiva, 0.0, 0.741, 0.3, 5.26, Neutra, 0.0006663799285888672, 0.00024437904357910156, 0.0009107589721679688
+wolfram alpha sucks even for researchers the information provided is less than you can get from google or wikipedia totally useless, Negativa, 0.2, 0.773, 0.0, 4.52, Neutra, 0.0010111331939697266, 0.0002849102020263672, 0.0012960433959960938
+off to the nike factory, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004792213439941406, 0.00030112266540527344, 0.0007803440093994141
+new nike muppet commercials are pretty cute why do we live together again, Positiva, 0.0, 0.64, 0.4, 5.87, Neutra, 0.0007338523864746094, 0.0003540515899658203, 0.0010879039764404297
+oh those are awesome i so wish they weren t owned by nike, Negativa, 0.0, 0.542, 0.5, 7.67, Positiva, 0.0007567405700683594, 0.00035858154296875, 0.0011153221130371094
+awesome seeing the show friday at the shoreline amphitheatre never seen nin before can t wait, Positiva, 0.0, 0.773, 0.2, 4.98, Neutra, 0.0006716251373291016, 0.00026416778564453125, 0.0009357929229736328
+arhh it s weka bug and i spent almost two hours to find that out crappy me, Negativa, 0.2, 0.795, 0.0, 4.52, Neutra, 0.00083160400390625, 0.0002911090850830078, 0.0011227130889892578
+hey bud np i do so love my d although i d love a d mkii more, Positiva, 0.0, 0.413, 0.6, 7.67, Positiva, 0.0007250308990478516, 0.000232696533203125, 0.0009577274322509766
+just got us a d for the office d, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.00049591064453125, 0.0003228187561035156, 0.0008187294006347656
+just picked up my new canon d it s beautiful prepare for some seriously awesome photography, Positiva, 0.1, 0.531, 0.4, 5.67, Neutra, 0.0009174346923828125, 0.0002856254577636719, 0.0012030601501464844
+just got my new toy canon d love love love it, Positiva, 0.0, 0.357, 0.6, 7.67, Positiva, 0.0007364749908447266, 0.0002620220184326172, 0.0009984970092773438
+learning about lambda calculus, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005013942718505859, 0.00031757354736328125, 0.0008189678192138672
+i m moving to east palo alto, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004868507385253906, 0.000316619873046875, 0.0008034706115722656
+atebits i just finished watching your stanford iphone class session i really appreciate it you rock, Positiva, 0.0, 0.813, 0.2, 4.98, Neutra, 0.0007712841033935547, 0.00027489662170410156, 0.0010461807250976562
+hi just saw your stanford talk and really liked your advice just saying hi from singapore yes the videos do get around, Positiva, 0.0, 0.775, 0.2, 4.98, Neutra, 0.0009255409240722656, 0.00034880638122558594, 0.0012743473052978516
+lakers tonight let s go, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0003943443298339844, 0.0002770423889160156, 0.00067138671875
+will the lakers kick the nuggets ass tonight, Positiva, 0.3, 0.667, 0.0, 3.99, Neutra, 0.0006773471832275391, 0.00034809112548828125, 0.0010254383087158203
+oooooooh north korea is in troubleeeee, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006914138793945312, 0.0003399848937988281, 0.0010313987731933594
+wat the heck is north korea doing they just conducted powerful nuclear tests follow the link, Negativa, 0.0, 0.843, 0.2, 4.98, Neutra, 0.0008876323699951172, 0.00029730796813964844, 0.0011849403381347656
+listening to obama friggin north korea, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0016930103302001953, 0.0003464221954345703, 0.0020394325256347656
+i just realized we three monkeys in the white obama biden pelosi sarah palin, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006587505340576172, 0.00030541419982910156, 0.0009641647338867188
+pelosi should stay in china and never come back, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004982948303222656, 0.0002849102020263672, 0.0007832050323486328
+nancy pelosi gave the worst commencement speech i ve ever heard yes i m still bitter about this, Negativa, 0.3, 0.556, 0.1, 3.99, Neutra, 0.0008580684661865234, 0.0002434253692626953, 0.0011014938354492188
+ugh the amount of times these stupid insects have bitten me grr, Negativa, 0.4, 0.617, 0.0, 3.09, Negativa, 0.0006735324859619141, 0.0002582073211669922, 0.0009317398071289062
+prettiest insects ever pink katydids, Positiva, 0.0, 0.519, 0.5, 7.67, Positiva, 0.00046896934509277344, 0.00021457672119140625, 0.0006835460662841797
+just got barraged by a horde of insects hungry for my kitchen light so scary, Negativa, 0.2, 0.76, 0.0, 4.52, Neutra, 0.0017518997192382812, 0.00030040740966796875, 0.00205230712890625
+just had mcdonalds for dinner d it was goooood big mac meal, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006480216979980469, 0.0003266334533691406, 0.0009746551513671875
+ahh yes lol ima tell my hubby to go get me sum mcdonalds, Positiva, 0.0, 0.667, 0.3, 5.26, Neutra, 0.0007843971252441406, 0.00027561187744140625, 0.0010600090026855469
+stopped to have lunch at mcdonalds chicken nuggetssss yummmmmy, Positiva, 0.2, 0.808, 0.0, 4.52, Neutra, 0.0005483627319335938, 0.0002505779266357422, 0.0007989406585693359
+could go for a lot of mcdonalds i mean a lot, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004973411560058594, 0.0003063678741455078, 0.0008037090301513672
+my exam went good your prayers worked, Positiva, 0.0, 0.674, 0.3, 5.26, Neutra, 0.0017385482788085938, 0.0003151893615722656, 0.0020537376403808594
+only one exam left and i am so happy for it d, Positiva, 0.0, 0.655, 0.3, 5.26, Neutra, 0.0007109642028808594, 0.0002765655517578125, 0.0009875297546386719
+math review im going to fail the exam, Negativa, 0.3, 0.667, 0.0, 3.99, Neutra, 0.0019752979278564453, 0.0002846717834472656, 0.002259969711303711
+colin powell rocked yesterday on cbs cheney needs to shut the hell up and go home powell is a man of honor and served our country proudly, Negativa, 0.1, 0.669, 0.2, 4.88, Neutra, 0.0012123584747314453, 0.00034356117248535156, 0.0015559196472167969
+obviously not siding with cheney here, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004992485046386719, 0.00034809112548828125, 0.0008473396301269531
+absolutely hilarious from, Positiva, 0.0, 0.401, 0.6, 7.67, Positiva, 0.0005044937133789062, 0.00025773048400878906, 0.0007622241973876953
+i never did thank you for including me in your top twitter authors you rock amp i new wave d, Positiva, 0.1, 0.793, 0.1, 4.81, Neutra, 0.0009615421295166016, 0.0003075599670410156, 0.0012691020965576172
+rt awesome jquery reference book for coda webdesign, Positiva, 0.0, 0.631, 0.4, 5.87, Neutra, 0.0005583763122558594, 0.00026607513427734375, 0.0008244514465332031
+i ve been sending e mails like crazy today to my contacts does anyone have a contact at goodby silverstein i d love to speak to them, Positiva, 0.1, 0.676, 0.2, 4.88, Neutra, 0.0008997917175292969, 0.0002589225769042969, 0.0011587142944335938
+goodby silverstein s new site i enjoy it, Positiva, 0.0, 0.61, 0.4, 5.87, Neutra, 0.0006618499755859375, 0.00028514862060546875, 0.0009469985961914062
+wow everyone at the google i o conference got free g s with a month of unlimited service, Positiva, 0.0, 0.608, 0.4, 5.87, Neutra, 0.0007600784301757812, 0.00028896331787109375, 0.001049041748046875
+dood i got a free google android phone at the i o conference the g, Positiva, 0.0, 0.732, 0.3, 5.26, Neutra, 0.0005486011505126953, 0.00023221969604492188, 0.0007808208465576172
+the g is amazing btw a huge improvement over the g, Positiva, 0.0, 0.355, 0.6, 7.67, Positiva, 0.0006093978881835938, 0.00021791458129882812, 0.0008273124694824219
+html demos lots of great stuff to come yes i m excited io googleio, Positiva, 0.0, 0.495, 0.5, 7.67, Positiva, 0.0008599758148193359, 0.0002415180206298828, 0.0011014938354492188
+yay happy place place place i love google, Positiva, 0.0, 0.261, 0.7, 7.6, Positiva, 0.0005807876586914062, 0.00023651123046875, 0.0008172988891601562
+googleio o d bringing d graphics to the browser very nice tbh funfun, Positiva, 0.0, 0.744, 0.3, 5.26, Neutra, 0.0007817745208740234, 0.0002815723419189453, 0.0010633468627929688
+awesome viral marketing for funny people, Positiva, 0.0, 0.364, 0.6, 7.67, Positiva, 0.0005815029144287109, 0.00022459030151367188, 0.0008060932159423828
+saw night at the museum out of sheer desperation who is funding these movies, Negativa, 0.2, 0.812, 0.0, 4.52, Neutra, 0.0007734298706054688, 0.0002663135528564453, 0.001039743423461914
+night at the museum pretty furkin good, Positiva, 0.0, 0.45, 0.6, 7.67, Positiva, 0.0006127357482910156, 0.00020694732666015625, 0.0008196830749511719
+watching night at the museum giggling, Positiva, 0.0, 0.667, 0.3, 5.26, Neutra, 0.0004928112030029297, 0.00024247169494628906, 0.0007352828979492188
+back from seeing star trek and night at the museum star trek was amazing but night at the museum was eh, Negativa, 0.0, 0.893, 0.1, 4.91, Neutra, 0.000762939453125, 0.0002951622009277344, 0.0010581016540527344
+just watched night at the museum so stinkin cute, Positiva, 0.0, 0.709, 0.3, 5.26, Neutra, 0.0006680488586425781, 0.00026607513427734375, 0.0009341239929199219
+so night at the museum was awesome much better than part next weekend we ll see up, Positiva, 0.0, 0.682, 0.3, 5.26, Neutra, 0.0009398460388183594, 0.0003037452697753906, 0.00124359130859375
+saw the new night at the museum and i loved it next is to go see up in d, Positiva, 0.0, 0.804, 0.2, 4.98, Neutra, 0.0007898807525634766, 0.00026106834411621094, 0.0010509490966796875
+it is a shame about gm what if they are forced to make only cars the white house thinks will sell what do you think, Negativa, 0.2, 0.783, 0.0, 4.52, Neutra, 0.0010209083557128906, 0.00026345252990722656, 0.0012843608856201172
+as u may have noticed not too happy about the gm situation nor aig lehman et al, Negativa, 0.2, 0.833, 0.0, 4.52, Neutra, 0.0007700920104980469, 0.0002617835998535156, 0.0010318756103515625
+gm good riddance sad though, Negativa, 0.3, 0.333, 0.3, 4.61, Neutra, 0.0005462169647216797, 0.0002789497375488281, 0.0008251667022705078
+i will never buy a government motors vehicle until just recently i drove gm cars since when i bought a, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0007388591766357422, 0.00034117698669433594, 0.0010800361633300781
+having the old coca cola guy on the gm board is stupid has heck tcot ala, Negativa, 0.2, 0.815, 0.0, 4.52, Neutra, 0.0008347034454345703, 0.0002720355987548828, 0.0011067390441894531
+rantsandraves the worst thing about gm concord pleasant hill martinez is the fucking uaw, Negativa, 0.2, 0.619, 0.2, 4.61, Neutra, 0.0008704662322998047, 0.0002541542053222656, 0.0011246204376220703
+give a man a fish u feed him for the day teach him to fish u feed him for life buy him gm and u f k him over for good, Negativa, 0.0, 0.888, 0.1, 4.91, Neutra, 0.0007851123809814453, 0.0002956390380859375, 0.0010807514190673828
+the more i hear about this gm thing the more angry i get billions wasted more bullshit all for something like k employees and all the, Negativa, 0.3, 0.587, 0.1, 3.99, Neutra, 0.00093841552734375, 0.00030112266540527344, 0.0012395381927490234
+i own a gm car and it is junk as far as quality compared to a honda, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006532669067382812, 0.0003559589385986328, 0.001009225845336914
+sad day bankrupt gm, Negativa, 0.8, 0.23, 0.0, 1.86, Negativa, 0.0005195140838623047, 0.00022482872009277344, 0.0007443428039550781
+is upset about the whole gm thing life as i know it is so screwed up, Negativa, 0.3, 0.659, 0.0, 3.99, Neutra, 0.0007917881011962891, 0.00031828880310058594, 0.001110076904296875
+whoever is running time warner needs to be repeatedly raped by a rhino so they understand the consequences of putting out shitty cable svcs, Negativa, 0.3, 0.719, 0.0, 3.99, Neutra, 0.0011677742004394531, 0.0002827644348144531, 0.0014505386352539062
+wftb joining a bit late my connection was down boo time warner, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006511211395263672, 0.00032782554626464844, 0.0009789466857910156
+cox or time warner cox is cheaper and gets a b on dslreports tw is more expensive and gets a c, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0007538795471191406, 0.000308990478515625, 0.0010628700256347656
+i am furious with time warner and their phone promotions, Negativa, 0.3, 0.684, 0.0, 3.99, Neutra, 0.0005407333374023438, 0.00023627281188964844, 0.0007770061492919922
+just got home from chick fil a with the boys damn my internets down stupid time warner, Negativa, 0.3, 0.697, 0.0, 3.99, Neutra, 0.0007843971252441406, 0.0002453327178955078, 0.0010297298431396484
+could time warner cable suck more no, Negativa, 0.5, 0.481, 0.0, 1.67, Negativa, 0.0006225109100341797, 0.00023436546325683594, 0.0008568763732910156
+pissed at time warner for causin me to have slow internet problems, Negativa, 0.4, 0.592, 0.0, 3.09, Negativa, 0.0006585121154785156, 0.00027251243591308594, 0.0009310245513916016
+ummm having some time warner problems, Negativa, 0.4, 0.649, 0.0, 3.09, Negativa, 0.0006060600280761719, 0.0002853870391845703, 0.0008914470672607422
+you guys see this why does time warner have to suck so much ass really wish i could get u verse at my apartment, Negativa, 0.2, 0.663, 0.1, 4.52, Neutra, 0.001116037368774414, 0.00030684471130371094, 0.001422882080078125
+rt the upside to time warner unhelpful phone operators superslow on site service crap that s not an upside, Negativa, 0.1, 0.867, 0.0, 4.81, Neutra, 0.0008909702301025391, 0.00030541419982910156, 0.0011963844299316406
+rt new time warner slogan time warner where we make you long for the days before cable, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0008587837219238281, 0.00032711029052734375, 0.0011858940124511719
+confirmed it s time warner s fault not facebook s that fb is taking about minutes to load so tempted to switch to verizon, Negativa, 0.1, 0.881, 0.0, 4.81, Neutra, 0.0009131431579589844, 0.0003006458282470703, 0.0012137889862060547
+time warner epic fail, Negativa, 0.5, 0.462, 0.0, 1.67, Negativa, 0.0006425380706787109, 0.00034809112548828125, 0.0009906291961669922
+i know how sad is that rt st day of hurricane season that s less scarey than govt taking over gm, Negativa, 0.2, 0.755, 0.0, 4.52, Neutra, 0.0009617805480957031, 0.0003001689910888672, 0.0012619495391845703
+gm files bankruptcy not a good sign, Negativa, 0.3, 0.675, 0.0, 3.99, Neutra, 0.0005934238433837891, 0.00026035308837890625, 0.0008537769317626953
+yankees won mets lost its a good day, Positiva, 0.2, 0.31, 0.5, 5.26, Neutra, 0.0006871223449707031, 0.0002636909484863281, 0.0009508132934570312
+my dentist appt today was actually quite enjoyable, Positiva, 0.0, 0.687, 0.3, 5.26, Neutra, 0.0006010532379150391, 0.0002636909484863281, 0.0008647441864013672
+i hate the effing dentist, Negativa, 0.6, 0.448, 0.0, 1.72, Negativa, 0.0004525184631347656, 0.00024247169494628906, 0.0006949901580810547
+i hate going to the dentist, Negativa, 0.5, 0.519, 0.0, 1.67, Negativa, 0.0004894733428955078, 0.00022912025451660156, 0.0007185935974121094
+i hate the dentist who invented them anyways, Negativa, 0.4, 0.619, 0.0, 3.09, Negativa, 0.0004551410675048828, 0.00024390220642089844, 0.0006990432739257812
+this dentist s office is cold, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004303455352783203, 0.0002989768981933594, 0.0007293224334716797
+just applied at safeway yeeeee, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0004744529724121094, 0.0003178119659423828, 0.0007922649383544922
+safeway place is a nightmare right now bumming, Negativa, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005216598510742188, 0.00030159950256347656, 0.0008232593536376953
+hate safeway select green tea icecream bought two cartons what a waste of money gt _ lt, Negativa, 0.3, 0.583, 0.1, 3.99, Neutra, 0.0007548332214355469, 0.00023293495178222656, 0.0009877681732177734
+nike rocks i m super grateful for what i ve done with them amp the european division of nike is beyond, Positiva, 0.0, 0.699, 0.3, 5.26, Neutra, 0.0008225440979003906, 0.0002834796905517578, 0.0011060237884521484
+have you tried nike v addictive, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005230903625488281, 0.0003178119659423828, 0.0008409023284912109
+the nike training club beta iphone app looks very interesting, Positiva, 0.0, 0.75, 0.2, 4.98, Neutra, 0.0006597042083740234, 0.0002734661102294922, 0.0009331703186035156
+argghhhh why won t my jquery appear in safari bad safari, Negativa, 0.2, 0.526, 0.2, 4.61, Neutra, 0.0006866455078125, 0.00029921531677246094, 0.000985860824584961
+i m ready to drop the pretenses i am forever in love with jquery and i want to marry it sorry ladies this nerd is jquery spokenfor js, Positiva, 0.2, 0.57, 0.3, 4.79, Neutra, 0.0013394355773925781, 0.00033783912658691406, 0.0016772747039794922
+super investors a great weekend read here from warren buffet oldie but a goodie, Positiva, 0.0, 0.667, 0.3, 5.26, Neutra, 0.0007314682006835938, 0.0002701282501220703, 0.001001596450805664
+reading michael palin book the python years great book i also recommend warren buffet amp nelson mandela s bio, Positiva, 0.0, 0.694, 0.3, 5.26, Neutra, 0.0009248256683349609, 0.00027060508728027344, 0.0011954307556152344
+i mean i m down with notre dame if i have to it s a good school i d be closer to dan i d enjoy it, Positiva, 0.0, 0.711, 0.3, 5.26, Neutra, 0.000782012939453125, 0.00025916099548339844, 0.0010411739349365234
+i can t watch tv without a tivo and after all these years the time warner dvr still sucks, Negativa, 0.1, 0.857, 0.0, 4.81, Neutra, 0.0007767677307128906, 0.0002887248992919922, 0.0010654926300048828
+i d say some sports writers are idiots for saying roger federer is one of the best ever in tennis roger federer is the best ever in tennis, Positiva, 0.0, 0.741, 0.3, 5.26, Neutra, 0.0009260177612304688, 0.00028014183044433594, 0.0012061595916748047
+i still love my kindle but reading the new york times on it does not feel natural i miss the bloomingdale ads, Negativa, 0.1, 0.71, 0.2, 4.88, Neutra, 0.0009875297546386719, 0.0002779960632324219, 0.0012655258178710938
+i love my kindle no more stacks of books to trip over on the way to the loo, Positiva, 0.1, 0.701, 0.2, 4.88, Neutra, 0.0008387565612792969, 0.0002753734588623047, 0.0011141300201416016
+although today s keynote rocked for every great announcement at amp t shit on us just a little bit more, Negativa, 0.2, 0.661, 0.2, 4.61, Neutra, 0.0008955001831054688, 0.000263214111328125, 0.0011587142944335938
+its not so much my obsession with cell phones but the iphone i m a slave to at amp t forever because of it, Negativa, 0.1, 0.912, 0.0, 4.81, Neutra, 0.0010628700256347656, 0.00031185150146484375, 0.0013747215270996094
+fuzzball is more fun than at amp t p, Negativa, 0.0, 0.625, 0.4, 5.87, Neutra, 0.0007040500640869141, 0.00034499168395996094, 0.001049041748046875
+today is a good day to dislike at amp t vote out of office indeed, Negativa, 0.2, 0.667, 0.2, 4.61, Neutra, 0.0007822513580322266, 0.0002570152282714844, 0.001039266586303711
+got my wave sandbox invite extra excited too bad i have class now but i ll play with it soon enough io wave, Positiva, 0.1, 0.671, 0.2, 4.88, Neutra, 0.0011332035064697266, 0.00033354759216308594, 0.0014667510986328125
+looks like summize has gone down too many tweets from wwdc perhaps, Negativa, 0.0, 0.815, 0.2, 4.98, Neutra, 0.0007352828979492188, 0.00031447410583496094, 0.0010497570037841797
+thanks so much from one of your very happy kindle winners i was so surprised fabulous thank you best kathleen, Positiva, 0.0, 0.342, 0.7, 7.6, Positiva, 0.001074075698852539, 0.00024700164794921875, 0.0013210773468017578
+man i kinda dislike apple right now case in point the iphone gs wish there was a video recorder app please, Negativa, 0.1, 0.686, 0.2, 4.88, Neutra, 0.0009751319885253906, 0.00028443336486816406, 0.0012595653533935547
+i have a kindle amp sony prs like it physical device feels good font is nice pg turns are snappy enuf ui a little klunky, Positiva, 0.0, 0.699, 0.3, 5.26, Neutra, 0.0011219978332519531, 0.000331878662109375, 0.0014538764953613281
+the kindle seems the best ereader but will it work in the uk and where can i get one, Positiva, 0.0, 0.867, 0.1, 4.91, Neutra, 0.0008952617645263672, 0.0003247261047363281, 0.0012199878692626953
+i have a google addiction thank you for pointing that out hahaha, Positiva, 0.0, 0.567, 0.4, 5.87, Neutra, 0.0007464885711669922, 0.00029158592224121094, 0.0010380744934082031
+dearest you rich bastards the visa card you sent me doesn t work why screw a little guy like me, Negativa, 0.2, 0.467, 0.3, 4.79, Neutra, 0.0009214878082275391, 0.0002548694610595703, 0.0011763572692871094
+excited about seeing bobby flay and guy fieri tomorrow at the great american food amp music fest, Positiva, 0.0, 0.698, 0.3, 5.26, Neutra, 0.0007262229919433594, 0.0002300739288330078, 0.0009562969207763672
+gonna go see bobby flay moro at shoreline eat and drink gonna be good, Positiva, 0.0, 0.818, 0.2, 4.98, Neutra, 0.0007779598236083984, 0.0003349781036376953, 0.0011129379272460938
+can t wait for the great american food and music festival at shoreline tomorrow mmm katz pastrami and bobby flay yes please, Positiva, 0.0, 0.58, 0.4, 5.87, Neutra, 0.0011363029479980469, 0.0003325939178466797, 0.0014688968658447266
+my dad was in ny for a day we ate at mesa grill last night and met bobby flay so much fun except i completely lost my voice today, Positiva, 0.1, 0.802, 0.1, 4.81, Neutra, 0.0011701583862304688, 0.0002956390380859375, 0.0014657974243164062
+fighting with latex again, Negativa, 0.5, 0.545, 0.0, 1.67, Negativa, 0.00040268898010253906, 0.0002193450927734375, 0.0006220340728759766
+we love you too and don t want you to die latex the devil, Negativa, 0.4, 0.395, 0.2, 3.99, Neutra, 0.0008790493011474609, 0.00027370452880859375, 0.0011527538299560547
+hours hours of inkscape crashing normally solid as a rock hours of latex complaining at the slightest thing i can t take any more, Negativa, 0.1, 0.848, 0.1, 4.81, Neutra, 0.0010447502136230469, 0.0003018379211425781, 0.001346588134765625
+shit s hitting the fan in iran craziness indeed iranelection, Negativa, 0.4, 0.414, 0.2, 3.99, Neutra, 0.0006413459777832031, 0.0003108978271484375, 0.0009522438049316406
+monday already iran may implode kitchen is a disaster seems happy had a nice weekend and is great whoop, Negativa, 0.1, 0.469, 0.4, 5.67, Neutra, 0.0009543895721435547, 0.0003464221954345703, 0.001300811767578125
+getting ready to test out some burger receipes this weekend bobby flay has some great receipes to try thanks bobby, Positiva, 0.0, 0.642, 0.4, 5.87, Neutra, 0.0008375644683837891, 0.00026535987854003906, 0.0011029243469238281
+i lam so in love with bobby flay he is my favorite rt you need a place in phoenix we have great peppers here, Positiva, 0.0, 0.621, 0.4, 5.87, Neutra, 0.0009665489196777344, 0.00028252601623535156, 0.001249074935913086
+i just created my first latex file from scratch that didn t work out very well see it s a great time waster, Negativa, 0.0, 0.653, 0.3, 5.26, Neutra, 0.0009739398956298828, 0.0002760887145996094, 0.0012500286102294922
+using linux and loving it so much nicer than windows looking forward to using the wysiwyg latex editor, Positiva, 0.0, 0.693, 0.3, 5.26, Neutra, 0.0009045600891113281, 0.0002779960632324219, 0.00118255615234375
+after using latex a lot any other typeset mathematics just looks hideous, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0006122589111328125, 0.00038433074951171875, 0.0009965896606445312
+on that note i hate word i hate pages i hate latex there i said it i hate latex all you texn rds can come kill me now, Negativa, 0.5, 0.48, 0.0, 1.67, Negativa, 0.0011186599731445312, 0.0002589225769042969, 0.0013775825500488281
+ahhh back in a real text editing environment i lt latex, Positiva, 0.0, 1.0, 0.0, 4.91, Neutra, 0.0005750656127929688, 0.00031280517578125, 0.0008878707885742188
+trouble in iran i see hmm iran iran so far away flockofseagullsweregeopoliticallycorrect, Negativa, 0.2, 0.787, 0.0, 4.52, Neutra, 0.0006387233734130859, 0.0002894401550292969, 0.0009281635284423828
+reading the tweets coming out of iran the whole thing is terrifying and incredibly sad, Negativa, 0.4, 0.647, 0.0, 3.09, Negativa, 0.000835418701171875, 0.00028228759765625, 0.001117706298828125

@@ -260,10 +260,6 @@ estrategias de precios y costos de implementación de nuevos productos y remodel
 
 ## Sistemas de marketing vertical
 
-__NOTA__:
-marketing directo el proveedor promociona directo al cliente.
-Marketing vertical, el proveedor promociona mediante los niveles del canal.
-
 Un canal de distribución convencional consta de uno o más productores, mayoristas y
 minoristas independientes, cada uno de los cuales constituye una compañía individual que
 trata de incrementar al máximo sus propias utilidades, incluso a expensas de las ganancias del
@@ -468,14 +464,14 @@ móviles y sociales.
 Existen dos estrategias basicas:
 
 - Promoción de empuje:
-  Impulsa el producto a través de los canales de marketing hacia los consumidores finales.
-  El productor dirige sus actividades principalmente hacia miembros del canal (ventas
-  personales y promoción comercial).
-  Ejemplo:
-  John Deere utiliza esta estrategia para productos como podadoras de césped y tractores de
-  jardín.
-  Se enfoca en inducir a los miembros del canal a incluir y promover el producto ante los
-  consumidores finales.
+    + Impulsa el producto a través de los canales de marketing hacia los consumidores finales.
+    + El productor dirige sus actividades principalmente hacia miembros del canal (ventas
+      personales y promoción comercial).
+    + Ejemplo:
+      John Deere utiliza esta estrategia para productos como podadoras de césped y tractores
+      de jardín.
+      Se enfoca en inducir a los miembros del canal a incluir y promover el producto ante los
+      consumidores finales.
 
 ```txt
 ┌───────────┐  publicidad   ┌─────────────────────┐  publicidad   ┌────────────┐
@@ -484,8 +480,9 @@ Existen dos estrategias basicas:
 ```
 
 - Promoción de atracción:
-  Dirige las actividades de marketing principalmente hacia los consumidores finales.
-  Utiliza herramientas como publicidad, promoción al consumidor y medios directos y digitales.
+    + Dirige las actividades de marketing principalmente hacia los consumidores finales.
+    + Utiliza herramientas como publicidad, promoción al consumidor y medios directos y
+      digitales.
 
 ```
                actividades de publicidad

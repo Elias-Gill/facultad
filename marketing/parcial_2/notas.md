@@ -15,6 +15,17 @@ servicios al consumidor.
 La oferta en el mercado incluye tanto productos tangibles como servicios, personas y
 experiencias.
 
+### Conceptos sobre los productos
+
+**Precio**:
+es la cantidad de dinero que se cobra por el producto o servicio, o la suma de valores que dan
+a cambio los consumidores para adquirir dicho producto.
+
+**Marca**:
+Nombre, término, letrero, símbolo, diseño, o una combinación de estos elementos, que
+identifican los productos o servicios de un vendedor o grupo de vendedores y los diferencian de
+sus competidores.
+
 ## Bienes vs servicios
 
 Caracteristicas de los **Bienes**:
@@ -357,6 +368,9 @@ Las principales herramientas son:
 - Relaciones públicas 
 - Marketing directo y digital
 
+NOTE:
+importante es lo de ahi arriba ^ !!!!!!!!!!!!!
+
 Es crucial que todas las formas de comunicación se combinen de manera cuidadosa en programas
 integrados.
 Esto implica coordinar no solo las herramientas de promoción, sino también otros elementos de
@@ -560,6 +574,97 @@ Consideraciones para la creación de mensajes publicitarios:
 - Deben ser más atractivos, entretenidos y emocionalmente impactantes.
 - No funcionan la vieja táctica de interrumpir a los consumidores.
 - Deben ofrecer valor añadido para ser vistos y recordados.
+
+### Tipos de llamados en el proceso de creacion de un mensaje
+
+#### 1. Llamado Racional
+
+- Se centra en argumentos lógicos y hechos verificables.
+- Ejemplo:
+  "El Mercedes-Benz ofrece la mejor tecnología e ingeniería alemana para traslados seguros y
+  cómodos viajes."
+- Características:
+- Se basa en datos y características tangibles del producto.
+- Apela a la razón y la lógica del receptor.
+- Útil para productos técnicos o complejos.
+
+#### 2. Llamado Emocional
+
+- Busca despertar emociones en el receptor.
+- Ejemplo:
+  "Imagina conducir por la costa con el viento en tu cabello, sintiendo la libertad absoluta
+  con tu nuevo coche deportivo."
+- Características:
+- Crea una conexión emocional con el producto.
+- Puede evocar sentimientos como felicidad, nostalgia o excitación.
+- Eficaz para productos relacionados con experiencias o estilos de vida.
+
+#### 3. Llamado Social
+
+- Se enfoca en la aceptación social o el prestigio asociado al producto.
+- Ejemplo:
+  "Únete a la élite de conductores que prefieren la exclusividad y el lujo de un automóvil
+  de alta gama."
+- Características:
+- Apela al deseo de pertenecer o ser visto de cierta manera.
+- Útil para productos de moda o de alto prestigio.
+- Puede crear un sentido de comunidad entre los usuarios.
+
+#### 4. Llamado Sensorial
+
+- Intenta activar los sentidos del receptor.
+- Ejemplo:
+  "Disfruta del aroma fresco de nuestro interior de cuero auténtico y la sensación de
+  suavidad al tacto."
+- Características:
+- Describe características sensoriales del producto.
+- Busca crear una experiencia mental vívida.
+- Eficaz para productos alimenticios, cosméticos o de decoración.
+
+#### 5. Llamado de Urgencia
+
+- Crea un sentido de prisa o limitación en la oferta.
+- Ejemplo:
+  "¡Oferta limitada!
+  Obtén un descuento exclusivo en tu próximo vehículo si lo compras antes de fin de mes."
+- Características:
+- Intenta acelerar la decisión de compra.
+- Útil para promociones temporales o lanzamientos de productos.
+- Puede crear ansiedad o temor a perderse una oportunidad.
+
+#### 6. Llamado de Autoridad
+
+- Se basa en la confianza y credibilidad de expertos o instituciones.
+- Ejemplo:
+  "Recomendado por los mejores mecánicos del país, nuestro modelo es el más confiable en su
+  categoría."
+- Características:
+- Usa testimonios de expertos o certificaciones.
+- Busca transferir credibilidad al producto.
+- Útil para productos técnicos o de salud.
+
+#### 7. Llamado de Recompensa
+
+- Ofrece beneficios adicionales por la compra o uso del producto.
+- Ejemplo:
+  "Compre hoy y obtenga un kit de accesorios gratuito, valorado en $500."
+- Características:
+- Agrega valor adicional a la transacción.
+- Puede aumentar la percepción de valor del producto.
+- Útil para promociones especiales o lanzamientos de productos.
+
+#### 8. Llamado de Comparación
+
+- Compara directamente el producto con alternativas.
+- Ejemplo:
+  "Nuestro modelo consume hasta un 30% menos de combustible que el líder del mercado."
+- Características:
+- Destaca ventajas específicas sobre la competencia.
+- Útil para diferenciarse en mercados saturados.
+- Puede crear una percepción de superioridad.
+
+Estos tipos de llamados pueden combinarse para crear mensajes más efectivos, adaptándose a
+las características del producto, el público objetivo y los objetivos de la comunicación.
 
 # Relaciones publicas
 

@@ -175,6 +175,9 @@ Elaborar un producto o prestar un servicio requiere de entablar relaciones con u
 proveedores e intermediarios que representan el suministro de las operaciones de la empresa.
 Un termino apropiado para esto es el de __cadena de demanda__.
 
+La cadena de __servicio-utilidad__ es la que vincula las utilidades de una compania de
+servicios con la satisfaccion de los clientes y empleados y/o consumidores.
+
 Esta incluye socios ascendentes (proveedores de materias primas, componentes, etc.) y socios
 descendentes (canales de distribución que llevan el producto al cliente, como mayoristas y
 minoristas).

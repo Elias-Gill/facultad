@@ -198,3 +198,5 @@ clasificarlas:
   apoyan principalmente el control de solicitudes de cambio y notificación de eventos (por
   ejemplo, cambios de estado de solicitudes de cambio, hitos alcanzados) (jira, sistema de
   tickets.
+
+

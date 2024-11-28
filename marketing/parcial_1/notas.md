@@ -1,3 +1,5 @@
+El marketing es la actividad encaminada a atraer clientes y administrar relaciones redituables con ellos.
+
 EL objetivo del marketing es dar una mejor valoracino a un producto o empresa, dando
 percepciones positivas.
 
@@ -23,6 +25,7 @@ servicios que ofrece el mercado para satisfacer una necesida o deseo.
 
 Las ofertas no se limitan al producto fisico, tambien incluye los servicios, actividades o
 beneficios de la venta.
+
 Miopia de marketing:
 el error es prestar mas atencion a los productos especificos mas que a la experiencia y
 beneficios producidos por los mismos.

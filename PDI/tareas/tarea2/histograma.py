@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 
 # Datos
-data = [12, 8, 5, 14, 14,
-        13, 10, 13, 5, 8,
-        1, 2, 5, 8, 8,
-        12, 2, 4, 4, 1,
-        8, 11, 11, 10, 14]
+data = [ 11,7,5,14,13,
+        12,9,12,5,7,
+        1,2,5,7,8,
+        11,2,3,3,1,
+        7,10,10,9,14]
 
 # Rango completo de 0 a 14
 bins = range(0, 16)  # De 0 a 14, el 15 es el límite superior

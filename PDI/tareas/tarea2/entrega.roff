@@ -1,0 +1,147 @@
+.\" carátula
+.bp
+.sp 5
+.ce
+.b "Entrega de ejercitario. Procesamiento digital de im\['a]genes"
+.sp 0.5
+.ce
+Elias Sebastian Gill Quintana
+.sp 0.5
+.ce
+Maria Jos\['e] Mendoza Recalde
+.sp 0.5
+.ce
+Abigail Mercedes Nu\[~n]es Fern\['a]ndez
+.ce
+.sp 1.5
+.ce
+"Ejercitario propuesto: Histogramas"
+.sp 1.5
+.\" Carátula
+.uh "\s+2Tema 1"
+.\" sub headers
+.sh 1 "C\['a]lculo del histograma"
+.lp
+Dada la siguiente matriz de valores de intensidad:
+.TS
+center, box, tab(;);
+c c c c c.
+11;7;4;14;13
+12;9;12;4;7
+1;2;4;7;8
+11;2;3;3;1
+7;10;10;9;14
+.TE
+
+Para calcular el histograma, se realiza el conteo de las ocurrencias de cada valor de intensidad en la matriz. En este caso, los valores de intensidad var\['i]an entre 0 y 14, lo que representa un total de 15 niveles de intensidad distintos.
+.\"
+.PSPIC histograma.eps 5i
+.\"
+.bp
+.sh 1 "Ecualizaci\['o]n del histograma"
+.lp
+Para ecualizar el histograma, primero se calculan las frecuencias acumuladas para cada valor de intensidad:
+
+.TS
+center, box, tab(;);
+c c c.
+Intensidad;Frecuencia;F. Acumulada
+0;0;0
+1;2;2
+2;2;4
+3;2;6
+4;3;9
+5;0;9
+6;0;9
+7;4;13
+8;1;14
+9;2;16
+10;2;18
+11;2;20
+12;2;22
+13;1;23
+14;2;25
+.TE
+
+Luego, se aplica la f\['o]rmula de ecualizaci\['o]n para obtener los nuevos valores de intensidad:
+
+.EQ
+y = 15 over 25 = 3 over 5
+.EN
+.EQ
+x = ({3 over 5}) { sum n sub i }
+.EN
+
+Los resultados de la ecualizaci\['o]n se muestran en la siguiente tabla:
+
+.TS
+center, box, tab(;);
+c c c c.
+Intensidad;Frecuencia acumulada;Acumulada(3/5);Redondeado
+0;0;0.00;0
+1;2;1.20;1
+2;4;2.40;2
+3;6;3.60;4
+4;9;5.40;5
+5;9;5.40;5
+6;9;5.40;5
+7;13;7.80;8
+8;14;8.40;8
+9;16;9.60;10
+10;18;10.80;11
+11;20;12.00;12
+12;22;13.20;13
+13;23;13.80;14
+14;25;15.00;14
+.TE
+
+.bp
+.sh 1 "Matriz actualizada"
+
+Al aplicar los nuevos valores de intensidad a la matriz original, se obtiene la siguiente matriz ecualizada:
+
+.TS
+center, box, tab(;);
+c c c c c.
+12;8;5;14;14
+13;10;13;5;8
+1;2;5;8;8
+12;2;4;4;1
+8;11;11;10;14
+.TE
+
+El histograma correspondiente a la matriz ecualizada se muestra a continuaci\['o]n:
+.PSPIC histograma_equalizado.eps 5i
+.\" 
+.uh "\s+2Tema 2"
+
+.\" Pseudocódigo en formato roff
+INICIO programa
+
+    // Suponemos que la imagen es una matriz de filas x columnas pixeles
+    // Cada pixel tiene un valor de gris entre 0 y max_gris
+
+    filas, columnas                    // Dimensiones de la imagen
+    imagen[filas][columnas]     // Matriz de la imagen
+    max_gris                             // Maximo valor de gris (por ejemplo, 255)
+    histograma[max_gris + 1]  // Histograma, con niveles de gris de 0 a max_gris
+
+    // Inicializar el histograma en 0
+    Para i desde 0 hasta max_gris Hacer
+        histograma[i] <- 0
+    Fin
+
+    // Recorrer cada pixel de la imagen
+    Para x desde 0 hasta filas - 1:
+        Para y desde 0 hasta columnas - 1:
+            valor_gris <- imagen[x][y]
+            histograma[valor_gris] <- histograma[valor_gris] + 1
+        Fin
+    Fin
+
+    // Mostrar el histograma
+    Para i desde 0 hasta max_gris:
+        Imprimir "Nivel de gris:", i, "Frecuencia:", histograma[i]
+    Fin
+
+FIN programa

@@ -1,51 +1,47 @@
 # zk_circuit_project
 
-Este proyecto implementa un circuito zk-SNARK utilizando Circom y snarkjs para verificar la operación:
+Este proyecto implementa un circuito zk-SNARK en Circom para verificar la operación:
 
 ```
 c = (a² + b²) % p
 ```
 
 donde:
-- `a` y `b` son números secretos.
+- `a` y `b` son valores secretos.
 - `p` es un número primo público.
 - `c` es la salida pública.
 
-## Estructura del Proyecto
+## Estructura
 
-- `circuits/`: Contiene el archivo del circuito en Circom.
-- `scripts/`: Scripts para compilar y probar el circuito.
-- `artifacts/`: Archivos generados (WASM, claves, pruebas, etc.).
-- `test/`: Pruebas y ejemplos de uso.
+- `circuits/` → Circuito en Circom.
+- `artifacts/` → Archivos generados (WASM, claves, pruebas, etc.).
+- `test/` → Pruebas e inputs de ejemplo.
+- `public/` → Archivos para pruebas en el navegador.
 
 ## Requisitos
 
+- Linux
 - Node.js
-- Circom
-- snarkjs
+- GNU Make
 
-## Instrucciones
+## Uso
 
-1. Instalar dependencias:
-
-```bash
-npm install -g circom snarkjs
-```
-
-2. Compilar el circuito:
-
-```bash
-make compile
-```
-
-3. Generar las claves y la prueba:
-
+### 1. Instalar dependencias y generar pruebas
 ```bash
 make setup
 ```
 
-4. Verificar la prueba:
-
+### 2. Verificar la prueba generada
 ```bash
 make verify
+```
+
+### 3. Probar en el navegador
+```bash
+make browser
+```
+
+### 4. Limpiar archivos generados
+```bash
+make clean
 ```

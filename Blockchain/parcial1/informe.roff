@@ -1,0 +1,174 @@
+.\" Car\['a]tula
+.bp
+.sp 5
+.ce
+.b "Trabajo Pr\['a]ctico. Circuitos Aritm\['e]ticos en Blockchain"
+.sp 0.7
+.ce
+Elias Sebastian Gill Quintana
+.sp 2
+.ce
+"An\['a]lisis de un circuito aritm\['e]tico para pruebas zk-SNARK"
+.sp 2
+.ce
+Dr. Marcos Daniel Villagra Riquelme
+.sp 2
+.\" Introducci\['o]n
+.uh \s+3Introducci\['o]n
+.pp
+Este documento describe el dise\[~n]o, implementaci\['o]n y uso de un circuito aritm\['e]tico
+en el lenguaje Circom, utilizado para generar pruebas zk-SNARK en aplicaciones de blockchain.
+El circuito calcula la suma de los cuadrados de dos n\['u]meros privados y luego toma el
+m\['o]dulo con respecto a un n\['u]mero primo p, asegurando que el resultado sea menor que p.
+Este tipo de circuitos es fundamental en sistemas criptogr\['a]ficos que requieren privacidad y
+verificabilidad.
+.pp
+El documento est\['a] estructurado de la siguiente manera:
+.np
+Descripci\['o]n detallada del circuito.
+.np
+Proceso de generaci\['o]n de pruebas.
+.np
+Proceso de verificaci\['o]n de pruebas.
+.np
+Ejemplos de uso con valores concretos.
+.\" Estructura del circuito
+.sp 1.4
+.uh "\s+3Estructura del Circuito"
+.pp
+El circuito est\['a] implementado en Circom y sigue la siguiente l\['o]gica:
+.lp
+1. \fIEntradas\fR:
+   - Dos entradas privadas: \fIa\fP y \fIb\fP.
+   - Una entrada p\['u]blica: \fIp\fP (un n\['u]mero primo).
+.lp
+2. \fISalida\fR:
+   - Una salida p\['u]blica: \fIc\fP, que representa el residuo de la suma de los cuadrados de \fIa\fP y \fIb\fP m\['o]dulo \fIp\fP.
+.lp
+3. \fIOperaciones internas\fR:
+   - Calcula los cuadrados de \fIa\fP y \fIb\fP: \fIa_squared = a * a\fP y \fIb_squared = b * b\fP.
+   - Suma los cuadrados: \fIsum_of_squares = a_squared + b_squared\fP.
+   - Calcula el cociente y el residuo de la divisi\['o]n de \fIsum_of_squares\fP por \fIp\fP:
+.EQ
+k = left lfloor {sum\_of\_squares} over {p} right rfloor
+.EN
+.EQ
+remainder = sum\_of\_squares - (p * k)
+.EN
+   - Asegura que el residuo sea menor que \fIp\fP mediante una restricci\['o]n:
+.EQ
+remainder < p
+.EN
+.pp
+El c\['o]digo del circuito en Circom es el siguiente:
+.(q
+pragma circom 2.0.0;
+
+template Main() {
+    signal input a;
+    signal input b;
+    signal input p;
+    signal output c;
+
+    signal a_squared;
+    signal b_squared;
+    signal sum_of_squares;
+    signal k;
+    signal remainder;
+
+    a_squared <== a * a;
+    b_squared <== b * b;
+    sum_of_squares <== a_squared + b_squared;
+    k <-- sum_of_squares \ p;
+    remainder <== sum_of_squares - (p * k);
+
+    signal aux;
+    aux <== p - remainder - 1;
+    aux === p - remainder - 1;
+
+    c <== remainder;
+
+}
+
+component main = Main();
+.)q
+.\" Generaci\['o]n de pruebas
+.sp 1.4
+.uh "\s+3Generaci\['o]n de Pruebas"
+.pp
+El proceso de generaci\['o]n de pruebas implica los siguientes pasos:
+.np
+Compilar el circuito en Circom para generar los archivos necesarios (r1cs, wasm, etc.).
+.np
+Realizar un \fItrusted setup\fP para generar las claves de prueba y verificaci\['o]n.
+.np
+Calcular el \fIwitness\fP (testigo) utilizando las entradas proporcionadas.
+.np
+Generar la prueba zk-SNARK utilizando las claves y el \fIwitness\fP.
+
+.pp
+Para el ejemplo concreto:
+.(q
+{
+    "a": 3,
+    "b": 4,
+    "p": 17
+
+}
+.)q
+El c\['a]lculo del residuo es:
+.EQ
+c = (3 sup 2 + 4 sup 2) mod 17 = (9 + 16) mod 17 = 25 mod 17 = 8
+.EN
+.\" Verificaci\['o]n de pruebas
+.sp 1.4
+.uh "\s+3Verificaci\['o]n de Pruebas"
+.pp
+El proceso de verificaci\['o]n implica:
+.np
+Usar la clave de verificaci\['o]n generada durante el \fItrusted setup\fP.
+.np
+Verificar que la prueba es v\['a]lida para las entradas p\['u]blicas y la salida.
+.pp
+En el ejemplo, la verificaci\['o]n confirmar\['a] que el residuo \fIc = 8\fP es correcto.
+.\" Ejemplos de uso
+.sh 1 Ejemplos de Uso
+.pp
+A continuaci\['o]n se presenta un ejemplo completo con los valores proporcionados:
+.np
+Entradas:
+.(q
+{
+    "a": 3,
+    "b": 4,
+    "p": 17
+
+}
+.)q
+.np
+Salida esperada:
+.(q
+{
+    "c": 8
+
+}
+.)q
+.pp
+Este ejemplo demuestra c\['o]mo el circuito calcula correctamente el residuo de la suma de los cuadrados m\['o]dulo \fIp\fP.
+.\" Conclusi\['o]n
+.sp 1.4
+.uh "\s+3Conclusi\['o]n"
+.pp
+Este documento ha presentado un circuito aritm\['e]tico en Circom para calcular la suma de los
+cuadrados de dos n\['u]meros privados y tomar el m\['o]dulo con respecto a un n\['u]mero primo.
+Se ha explicado la estructura del circuito, el proceso de generaci\['o]n y verificaci\['o]n de
+pruebas, y se ha proporcionado un ejemplo concreto. Este tipo de circuitos es esencial en
+aplicaciones de blockchain que requieren privacidad y verificabilidad.
+.sp 1.4
+.uh "\s+3Referencias"
+.lp
+1. Circom documentation: https://docs.circom.io/
+.lp
+2. SnarkJS documentation: https://github.com/iden3/snarkjs
+.lp
+3. zk-SNARKs: https://z.cash/technology/zksnarks/

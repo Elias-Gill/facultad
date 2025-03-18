@@ -14,7 +14,7 @@ Elias Sebastian Gill Quintana
 Dr. Marcos Daniel Villagra Riquelme
 .sp 2
 .\" Introducci\['o]n
-.uh \s+3Introducci\['o]n
+.uh \s+2Introducci\['o]n
 .pp
 Este documento describe el dise\[~n]o, implementaci\['o]n y uso de un circuito aritm\['e]tico
 en el lenguaje Circom, utilizado para generar pruebas zk-SNARK en aplicaciones de blockchain.
@@ -34,7 +34,7 @@ Proceso de verificaci\['o]n de pruebas.
 Ejemplos de uso con valores concretos.
 .\" Estructura del circuito
 .sp 1.4
-.uh "\s+3Estructura del Circuito"
+.uh "\s+2Estructura del Circuito"
 .pp
 El circuito est\['a] implementado en Circom y sigue la siguiente l\['o]gica:
 .lp
@@ -50,17 +50,18 @@ El circuito est\['a] implementado en Circom y sigue la siguiente l\['o]gica:
    - Suma los cuadrados: \fIsum_of_squares = a_squared + b_squared\fP.
    - Calcula el cociente y el residuo de la divisi\['o]n de \fIsum_of_squares\fP por \fIp\fP:
 .EQ
-k = left lfloor {sum\_of\_squares} over {p} right rfloor
+k = left lfloor {sum_of_squares} over {p} right rfloor
 .EN
 .EQ
-remainder = sum\_of\_squares - (p * k)
+remainder = sum_of_squares - (p * k)
 .EN
    - Asegura que el residuo sea menor que \fIp\fP mediante una restricci\['o]n:
 .EQ
 remainder < p
 .EN
-.pp
-El c\['o]digo del circuito en Circom es el siguiente:
+
+.lp
+El \fBc\['o]digo\fR del circuito en Circom es el siguiente:
 .(q
 pragma circom 2.0.0;
 
@@ -94,7 +95,7 @@ component main = Main();
 .)q
 .\" Generaci\['o]n de pruebas
 .sp 1.4
-.uh "\s+3Generaci\['o]n de Pruebas"
+.uh "\s+2Generaci\['o]n de Pruebas"
 .pp
 El proceso de generaci\['o]n de pruebas implica los siguientes pasos:
 .np
@@ -106,23 +107,20 @@ Calcular el \fIwitness\fP (testigo) utilizando las entradas proporcionadas.
 .np
 Generar la prueba zk-SNARK utilizando las claves y el \fIwitness\fP.
 
-.pp
+.lp
 Para el ejemplo concreto:
-.(q
-{
-    "a": 3,
-    "b": 4,
-    "p": 17
 
-}
-.)q
+.(c
+{ "a": 3, "b": 4, "p": 17 }
+.)c
+
 El c\['a]lculo del residuo es:
 .EQ
 c = (3 sup 2 + 4 sup 2) mod 17 = (9 + 16) mod 17 = 25 mod 17 = 8
 .EN
 .\" Verificaci\['o]n de pruebas
 .sp 1.4
-.uh "\s+3Verificaci\['o]n de Pruebas"
+.uh "\s+2Verificaci\['o]n de Pruebas"
 .pp
 El proceso de verificaci\['o]n implica:
 .np
@@ -138,26 +136,18 @@ A continuaci\['o]n se presenta un ejemplo completo con los valores proporcionado
 .np
 Entradas:
 .(q
-{
-    "a": 3,
-    "b": 4,
-    "p": 17
-
-}
+{ "a": 3, "b": 4, "p": 17 }
 .)q
 .np
 Salida esperada:
 .(q
-{
-    "c": 8
-
-}
+{ "c": 8 }
 .)q
 .pp
 Este ejemplo demuestra c\['o]mo el circuito calcula correctamente el residuo de la suma de los cuadrados m\['o]dulo \fIp\fP.
 .\" Conclusi\['o]n
 .sp 1.4
-.uh "\s+3Conclusi\['o]n"
+.uh "\s+2Conclusi\['o]n"
 .pp
 Este documento ha presentado un circuito aritm\['e]tico en Circom para calcular la suma de los
 cuadrados de dos n\['u]meros privados y tomar el m\['o]dulo con respecto a un n\['u]mero primo.
@@ -165,7 +155,7 @@ Se ha explicado la estructura del circuito, el proceso de generaci\['o]n y verif
 pruebas, y se ha proporcionado un ejemplo concreto. Este tipo de circuitos es esencial en
 aplicaciones de blockchain que requieren privacidad y verificabilidad.
 .sp 1.4
-.uh "\s+3Referencias"
+.uh "\s+2Referencias"
 .lp
 1. Circom documentation: https://docs.circom.io/
 .lp

@@ -26,8 +26,6 @@ template Main() {
     sum_of_squares <== a_squared + b_squared;
 
     // Calcular el cociente (k) y el residuo (remainder)
-    // k = floor(sum_of_squares / p)
-    // remainder = sum_of_squares - (p * k)
     k <-- sum_of_squares \ p;  // División entera (no es una restricción)
     remainder <== sum_of_squares - (p * k);
 

@@ -1,0 +1,176 @@
+.\" Car\['a]tula
+.bp
+.sp 5
+.ce
+.b "Trabajo Pr\['a]ctico. Circuitos Aritm\['e]ticos en Blockchain"
+.sp 0.7
+.ce
+Elias Sebastian Gill Quintana
+.ce
+Johana Mabel Bareiro
+.sp 2
+.ce
+"An\['a]lisis de un circuito aritm\['e]tico para pruebas zk-SNARK"
+.sp 1.6
+.ce
+Dr. Marcos Daniel Villagra Riquelme
+.sp 2
+
+.\" Introducci\['o]n
+.uh \s+2Introducci\['o]n
+.pp
+Este documento describe el dise\[~n]o, implementaci\['o]n y uso de un circuito aritm\['e]tico
+en el lenguaje Circom, utilizado para generar pruebas zk-SNARK en aplicaciones de blockchain.
+El circuito calcula la suma de los cuadrados de dos n\['u]meros privados y luego toma el
+m\['o]dulo con respecto a un n\['u]mero primo p, asegurando que el resultado sea menor que p.
+Esta versi\['o]n incluye mejoras significativas en la implementaci\['o]n del circuito.
+.pp
+El documento est\['a] estructurado de la siguiente manera:
+.np
+Descripci\['o]n detallada del circuito.
+.np
+Proceso de generaci\['o]n de pruebas.
+.np
+Proceso de verificaci\['o]n de pruebas.
+.np
+Ejemplos de uso con valores concretos.
+
+.\" Estructura del circuito
+.sp 1
+.uh "\s+2Estructura del Circuito"
+.pp
+El circuito implementado en Circom sigue la siguiente l\['o]gica mejorada:
+.lp
+1. \fIEntradas\fR:
+   - Dos entradas privadas: \fIa\fP y \fIb\fP.
+   - Una entrada p\['u]blica: \fIp\fP (un n\['u]mero primo).
+.lp
+2. \fISalida\fR:
+   - Una salida p\['u]blica: \fIc\fP, que representa el residuo de la suma de los cuadrados de \fIa\fP y \fIb\fP m\['o]dulo \fIp\fP.
+.lp
+3. \fINovedades en la implementaci\['o]n\fR:
+   - Uso de un componente \fILessThan\fP independiente para verificar que el residuo sea menor que p.
+   - Eliminaci\['o]n de variables intermedias redundantes.
+   - Implementaci\['o]n m\['a]s segura del c\['a]lculo del m\['o]dulo.
+
+.lp
+El \fBc\['o]digo\fR del circuito en Circom es el siguiente:
+.(q
+pragma circom 2.0.0;
+
+template LessThan(n) {
+    signal input in[2];
+    signal output out;
+    
+    signal diff <== in[1] - in[0] - 1;
+    
+    signal bits[n];
+    var lc = 0;
+    for (var i = 0; i < n; i++) {
+        bits[i] <-- (diff >> i) & 1;
+        bits[i] * (bits[i] - 1) === 0;
+        lc += bits[i] * (1 << i);
+    }
+    lc === diff;
+    out <== 1 - bits[n-1];
+}
+
+template Main() {
+    signal input a;
+    signal input b;
+    signal input p;
+    signal output c;
+
+    signal sum <== a*a + b*b;
+    c <-- sum % p;
+    
+    signal k;
+    k <-- (sum - c) / p;
+    sum === k * p + c;
+
+    component lt = LessThan(252);
+    lt.in[0] <== c;
+    lt.in[1] <== p;
+    lt.out === 1;
+
+}
+
+component main = Main();
+.)q
+.\" Generaci\['o]n de pruebas
+.sp 1
+.uh "\s+2Generaci\['o]n de Pruebas"
+.pp
+El proceso de generaci\['o]n de pruebas con el circuito mejorado implica:
+.np
+Compilar el circuito en Circom para generar los archivos necesarios (r1cs, wasm, etc.).
+.np
+Realizar un \fItrusted setup\fP para generar las claves de prueba y verificaci\['o]n.
+.np
+Calcular el \fIwitness\fP (testigo) utilizando las entradas proporcionadas.
+.np
+Generar la prueba zk-SNARK utilizando las claves y el \fIwitness\fP.
+
+.lp
+Para el ejemplo concreto:
+.(c
+{ "a": 3, "b": 4, "p": 17 }
+.)c
+
+El c\['a]lculo del residuo es:
+.EQ
+c = (3 sup 2 + 4 sup 2) mod 17 = (9 + 16) mod 17 = 25 mod 17 = 8
+.EN
+
+.\" Verificaci\['o]n de pruebas
+.sp 1
+.uh "\s+2Verificaci\['o]n de Pruebas"
+.pp
+El proceso de verificaci\['o]n con el circuito mejorado:
+.np
+Usar la clave de verificaci\['o]n generada durante el \fItrusted setup\fP.
+.np
+Verificar que la prueba es v\['a]lida para las entradas p\['u]blicas y la salida.
+.pp
+En el ejemplo, la verificaci\['o]n confirmar\['a] que el residuo \fIc = 8\fP es correcto y cumple \fIc < p\fP.
+
+.\" Ejemplos de uso
+.sh 1 Ejemplos de Uso
+.pp
+Ejemplo completo con los valores proporcionados:
+.np
+Entradas:
+.(q
+{ "a": 3, "b": 4, "p": 17 }
+.)q
+.np
+Salida esperada:
+.(q
+{ "c": 8 }
+.)q
+.pp
+Este ejemplo demuestra c\['o]mo el circuito mejorado calcula correctamente el residuo de la suma de los cuadrados m\['o]dulo \fIp\fP.
+
+.\" Conclusi\['o]n
+.sp 1
+.uh "\s+2Conclusi\['o]n"
+.pp
+Este documento ha presentado una versi\['o]n mejorada de un circuito aritm\['e]tico en Circom para calcular la suma de los
+cuadrados de dos n\['u]meros privados y tomar el m\['o]dulo con respecto a un n\['u]mero primo. Las principales mejoras incluyen:
+.np
+Implementaci\['o]n segura de la comparaci\['o]n mediante \fILessThan\fP.
+.np
+Reducci\['o]n de complejidad y variables intermedias.
+.np
+Mayor claridad en las restricciones matem\['a]ticas.
+.pp
+Este tipo de circuitos mejorados son esenciales en aplicaciones de blockchain que requieren privacidad y verificabilidad.
+
+.sp 1
+.uh "\s+2Referencias"
+.lp
+1. Circom documentation: https://docs.circom.io/
+.lp
+2. SnarkJS documentation: https://github.com/iden3/snarkjs
+.lp
+3. zk-SNARKs: https://z.cash/technology/zksnarks/

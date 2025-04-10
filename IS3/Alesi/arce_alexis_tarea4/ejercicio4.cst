@@ -1,0 +1,79 @@
+998 Type:           SystemStar estimate
+0   Written:        15/03/24 17:31:55
+900 File Version:   9003
+901 SW Version:     Demo
+902 Build:          3.0.3.1003
+904 Sequence Number:00235121760506842432209111255
+905 Version:        SystemStar 3.0 Demo
+906 Serial Number:  83 - 01126                              
+estcreate "ejercicio4"
+dbselect "COCOMO_II.2000_Waterfall"
+calcmodel intermediate
+prec 4
+flex 4
+resl 3
+team 3
+pmat 3
+wsname *
+sced  nominal
+amcf *
+wsstartpoint 2
+rename "Component1"
+ACAP     high
+CPLX     high
+DATA     high
+RELY     high
+RUSE     high
+TIME     high
+TOOL  nominal
+CD00     high
+CD01      low
+CD02     high
+CD03  nominal
+CD05     high
+wsslocdist y  0 1        3710
+RQCOST    850
+PDCOST    850
+DDCOST    850
+CTCOST    850
+ITCOST    850
+MNCOST    850
+increment 1
+set auto on
+910 Lines:                       48
+911 Characters:                 756
+912 File Size:                 1062
+913 Checksum 1:                 127
+914 Checksum 2:                 101
+915 Checksum 3: 0462263897063115728
+1000 "ejercicio4"
+1001 "    "
+1002 152
+1003  100
+1004   1.0000
+1006      17.7141
+1007      17.7141
+1008   1.4677
+1009       9.0352
+1010       9.0352
+1011         3710
+1012         3710
+1013    1.0772
+1014    0.3134
+1015 2
+1016 4
+1017 4
+1018 3
+1019 3
+1020 3
+1021    0
+1022    2.9400
+1023   0.91000
+1024   1.00000
+1025    3.6700
+1026   0.28000
+1027   0.20000
+1028   0.16720
+1029   0.00000
+1030 s
+1031 ""

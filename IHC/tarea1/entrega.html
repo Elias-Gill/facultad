@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe PoliPlanner | Rediseño UX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      primary: {
+                          50: '#f5f7fa',
+                          100: '#e2e8f0',
+                          200: '#cbd5e1',
+                          300: '#94a3b8',
+                          400: '#6b7280',
+                          500: '#4b5563',
+                          600: '#374151',
+                          700: '#1f2937',
+                          800: '#111827',
+                          900: '#0f172a',
+                      },
+                      accent: {
+                          500: '#2563eb',
+                          600: '#1d4ed8',
+                          700: '#1e40af',
+                      }
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      heading: ['Source Serif Pro', 'serif']
+                  }
+              }
+          }
+      }
+    </script>
+    <style>
+      body {
+          background-color: #ffffff;
+          line-height: 1.5;
+          color: #111827;
+          font-family: 'Inter', sans-serif;
+      }
+      .prose {
+          color: #111827;
+          max-width: 65ch;
+      }
+      .prose h1, .prose h2, .prose h3, .prose h4 {
+          color: #111827;
+          font-family: 'Source Serif Pro', serif;
+          font-weight: 600;
+          margin-top: 1.5em;
+          margin-bottom: 0.5em;
+      }
+      .prose h1 {
+          font-size: 2rem;
+      }
+      .prose h2 {
+          border-bottom: 1px solid #e2e8f0;
+          padding-bottom: 0.3em;
+          font-size: 1.5rem;
+      }
+      .prose h3 {
+          font-size: 1.25rem;
+      }
+      .prose p {
+          margin-bottom: 1em;
+      }
+      .prose ul, .prose ol {
+          padding-left: 1.5em;
+          margin-bottom: 1.25em;
+      }
+      .prose li {
+          margin-bottom: 0.5em;
+      }
+      .prose blockquote {
+          border-left: 4px solid #94a3b8;
+          padding-left: 1em;
+          font-style: italic;
+          color: #4b5563;
+          margin: 1.5em 0;
+      }
+      .card {
+          background: white;
+          border: 1px solid #e2e8f0;
+          padding: 1.5rem;
+          margin-bottom: 1.5rem;
+      }
+      .card-title {
+          font-family: 'Source Serif Pro', serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #111827;
+          margin-bottom: 1rem;
+      }
+      .highlight {
+          background-color: #f5f7fa;
+          padding: 0.2em 0.4em;
+          border-radius: 4px;
+          color: #1e40af;
+          font-weight: 500;
+      }
+      .table-container {
+          margin: 1.5em 0;
+      }
+      .styled-table {
+          width: 100%;
+          border-collapse: collapse;
+          border: 1px solid #e2e8f0;
+      }
+      .styled-table th {
+          background-color: #f5f7fa;
+          color: #374151;
+          font-weight: 600;
+          text-align: left;
+          padding: 0.75rem;
+          font-family: 'Source Serif Pro', serif;
+      }
+      .styled-table td {
+          padding: 0.75rem;
+          border-top: 1px solid #e2e8f0;
+      }
+      .styled-table tr:nth-child(even) {
+          background-color: #fafafa;
+      }
+      .grid-empathy {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 1rem;
+          margin: 1.5em 0;
+      }
+      .empathy-card {
+          background: #fafafa;
+          padding: 1rem;
+          border: 1px solid #e2e8f0;
+      }
+      .empathy-card h3 {
+          font-family: 'Source Serif Pro', serif;
+          font-weight: 600;
+          color: #111827;
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+      }
+      .tag {
+          display: inline-block;
+          background-color: #e2e8f0;
+          color: #374151;
+          padding: 0.25em 0.75em;
+          border-radius: 4px;
+          font-size: 0.875rem;
+          font-weight: 500;
+          margin-right: 0.5em;
+          margin-bottom: 0.5em;
+      }
+      .header {
+          background: #ffffff;
+          padding: 2rem 0;
+          border-bottom: 1px solid #e2e8f0;
+      }
+      .header-title {
+          font-family: 'Source Serif Pro', serif;
+          font-size: 2rem;
+          font-weight: 700;
+          color: #111827;
+          margin-bottom: 0.5rem;
+      }
+      .header-subtitle {
+          font-size: 1.1rem;
+          color: #4b5563;
+          max-width: 800px;
+      }
+      .ideation-grid div {
+          background: #fafafa !important;
+          border: 1px solid #e2e8f0;
+      }
+      .ideation-grid h3 {
+          color: #1e40af !important;
+      }
+      .placeholder-img {
+          background-color: #f5f7fa;
+          border: 1px solid #e2e8f0;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #6b7280;
+          font-size: 0.875rem;
+          font-weight: 500;
+          height: 100px;
+          margin: 1em 0;
+      }
+      @media print {
+          body {
+              margin: 0;
+              font-size: 11pt;
+              line-height: 1.4;
+              color: #000000;
+          }
+          .header {
+              padding: 1cm 0;
+              border-bottom: 1px solid #000000;
+          }
+          .header-title {
+              font-size: 16pt;
+          }
+          .header-subtitle {
+              font-size: 10pt;
+          }
+          .prose {
+              max-width: none;
+          }
+          .card {
+              page-break-inside: avoid;
+              border: none;
+              box-shadow: none;
+              padding: 0.5cm;
+              margin-bottom: 0.5cm;
+          }
+          .card-title {
+              font-size: 14pt;
+          }
+          .styled-table {
+              font-size: 10pt;
+              page-break-inside: auto;
+          }
+          .styled-table th, .styled-table td {
+              border: 1px solid #000000;
+              padding: 0.3cm;
+          }
+          .styled-table tr {
+              page-break-inside: avoid;
+              page-break-after: auto;
+          }
+          .grid-empathy, .ideation-grid {
+              grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+              gap: 0.5cm;
+          }
+          .empathy-card, .ideation-grid div {
+              page-break-inside: avoid;
+              border: 1px solid #000000;
+          }
+          .placeholder-img {
+              display: none;
+          }
+          .no-print {
+              display: none;
+          }
+          @page {
+              margin: 2cm;
+          }
+      }
+      @media (max-width: 768px) {
+          .header-title {
+              font-size: 1.5rem;
+          }
+          .header-subtitle {
+              font-size: 1rem;
+          }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div class="header">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="header-title">Rediseño: PoliPlanner</h1>
+      </div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose">
+      <!-- Datos de Identificación -->
+      <div class="card">
+        <h2 class="card-title">Datos de Identificación</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p><strong>Nombre:</strong> <span class="highlight">Elias Sebastian Gill Quintana</span></p>
+            <p><strong>Carrera:</strong> <span class="highlight">IIN</span></p>
+            <p><strong>Año/semestre:</strong> <span class="highlight">9no semestre - 2025</span></p>
+          </div>
+          <div>
+            <p><strong>Aplicación seleccionada:</strong> <span class="highlight">PoliPlanner</span></p>
+            <p><strong>Descripción:</strong> Aplicación que permite a los alumnos crear, gestionar y consultar sus horarios de clases.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tabla de Observación -->
+      <div class="card">
+        <h2 class="card-title">Observación de la Aplicación</h2>
+        <p>Análisis de las funcionalidades, usuarios y oportunidades de mejora de PoliPlanner:</p>
+        <div class="table-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>¿Qué es?</strong></td>
+                <td>
+                  Aplicación para estudiantes de la FP-UNA que facilita la construcción de
+                  horarios académicos a partir de las planillas Excel proporcionadas por la
+                  universidad.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>¿Quiénes la usan?</strong></td>
+                <td>Estudiantes de grado de la Facultad Politécnica que necesitan planificar su carga horaria semestral.</td>
+              </tr>
+              <tr>
+                <td><strong>¿Que dificultades presenta?</strong></td>
+                <td>
+                  <ul class="list-disc pl-5">
+                    <li>Interfaz para creación de horarios tosca</li>
+                    <li>Falta de información sobre las materias (email de contacto del docente,
+                      aulas, secciones, fechas de revision)</li>
+                    <li>No permite tener múltiples horarios creados a la vez</li>
+                    <li>Solo se aceptan archivos en formato ".xls"</li>
+                    <li>Los archivos .xls deben ser proporcionados manualmente por el usuario</li>
+                    <li>Falta de sincronización entre dispositivos</li>
+                    <li>Vista de exámenes poco clara (muestra solo los exámenes del mes actual)</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>¿Que mejoras se podrian incorporar?</strong></td>
+                <td>
+                  <ul class="list-disc pl-5">
+                    <li>Rediseño del formulario de creación de horarios</li>
+                    <li>Inclusión de datos adicionales de las materias</li>
+                    <li>Permitir múltiples horarios simultáneos</li>
+                    <li>Sincronización automática de planillas</li>
+                    <li>Vista condensada de horarios y exámenes</li>
+                    <li>Contar con una calculadora de notas integrada</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Mapa de Empatía -->
+      <div class="card">
+        <h2 class="card-title">Mapa de Empatía</h2>
+        <p>
+          <strong>Usuario:</strong> Estudiante de grado de la FP-UNA que utiliza PoliPlanner
+          para organizar su semestre académico.
+        </p>
+        <div class="grid-empathy">
+          <div class="empathy-card">
+            <h3>Piensa</h3>
+            <ul class="list-disc pl-5">
+              <li>"Ojalá pudiera comparar horarios sin tanto trabajo"</li>
+              <li>"Otra vez tengo que descargar el excel"</li>
+              <li>"Armar esto a mano es complicado"</li>
+              <li>"Un buscador sería útil"</li>
+              <li>"Ojala tuviera una calculadora"</li>
+            </ul>
+          </div>
+          <div class="empathy-card">
+            <h3>Siente</h3>
+            <ul class="list-disc pl-5">
+              <li>Frustración por falta de claridad</li>
+              <li>Enojo al no poder comparar horarios</li>
+              <li>Desmotivación por procesos manuales</li>
+            </ul>
+          </div>
+          <div class="empathy-card">
+            <h3>Hace</h3>
+            <ul class="list-disc pl-5">
+              <li>Descarga y transfiere archivos manualmente</li>
+              <li>Prueba combinaciones de materias</li>
+              <li>Crea versiones parciales de sus horarios</li>
+              <li>Consulta su horario esporádicamente durante el semestre</li>
+            </ul>
+          </div>
+          <div class="empathy-card">
+            <h3>Dice</h3>
+            <ul class="list-disc pl-5">
+              <li>"No anda PoliPlanner"</li>
+              <li>"¿Quién tiene el Excel actualizado?"</li>
+              <li>"Qué molesto tener que pasar esto a mi celular"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Ideación Rápida -->
+      <div class="card">
+        <h2 class="card-title">Ideación Rápida (Crazy 8s)</h2>
+        <div class="mt-4 space-y-4 ideation-list">
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">1. Descarga automática</h3>
+            <p>Integrar PoliPlanner con los sistemas de la facultad para descargar
+              automáticamente la planilla excel oficial más reciente.
+              Esto elimina la necesidad de que los estudiantes busquen y transfieran manualmente
+              los archivos, agilizando la creación de horarios.</p>
+          </div>
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">2. Múltiples horarios</h3>
+            <p>Permitir a los usuarios crear, guardar y comparar múltiples horarios
+              simultáneamente dentro de la aplicación. Los estudiantes podrían alternar entre
+              diferentes configuraciones de horarios para evaluar opciones según sus necesidades,
+              especialmente útil para quienes cursan más de una carrera.</p>
+            <p>
+              Permitir a los usuarios asignar nombres personalizados a cada versión de sus
+              horarios.
+            </p>
+          </div>
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">3. Información completa</h3>
+            <p>Incorporar datos detallados de cada materia, incluyendo el correo electrónico
+              del docente, el aula asignada para clases y exámenes, y las fechas de revisión de
+              exámenes finales. Esto proporciona a los estudiantes toda la información
+              necesaria en un solo lugar.</p>
+          </div>
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">4. Sincronización en nube</h3>
+            <p>Implementar almacenamiento en la nube para que los horarios creados se
+              sincronicen automáticamente entre dispositivos (teléfonos, tabletas, computadoras).
+              Esto permite a los estudiantes acceder y editar sus horarios desde cualquier lugar.</p>
+          </div>
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">6. Filtros de búsqueda</h3>
+            <p>Agregar un sistema de filtros avanzados que permita buscar materias por nombre del docente o nombre de la
+              materia, seccion y semestre. Esto agiliza la selección de materias y mejora la usabilidad.</p>
+          </div>
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">7. Vista condensada</h3>
+            <p>Desarrollar una vista compacta que muestre un resumen de las clases semanales y
+              un una lista con todas las fechas de exámenes. Esta vista proporcionaría una
+              perspectiva rápida y clara de las responsabilidades académicas.</p>
+          </div>
+          <div class="border-t border-gray-200 pt-3">
+            <h3 class="font-semibold text-primary-700">8. Exportación</h3>
+            <p>Ofrecer opciones para exportar los horarios a formatos como PDF para impresión o
+              integración directa con Google Calendar para notificaciones automáticas de
+              exámenes.
+            </p>
+          </div>
+        </div>
+        <h3 class="mt-6">Ideas destacadas</h3>
+        <div class="mt-1 flex flex-wrap gap-2">
+          <span class="tag">Descarga automática</span>
+          <span class="tag">Múltiples horarios</span>
+          <span class="tag">Vista condensada</span>
+        </div>
+      </div>
+      <!-- Propuesta de Mejora -->
+      <div class="card">
+        <h2 class="card-title">Propuesta de Mejora</h2>
+        <p>Las propuestas centrales consisten en implementar la descarga y sincronización
+          automática con las planillas excel de la facultad, eliminando la necesidad de descargas
+          y transferencias manuales.</p>
+        <p>Creación y almacenamiento de múltiples horarios de
+          manera simultánea, permitiendo a los alumnos comparar distintos horarios de manera
+          sencilla, mejorando la experiencia, especialmente para alumnos con más de una carrera.</p>
+        <h3>Funcionalidades complementarias</h3>
+        <ul class="list-disc pl-5">
+          <li>Visualización de detalles de la materia (aula, sección, información del docente)</li>
+          <li>Sincronización multiplataforma</li>
+          <li>Filtros avanzados</li>
+          <li>Vista condensada de exámenes</li>
+          <li>Opciones de exportación</li>
+        </ul>
+        <h3>Boceto conceptual</h3>
+        <div class="p-4">
+          <h4 class="font-semibold text-sm">Vista condensada</h4>
+          <img src="/home/elias/Imágenes/screenshots/2025-08-05-140705_721x508_scrot.png" alt="">
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-sm">Buscador</h4>
+          <img style="max-width: 300px" src="/home/elias/Imágenes/screenshots/2025-08-05-140801_750x513_scrot.png" alt="">
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-sm">Calculadora de notas</h4>
+          <img style="max-width: 300px" src="/home/elias/Imágenes/screenshots/2025-08-05-140817_727x259_scrot.png" alt="">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

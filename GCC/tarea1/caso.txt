@@ -1,0 +1,147 @@
+Cap 1: caso de estudio #1
+Alcanzando la Altitud de Crucero: El Viaje
+de DevOps de American Airlines (Parte 1)
+(2020)
+El viaje de DevOps de American Airlines surgió de una serie de preguntas,
+siendo la primera simplemente "¿Qué es DevOps?”
+"Realmente estábamos empezando desde abajo, desde el principio", dijo Maya
+Leibman, Vicepresidenta Ejecutiva y Directora de Información de American
+Airlines en la DevOps Enterprise Summit-Londres 2020.
+Para comenzar, el equipo hizo su investigación, pero lo más importante fue que
+dejaron de poner excusas. Al principio de DevOps, la mayoría de los ejemplos
+provenían de empresas digitales nativas como Netflix y Spotify. Fue fácil para el
+equipo descartar sus logros, después de todo, nacieron en la nube. Pero a
+medida que empresas más tradicionales como Target, Nordstrom y Starbucks
+se sumaron, American Airlines supo que ya no tenía excusas.
+El equipo comenzó por:
+1. establecer objetivos concretos
+2. formalizar su cadena de herramientas
+3. traer entrenadores y mentores de fuera de la empresa
+4. experimentar y automatizar
+
+Cap 1: caso de estudio #1
+
+1
+
+5. realizar entrenamiento práctico inmersivo (para aprender mientras hacían)
+Todo esto estaba relacionado con su objetivo final, que era entregar valor más
+rápido.
+Como dijo Leibman:
+Hubo muchas veces en las que un socio comercial presentaría algo nuevo, una
+idea, y dirían: "Oh, esto es lo que queremos hacer, pero llevará seis meses o un
+año para que IT lo haga". Y esas experiencias me mataron. Así que el impulso
+detrás de esto fue realmente "cómo no ser el poste largo". Sabíamos que había
+una mejor manera de trabajar que nos ayudaría a lograrlo.
+A continuación, decidieron qué salidas iban a medir:
+Frecuencia de implementación
+Tiempo de ciclo de implementación
+Tasa de fallos en los cambios
+Tiempo de ciclo de desarrollo
+Número de incidentes
+Tiempo medio para recuperarse (MTTR)
+Los primeros éxitos en la realización de mapeo de flujos de valor ayudaron a
+los miembros del equipo a comprender mejor los procesos de extremo a
+extremo del sistema e inspiraron la motivación. A partir de estos éxitos,
+generaron energía en torno a cómo abordar los problemas y mejorarlos.
+También llevaron a cabo oportunidades de aprendizaje inmersivo en toda la
+tecnología de la información.
+Estos éxitos iniciales, el aprendizaje sobre DevOps y el comienzo de la práctica
+de algunos de sus elementos, los llevó a la segunda gran pregunta en su viaje
+de DevOps: ¿Finanzas, amigo o enemigo? El actual proceso de aprobación
+financiera era engorroso y prolongado, con meses de ciclos de aprobación.
+"Solía describirlo como un proceso diseñado para hacer que te rindas", dijo
+Leibman.
+El proceso se veía así:
+No se aprobaban proyectos sin la participación de Finanzas.
+Se aprobaban proyectos pero no se agregaba personal para llevarlos a
+cabo (y no se detenían otras prioridades).
+
+Cap 1: caso de estudio #1
+
+2
+
+Las solicitudes se examinaban con igual escrutinio independientemente de
+su tamaño o riesgo.
+Las solicitudes se examinaban con igual escrutinio, incluso si la solicitud
+era una prioridad corporativa principal y no había duda de que se llevaría a
+cabo.
+Los proyectos a menudo se completaban antes de ser aprobados.
+Incluso Finanzas sabía que el proceso necesitaba cambiar, pero la falta de
+confianza entre Finanzas y TI causaba un bloqueo. Para ayudar a arrojar luz
+sobre dónde se estaba gastando el dinero y construir confianza con Finanzas,
+el equipo realizó un ejercicio de asignación de costos y asignó todos los costos
+a sus productos, incluidos los costos para ejecutarlos.
+Después de este ejercicio, el equipo de TI pudo ver mejor dónde se estaba
+invirtiendo el dinero y cuestionar si esa era la mejor manera de usarlo. Y
+Finanzas pudo obtener la visibilidad que necesitaban para confiar en que no
+había grandes cantidades de desperdicio.
+Esta visibilidad construyó la confianza necesaria para la experimentación.
+Finanzas tomó cuatro equipos de productos y les dio un presupuesto fijo para
+el año. Los equipos definieron los OKR y utilizaron el presupuesto para las
+prioridades principales que consideraban que cumplían con esos OKR. Esto
+permitió al equipo realizar pruebas antes de la implementación y centrarse en
+la responsabilidad y los resultados, y Finanzas pudo obtener aún más
+visibilidad.
+
+Figure 1.5: American Airlines’ DevOps Transformation Journey.
+Source: With permission of Ross Clanton
+
+Cap 1: caso de estudio #1
+
+3
+
+Este éxito les permitió escalar el nuevo modelo en todos sus productos y definir
+un nuevo proceso de financiación. "Esto fue un gran acelerador en nuestro
+viaje", dijo Leibman.
+Con Finanzas a bordo y nuevos procesos en su lugar, American Airlines
+descubrió la tercera pregunta en su viaje DevOps: ¿Cómo sabemos cuál es el
+puntaje? Con cada pequeño éxito, el equipo quería comprender mejor cómo
+estaban haciendo en general. En otras palabras, querían saber cuál era el
+puntaje.
+Para el equipo de American Airlines, el primer año de su viaje DevOps se
+centró realmente en los insumos: aprendiendo sobre Agile/DevOps,
+enfocándose en productos, nube y seguridad, etc. El segundo año de su viaje
+se enfocó más en los resultados, incluyendo las métricas que comenzaron a
+medir, como la frecuencia de implementación y el tiempo medio de
+recuperación.
+Finalmente, en el tercer año comenzaron a enfocarse no solo en los insumos y
+resultados, sino en los resultados finales. "Al final del día, ¿qué queremos
+realmente hacer?", dijo Leibman.
+Llegaron a los siguientes resultados finales: ganar dinero, mejorar las
+operaciones, aumentar LTR y reducir costos.
+En el primer año, uno de nuestros objetivos fue que X% de personas iban a ir a
+la capacitación de Agile. Eso realmente representa un insumo. En el segundo
+año, a medida que comenzamos a enfocarnos más en los resultados, los
+objetivos cambiaron a que X% de equipos iban a aumentar su madurez ágil de
+este nivel a este nivel. Y para cuando llegamos al tercer año, agile ni siquiera
+era un objetivo. Nos dimos cuenta de que los insumos y resultados son
+geniales, tenemos que medirlos, pero en última instancia tenemos que
+enfocarnos en el resultado.
+Finalmente, esto llevó a la cuarta pregunta en su viaje DevOps: ¿Qué es un
+producto? Estaba claro que era hora de desarrollar su taxonomía. Esto resultó
+ser uno de los momentos más desafiantes de su viaje. Había muchas opiniones
+y no una respuesta única correcta. Al final, decidieron comenzar, poner algo
+sobre papel, organizarse y corregirlo a medida que aprendían. Y en última
+instancia, todo esto llevó a su quinta pregunta: ¿Se siente esto mucho más
+grande que DevOps? Para responder a eso y mostrar algunos ejemplos
+específicos de éxito del producto, continuaremos el viaje de American Airlines
+más adelante en el libro.
+
+Cap 1: caso de estudio #1
+
+4
+
+Este estudio ilustra la aplicación de las Tres Vías mediante el
+uso del mapeo de flujos de valor para ayudar a optimizar el
+flujo, seleccionar los resultados a medir para establecer una
+retroalimentación rápida y crear experiencias de aprendizaje
+inmersivas para construir una cultura de aprendizaje y
+experimentación continuos.
+Gene Kim. The DevOps Handbook. IT Revolution Press. Second Edition.
+Traducción con IA de Notion by copp@pol.una.py
+
+Cap 1: caso de estudio #1
+
+5
+
+

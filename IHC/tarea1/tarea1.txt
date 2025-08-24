@@ -1,0 +1,156 @@
+------------------------------------------------------------
+        Tabla de Observación de la Aplicación
+------------------------------------------------------------
+
+Aplicación: PoliPlanner
+
+¿Qué es y para qué sirve?
+PoliPlanner es una aplicación desarrollada para estudiantes de la Facultad Politécnica de la
+Universidad Nacional de Asunción. Su función principal es facilitar la construcción de horarios
+académicos a partir de las planillas Excel que publica la facultad con la oferta de materias,
+horarios, aulas y exámenes. Dado que el método tradicional requiere que los alumnos armen sus
+horarios manualmente a partir de estas hojas de cálculo, la aplicación busca automatizar y
+simplificar este proceso.
+
+¿Quiénes la usan?
+Está dirigida exclusivamente a estudiantes de grado de la Facultad Politécnica de la UNA. Todos
+los alumnos que necesitan planificar su carga horaria para el semestre son usuarios potenciales
+de la aplicación.
+
+¿Qué dificultades presenta?
+- La interfaz de usuario no es intuitiva para la creación de horarios.
+- No se visualiza información completa de las materias, como docentes, aulas o secciones.
+- No permite trabajar con múltiples configuraciones de horario simultáneamente, lo cual impide
+  comparar opciones.
+- La aplicación depende de que el usuario proporcione manualmente el archivo Excel, que debe
+  ser previamente descargado en una computadora y luego transferido al dispositivo móvil, ya
+  que solo se aceptan archivos .xls.
+- No existe sincronización entre dispositivos ni acceso web.
+- La vista de exámenes no se integra adecuadamente con la planificación horaria; se presenta
+  como un calendario general, sin la posibilidad de visualizar todos los exámenes del usuario
+  de forma consolidada.
+
+¿Qué mejoras se podrían incorporar?
+- Rediseño de la interfaz para facilitar la creación de horarios.
+- Inclusión de datos completos de cada materia: docentes, aulas y secciones.
+- Posibilidad de crear, guardar y comparar múltiples configuraciones de horario.
+- Sincronización automática con la planilla oficial de la facultad o integración con una fuente
+  en línea para evitar la descarga manual.
+- Compatibilidad con formatos .xlsx y funcionamiento multiplataforma.
+- Unificación de la vista de horarios y exámenes en una interfaz integrada, junto con una vista
+  tipo calendario personalizada por el usuario.
+
+
+------------------------------------------------------------
+    Mapa de Empatía - Usuario: Estudiante promedio
+------------------------------------------------------------
+
+Usuario:
+Estudiante regular de grado de la Facultad Politécnica de la UNA. Utiliza PoliPlanner para
+construir y gestionar su horario de clases y exámenes a partir del Excel oficial de materias.
+Su objetivo principal es organizar su semestre de forma eficiente, evitando solapamientos y
+eligiendo los mejores horarios disponibles. Suele usar la aplicación al inicio del semestre
+para planificar, y durante el mismo para consultar sus clases o rendir exámenes. Utiliza
+principalmente su teléfono móvil.
+
+¿Qué piensa?
+- “Ojalá pudiera encontrar un horario que se adapte a mí sin tanto trabajo.”
+- “¿Cómo sé si este profesor es bueno si no me aparece su nombre?”
+- “Armar esto a mano es imposible, y esta app no me está ayudando tanto como esperaba.”
+
+¿Qué siente?
+- Frustración por la falta de claridad y flexibilidad de la app.
+- Ansiedad al no poder visualizar claramente todos los exámenes ni comparar entre horarios.
+- Cierta desmotivación al tener que descargar manualmente archivos, convertirlos y pasarlos
+  entre dispositivos.
+
+¿Qué hace?
+- Descarga el Excel desde la web de la facultad y lo transfiere a su celular.
+- Prueba diferentes combinaciones de materias intentando evitar solapamientos.
+- Crea versiones parciales de horario con 2 o 3 materias cambiadas para decidir cuál usar.
+- Consulta PoliPlanner durante el semestre para ver sus clases, pero no de forma diaria.
+
+¿Qué dice?
+- “No anda PoliPlanner.”
+- “¿Quién tiene el Excel actualizado?”
+- “Qué molesto tener que pasar esto a mi celular.”
+- “Otra vez tengo que armar el horario porque se actualizó el archivo.”
+- “No puedo ver qué profesor me toca en cada materia.”
+- “Tengo que scrollear un montón para ver cuándo tengo exámenes.”
+
+------------------------------------------------------------
+             Ideación rápida (Crazy 8s)
+------------------------------------------------------------
+
+1. Evitar que el estudiante tenga que descargar manualmente el archivo. La aplicación podría
+conectarse a una fuente oficial en línea y obtener siempre la versión más reciente de la
+planilla.
+
+2. Permitir crear y visualizar múltiples versiones de horario al mismo tiempo, de modo que el
+estudiante pueda comparar fácilmente cuál le resulta más conveniente.
+
+3. Incorporar en cada bloque del horario información clave como el nombre del docente, aula
+asignada y sección. Esto facilitaría la toma de decisiones académicas y logísticas.
+
+4. Implementar un sistema de guardado en la nube que permita acceder al horario desde distintos
+dispositivos, sin depender del almacenamiento local del teléfono.
+
+5. Agregar una función para guardar varias configuraciones de horario con nombres
+personalizados. Esto permitiría, por ejemplo, comparar un “horario liviano” con uno “intensivo”
+y decidir más tarde.
+
+6. Incluir filtros por turno, día de la semana, docentes específicos o tipo de materia. Esto
+ayudaría a reducir el tiempo necesario para encontrar opciones que se ajusten a las
+preferencias del estudiante.
+
+7. Ofrecer una sección donde se muestren únicamente los exámenes correspondientes a las
+materias del usuario, evitando tener que explorar el calendario general que incluye todas las
+carreras.
+
+8. Agregar la posibilidad de exportar el horario final en formato PDF o integrarlo
+automáticamente con herramientas como Google Calendar, para facilitar la consulta y
+organización diaria.
+
+Ideas destacadas:
+- Integración con el Excel oficial de la facultad (Idea 1)
+- Creación y guardado de múltiples horarios (Idea 5)
+- Vista de exámenes condensada (Idea 7)
+
+------------------------------------------------------------
+Propuesta de mejora
+------------------------------------------------------------
+
+La propuesta central consiste en implementar una funcionalidad que permita la descarga
+automática y sincronización de las planillas Excel oficiales de la facultad dentro de
+PoliPlanner. De esta manera, el usuario no deberá realizar descargas manuales ni transferencias
+de archivos entre dispositivos, lo que simplifica significativamente el proceso y reduce
+errores o desactualizaciones.
+
+Esta mejora responde directamente a la necesidad de facilitar la gestión y actualización de
+horarios, evitando la frustración causada por el manejo manual de archivos y la imposibilidad
+de acceder rápidamente a la información vigente.
+
+Además, la propuesta incluye la incorporación de funcionalidades complementarias que mejoran la
+experiencia general del usuario, tales como la creación y almacenamiento de múltiples horarios
+para comparación, la visualización detallada de cada materia con datos de docente y aula, la
+sincronización multiplataforma para acceder desde cualquier dispositivo, filtros avanzados, una
+vista personalizada de exámenes, y opciones de exportación a formatos estándar.
+
+El diseño de esta solución se inspira en el análisis del mapa de empatía, especialmente en la
+frustración y ansiedad del estudiante al manejar archivos manualmente y no poder comparar
+fácilmente diferentes opciones. La automatización y la integración directa buscan eliminar
+estas barreras y mejorar la eficiencia y satisfacción del usuario.
+
+Sugerencia visual para el boceto
+
+Imaginá un esquema dividido en tres partes principales:
+
+Sincronización automática: Un icono o nube representando la conexión con la fuente oficial de
+los Excel, donde la app descarga y actualiza automáticamente.
+
+Interfaz principal con múltiples horarios: Una pantalla que muestra a la izquierda una lista de
+horarios guardados, y a la derecha una vista comparativa de dos o tres horarios lado a lado,
+con colores para las materias y datos visibles (docente, aula).
+
+Vista integrada de exámenes y calendario: Debajo o a un costado, un calendario personalizado que
+muestra solo los exámenes vinculados a los horarios seleccionados, con opción para exportar.

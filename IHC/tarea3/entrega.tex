@@ -1,0 +1,290 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{pifont}   % Para checkboxes
+\usepackage{tabularx} % Para alineación
+\geometry{margin=2cm}
+
+\title{\textbf{Diseño de Entrevistas y Cuestionarios} \\ \large Trabajo Práctico}
+\author{
+    Elias Sebastián Gill Quintana - CI: 5.223.084\\
+        Germán Antonio Mendieta González - CI: 5.739.116\\
+        Marcos Raul Flores Duarte - CI: 5.711.973
+}
+\date{}
+
+% Definición de checkbox vacía
+\newcommand{\checkbox}{\fbox{\rule{0pt}{1.5ex}\rule{1.5ex}{0pt}}}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Objetivo}
+El presente trabajo tiene como finalidad diseñar entrevistas y cuestionarios para dos aplicaciones diferentes: un sistema de reserva de laboratorios de informática y un sistema de marcado de asistencia a clases.
+
+\subsection*{Formato de las entrevistas}
+
+Se utilizó el formato de entrevista semiestructurada con enfoque orientado a la recolección de requisitos, porque sigue este esquema:
+
+\textbf{Objetivo:} Diseñar entrevistas y cuestionarios para relevar necesidades, problemas y expectativas de los usuarios en dos aplicaciones: un sistema de reserva de laboratorios de informática y un sistema de asistencia a clases.
+
+\textbf{Metodología:} el entrevistador sigue una guía de preguntas clave centradas en experiencias previas, dificultades y mejoras deseadas, pero permite que los entrevistados aporten libremente sugerencias y comentarios adicionales.
+
+\textbf{Enfoque:} basado en el diseño centrado en el usuario, busca obtener información práctica y detallada que sirva para optimizar los sistemas propuestos.
+
+\section{Aplicación 1: Reserva de Laboratorios de Informática}
+
+\subsection{Entrevista}
+
+\subsubsection*{Entrevista a Profesores}
+\begin{enumerate}
+\item ¿Con qué frecuencia necesita reservar laboratorios y para qué fines principales (clases, exámenes, otros)?
+\item ¿Qué dificultades ha tenido en el proceso de reservas en el pasado?
+\item ¿Ha utilizado algún sistema digital de reservas anteriormente? Si es así, ¿cómo evaluaría su experiencia?
+\item ¿Qué funcionalidades adicionales le gustaría que tenga el sistema (ej. cancelación, modificación, historial de reservas)?
+\item ¿Cómo prefiere recibir la confirmación de la reserva (correo, notificación en sistema, ambos)?
+\item ¿Que considera que es especialmente importante para mejorar el proceso de reserva de laboratorios?
+\end{enumerate}
+
+\subsubsection*{Entrevista a Encargados de Laboratorio}
+\begin{enumerate}
+\item ¿Cómo gestiona actualmente las reservas de los laboratorios?
+\item ¿Cuáles son los problemas más frecuentes que enfrenta en ese proceso?
+\item ¿Qué información considera esencial al momento de confirmar una reserva (materia, profesor, cantidad de alumnos, equipamiento requerido)?
+\item ¿Qué mejoras cree que debería incluir un sistema digital de reservas para facilitar su trabajo?
+\item ¿Le gustaría contar con reportes automáticos sobre el uso de los laboratorios?
+\end{enumerate}
+
+\subsubsection*{Entrevista a Dirección Académica}
+\begin{enumerate}
+\item ¿Con qué frecuencia necesita reservar laboratorios para actividades especiales?
+\item ¿Qué dificultades ha enfrentado en esos procesos de reserva?
+\item ¿Qué nivel de detalle requiere en los reportes de uso de los laboratorios?
+\item ¿Qué características considera indispensables en un sistema de reservas institucional?
+\item ¿Qué tan importante considera que el jefe de laboratorio valide todas las reservas?
+\end{enumerate}
+
+\subsubsection*{Entrevista a Jefe de Laboratorio}
+\begin{enumerate}
+\item ¿Cómo realiza actualmente la confirmación de las reservas solicitadas?
+\item ¿Qué problemas suele encontrar en ese proceso?
+\item ¿Qué información debería mostrar el sistema para simplificar la validación de reservas?
+\item ¿Cree necesario que exista la posibilidad de rechazar una reserva? ¿En qué casos?
+\item ¿Cómo debería integrarse el sistema con su flujo de trabajo diario?
+\end{enumerate}
+
+
+\subsection{Cuestionario}
+\begin{enumerate}[label=\textbf{P\arabic*}.]
+
+\item ¿Ha utilizado anteriormente algún sistema de reservas de laboratorios?  \\
+        \begin{tabular}{ll}
+        \checkbox & Sí \\
+            \checkbox & No \\
+            \end{tabular}
+
+            \item En caso afirmativo, ¿cómo evaluaría la facilidad de uso de dicho sistema?  \\
+                \begin{tabular}{ccccccccc}
+                & Dificil & Medio & Regular & Facil & Muy facil \\
+                    Facilidad & \checkbox & \checkbox & \checkbox & \checkbox & \checkbox \\
+                    \end{tabular}
+
+                    \item ¿Con qué frecuencia suele necesitar reservar un laboratorio?  \\
+                        \begin{tabular}{ll}
+                        \checkbox & Diario \\
+                            \checkbox & Semanal \\
+                            \checkbox & Mensual \\
+                            \checkbox & Ocasional \\
+                            \end{tabular}
+
+                            \item ¿Cuál es el principal motivo por el que reserva laboratorios?  \\
+                                \begin{tabular}{ll}
+                                \checkbox & Clases \\
+                                    \checkbox & Exámenes \\
+                                    \checkbox & Eventos \\
+                                    \checkbox & Otros: \rule{6cm}{0.3pt} \\
+                                    \end{tabular}
+
+                                    \item ¿Qué tan importante considera la posibilidad de modificar o cancelar una reserva ya confirmada?  \\
+                                        \begin{tabular}{ll}
+                                        \checkbox & Nada importante \\
+                                            \checkbox & Poco importante \\
+                                            \checkbox & Neutral \\
+                                            \checkbox & Importante \\
+                                            \checkbox & Muy importante \\
+                                            \end{tabular}
+
+                                            \item ¿Qué nivel de importancia le asigna a que el jefe de laboratorio confirme la reserva?  \\
+                                                \begin{tabular}{ll}
+                                                \checkbox & Muy importante \\
+                                                    \checkbox & Poco importante \\
+                                                    \checkbox & Innecesario \\
+                                                    \end{tabular}
+
+                                                    \item ¿Cuenta siempre con acceso a internet para realizar una reserva en línea?  \\
+                                                        \begin{tabular}{ll}
+                                                        \checkbox & Siempre \\
+                                                            \checkbox & A veces \\
+                                                            \checkbox & Nunca \\
+                                                            \end{tabular}
+
+                                                            \item ¿Qué mejoras o funciones adicionales considera más útiles en un sistema de reserva de laboratorios?  \\
+                                                                \rule{\textwidth}{0.3pt} \\[0.5cm]
+                                                                \rule{\textwidth}{0.3pt} \\[0.5cm]
+
+                                                                \end{enumerate}
+                                                                \\
+
+                                                                \section{Aplicación 2: Marcado de Asistencia a Clases}
+
+                                                                \subsection{Entrevista}
+                                                                \subsubsection*{Entrevista a Alumnos}
+                                                                \begin{enumerate}
+                                                                \item ¿Cómo marca actualmente su asistencia en las clases?
+                                                                \item ¿Con qué frecuencia enfrenta dificultades con los metodos actuales?
+                                                                \item ¿Qué problemas ha tenido con este método?
+                                                                \item ¿Considera útil poder justificar sus faltas dentro del mismo sistema?
+                                                                \item ¿Qué le gustaría ver en un sistema digital de asistencia?
+
+                                                                \end{enumerate}
+
+                                                                \subsubsection*{Entrevista a Docentes}
+                                                                \begin{enumerate}
+                                                                \item ¿Cómo controla actualmente la asistencia de sus alumnos?
+                                                                \item ¿Qué dificultades encuentra en el proceso de registrar o validar asistencias?
+                                                                \item ¿Qué tan práctico le resulta el sistema actual para registrar faltas justificadas?
+                                                                \item ¿Qué cambios o mejoras considera más importantes en un sistema de asistencia digital?
+                                                                \item ¿Qué tipo de reportes considera más útiles para su gestión docente?
+                                                                \end{enumerate}
+
+                                                                \subsubsection*{Entrevista a Director del Departamento de Enseñanza}
+                                                                \begin{enumerate}
+                                                                \item ¿Qué informes de asistencia necesita para la gestión académica?
+                                                                \item ¿Qué nivel de detalle espera en los reportes (porcentaje de asistencia, faltas justificadas, tendencias, etc.)?
+                                                                \item ¿Con qué frecuencia requiere acceder a esos reportes?
+                                                                \item ¿Qué dificultades encuentra actualmente al momento de obtener esa información?
+                                                                \item ¿Qué indicadores considera prioritarios para la toma de decisiones?
+                                                                \end{enumerate}
+
+                                                                \subsection{Cuestionario Sistema de Asistencia}
+
+                                                                \subsection*{Preguntas generales}
+
+                                                                \begin{enumerate}[label=\textbf{G\arabic*}.]
+                                                                \item En términos generales, ¿qué tan satisfecho está con el sistema de asistencia utilizado en la institución?\\
+                                                                    \begin{tabular}{ll}
+                                                                    \checkbox & Muy satisfecho \\
+                                                                        \checkbox & Satisfecho \\
+                                                                        \checkbox & Poco satisfecho \\
+                                                                        \checkbox & Insatisfecho \\
+                                                                        \end{tabular}
+
+                                                                        \item ¿Con qué frecuencia observa problemas técnicos o errores en el proceso de toma de asistencia?\\
+                                                                            \begin{tabular}{ll}
+                                                                            \checkbox & Nunca \\
+                                                                                \checkbox & Rara vez \\
+                                                                                \checkbox & Con frecuencia \\
+                                                                                \checkbox & Muy a menudo \\
+                                                                                \end{tabular}
+                                                                                \end{enumerate}
+
+                                                                                \subsection*{Preguntas para Alumnos}
+
+                                                                                \begin{enumerate}[label=\textbf{A\arabic*}.]
+                                                                                \item ¿Con qué frecuencia está presente y participa en clases donde se marca asistencia?\\
+                                                                                    \begin{tabular}{ll}
+                                                                                    \checkbox & Siempre \\
+                                                                                        \checkbox & Mayormente \\
+                                                                                        \checkbox & Ocasionalmente \\
+                                                                                        \checkbox & Rara vez \\
+                                                                                        \end{tabular}
+
+                                                                                        \item ¿Percibe que el proceso de registro de asistencia por parte del docente es eficiente?\\
+                                                                                            \begin{tabular}{ll}
+                                                                                            \checkbox & Sí, muy eficiente \\
+                                                                                                \checkbox & Generalmente eficiente \\
+                                                                                                \checkbox & Poco eficiente \\
+                                                                                                \checkbox & Ineficiente \\
+                                                                                                \end{tabular}
+
+                                                                                                \item ¿Considera que recibe información clara sobre su asistencia y faltas?\\
+                                                                                                    \begin{tabular}{ll}
+                                                                                                    \checkbox & Sí, siempre \\
+                                                                                                        \checkbox & Generalmente sí \\
+                                                                                                        \checkbox & A veces \\
+                                                                                                        \checkbox & No, nunca \\
+                                                                                                        \end{tabular}
+
+                                                                                                        \item ¿Está satisfecho con la manera en que se comunica la información de asistencia y faltas en la institución?\\
+                                                                                                            \begin{tabular}{ll}
+                                                                                                            \checkbox & Muy satisfecho \\
+                                                                                                                \checkbox & Satisfecho \\
+                                                                                                                \checkbox & Poco satisfecho \\
+                                                                                                                \checkbox & Insatisfecho \\
+                                                                                                                \end{tabular}
+
+                                                                                                                \item ¿Esta satisfecho con el sistema a la hora de presentar justificativos ante faltas?\\
+                                                                                                                    \begin{tabular}{ll}
+                                                                                                                    \checkbox & Muy satisfecho \\
+                                                                                                                        \checkbox & Satisfecho \\
+                                                                                                                        \checkbox & Poco satisfecho \\
+                                                                                                                        \checkbox & Insatisfecho \\
+                                                                                                                        \end{tabular}
+                                                                                                                        \end{enumerate}
+
+                                                                                                                        \subsection*{Preguntas para Docentes}
+
+                                                                                                                        \begin{enumerate}[label=\textbf{B\arabic*}.]
+                                                                                                                        \item ¿Con qué frecuencia utiliza la lista digital para registrar la asistencia de los alumnos?\\
+                                                                                                                            \begin{tabular}{ll}
+                                                                                                                            \checkbox & Todos los días \\
+                                                                                                                                \checkbox & Varias veces por semana \\
+                                                                                                                                \checkbox & Una vez a la semana \\
+                                                                                                                                \checkbox & Raramente / Nunca \\
+                                                                                                                                \end{tabular}
+
+                                                                                                                                \item ¿Qué tan práctico le resulta el sistema para registrar asistencia y gestionar la lista digital?\\
+                                                                                                                                    \begin{tabular}{ll}
+                                                                                                                                    \checkbox & Muy fácil y rápido \\
+                                                                                                                                        \checkbox & Generalmente fácil \\
+                                                                                                                                        \checkbox & Difícil de usar \\
+                                                                                                                                        \checkbox & Muy complicado \\
+                                                                                                                                        \end{tabular}
+
+                                                                                                                                        \item ¿Con qué frecuencia enfrenta problemas técnicos al usar el sistema de asistencia?\\
+                                                                                                                                            \begin{tabular}{ll}
+                                                                                                                                            \checkbox & Nunca \\
+                                                                                                                                                \checkbox & Rara vez \\
+                                                                                                                                                \checkbox & Con frecuencia \\
+                                                                                                                                                \checkbox & Muy a menudo \\
+                                                                                                                                                \end{tabular}
+
+                                                                                                                                                \item ¿Con qué frecuencia debe subir justificativos de inasistencia de los alumnos o gestionar casos especiales?\\
+                                                                                                                                                    \begin{tabular}{ll}
+                                                                                                                                                    \checkbox & Todos los días \\
+                                                                                                                                                        \checkbox & Varias veces por semana \\
+                                                                                                                                                        \checkbox & Una vez a la semana \\
+                                                                                                                                                        \checkbox & Raramente / Nunca \\
+                                                                                                                                                        \end{tabular}
+
+                                                                                                                                                        \item ¿Qué mejoras o funcionalidades adicionales le serían más útiles en la gestión de asistencia?\\
+                                                                                                                                                            \rule{\textwidth}{0.3pt} \\[0.5cm]
+                                                                                                                                                            \rule{\textwidth}{0.3pt} \\[0.5cm]
+                                                                                                                                                            \end{enumerate}
+
+
+                                                                                                                                                            \section*{Referencias}
+                                                                                                                                                            \begin{itemize}
+                                                                                                                                                            \item Hernández, R., Fernández, C. \& Baptista, P. (2014).\textit{Metodología de la investigación}. McGraw-Hill. 
+                                                                                                                                                            \item https://wiki.ead.pucv.cl/Entrevistas\_semiestructuradas/
+                                                                                                                                                            \item https://www.wearetesters.com/entrevistas-de-usabilidad/ 
+
+                                                                                                                                                            \end{itemize}
+                                                                                                                                                            \end{document}

@@ -1,0 +1,153 @@
+Diseño de Entrevistas y Cuestionarios
+Objetivo:
+Diseñar entrevistas y cuestionarios para dos aplicaciones diferentes,
+considerando los diferentes perfiles de usuarios y sus necesidades específicas. El
+ejercicio tiene como finalidad recoger requisitos claros y detallados que guiarán el
+diseño de ambas aplicaciones.
+
+Aplicación 1: Reserva de Laboratorios de Informática en la FPUNA
+Usuarios:
+
+
+Profesores: Necesitan reservar laboratorios para clases, exámenes y otras
+actividades académicas.
+
+
+
+Encargado de Laboratorio: Debe gestionar las reservas, ver los laboratorios
+asignados y asegurar que los laboratorios estén disponibles y en buen
+estado.
+
+
+
+Dirección Académica: Podrían necesitar hacer reservas para eventos
+especiales o sesiones fuera de horario regular.
+
+
+
+Jefe de Laboratorio: Confirma las reservas realizadas por los profesores y
+académicos.
+
+Actividades:
+
+
+Diseño de Entrevistas:
+o
+
+Identificar las necesidades específicas de cada perfil (profesor,
+encargado de laboratorio, académico (?), jefe de laboratorio).
+
+o
+
+Preguntar sobre las experiencias previas con sistemas de reserva (si
+existen).
+
+o
+
+Indagar sobre problemas actuales y necesidades no cubiertas en el
+proceso de reserva.
+
+o
+
+Preguntar sobre las preferencias en la interfaz y funcionalidades
+adicionales que les gustaría tener, incluyendo la capacidad de
+solicitar cambios o cancelaciones de reservas.
+
+
+
+Diseño de Cuestionarios:
+o
+
+Crear preguntas para evaluar la facilidad de uso del sistema actual
+(si existe).
+Incluir preguntas sobre la frecuencia de uso y el tipo de reservas
+más comunes.
+
+o
+
+Indagar sobre las características que consideran más importantes
+en un sistema de reservas, incluyendo la capacidad de solicitar
+cambios o cancelaciones y la confirmación de reservas por parte del
+jefe de laboratorio.
+
+o
+
+Preguntar sobre posibles barreras tecnológicas (como acceso a
+internet o familiaridad con sistemas digitales).
+
+Aplicación 2: Marcado de Asistencia a Clases
+Usuarios:
+
+
+Alumnos: Reportan su asistencia y suben justificativos en caso de
+inasistencia.
+
+
+
+Docentes: Marcan asistencia de los alumnos y reportan su propia
+asistencia, subiendo justificativos cuando es necesario.
+
+
+
+Director del Departamento de Enseñanza: Accede a informes y estadísticas
+de asistencia para la gestión académica.
+
+Actividades:
+
+
+Diseño de Entrevistas:
+o
+
+Preguntar a los alumnos sobre su experiencia actual con el marcado
+de asistencia y qué mejoras consideran necesarias.
+
+o
+
+Indagar a los docentes sobre el proceso de manejo de asistencias,
+dificultades encontradas y sugerencias para mejorar la
+funcionalidad.
+
+o
+
+Consultar al director sobre los tipos de informes y datos de
+asistencia que necesitan para la gestión del departamento.
+
+
+
+Diseño de Cuestionarios:
+o
+
+Incluir preguntas para alumnos sobre la facilidad de uso del sistema
+de asistencia, accesibilidad y satisfacción con el proceso actual.
+
+o
+
+Preguntar a los docentes sobre la frecuencia de reportes, facilidad
+para subir justificativos y uso de la plataforma.
+
+o
+
+Incluir preguntas para todos los usuarios sobre la percepción
+general del sistema y posibles mejoras.
+
+Instrucciones:
+1. Trabajar en grupos de 4 (max) en la creación de entrevistas y cuestionarios
+para los dos sistemas. Se debe investigar más sobre diseño de entrevistas y
+cuestionarios, y agregar una cita a las referencias utilizadas (puntaje para
+el equipo que diseña).
+
+2. Una vez entregado, se realizará una revisión cruzada (un grupo evalúa y
+sugiere mejoras al trabajo del otro). La revisión tendrá un espacio en educa
+para su entrega y se hará por rúbrica (puntaje para el equipo que revisa).
+3. Entrega y Calificación:
+
+
+Los miembros del grupo deben generar documentos PDF con las
+entrevistas y cuestionarios (agregando link), diseñados por el grupo ya
+validadas por otro grupo.
+
+
+
+Incluir los nombres y CI de los integrantes. Subir a educa.
+
+

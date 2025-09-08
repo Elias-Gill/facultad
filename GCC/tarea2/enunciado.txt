@@ -1,0 +1,15 @@
+Teniendo en caso el material, responder a las siguientes consultas:
+
+- Si fueras parte del comité de flujo, ¿qué acciones priorizarías para mantener la mejora
+  lograda en el hospital?
+- ¿Cómo se podría aplicar la Teoría de Restricciones en otros sectores de servicios (por
+  ejemplo, universidades o transporte público)?
+- ¿Qué enseñanzas deja este caso para futuros ingenieros en cuanto al rol del liderazgo en la
+  gestión de procesos?
+- El caso menciona que “muchas de las restricciones son artificiales”. ¿Cómo interpretarías
+  esta afirmación en el contexto de la gestión de proyectos?
+- ¿Qué relación encuentras entre el enfoque DevOps y la Teoría de Restricciones aplicada en
+  este hospital?
+
+Presentar las respuestas en un archivo ".pdf".
+Deben subir el trabajo todos los integrantes del grupo.

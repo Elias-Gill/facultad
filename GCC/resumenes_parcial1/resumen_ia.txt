@@ -1,0 +1,984 @@
+================================================================================
+Clase-01.pdf - Resumen rápido
+TEMA: Gestión de Centro de Cómputos - Introducción a Data Centers (DC)
+PROFS: Cristian Cabanellas, Gerardo Riveros
+================================================================================
+
+AGENDA DE LA CLASE:
+Conceptos generales de DC. Antecedentes de DC. Opciones de DC. Avances tecnológicos.
+Disposición o áreas de un DC.
+
+DEFINICION DE DC (Data Center):
+Lugar (edificio/sala) diseñado para albergar y operar servidores. Términos similares: data
+processing center, computer room, server room, collocation center, IT room. Según TIA942:
+Edificio cuya función principal es albergar una sala de informática y sus áreas de soporte.
+
+CONCEPTOS GENERALES/ATRIBUTOS COMUNES DE UN DC:
+Respaldo. Gestión. Almacenamiento. Redes. Procesamiento. Seguridad. Internet y
+comunicaciones WAN. Hosting de aplicaciones. Distribución de contenido. Almacenamiento
+y backup de archivos. Gestión de bases de datos. Energía a prueba de fallos (Failsafe
+power). HVAC (Calefacción, Ventilación, Aire Acondicionado). Supresión de incendios.
+Infraestructura de cableado de alto rendimiento. Control de acceso y vigilancia.
+
+ANTECEDENTES DE DC:
+Evolucionaron desde salas centralizadas de informática. Diseño original: Suelo técnico para
+cables/tuberías, suelo reforzado para equipos pesados. Control estricto de temperatura y
+humedad por uso de papel, soportes magnéticos y riesgo de electricidad estática. Ejemplos
+históricos: ILLIAC II (años 50), salas de los 60/70. Problemas: manejo de cintas de papel,
+tarjetas perforadas, polvo.
+
+TENDENCIAS DE MERCADO (Expansión DC):
+Uso de transacciones electrónicas. Internet como herramienta comercial. Menos registros en
+papel. Educación online. Uso general de internet (redes sociales, descargas).
+
+OPCIONES/TIPOS DE DC:
+- Enterprise DC: De propiedad de la organización, para uso exclusivo propio. Alta seguridad y
+  fiabilidad. Suele estar en el edificio principal.
+- Hosting Gestionado: Clientes alquilan capacidad computacional. No son propietarios. Subtipos:
+  Hosting dedicado, Hosting compartido.
+- Colocation: Clientes albergan sus equipos críticos en instalaciones de un tercero. El tercero
+  provee infraestructura (energía, refrigeración, conectividad). Beneficios: Ahorro económico,
+  alto control sobre equipos, alta seguridad física (solo acceden a su equipo).
+- Wholesale DataCenter (Al por mayor): Instalaciones construidas para vender espacio a quien lo
+  necesite (uso personal o para revender como colocation). Espacio comprado/vendido por agentes
+  inmobiliarios.
+
+AVANCES TECNOLOGICOS:
+Años 80: Llegada de Ethernet y protocolos IEEE 802.xx. IEEE 802.3 (Ethernet) revolucionó
+conexión de PC/servidores (LAN). IEEE 802.5 (Token Ring) fue norma de IBM, segura pero
+lenta, perdió terreno frente a Ethernet. Modelo OSI (Open Systems Interconnection): Modelo
+de referencia de 7 capas para estándares de telecomunicaciones e interoperabilidad. Capas:
+Aplicación, Presentación, Sesión, Transporte, Red, Enlace de Datos, Físico. Dispersión de
+la potencia informática a oficinas (LAN) trajo problemas: gestión de usuarios, pérdida de
+control, licencias, acceso a datos, seguridad.
+
+DESAFIOS ACTUALES:
+Aumento de densidades de servidores (desde ~2000). Potencia y refrigeración se volvieron
+críticos. Requisitos de potencia por rack pasaron de bajos a más de 40+kW. Necesidad de
+suministros adecuados (electricidad, agua, gas, telecom). Mayor demanda de eficiencia en
+diseño y operaciones. Desafíos específicos: Densidades térmicas y de peso mayores.
+Tecnologías de cambio rápido. Altas tasas de datos. Necesidades de almacenamiento
+crecientes.
+
+CONSIDERACIONES CLAVES ACTUALES:
+Reglamentos afectan el diseño. La eficiencia es clave. Creación de estándares. Fabricantes
+más responsables. Los DC son vistos como un "caso especial". El sector está "madurando".
+
+DISPOSICION/AREAS DE UN DC (Según estándares TIA942, ISO/IEC 24764):
+- ER (Entrance Room): Punto de entrada a la red del DC, acceso al proveedor de internet.
+- MDA (Main Distribution Area): Es el núcleo o core del DC. Gestiona todo el tráfico. Alta
+  seguridad y redundancia. También llamado Core Layer o Main Cross Connect (MC).
+  - AL (Aggregation Layer): es parte de la Core Layer, distribuye datos empaquetados desde la
+    capa de acceso hacia el core mediante switches de distribución. 
+- IDA (Intermediate Distribution Area): Usado en DC grandes para estructurar MDA y HDA. Puede
+  haber interrupciones.
+- HDA (Horizontal Distribution Area): Capa de acceso (Access Layer). Conecta el backbone con el
+  cableado horizontal. También llamado Horizontal Cross Connect (HC).
+- ZDA (Zone Distribution Area): Para distribución intermedia fuera del EDA (ej. en falso piso).
+  Punto de consolidación (CP o Consolidation Point).
+- EDA (Equipment Distribution Area): Alberga el equipamiento (servidores, hardware en racks).
+- Telecom Room: Conexión a la red interna.
+- Otras áreas: Operation Center, Support Room, Offices para el personal.
+
+CABLEADO EN DC:
+Selección crítica para escalabilidad. Fibra óptica usualmente para backbone. Cable de cobre
+para cableado horizontal. La arquitectura afecta la disponibilidad y disposición de racks.
+
+ESTANDARES INTERNACIONALES MENCIONADOS:
+TIA-942-A, ISO/IEC 24764, ISO 11801. Definen terminología y estructura de cableado (ENI,
+ER, MDA, IDA, HDA, ZDA, EDA).
+
+MENSAJE CLAVE:
+"ALGUNAS COSAS NO PUEDEN FALLAR NUNCA." -> La confiabilidad extrema es fundamental.
+
+ACRONIMOS IMPORTANTES:
+DC (Data Center). HVAC (Heating, Ventilation, and Air Conditioning). LAN (Local Area
+Network). WAN (Wide Area Network). IEEE (Institute of Electrical and Electronics
+Engineers). OSI (Open Systems Interconnection). ERP (Entrance Room). MDA (Main
+Distribution Area). IDA (Intermediate Distribution Area). HDA (Horizontal Distribution Area).
+ZDA (Zone Distribution Area). EDA (Equipment Distribution Area). ENI (External Network
+Interface). TIA (Telecommunications Industry Association). ISO (International Organization
+for Standardization). IEC (International Electrotechnical Commission). IaaS (Infrastructure as
+a Service).
+
+================================================================================
+Clase-02.pdf - Resumen rápido
+TEMA: Computer Rooms - Componentes y Topologías de Cableado
+================================================================================
+
+AGENDA:
+Flashback (Areas de un DC). Computer Rooms. Principales componentes de un Computer Room.
+Topologías de cableado (ToR vs EoR).
+
+COMPUTER ROOMS:
+Es la sala principal donde está el equipamiento IT. Ejemplos: Google, Facebook. Concepto
+clave: "The Datacenter as a Computer" (Luiz Barroso, Google). El DC es una computadora a
+gran escala (Warehouse-Scale Computer - WSC), no solo servidores juntos. Hardware y
+software deben trabajar en conjunto para buen rendimiento.
+
+PRINCIPALES COMPONENTES DE UN COMPUTER ROOM:
+- Racks: Estructuras para montar equipos. Hay estándares como Open Rack (Facebook). Pueden
+         contener: Servers (archivos, impresión, dominio, mensajería, almacenamiento). 
+- UPS (sistema de alimentación ininterrumpida). 
+- PDU (Power Distribution Unit): Unidad de distribución de energía para los racks.
+- Patch Panels: Paneles de conexión para cableado. UTP (cobre) y FO (fibra óptica). 
+- Keyboard/display para gestión. 
+- Firewall/VPN. 
+
+TOPOLOGIAS DE CABLEADO EN COMPUTER ROOMS:
+Elección de arquitectura crítica para escalabilidad y disponibilidad. Fibra óptica usual para
+backbone. Cobre para cableado horizontal.
+
+TOP OF RACK (ToR):
+Switch Ethernet (ETH SWITCH) se monta en la parte superior de *cada* rack. Conecta los
+servers de ese rack. Pros: Cableado de cobre se queda "en el rack". Menor infraestructura de
+cobre, más barato y limpio. Arquitectura modular por rack, upgrades fáciles. Fibra hacia
+agregación está future-proof (40G, 100G). Cobre corto permite 10GE/40G de bajo consumo.
+Contras: Más switches para gestionar. Más puertos needed en agregación. Posibles problemas
+de escalabilidad (puertos lógicos STP). Más tráfico server-to-server en capa 2 en la
+agregación. Más instancias de STP (Spanning Tree) por gestionar (una por rack/switch).
+Skill set más alto para reemplazar switches.
+
+END OF ROW (EoR):
+Switch modular grande al *final de una fila* de racks. Conecta todos los racks de esa fila con
+cobre. Pros: Menos switches para gestionar. Potencial menor costo y mantenimiento. Menos
+puertos needed en agregación. Racks conectados en Capa 1. Menos instancias de STP (una por
+fila). Plataforma modular de alta disponibilidad y mayor vida útil. Skill set más bajo para
+reemplazar tarjetas de línea. Contras: Infraestructura de cobre grande, rígida y cara.
+Problemas de gestión de cables. Cableado de cobre largo limita adopción de I/O de alta
+velocidad/bajo consumo. Menos future-proof. Arquitectura menos flexible por fila, upgrades
+afectan toda la fila.
+
+ACRONIMOS IMPORTANTES:
+NOC (Network Operations Center). ER (Entrance Room). MDA (Main Distribution Area). HDA
+(Horizontal Distribution Area). ZDA (Zone Distribution Area). EDA (Equipment Distribution
+Area). SAN (Storage Area Network). NAS (Network Attached Storage). VTL (Virtual Tape
+Library). ToR (Top of Rack). EoR (End of Row). STP (Spanning Tree Protocol). PDU (Power
+Distribution Unit). UTP (Unshielded Twisted Pair). FO (Fibra Optica). ETH (Ethernet). I/O
+(Input/Output). WSC (Warehouse-Scale Computer).
+
+================================================================================
+Clase-03.pdf - Resumen rápido
+TEMA: Estándares para DC y Clasificación Tier
+================================================================================
+
+AGENDA:
+Flashback (Partes/componentes DC). Organismos industriales relevantes. Normas y referencias.
+Estándares para DC. Diferencias entre estándares. Clasificación Tier.
+
+FLASHBACK:
+Video sobre DC1 y DC2 de online.net. Diseñados con arquitectura N+1 (cada elemento activo tiene
+un componente redundante).
+
+ORGANISMOS INDUSTRIALES RELEVANTES:
+Uptime Institute (fund. 1993). ASHRAE (Sociedad americana de calefacción, refrigeración y AC,
+fund. 1894). The Green Grid (fund. 2007). AFCOM (Asoc. para gestión de operaciones de
+computación, fund. 1980). TIA (Asoc. de industria de telecomunicaciones, fund. 1988). BICSI
+(Consultoría internacional de servicios de la industria de la construcción, fund. 1974). BCS
+(Sociedad británica de computación, fund. 1957). DOE (Departamento de energía de EE.UU.). EPA
+(Agencia de protección ambiental de EE.UU.).
+
+NORMAS Y REFERENCIAS CLAVE:
+Uptime Institute Tier Ratings. ASHRAE TC9.9 Guidelines for Mission Critical Facilities.
+ANSI/TIA-942 (Estándar de infraestructura para DC). ANSI/BICSI-002 (Mejores prácticas de diseño
+e implementación de DC). EU Code of Conduct for Data Centers.
+
+¿POR QUE ESTANDARES PARA DC?
+Tendencias como cloud computing y virtualización. Empresas externalizan operaciones de DC.
+Requisitos de espacio más complejos. Funciones deben definirse y asignarse a salas separadas.
+Objetivos: Administración fluida del DC. Recuperación rápida ante fallos. Posibilidad de
+expansión y migración sin gran sobrecarga administrativa.
+
+ESTANDARES RELEVANTES (CABLING):
+ISO/IEC 24764, EN 50173-5, EN 50600-2-4, TIA-942-A. Enfocados en estructura y rendimiento de
+sistemas de cableado. Objetivo: Estructura flexible, escalable y clara para cambios y
+expansiones rápidas.
+
+PRINCIPALES DIFERENCIAS ENTRE ESTANDARES (TABLA COMPARATIVA):
+TIA-942-A es el más completo. Cubre: Estructura, rendimiento de cableado, redundancia, puesta a
+tierra, clasificación Tier, routing de cables, cielorrasos/pisos técnicos, carga de piso,
+requisitos de espacio (altura, puertas), alimentación/UPS, protección contra incendios,
+refrigeración, iluminación, administración/etiquetado, temperatura/humedad. ISO/IEC y EN se
+enfocan más en cableado y rendimiento, delegando otros temas a otros estándares (ej. IEC
+60364-1 para puesta a tierra).
+
+RESUMEN ESTANDAR DC (ANSI/TIA-942):
+Documento comprehensivo. Guías para diseño, construcción y expansión en áreas: telecom,
+eléctrica, arquitectónica, mecánica, seguridad. Provee estándares de infraestructura
+obligatorios y guías informativas por niveles de rendimiento y disponibilidad ("Tiers").
+Excelente vehículo de comunicación entre profesionales. Otros estándares de referencia: IEEE
+802.3an (10GBASE-T), ANSI/TIA-568B.2 (Cat 6 aumentado/Clase EA), IEEE 802.3af/at (PoE),
+ANSI/TIA-569-B (Espacios y pathways), ANSI/TIA-606-A (Administración), ANSI-J-STD-607-A (Puesta
+a tierra).
+
+CLASIFICACION TIER (UPTIME INSTITUTE):
+Standard objetivo para comparar funcionalidad, capacidad y disponibilidad esperada de una
+topología de diseño de infraestructura de sitio. Define 4 clasificaciones (Tier I, II, III, IV)
+basadas en niveles crecientes de componentes de capacidad redundante y paths de distribución.
+El rating Tier de todo un sitio está limitado por el subsistema más débil. No hay ratings
+parciales. No es el promedio de los subsistemas. No se puede calcular con MTBF. Es
+independiente de los sistemas IT.
+
+TIER I: INFRAESTRUCTURA BASICA.
+Componentes de capacidad no redundantes. Single path de distribución no redundante. Incluye:
+Espacio dedicado para IT, UPS, equipo de cooling dedicado, generador. 12h de almacenamiento de
+combustible. Impacto operacional: Susceptible a interrupciones por actividades planificadas y
+no planificadas. Errores humanos causan disrupción. Fallo de cualquier componente impacta el
+ambiente crítico. Debe apagarse completamente anualmente para mantenimiento.
+
+TIER II: CAPACIDAD DE INFRAESTRUCTURA REDUNDANTE.
+Componentes de capacidad redundantes (N+1). Single path de distribución no redundante. 12h de
+combustible para capacidad 'N'. Impacto: Componentes redundantes pueden quitarse de servicio de
+forma planificada sin apagar el ambiente crítico. Quitar paths de distribución requiere
+shutdown. Fallo de un componente *puede* impactar, fallo de un sistema o path *impactará*.
+
+TIER III: INFRAESTRUCTURA CONCURRENTEMENTE MANTENIBLE.
+Componentes redundantes (N+1). Múltiples paths de distribución independientes. Solo un path
+required en cualquier momento. Todo equipo IT debe ser dual-powered (según especificación Fault
+Tolerant de Uptime). 12h de combustible. Impacto: Susceptible a disrupciones no planificadas.
+Fallo de un sistema impacta, fallo de un componente o elemento *puede* impactar. Mantenimiento
+planificado se puede hacer usando componentes/paths redundantes.
+
+TIER IV: INFRAESTRUCTURA TOLERANTE A FALLOS.
+Múltiples sistemas independientes y aislados físicamente. Proveen componentes de capacidad
+redundantes y múltiples paths de distribución activos, diversos e independientes que sirven
+*simultáneamente* al ambiente crítico. Configurado para que "N" provea poder y cooling tras
+cualquier fallo. Todo equipo IT dual-powered. Sistemas complementarios deben estar aislados
+físicamente (compartimentados). Cooling continuo required. 12h de combustible. Impacto: No
+susceptible a disrupción por un solo evento no planificado ni por trabajo planificado.
+
+RESUMEN REQUISITOS TIER (TABLA):
+Tier I: Comp. Activos=N, Paths=1, Mant. Concurrente=No, Fault Tolerance=No,
+        Compartimentación=No, Cooling Continuo=No.
+Tier II: Comp. Activos=N+1, Paths=1, Mant. Concurrente=No, Fault Tolerance=No,
+         Compartimentación=No, Cooling Continuo=No.
+Tier III: Comp. Activos=N+1, Paths=1 Activo + 1 Alterno, Mant. Concurrente=Yes, Fault
+          Tolerance=No, Compartimentación=No, Cooling Continuo=No.
+Tier IV: Comp. Activos=N Tras fallo, Paths=2 Simultáneamente Activos, Mant. Concurrente=Yes,
+         Fault Tolerance=Yes, Compartimentación=Yes, Cooling Continuo=Yes.
+
+GENERADORES:
+Considerados la fuente de poder primaria. La utility es una alternativa económica. Las
+disrupciones de utility son una condición operacional esperada. Generadores deben arrancar
+automáticamente y asumir la carga upon loss of utility. En Tier III/IV, deben pasar las pruebas
+de performance mientras cargan el sitio.
+
+NIVELES DE DISPONIBILIDAD:
+Tier I ~99.671%. 
+Tier II ~99.741% -> 99.982%. 
+Tier III ~99.982%. 
+Tier IV ~99.995%. 
+
+Tabla de disponibilidad: 
+    99% = 88h/año indisp., 
+    99.9% = 8.8h, 
+    99.99% = 53min, 
+    99.999% = 5.3min, 
+    99.9999% = 32seg.
+
+ACRONIMOS:
+ASHRAE, TIA, BICSI, ISO, IEC, CENELEC, ANSI, EPA, DOE, UPS, MTBF, EPO (Emergency Power Off),
+N+1, 2N, PUE (Power Usage Effectiveness).
+
+================================================================================
+Clase-04.pdf - Resumen rápido
+TEMA: Topologías de Redes en Centros de Datos
+================================================================================
+
+AGENDA:
+Flashback (Conceptos generales, ToR vs EoR). Topologías de redes en DC.
+
+FLASHBACK - ToR vs EoR:
+ToR: Switch en cada rack. Cableado de cobre se queda "en rack". Pros: Más modular, upgrades
+fáciles, infraestructura de fibra future-proof. Contras: Más switches para gestionar, más
+puertos en agregación, más instancias STP. EoR: Switch grande al final de una fila. Pros: Menos
+switches, menos puertos en agregación, menos instancias STP. Contras: Infraestructura de cobre
+cara y rígida, menos future-proof, upgrades afectan toda la fila.
+
+CONCEPTOS:
+Topología: Estudio matemático de formas y espacios (propiedades preservadas bajo deformaciones
+continuas). Topología de red: Disposición de varios elementos (enlaces, nodos) de una red.
+Puede ser física (ubicación de dispositivos, cableado) o lógica (cómo fluyen los datos).
+
+PROBLEMAS DE REDES EN DC:
+Capas superiores oversuscribed (sobresuscritas). Uplinks desde ToR: 1:2 a 1:20. Core Routers:
+1:240. Moverse entre subredes es doloroso (reconfigurar IPs, VLAN trunks). Los servicios se
+pisan entre sí. Baja confiabilidad (fallo de un switch de acceso duplica la carga del otro).
+Subutilización (aunque existan múltiples paths, solo se usa uno). ECMP (Equal Cost Multipath)
+usa hash function, pero solo existen 2 paths.
+
+TOPOLOGIAS DE RED COMUNES:
+Core, Aggregation, Access (3-tier). Ejemplo: Usuario remoto -> WAN/Internet -> Edge Routers ->
+Campus Core -> Campus Distribution -> Campus Access -> Data Center Core -> Data Center
+Aggregation -> Data Center Access.
+
+FAT TREE:
+Topología escalable usando elementos de red idénticos. k-port homogeneous switches, k/2-ary
+3-tree, 5/4k² switches, k³/4 hosts.
+
+EJEMPLOS DE TOPOLOGIAS (ILUSTRATIVOS):
+1. Simple 3-tier con firewalls. 
+2. Aplicación web simple en 3-tier con firewalls. 
+3. Opciones de topologías para despliegue de apps. 
+4. Simple 3-tier con 802.1q (VLAN trunks). 
+5. Otra 3-tier con 802.1q. 
+6. Simple con balanceadores de carga e IPS. 
+7. Ejemplo de topología de DC empresarial. 
+8. Ejemplo de topología de DC empresarial .PY. Muestran disposición típica: ISPs
+    -> CPE -> Core -> Agregación -> Acceso -> Servidores (Web, App, DB). Uso de VLANs,
+    balanceadores, IPS, firewalls.
+
+ACRONIMOS:
+ToR (Top of Rack), EoR (End of Row), STP (Spanning Tree Protocol), ECMP (Equal Cost Multipath),
+VLAN (Virtual LAN), IPS (Intrusion Prevention System), CPE (Customer Premises Equipment), ISP
+(Internet Service Provider).
+
+================================================================================
+Clase-05.pdf - Resumen rápido
+TEMA: Clusters, Tecnologías de Storage, Proceso de Diseño de un DC
+================================================================================
+
+AGENDA:
+Clusters. Tecnologías de Storage. Proceso de Diseño y Proyecto de un DC.
+
+CLUSTERS:
+Conjunto de computadoras trabajando juntas en una sola tarea. 
+
+Tipos: 
+- Load Balancing Cluster: Todos los nodos ejecutan el mismo software y realizan la misma tarea.
+  Las requests de clientes se distribuyen. Ej: granjas de servidores web/smtp. 
+- Compute Cluster (HPC - High Performance Computing): Las tareas se dividen en chunks más
+  pequeños que se computan en máquinas diferentes. Ej: Red Hat Enterprise MRG, Condor. 
+- High-Availability Cluster (HA Cluster o Failover Cluster): Objetivo mantener los servicios lo
+  más disponibles posible. Los nodos se monitorizan entre sí y migran servicios a un nodo
+  "saludable" upon failure. Subsets: Active-Active, Passive. Ej: Pacemaker, Red Hat HA Add-on.
+
+CONCEPTOS CLAVE DE CLUSTERS HA:
+- Failover Domains: Grupos de servicios que pueden fallover juntos. 
+- Fencing: Desconexión de un nodo del almacenamiento compartido del cluster para prevenir
+  corrupción del filesystem.
+- Métodos: Power fencing, Fabric fencing, o combinación. 
+- Quorum: Esquema de votación por mayoría. El cluster opera solo si se emiten más de la mitad
+  de los votos posibles. 
+- GFS (Red Hat Global File System): Filesystem nativo que proporciona compartición de datos
+  entre nodos con una vista única y consistente del namespace. Debe crearse sobre un volumen
+  lógico LVM.
+
+TECNOLOGIAS DE STORAGE - TIPOS DE DATOS:
+Datos de sistema vs. de usuario. Estáticos vs. Dinámicos. Actuales vs. Archivados.
+Fáciles-de-reemplazar vs. Difíciles-de-reemplazar. Accedidos a menudo vs. Raramente.
+Específicos del sistema vs. Comunes.
+
+TECNOLOGIAS DE ALMACENAMIENTO (MEDIOS):
+Papel. Almacenamiento Flash: USB sticks, flash cards, SSDs. Cinta Magnética: 9-track, DDS, DLT,
+LTO. Platos Magnéticos Giratorios: Hard Disks (varios interconnects). Almacenamiento Optico:
+CD, DVD, Blu-Ray.
+
+CONEXION DE ALMACENAMIENTO - TIPOS:
+DAS (Direct Attached Storage): Interno (controlador y discos dentro del server). DAS con
+controlador interno y almacenamiento externo. DAS con controlador externo y almacenamiento
+externo. DAS over Fibre Channel: HBA interno, protocolo FC entre HBAs y RAID externo. NAS
+(Network Attached Storage): Utiliza red TCP/IP para "compartir" datos. Usa protocolos de file
+sharing como NFS (Unix) y CIFS (Windows). "Appliances" con OS optimizado. iSCSI: Forma
+alternativa de almacenamiento en red. Encapsula comandos SCSI nativos en paquetes TCP/IP.
+Soportado en Windows y Linux. TOE (TCP/IP Offload Engines) en NICs aceleran el proceso. Fibre
+Channel (FC): Protocolo de red específico para redes de almacenamiento dedicadas. Utiliza
+switches, HBAs, controladores RAID y cables especializados. SAN (Storage Area Network): Red
+cuyo propósito principal es la transferencia de datos entre sistemas de almacenamiento y
+sistemas informáticos. FC es la tecnología primaria. También se implementan con redes iSCSI
+dedicadas.
+
+COMPARATIVAS (FC vs iSCSI vs otros):
+FC: Líder de mercado para storage compartido. Mayor rendimiento. Diseñado para apps
+mission-critical. Costo relativamente alto. Difícil de implementar y gestionar. iSCSI:
+Relativamente nuevo pero en aumento. Rendimiento puede acercarse a FC. Mejor ajuste para DBs
+que NAS. Bueno para PYMES. Relativamente económico y fácil de gestionar. Otras opciones: SAS,
+FCoE, IB-SRP, FCIP, IFCP. Tabla comparativa muestra suited environment, cost, performance,
+overhead, etc.
+
+BENEFICIOS DE SAN/CONSOLIDATED STORAGE:
+Reducir costo de almacenamiento externo. Aumentar rendimiento. Backup centralizado y mejorado
+en cinta. Backup sin LAN (LAN-less). Soluciones de clustering de alta velocidad sin
+single-point-of-failure. Consolidación con >70TB de almacenamiento.
+
+PROCESO DE DISENO Y PROYECTO DE UN DC:
+- Fases: Planificación, Diseño, Construcción, Entrega, Post-Construcción (Entrega al cliente).
+- Impacto en el diseño: Mayores niveles de seguridad y resiliencia/redundancia. Mayor
+responsabilidad ante autoridades. Requisitos de auditoría más exigentes. Necesidad de operación
+más eficiente. 
+- Toma de decisiones: Involucrar a todas las partes interesadas (Clase "C": CEO,
+CFO, CIO, COO, CTO; accionistas, clientes, personal, proveedores). 
+
+- Fase de Planificación: Designar consultores, documentos de objetivos, plan de inversión,
+  cronogramas, interacción con cliente, financiación, autorizaciones. 
+- Fase de Diseño: Designar contratista principal, definir equipo, sistemas a implementar,
+  revisión edilicia, requerimientos IT, aprobar infra IT y plan lógico de red. 
+- Fase de Construcción: Contratistas (electromecánicos, civiles), pruebas pre-funcionales,
+  documentación, inicio de puesta en funcionamiento. 
+- Fase de Entrega: Recepción de documentación y equipos, pruebas de aceptación, auditorías de
+  equipamiento y garantías. 
+- Fase de Post-Construcción: Definición de procedimientos (SOP - Estándar, EOP - Emergencia,
+  PMP - Mantenimiento planificado). Instalación de equipos IT (2da parte). Definición de
+  políticas para traslado, incorporación, cambios, control de cambios.
+
+ACRONIMOS:
+HPC (High Performance Computing), HA (High Availability), GFS (Global File System), DAS (Direct
+Attached Storage), NAS (Network Attached Storage), SAN (
+
+================================================================================
+Clase-06.pdf - Resumen rápido
+TEMA: Green IT, PUE y Simulador Greencloud
+================================================================================
+
+AGENDA:
+Flashback (Topologías de redes). Green IT. PUE. Simulador Greencloud.
+
+FLASHBACK - TOPOLOGIAS DE RED:
+- Two-Tier: Servers en racks, interconectados por switches L3 (full mesh). Hasta 5500 nodos.
+  Capas: Access y Core. Links 1/10 Gb/s. Balanceo de carga ICMP.
+- Three-Tier: Más común hoy. Capas: Access, Aggregation, Core. Más de 10,000 servidores. ECMP
+  routing. Links 1/10 Gb/s. Usa switches L2 baratos en access. Three-Tier High-Speed: Con links
+  100 GE (IEEE 802.3ba). Reduce nº switches core y cableado. Aumenta tamaño máximo DC. Más de
+  100,000 hosts. Links 1/10/100 Gb/s.
+
+GREEN IT (COMPUTACION VERDE):
+Estudio y práctica de usar recursos computacionales eficientemente para minimizar impacto
+ambiental. Objetivos: Usar menos materiales peligrosos. Usar recursos eficientemente (energía).
+Promover la reciclabilidad.
+
+¿POR QUE ES IMPORTANTE?
+Casa: PC desktop consume 200-300W -> ~220Kg CO2/año. Data Center: Muchas unidades de
+procesamiento (servers), almacenamiento y comunicación. En 2006, DCs en EE.UU. usaron 61
+mil millones kWh (1.5% del consumo total de EE.UU.).
+
+CIFRAS INTERESANTES:
+Costo energía DCs 2010: $11.5 mil millones. DCs producen 170 millones toneladas métricas
+CO2/año globalmente. Se esperan 670 millones toneladas métricas CO2/año para 2020. 32% de
+todos los servidores funcionan al 3% o menos de utilización (pico y promedio), desperdiciando
+energía.
+
+CONSUMO DE ENERGIA:
+Grandes compañías IT (Microsoft, Google, Amazon, IBM) pioneras en cloud. Gartner estima:
+consumo energía es hasta 10% de OPEX (gastos operativos) actual de un DC. Puede subir al
+50% en próximos años. Alto consumo genera calor -> requiere sistema de cooling -> costo $2 a
+$5 millones/año. Muchos DCs no pueden extenderse por capacidad de poder limitada.
+
+DISTRIBUCION DEL CONSUMO DE ENERGIA EN DC:
+Sistema de cooling 45%. Equipamiento 40%. Distribución de energía 15%. IT Equipment 40%.
+
+PUE (POWER USAGE EFFECTIVENESS):
+Métrica estándar de The Green Grid para eficiencia energética de DCs.
+PUE = Energía Total de la Facilidad / Energía del Equipo IT.
+Muestra la relación entre energía usada por equipo IT y energía usada por otras facilidades
+(cooling, distribución). Ej: PUE de 2.0 -> por cada watt de IT power, se consume 1 watt
+adicional para cooling/distribución. PUE típico enterprise DC: entre 1 y 3.
+
+¿QUE PODEMOS HACER?
+Reducir energía usada por otros factores (ej. cooling). Reducir energía usada por el equipo IT.
+
+SIMULADOR GREENCLOUD:
+Entorno de simulación para estudios de eficiencia energética de DCs de cloud computing.
+Extensión del simulador de red packet-level Ns2. Modelado fino del consumo de energía de
+servers, switches y links. Define un DC cloud como un pool de recursos de computación y
+comunicación que transforma poder recibido en trabajo de computación/transferencia.
+
+ARQUITECTURA DEL SIMULADOR:
+Workload Generator -> Task Scheduler -> Data Center (Core Network -> Aggregation Network ->
+Access Network -> Computing Servers). Modelos de energía para L3, L2, Servers.
+
+COMPONENTES DEL SIMULADOR:
+Servers. Switches and Links. Workloads: CIws (Computationally Intensive), DIws
+(Data-Intensive), BWs (Balanced).
+
+TECNICAS DE AHORRO DE ENERGIA:
+DNS (Dynamic Network Shutdown): Apagar componentes de red inactivos. DVFS (Dynamic
+Voltage and Frequency Scaling): Escalar voltaje y frecuencia dinámicamente.
+
+CONFIGURACION DE SIMULACION:
+DC con 1536 nodos. Política de scheduling "green" que agrupa workloads en el mínimo set de
+servers posibles, permitiendo poner servers idle en sleep. Parámetros para arquitecturas 2T,
+3T, 3Ths (nodos core, aggregation, access, links, etc.). Carga promedio DC: 30%. Tiempo de
+generación de task y tamaño distribuidos exponencialmente. Tiempo simulación: 60 min.
+
+RESULTADOS DE SIMULACION:
+Shutdown dinámico (DNS) es efectivo para servers y switches. DVFS aborda solo 43% consumo
+servers y 3% switches. Combinación DVFS+DNS da mejor resultado (35% consumo total vs.
+sin ahorro). Ahorro de costo de energía significativo (de $441k/año a $157k/año).
+
+DISTRIBUCION DETALLADA DEL CONSUMO:
+En un DC de 503kW-h: Servers 351kW-h (70%). Access switches 75.6kW-h (15%). Aggregation
+switches 51.2kW-h (10%). Core switches 25.6kW-h (5%). Dentro de un server (301W): CPU 43%,
+Memory 12%, Discos 4%, Otros 16%. Switches: Linecards 53%, Chassis 36%, Partes
+transceptores 11%.
+
+LABORATORIO GREENCLOUD:
+La simulación se configura usando archivos en directorio scripts/: main.tcl, setup_params.tcl,
+topology.tcl, dc.tcl, user.tcl, record.tcl, finish.tcl. Se ejecuta con script ./run. Resultados
+en trace files o dashboard. Usar guía de lab en Educa.
+
+ACRONIMOS:
+PUE (Power Usage Effectiveness), OPEX (Operational Expenditure), CIws (Computationally
+Intensive Workloads), DIws (Data-Intensive Workloads), BWs (Balanced Workloads), DNS
+(Dynamic Network Shutdown), DVFS (Dynamic Voltage and Frequency Scaling), GE (Gigabit
+Ethernet), L2/L3 (Layer 2/3).
+
+================================================================================
+================================================================================
+|                         EXPOSICIONES GRUPALES                                |
+================================================================================
+================================================================================
+
+Presentacion-Grupo6.pdf - Resumen rápido
+TEMA: La Segunda Via de DevOps - Telemetría y Feedback Loops
+================================================================================
+
+INTEGRANTES: Andres Roman, Abel Diaz, Marcelo Pauls, Juan Andres Gonzalez, Diego Noguera.
+
+EXPLICACION GENERAL:
+La Segunda Vía de DevOps se enfoca en amplificar los bucles de retroalimentación (feedback
+loops) para crear un flujo rápido y constante de información desde producción hacia desarrollo.
+Esto permite ver y resolver problemas de manera proactiva.
+
+TELEMETRIA: CONCEPTO Y UTILIDAD:
+Proceso de comunicación automatizado para recopilar mediciones y datos en puntos remotos y
+transmitirlos a equipos receptores para monitoreo. Es crucial para obtener visibilidad del
+comportamiento del sistema en tiempo real.
+
+IMPORTANCIA DE LA SEGUNDA VIA (DATOS DORA 2019):
+Elite performers restauran servicios hasta 2604x más rápido que low performers. MTTR (Mean Time
+To Restore) en minutos vs. días/semanas. Gráfico muestra tiempo de resolución de incidentes
+mucho menor para equipos élite.
+
+CASO DE ESTUDIO: TRANSFORMACION DEVOPS EN ETSY (2012):
+Migración tecnológica a LAMP (2009) creó necesidad de estandarización y monitoreo confiable.
+Cultura: "Si se mueve, lo monitorizamos". Métricas crecieron de 200k (2011) a 800k (2014),
+incluyendo técnicas y de negocio. Resultados: Equipos de alto rendimiento resolvían problemas
+168x más rápido (2015) y hasta 2604x más rápido (2019). MTTR en minutos.
+
+CLAVES APRENDIDAS DE ETSY:
+Medir todo siempre. Detectar fallos temprano. Decisiones basadas en datos. La telemetría es la
+base de DevOps.
+
+CREAR INFRAESTRUCTURA DE TELEMETRIA CENTRALIZADA:
+Antes: Herramientas separadas (HP OpenView, IBM Tivoli, BMC) creaban silos de información entre
+Desarrollo y Operaciones, dificultando encontrar fallos. Solución: Arquitectura moderna de 3
+capas: Recopilación (syslog, OpenTelemetry, AppDynamics), Enrutador/Almacenamiento de eventos
+(Prometheus, Honeycomb, Sensu), Visualización/Análisis (Grafana, AlertManager). Beneficios:
+Detección de problemas en tiempo real, visibilidad en todas las capas (app, SO, red, negocio),
+permite alertas y escalamiento.
+
+BUENAS PRACTICAS PARA TELEMETRIA:
+Transformar logs en métricas. Telemetría de todo el ciclo (producción y despliegue). Acceso
+fácil vía APIs (autoservicio). "Los sistemas de monitorización deben ser más escalables que los
+sistemas que monitorizan."
+
+TELEMETRIA DE REGISTRO DE APLICACIONES:
+Las apps deben producir suficiente telemetría. Cada característica debe ser instrumentada.
+Niveles de registro: DEBUG, INFO, WARN, ERROR, FATAL.
+
+USAR TELEMETRIA PARA GUIAR RESOLUCION DE PROBLEMAS:
+Cambio de cultura de culpa a cultura de hechos. Permite usar método científico: formular
+hipótesis, probarlas con datos. Caso Netflix: Ingenieros descubren fallo en JVM usando
+telemetría (hardware counters). Analizaron métricas de rendimiento (Throughput vs CPU, Latency)
+en nodes fast vs slow, identificaron problema de contención en cache line (falsa compartición).
+Solución: Añadir padding en estructura de datos para alinear cache. Resultado: Mejora de
+rendimiento (throughput y latency).
+
+FACILITAR CREACION DE METRICAS EN TRABAJO DIARIO:
+Objetivo: Que cualquier desarrollador pueda instrumentar su código sin fricción. Filosofía de
+Etsy con StatsD: Hacerlo trivial. Ideal: Añadir métrica con una línea de código. Ej: PHP con
+StatsD: `$StatsD->increment("login.successes");`. El poder de la correlación visual: Grafos que
+muestran métricas en contexto de cambios (ej: deploys). OpenTelemetry unifica esto para la
+mayoría de lenguajes.
+
+CREAR ACCESO DE AUTOSERVICIO A TELEMETRIA (RADIADORES DE INFORMACION):
+Definición: Pantallas visibles que muestran información clave de un vistazo. Objetivo: Crear
+visión compartida de la realidad. Promueve transparencia y responsabilidad compartida. Caso
+LinkedIn: Antes, métricas inaccesibles, gráfico requería ticket y 30min de espera. Después con
+InGraphs (herramienta autoservicio), cualquier ingeniero crea dashboards y analiza tendencias
+al instante.
+
+IDENTIFICAR Y SUBSANAR DEFICIENCIAS EN LA TELEMETRIA:
+Un DC debe garantizar recolección de datos en todos los niveles para anticipar y resolver
+incidentes eficientemente. Brechas dificultan la detección temprana y llevan a suposiciones.
+
+METRICAS DE APLICACION Y NEGOCIO:
+No solo salud técnica (memoria, response time, errores), sino también objetivos
+organizacionales: Nº usuarios nuevos, logins, duración de sesiones, % clientes activos,
+conversión en compras, uso de funcionalidades clave. Esto vincula comportamiento técnico con
+resultados de negocio (ingresos, adquisición, satisfacción) y facilita A/B testing.
+
+METRICAS DE INFRAESTRUCTURA:
+Monitorear toda la capa: carga CPU, uso disco, tráfico red, fallos en DBs, disponibilidad de
+servicios críticos. Debe ser visible y contextualizada, integrada con métricas de negocio.
+Herramientas modernas (Consul, Etcd, Istio) permiten mapear dinámicamente servicios y
+dependencias.
+
+SUPERPOSICION DE INFORMACION RELEVANTE:
+Enriquecer métricas con eventos clave: Despliegues en producción (correlacionar incidentes con
+cambios). Mantenimientos/backups (diferenciar efectos esperados de problemas reales). Periodos
+críticos de negocio (cierres financieros, temporadas altas). Esto permite entender impacto,
+evaluar velocidad de recuperación y prevenir riesgos.
+
+CONCLUSION:
+La telemetría integral es un pilar esencial para la gestión eficiente de un DC. Recolectar en
+todos los niveles (negocio, app, infraestructura, pipeline) permite: Detectar/corregir
+problemas temprano. Decisiones basadas en datos (menos tiempos de diagnóstico). Mejorar
+colaboración Dev+Ops. Construir confianza con clientes mediante transparencia. Llenar brechas
+de telemetría optimiza la operación técnica y contribuye a objetivos estratégicos,
+fortaleciendo resiliencia e innovación.
+
+================================================================================
+Presentacion-Grupo5.pdf - Resumen rápido
+TEMA: Arquitectura para Liberaciones de Bajo Riesgo
+================================================================================
+
+INTRODUCCION:
+La arquitectura es clave en DevOps. Muchas empresas casi fracasaron por problemas
+arquitectónicos (Google, Amazon, eBay, LinkedIn, Etsy). La arquitectura de software debe
+evolucionar con el tiempo.
+
+ARQUITECTURA EVOLUTIVA:
+La arquitectura de un producto debe adaptarse y evolucionar a lo largo de su ciclo de vida.
+Cada decisión se toma en función de los objetivos organizacionales del momento. Ejemplos:
+LinkedIn, Google, eBay han reescrito su arquitectura múltiples veces. La evolución es clave
+para seguir el ritmo del crecimiento.
+
+PATRON DE LA HIGUERA ESTRANGULADORA:
+Migrar funcionalidades de un sistema antiguo a uno nuevo usando APIs, sin interrumpir el
+servicio. Estrategia: Poner el sistema antiguo detrás de un API, todas las nuevas
+funcionalidades usan la nueva arquitectura. Beneficios: Evitar riesgo de reescribir todo de una
+vez. Mantener operatividad durante la implementación.
+
+DESAFIO DE MIGRAR ARQUITECTURAS:
+Arquitecturas antiguas se vuelven obsoletas cuando cambian las necesidades. Migrar es complejo
+y arriesgado. Solución: Proyectos Piloto (pruebas pequeñas antes de migración masiva). Evaluar
+beneficios antes de comprometerse con re-arquitectura completa.
+
+ESPIRAL DESCENDENTE DE LA ARQUITECTURA (Ley de Termodinámica Arquitectónica):
+Proyectos TI no suelen reducir la complejidad global. Arquitecturas anticuadas crean ciclo
+vicioso: desarrolladores pierden tiempo en reuniones y correcciones. Consecuencias: Falta de
+Agilidad (cambios pequeños causan fallos masivos). Riesgo de Integración (dependencia de
+sistemas viejos).
+
+IMPACTO POSITIVO DE LA EVOLUCION:
+Arquitectura flexible y escalable permite despliegues rápidos y seguros. Equipos pequeños
+pueden trabajar independientemente. Casos: Amazon y Google mejoraron capacidad de liberación.
+
+VENTAJAS DE LA DESACOPLACION:
+Arquitecturas desacopladas permiten a equipos trabajar de manera independiente, mejorando
+productividad. Cada equipo puede hacer cambios sin interrumpir a otros. Microservicios permiten
+innovar y mejorar componentes sin miedo a romper el sistema completo.
+
+MONOLITOS vs. MICROSERVICIOS:
+Monolitos: Ventajas: Simplicidad inicial, bajo costo y latencia, un punto de despliegue.
+Desventajas: Escalabilidad pobre, difícil escalar por partes, tiempos largos de build/deploy.
+Microservicios: Ventajas: Desacoplamiento, escalabilidad independiente, autonomía de equipos.
+Desventajas: Latencia por red, mayor complejidad en dependencias y herramientas.
+
+CASO DE ESTUDIO: AMAZON:
+Pasó de monolítico a microservicios. Impacto: Mejora de escalabilidad, innovaciones rápidas y
+continuas. Resultado: 136,000 despliegues diarios.
+
+DESACOPLAMIENTO Y AUTONOMIA DE EQUIPOS:
+Beneficios: Equipos trabajan independientemente sin esperar. Fomenta innovación y productividad.
+Impacto: Despliegue más rápido y seguro de nuevos servicios.
+
+CASO DE ESTUDIO: BLACKBOARD LEARN:
+Problema: Código monolítico J2EE con partes en Perl. Complejidad y tiempos de espera
+crecientes. David Ashman observó: "cuanto más grande el producto, más largos los tiempos de
+espera y peores resultados para clientes". Solución (2012): Implementar patrón de la higuera
+estranguladora para modularizar código. Proceso: Desarrolladores trabajaron en bloques pequeños
+(Building Blocks) para desarrollo ágil. Resultado: Código monolítico reemplazado gradualmente,
+mejorando modularidad y autonomía. Gráficos muestran aumento de commits y líneas de código tras
+la transformación.
+
+LECCIONES APRENDIDAS:
+Orientación a servicios ayuda a conseguir aislamiento para arquitectura escalable y manejable.
+Evitar complejidad innecesaria: la migración muestra cómo simplificar funcionalidades.
+Beneficios: Incremento en productividad y menor número de errores en producción.
+
+BENEFICIOS DE ARQUITECTURA ESCALABLE Y MODULAR:
+Escalabilidad: Permite escalar partes individuales sin reescribir todo. Modularidad: Diferentes
+equipos trabajan en módulos específicos sin coordinar todos los cambios. Mayor Flexibilidad:
+Adaptarse a nuevas necesidades sin romper estabilidad.
+
+CONCLUSION:
+Migrar a arquitecturas modulares y desacopladas mejora productividad y capacidad de liberar
+código de forma segura y eficiente. Recomendaciones: Adoptar patrones como la higuera
+estranguladora y migrar a arquitecturas orientadas a servicios para asegurar escalabilidad y
+seguridad a largo plazo.
+
+================================================================================
+Presentacion-Grupo4.pdf - Resumen rápido
+TEMA: Automatizar y Habilitar Liberaciones de Bajo Riesgo (Cap 12 DevOps Handbook)
+================================================================================
+
+INTEGRANTES: Elias Jara, Paul Navarro, Maria José Mendoza, Guillermo Gimenez.
+
+INTRODUCCION - HISTORIA DE CHUCK ROSSI EN FACEBOOK:
+El secreto de las organizaciones de alto rendimiento: 1. Automatizar despliegues (repetibles y
+predecibles). 2. Reducir tamaño de cambios (más seguros). 3. Convertir despliegue en trabajo
+diario de todos, no evento extraordinario. Gráfico: Número de desarrolladores haciendo deploy
+por semana en Facebook creció enormemente (2005-2012). La automatización y disciplina
+convierten el despliegue de riesgoso a rutina diaria confiable.
+
+AUTOMATIZAR NUESTRO PROCESO DE DESPLIEGUE:
+Despliegues manuales y lentos llevan a que se hagan pocas veces y con mucho riesgo. Solución:
+Documentar y luego automatizar cada paso: Empaquetado de código. Creación de imágenes de
+máquinas/contenedores. Configuración automática de servidores/middleware. Copiar archivos a
+producción. Migraciones de BD automatizadas. Ejecución de smoke tests. Caso CSG International:
+Despliegues diarios resultaron en disminución de incidentes en producción y MTTR. Gráfico
+muestra incidentes por release cayendo de 455 (2011) a 45 (2015), con mejora del 90%. Frequent
+deployments permiten identificar problemas antes, motivan a arreglar errores pronto y entregan
+código más limpio más rápido.
+
+HABILITAR DESPLIEGUES DE AUTOSERVICIO AUTOMATIZADOS:
+Meta no es solo automatizar, sino que desarrolladores ejecuten despliegues sin depender de
+Operaciones. Cuando los despliegues son rutinarios, los equipos ganan autonomía y
+productividad.
+
+INTEGRAR EL DESPLIEGUE DE CODIGO AL PIPELINE DE DESPLIEGUE:
+No basta con CI (Integración Continua); el siguiente paso es CD (Continuous Delivery): Cada
+build que pasa los tests puede llegar a producción automáticamente o bajo demanda. Casos: Etsy
+integró su Deployinator al pipeline CI/CD, logrando que cada commit se despliegue de inmediato.
+Facebook transformó el "push diario" en predecible y rutinario, integrando pruebas, canary
+releases y dashboards automáticos.
+
+DESACOPLAR DESPLIEGUES DE LIBERACIONES:
+Desplegar código no significa necesariamente "liberar" la funcionalidad al usuario final.
+Estrategias: Feature toggles (banderas): código desplegado pero apagado hasta decidir
+habilitarlo. Dark launches: código corre en producción pero no visible (ej: Facebook Chat
+probado en vivo antes de lanzar masivamente en 2008).
+
+PATRONES DE LIBERACION BASADOS EN ENTORNOS (ENVIRONMENT-BASED RELEASE PATTERNS):
+Blue-Green Deployment: dos entornos idénticos (azul y verde). Tráfico se conmuta al nuevo solo
+si todo funciona. Revertir es inmediato. Manejo de cambios en BD: Crear dos BD (blue y green).
+Desvincular cambios de BD de cambios de aplicación. Canary Release: liberar primero a un
+subconjunto pequeño de usuarios, observar métricas y luego expandir gradualmente. Cluster
+Immune System.
+
+PATRONES DE APLICACION PARA LIBERACIONES MAS SEGURAS (APPLICATION-BASED PATTERNS):
+Más allá de entornos, se aplican dentro de la misma aplicación: Feature toggles:
+activar/desactivar funcionalidades en tiempo real. A/B Testing: liberar a grupos distintos y
+comparar resultados. Gradual rollouts: liberar progresivamente a un % creciente de usuarios.
+Estos patrones permiten controlar impacto y medir resultados antes de liberar al 100%.
+Objetivos: Reversión fácil, degradación gradual de rendimiento, aumentar resiliencia con
+arquitectura orientada a servicios.
+
+ENCUESTA DE PRACTICAS DE CONTINUOUS DELIVERY Y DEPLOYMENT (HALLAZGOS DORA):
+Equipos de alto rendimiento (elite performers) realizan múltiples despliegues por día y tienen
+tiempos de recuperación más bajos. Gráfico: Elite performers tienen Lead Time for Changes <1
+hora, Time to Restore Service <1 hora, Change Fail Rate 0-15%. Deploy Frequency: on demand
+(múltiples por día). Vínculo fuerte entre CD/CD y satisfacción laboral: menos burnout, más
+motivación.
+
+CONCLUSION:
+Los despliegues de bajo riesgo se logran con: automatización, autoservicio, desacoplamiento y
+patrones de seguridad (blue-green, canary, toggles). Esto convierte despliegues en actividad
+rutinaria y segura, no eventos traumáticos. Las organizaciones que aplican estas prácticas
+entregan más rápido, son más resilientes y felices.
+
+================================================================================
+Presentacion-Grupo3.pdf - Resumen rápido
+TEMA: Habilitando y Practicando la Integración Continua
+================================================================================
+
+INTEGRANTES: Abigail Nuñez, Jonathan Godoy, German Mendieta, Werner Ulbrig, Oscar Takeuchi.
+
+EL PROBLEMA: Trabajar en ramas de código aisladas por mucho tiempo hace que la integración
+final sea un infierno. Es un círculo vicioso: duele, se hace menos, duele más. Resulta en
+retrabajo, conflictos manuales y presión para salir.
+
+CASO HP LASERJET: 400 devs, solo 2 releases/año. Solo el 5% del tiempo en innovar. El resto en
+planear, portar código e integrar manualmente.
+
+LA SOLUCION: Implementaron Integración Continua (CI) y Desarrollo Basado en Trunk (TBD). Todo a
+un único código base. Automatización masiva de pruebas con simuladores.
+
+RESULTADOS HP: Tiempo en innovación subió del 5% al 40%. Costos de desarrollo bajaron 40%.
+Builds por día de 1 a 15. Commits de 20 a +100/día. Regresión de 6 semanas a 1 día.
+
+¿QUE ES CI? Significa integrar código al tronco principal (trunk) al menos una vez al día. Con
+pruebas automatizadas corriendo siempre para feedback inmediato. Lotes de cambio pequeños =
+menos riesgo.
+
+TBD - DESARROLLO BASADO EN TRUNK: La práctica core de CI. Commits diarios al trunk, no a ramas
+largas. Usan "gated commits": el pipeline automático rechaza cambios que rompen el build.
+
+DONE REDEFINIDO: "Terminado" ya no es "funciona en mi máquina". Es: código integrado, probado,
+funcional y potencialmente desplegable desde el trunk con un clic.
+
+CASO BAZAARVOICE: En 2012, releases cada 10 semanas. Intentaron bi-semanal y tuvieron 44
+incidentes. Su solución: Parar 6 semanas. Crearon miles de pruebas automatizadas (JUnit,
+Selenium) y un pipeline en TeamCity. En 3 meses bajaron de 44 a 0 incidentes por release.
+
+POR QUE FUNCIONA CI: Beneficios técnicos: detecta problemas pronto, mejor calidad de código,
+feedback rápido. Beneficios de negocio: menor costo, releases predecibles, menos burnout.
+
+COMO EMPEZAR: Prerrequisitos: Control de versiones (como Git), suite de pruebas automáticas,
+pipeline de deployment automatizado y la cultura de parar todo si se rompe.
+
+METRICAS DE EXITO: Frecuencia de commits por dev, tiempo de feedback (debe ser en mins), tiempo
+para arreglar un build roto, lead time a producción, bugs en prod.
+
+CAMBIO CULTURAL: Lo más importante. De optimizar al individuo (su rama) a optimizar al equipo
+(trunk). De "mi código" a "nuestro código". De testear al final a testear continuo.
+
+CONCLUSION: CI no es solo técnica, es cultural. Los resultados son medibles y dramáticos.
+Requiere inversión inicial pero el ROI es bestial. Es la base para Continuous Delivery y
+DevOps. ACRONIMOS: CI: Integración Continua. TBD: Desarrollo Basado en Trunk. ROI: Retorno de
+la Inversión.
+
+================================================================================
+Presentacion-Grupo2.pdf - Resumen rápido
+TEMA: Permitir Pruebas Automatizadas Rápidas y Fiables
+================================================================================
+ANTECEDENTES: Si las pruebas se hacen solo al final y pocas veces al año, los problemas se
+acumulan y es un desastre. Los devs no ven sus errores a tiempo.
+
+CASO GOOGLE WEB SERVER (GWS): Hacer deploy en google.com era un infierno. Causas: Builds y
+pruebas muy lentas, código sin probar, cambios grandes e infrecuentes. Consecuencias:
+Resultados de búsqueda rotos, pérdida de $$$ y confianza.
+
+SOLUCION GWS: Bharat Mediratta dijo: "Nada de cambios sin pruebas automatizadas". Aplicaron
+Integración Continua, monitoreo de cobertura de pruebas y guías.
+
+RESULTADOS GWS: Se volvieron ultra productivos. Google.com mejoró sus capacidades. El modelo se
+replicó en toda Google. Sin pruebas automáticas, más código = más tiempo y dinero para probar.
+
+OBJETIVO: Crear un conjunto de pruebas automatizadas rápidas y confiables que den feedback
+inmediato.
+
+DEPLOYMENT PIPELINE: Es el flujo automatizado que sigue el código. Jez Humble y David Farley lo
+definen. Etapas: Commit (auto), Acceptance (auto), Exploratory (manual), UAT (manual), Staging
+(manual), Production (manual). Hay aprobaciones automáticas y manuales.
+
+PRACTICAS DE INTEGRACION CONTINUA: Necesitas 3 cosas: 1) Un set de pruebas automáticas
+confiable que valide el estado. 2) Una política que pare TODO si fallan las pruebas. 3) Devs
+trabajando en lotes pequeños, no en ramas grandes.
+
+TIPOS DE PRUEBAS AUTOMATIZADAS: Unitarias: Prueban una clase o función aislada. Aceptación:
+Prueban la app completa, aseguran que las funcionalidades alto nivel funcionen. Integración:
+Aseguran que la app interactúa bien con otros servicios.
+
+CONTROL DE COBERTURA: Los devs bajo presión omiten pruebas. Estrategia: Definir un mínimo (ej:
+80% de clases con pruebas). Si la cobertura está por debajo, el build falla.
+
+PIRAMIDE DE PRUEBAS (Martin Fowler): Ideal: Base ancha de pruebas unitarias rápidas (más
+rápidas, más cantidad). Luego pruebas de integración. Luego pruebas de aceptación/GUI (más
+lentas, menos cantidad). El objetivo es encontrar bugs lo más rápido posible en el nivel más
+bajo. La pirámide invertida (más pruebas GUI que unitarias) es un anti-patrón.
+
+EJECUCION EN PARALELO: Hay que diseñar las pruebas para que corran en paralelo, en distintos
+servidores. Así se aceleran. Se pueden correr diferentes categorías (ej: rendimiento y
+seguridad) en paralelo una vez que pasan la aceptación.
+
+AUTOMATIZACION - TDD: La forma más efectiva es escribir las pruebas ANTES que el código. Esto
+se llama Test-Driven Development (TDD), técnica de Kent Beck (XP). Pasos: 1) Escribir la prueba
+(falla). 2) Escribir el código mínimo para que pase. 3) Refactorizar.
+
+OBJETIVO DE AUTOMATIZAR: Encontrar la mayor cantidad de bugs de forma automática, para reducir
+la dependencia de pruebas manuales. Así los testers y devs se pueden enfocar en pruebas
+exploratorias (que no se pueden automatizar). No hay que automatizar TODO, eso genera falsos
+positivos.
+
+QUE AUTOMATIZAR PRIMERO: Prefiere pocas pruebas confiables a muchas inestables. Enfócate en
+automatizar las pruebas que validen los objetivos de negocio clave. Empezar con un set pequeño
+y confiable e ir agregando con el tiempo.
+
+PRUEBAS DE RENDIMIENTO: Evalúan cómo se comporta el sistema bajo carga (como en producción).
+Problemas comunes: Difíciles de detectar (ej: consultas sin índices) y de resolver (ej:
+problemas de arquitectura). Objetivo: Crear pruebas automáticas de rendimiento para detectar
+pronto. Desafío: Necesitan un entorno complejo que debe diseñarse desde el inicio.
+
+PRUEBAS NO FUNCIONALES: Evalúan atributos de calidad del sistema: Disponibilidad, Capacidad,
+Seguridad, Rendimiento. Prueban todo: la app, la BD, librerías, el SO, compiladores,
+dependencias. Cómo: Con Automatización usando IaC (Infraestructura como Código), frameworks de
+testing y validación continua de la configuración.
+
+ANDON CORD: Es una política que obliga a parar la línea de producción (el pipeline) si algo
+falla. Su objetivo es evitar que el sistema avance con errores, previniendo deuda técnica.
+Implica: Bloquear nuevos commits hasta arreglar el fallo, notificar al equipo, permitir
+rollback, corregir falsos positivos, priorizar la estabilidad del build sobre el trabajo
+individual y crear tests para que no vuelva a pasar.
+
+BUENAS PRACTICAS ANDON CORD: Tener indicadores visibles del estado del build (luces, sonidos,
+alertas). Empoderar al equipo para que actúe rápido y devuelva el build a estado verde (green
+build).
+
+IMPORTANCIA: Si no se activa el Andon Cord, un build roto se llena de más cambios rotos. El
+proceso de deploy se vuelve impredecible y el equipo entra en crisis por semanas o meses para
+arreglar el desastre. ACRONIMOS: QA: Control de Calidad/Aseguramiento de la Calidad. GWS:
+Google Web Server. TDD: Test-Driven Development. UAT: User Acceptance Testing (Pruebas de
+Aceptación del Usuario). GUI: Graphical User Interface. IaC: Infrastructure as Code. SO:
+Sistema Operativo.
+
+================================================================================
+Presentacion-Grupo1.pdf - Resumen rápido
+TEMA: Crear las Bases para Nuestro Pipeline de Despliegue
+================================================================================
+
+INTRODUCCION: ¿Cómo crear un flujo rápido y confiable desde Desarrollo (Dev) hasta Operaciones
+(Ops)?
+
+CASO DE ESTUDIO: Enterprise Data Warehouse (2009). Liderado por Em Campbell-Pretty en una telco
+australiana. Tenían 10 flujos de trabajo en cascada, todos atrasados. Solo 1 completó las UAT a
+tiempo y tardó 6 meses más, con mala capacidad. Este fracaso fue el catalizador para volverse
+ágiles.
+
+PROBLEMA: Los entornos de desarrollo y prueba eran inconsistentes con producción. Solo el 50%
+del código en dev/test coincidía con production. Los problemas de rendimiento se descubrían
+recién en producción, afectando clientes.
+
+PREGUNTA CLAVE: "¿Qué podríamos hacer para DOBLAR nuestra productividad?"
+
+SOLUCION APPLICADA: Automatizaron la creación de entornos. El tiempo para conseguir un entorno
+pasó de 8 semanas a 1 día. Esto fue clave para cumplir plazos, costos y reducir defectos en
+producción.
+
+MORALEJA: Los problemas vienen de entornos inconsistentes y cambios que no se versionan.
+
+OBJETIVO PRINCIPAL: Habilitar la creación bajo demanda de entornos de desarrollo, pruebas y
+producción. Que sean On-Demand, Similares a Producción y de Uso Diario.
+
+SOLUCION TECNICA: Automatización de entornos. Que sean estables, seguros y consistentes. La
+configuración debe expresarse como código (no manual).
+
+OPCIONES TECNICAS: Virtualización (VMware, Vagrant). Infraestructura como Código - IaC (Puppet,
+Chef, Ansible). Instalación automática de SO (Kickstart). Contenedores y Nube (Docker,
+Kubernetes, AWS, Azure, GCP).
+
+BENEFICIOS: Para Ops: Menos trabajo manual, mayor consistencia. Para Devs: Pueden reproducir
+producción, detectar errores temprano y aprender en entornos controlados. Resultado: Entornos
+rápidos, confiables y colaborativos. Menos riesgos en producción.
+
+UN SOLO REPOSITORIO: Todo el código, configuraciones, scripts de BD, definiciones de
+infraestructura y textos DEBEN estar en control de versiones (ej: Git). Beneficios:
+Trazabilidad, Reproducibilidad y Colaboración.
+
+INFRAESTRUCTURA: MAS FACIL DE RECONSTRUIR QUE REPARAR: Antes los servidores eran "mascotas":
+únicos, con nombre, se reparaban a mano. Ahora son "ganado": son idénticos, si uno falla se
+mata y se reemplaza por otro nuevo automáticamente. Beneficios: Consistencia, Velocidad y
+Resiliencia.
+
+CASO EXITO: Una empresa hotelera generó $30 mil millones con contenedores (2020). Dwayne Holmes
+lideró un equipo pequeño (3 devs + 3 infra). Logros Técnicos: Contenedores portables,
+escalables y seguros. Kubernetes en producción desde 2016. Para 2020: miles de builds diarios
+en 5 nubes diferentes. Resultado: Soportaron 3000+ devs, miles de deploys/día, acelerando
+productividad y valor de negocio.
+
+REDEFINIR "TERMINADO": "Terminado" ya NO significa "funciona en mi laptop". Significa: El
+código se ejecuta en un entorno similar a producción, está integrado, probado y listo para
+entregar en cada sprint.
+
+¿POR QUE ES IMPORTANTE? Detecta errores temprano, evita sorpresas al final del proyecto, reduce
+riesgos en despliegues y hace que Dev y Ops trabajen en los mismos entornos.
+
+CONCLUSION: Las bases para un buen pipeline son: 1) Acceso bajo demanda a entornos similares a
+producción. 2) Todo bajo control de versiones (una sola fuente de verdad). 3) Infraestructura
+que sea fácil de reconstruir (ganado, no mascotas). Esto es la base para automatizar pruebas y
+despliegues. ACRONIMOS: Ops: Operaciones. Dev: Desarrollo. UAT: User Acceptance Testing. BD:
+Base de Datos. IaC: Infrastructure as Code. SO: Sistema Operativo. AWS: Amazon Web Services.
+Azure: Microsoft Azure. GCP: Google Cloud Platform.
+================================================================================

@@ -1,0 +1,30 @@
+Tema:
+    Zhou, Z. H. (2012). Ensemble Methods: Foundations and Algorithms. CRC Press.
+    Cap 2, Paginas 35 al 58.
+    Ensambled Boosting.
+
+Link de descarga: https://tjzhifei.github.io/links/EMFA.pdf.
+========================================================================================
+                                Resumen
+========================================================================================
+
+===================================================
+        SECCION: Conceptos previos
+===================================================
+
+BOOSTING
+El termino boosting se refiere a una familia de algoritmos que son capaces de convertir "weak
+learners" en "strong learners".
+
+De manera intuitiva, un weak learner es un algoritmo ligeramente superior a una respuesta
+random, mientras que un strong learner es un algoritmo que puede realizar predicciones casi
+perfectas.
+
+El termino surge debido a la pregunta "Son los weak learners del mismo dominio a los strong
+learners ?" ya que si la respuesta es "si" entonces significa de que cualquier weak learner
+puede ser boosteado. Esto es importante dado que siempre es mas facil crear WL, en cambio es
+mucho mas complejo crear SL.
+
+===================================================
+        SECCION: Tipos de Boosting
+===================================================

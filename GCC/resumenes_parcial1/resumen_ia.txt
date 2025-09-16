@@ -70,13 +70,13 @@ DISPOSICION/AREAS DE UN DC (Según estándares TIA942, ISO/IEC 24764):
   seguridad y redundancia. También llamado Core Layer o Main Cross Connect (MC).
   - AL (Aggregation Layer): es parte de la Core Layer, distribuye datos empaquetados desde la
     capa de acceso hacia el core mediante switches de distribución. 
-- IDA (Intermediate Distribution Area): Usado en DC grandes para estructurar MDA y HDA. Puede
-  haber interrupciones.
 - HDA (Horizontal Distribution Area): Capa de acceso (Access Layer). Conecta el backbone con el
   cableado horizontal. También llamado Horizontal Cross Connect (HC).
+- IDA (Intermediate Distribution Area): Usado en DC grandes para estructurar MDA y HDA. Puede
+  haber interrupciones.
+- EDA (Equipment Distribution Area): Alberga el equipamiento (servidores, hardware en racks).
 - ZDA (Zone Distribution Area): Para distribución intermedia fuera del EDA (ej. en falso piso).
   Punto de consolidación (CP o Consolidation Point).
-- EDA (Equipment Distribution Area): Alberga el equipamiento (servidores, hardware en racks).
 - Telecom Room: Conexión a la red interna.
 - Otras áreas: Operation Center, Support Room, Offices para el personal.
 
@@ -365,9 +365,12 @@ CONCEPTOS CLAVE DE CLUSTERS HA:
   lógico LVM.
 
 TECNOLOGIAS DE STORAGE - TIPOS DE DATOS:
-Datos de sistema vs. de usuario. Estáticos vs. Dinámicos. Actuales vs. Archivados.
-Fáciles-de-reemplazar vs. Difíciles-de-reemplazar. Accedidos a menudo vs. Raramente.
-Específicos del sistema vs. Comunes.
+- Datos de sistema vs. de usuario. 
+- Estáticos vs. Dinámicos. 
+- Actuales vs. Archivados.
+- Fáciles-de-reemplazar vs. Difíciles-de-reemplazar. 
+- Accedidos a menudo vs. Raramente.
+- Específicos del sistema vs. Comunes.
 
 TECNOLOGIAS DE ALMACENAMIENTO (MEDIOS):
 Papel. Almacenamiento Flash: USB sticks, flash cards, SSDs. Cinta Magnética: 9-track, DDS, DLT,
@@ -375,18 +378,20 @@ LTO. Platos Magnéticos Giratorios: Hard Disks (varios interconnects). Almacenam
 CD, DVD, Blu-Ray.
 
 CONEXION DE ALMACENAMIENTO - TIPOS:
-DAS (Direct Attached Storage): Interno (controlador y discos dentro del server). DAS con
-controlador interno y almacenamiento externo. DAS con controlador externo y almacenamiento
-externo. DAS over Fibre Channel: HBA interno, protocolo FC entre HBAs y RAID externo. NAS
-(Network Attached Storage): Utiliza red TCP/IP para "compartir" datos. Usa protocolos de file
-sharing como NFS (Unix) y CIFS (Windows). "Appliances" con OS optimizado. iSCSI: Forma
-alternativa de almacenamiento en red. Encapsula comandos SCSI nativos en paquetes TCP/IP.
-Soportado en Windows y Linux. TOE (TCP/IP Offload Engines) en NICs aceleran el proceso. Fibre
-Channel (FC): Protocolo de red específico para redes de almacenamiento dedicadas. Utiliza
-switches, HBAs, controladores RAID y cables especializados. SAN (Storage Area Network): Red
-cuyo propósito principal es la transferencia de datos entre sistemas de almacenamiento y
-sistemas informáticos. FC es la tecnología primaria. También se implementan con redes iSCSI
-dedicadas.
+- DAS (Direct Attached Storage): Interno (controlador y discos dentro del server). DAS con
+  controlador interno y almacenamiento externo. DAS con controlador externo y almacenamiento
+  externo. 
+- DAS over Fibre Channel: HBA interno, protocolo FC entre HBAs y RAID externo. 
+- NAS (Network Attached Storage): Utiliza red TCP/IP para "compartir" datos. Usa protocolos de
+  file sharing como NFS (Unix) y CIFS (Windows). "Appliances" con OS optimizado. 
+- iSCSI: Forma alternativa de almacenamiento en red. Encapsula comandos SCSI nativos en
+  paquetes TCP/IP. Soportado en Windows y Linux. TOE (TCP/IP Offload Engines) en NICs aceleran
+  el proceso. 
+- Fibre Channel (FC): Protocolo de red específico para redes de almacenamiento dedicadas.
+  Utiliza switches, HBAs, controladores RAID y cables especializados. 
+- SAN (Storage Area Network): Red cuyo propósito principal es la transferencia de datos entre
+  sistemas de almacenamiento y sistemas informáticos. FC es la tecnología primaria. También se
+  implementan con redes iSCSI dedicadas.
 
 COMPARATIVAS (FC vs iSCSI vs otros):
 FC: Líder de mercado para storage compartido. Mayor rendimiento. Diseñado para apps
@@ -402,13 +407,15 @@ en cinta. Backup sin LAN (LAN-less). Soluciones de clustering de alta velocidad 
 single-point-of-failure. Consolidación con >70TB de almacenamiento.
 
 PROCESO DE DISENO Y PROYECTO DE UN DC:
+Proceso de disenho:
 - Fases: Planificación, Diseño, Construcción, Entrega, Post-Construcción (Entrega al cliente).
 - Impacto en el diseño: Mayores niveles de seguridad y resiliencia/redundancia. Mayor
-responsabilidad ante autoridades. Requisitos de auditoría más exigentes. Necesidad de operación
-más eficiente. 
-- Toma de decisiones: Involucrar a todas las partes interesadas (Clase "C": CEO,
-CFO, CIO, COO, CTO; accionistas, clientes, personal, proveedores). 
+  responsabilidad ante autoridades. Requisitos de auditoría más exigentes. Necesidad de
+  operación más eficiente. 
+- Toma de decisiones: Involucrar a todas las partes interesadas (Clase "C": CEO, CFO, CIO, COO,
+  CTO; accionistas, clientes, personal, proveedores). 
 
+Fases del proyecto de un DC
 - Fase de Planificación: Designar consultores, documentos de objetivos, plan de inversión,
   cronogramas, interacción con cliente, financiación, autorizaciones. 
 - Fase de Diseño: Designar contratista principal, definir equipo, sistemas a implementar,
@@ -491,8 +498,8 @@ Servers. Switches and Links. Workloads: CIws (Computationally Intensive), DIws
 (Data-Intensive), BWs (Balanced).
 
 TECNICAS DE AHORRO DE ENERGIA:
-DNS (Dynamic Network Shutdown): Apagar componentes de red inactivos. DVFS (Dynamic
-Voltage and Frequency Scaling): Escalar voltaje y frecuencia dinámicamente.
+- DNS (Dynamic Network Shutdown): Apagar componentes de red inactivos. 
+- DVFS (Dynamic Voltage and Frequency Scaling): Escalar voltaje y frecuencia dinámicamente.
 
 CONFIGURACION DE SIMULACION:
 DC con 1536 nodos. Política de scheduling "green" que agrupa workloads en el mínimo set de
@@ -528,6 +535,7 @@ Ethernet), L2/L3 (Layer 2/3).
 ================================================================================
 ================================================================================
 
+================================================================================
 Presentacion-Grupo6.pdf - Resumen rápido
 TEMA: La Segunda Via de DevOps - Telemetría y Feedback Loops
 ================================================================================
@@ -560,12 +568,12 @@ Medir todo siempre. Detectar fallos temprano. Decisiones basadas en datos. La te
 base de DevOps.
 
 CREAR INFRAESTRUCTURA DE TELEMETRIA CENTRALIZADA:
-Antes: Herramientas separadas (HP OpenView, IBM Tivoli, BMC) creaban silos de información entre
-Desarrollo y Operaciones, dificultando encontrar fallos. Solución: Arquitectura moderna de 3
-capas: Recopilación (syslog, OpenTelemetry, AppDynamics), Enrutador/Almacenamiento de eventos
-(Prometheus, Honeycomb, Sensu), Visualización/Análisis (Grafana, AlertManager). Beneficios:
-Detección de problemas en tiempo real, visibilidad en todas las capas (app, SO, red, negocio),
-permite alertas y escalamiento.
+- Antes: Herramientas separadas (HP OpenView, IBM Tivoli, BMC) creaban silos de información
+  entre Desarrollo y Operaciones, dificultando encontrar fallos. 
+- Solución: Arquitectura moderna de 3 capas: Recopilación (syslog, OpenTelemetry, AppDynamics),
+  Enrutador/Almacenamiento de eventos (Prometheus, Honeycomb, Sensu), Visualización/Análisis
+  (Grafana, AlertManager). Beneficios: Detección de problemas en tiempo real, visibilidad en
+  todas las capas (app, SO, red, negocio), permite alertas y escalamiento.
 
 BUENAS PRACTICAS PARA TELEMETRIA:
 Transformar logs en métricas. Telemetría de todo el ciclo (producción y despliegue). Acceso
@@ -978,7 +986,9 @@ riesgos en despliegues y hace que Dev y Ops trabajen en los mismos entornos.
 CONCLUSION: Las bases para un buen pipeline son: 1) Acceso bajo demanda a entornos similares a
 producción. 2) Todo bajo control de versiones (una sola fuente de verdad). 3) Infraestructura
 que sea fácil de reconstruir (ganado, no mascotas). Esto es la base para automatizar pruebas y
-despliegues. ACRONIMOS: Ops: Operaciones. Dev: Desarrollo. UAT: User Acceptance Testing. BD:
+despliegues. 
+
+ACRONIMOS: Ops: Operaciones. Dev: Desarrollo. UAT: User Acceptance Testing. BD:
 Base de Datos. IaC: Infrastructure as Code. SO: Sistema Operativo. AWS: Amazon Web Services.
 Azure: Microsoft Azure. GCP: Google Cloud Platform.
 ================================================================================

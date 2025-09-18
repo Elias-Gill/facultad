@@ -70,6 +70,11 @@ un algoritmo de boosting para clasificacion binaria.
 
 UNa de las versiones del algoritmo de ADABOOST es el propuesto por Friedman y colaboradores en
 el año 2000. Esta version trata de minimizar la funcion de PERDIDA EXPONENCIAL:
+
+ACA VA UNA IMAGEN DE LA FORMULA DE PERDIDA EXPONENCIAL.
+
+El algoritmo de ADABOOST queda descrito en la siguiente imagen, donde:
+ACA VA LA IMAGEN DEL ALGORITMO
 - Lexp = funcion de perdida exponencial
 - h = el learner o clasificador
 - D = el espacio muestral o datos de entrenamiento
@@ -99,17 +104,20 @@ La forma de determimnar el peso es resolviendo al ecuacion de perdida exponencia
 que se minimize. Si resolvemos mediante algebra y calculamos las probabilidades, entonces
 derivamos de que la expresion que calcula el peso que minimiza dicha perdida es:
 alpha = 1/2 ln ((1-et) / et).
+PONER IMAGEN DE CALCULOS PREVIOS
 
 Traducción de la demostracion larguisima: “El mejor clasificador débil no es el que minimiza
 cualquier parametro, sino el que minimiza el error de clasificación bajo los nuevos pesos Dt.
 Eso significa de que AdaBoost no es “heurístico”.
 
 Esto tambien nos ayuda a calcular la funcion de ajuste de la nueva distribucion muestral:
+PONER IMAGEN DE DEMOSTRACION MATEMATICA y formula final
 - Cada elemento de la nueva distribucion Dt+1 = el mismo elemento en Dt multiplicado por la
   perdida exponencial, dividido por el promedio de la perdida exponencial de cada elemento de
   la distribucion Dt.
 
 Figura comparativa para un boosting para resolver XOR:
+PONER IMAGEN PARA EL EJEMPLO CON XOR
 - No se puede hacer un solo clasificador lineal que parta completamente el espacio. Entonces lo
   que se hace es combinar 3 clasificadores debiles en 3 rondas de boosting, logrando asi
   obtener un clasificador fuerte. En total, el algoritmo cuenta con 8 clasificadores debiles
@@ -120,6 +128,7 @@ Figura comparativa para un boosting para resolver XOR:
   en arboles de decision, u otros clasificadores no lineales mas complejos.
 
 Figura comparativa de clasificacion de datos de 3 datasets gaussianos:
+PONER IMAGEN PARA EL EJEMPLO DE CLASIFICADOR CON ARBOLES DE DECISION
 - Figura A, un clasificador lineal basado en 10 clasificadores debiles de arboles de decision
 
 DISCREPANCIAS con la TEORIA
@@ -182,16 +191,18 @@ sencilla, pero tiene la desventaja de ser muy sensible a valores atipicos.
 
 El algoritmo LogitBoost surge como alternativa, proponiendo utilizar en vez de la pérdida
 exponencial la pérdida logística o log-loss, definida como:
-
     Llog(H) = Ex~D[ ln( 1 + e^(-2 f(x) H(x)) ) ]
+IMAGEN DE PERDIDA LOGISTICA
 
 Esta función de pérdida proviene del modelo de regresión logística, y
 corresponde al "negative log-likelihood" de una distribución Bernoulli. 
 
 La probabilidad estimada de que la etiqueta verdadera sea +1 se define como:
     P(f(x) = 1 | x) = e^(H(x)) / ( e^(H(x)) + e^(-H(x)) )
+IMAGEN DE FORMULA
 
 De este modo, LogitBoost puede interpretarse como un método de REGRESION LOGISTICA ADITIVA.
+Este algoritmo tiene la particularidad de ser más estable y más robusto al ruido.
 
 PROCESO DEL ALGORITMO
 1. Inicialización:
@@ -206,6 +217,20 @@ PROCESO DEL ALGORITMO
    - d. Entrenar un learner base ht(x) con mínimos cuadrados ponderados usando { yt(x), Dt(x) }
    - e. Actualizar el clasificador combinado: Ht(x) = H_{t-1}(x) + (1/2) * ht(x)
 3. Clasificador final: H(x) = sign( Σ_{t=1 to T} ht(x) )
+PONER IMAGEN DEL ALGORITMO
+
+El pseudo-target es como decirle al nuevo aprendiz:
+“Mira, la etiqueta real es esta, pero yo ya tengo una predicción previa. Corrige la diferencia,
+ajusta donde estoy fallando”.
+
+El paso previo a hacer esto es con la funcion sigmoide, que calcula cuan seguro esta el modelo
+sobre una prediccion. Luego para calcular los pseudo targets, se compara esta probabilidad dada
+con la clasificacion real correcta. Entonces esto lo que hace es crear un nuevo "espacio
+muuestral" intermedio el cual normaliza y obliga al nuevo learner a mejorar la seguridad de las
+predicciones.
+
+A diferencia de adaboost, el ESPACIO MUESTRAL SE MANTIENE INALTERADO. Se recalcula el
+pseudo-target con cada iteracion.
 
 DIFERENCIAS CON ADABOOST
 - AdaBoost optimiza la pérdida exponencial.

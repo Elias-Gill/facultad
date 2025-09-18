@@ -4,12 +4,22 @@ Tema:
     Ensambled Boosting.
 
 Link de descarga: https://tjzhifei.github.io/links/EMFA.pdf.
+
 ========================================================================================
-                                Resumen
+                            NOTAS
 ========================================================================================
 
 ===================================================
-        SECCION: Conceptos previos
+SECCION: Aclaracion de mierdas inentendibles
+===================================================
+
+EL SIMBOLO "~" se lee como "distribuido según" o "extraído de". Es notación estándar en
+probabilidad.
+- Ex~D[e^{-f(x)h(x)}] significa: "Calcular el promedio de e^{-f(x)h(x)} para todos los x que
+  pueden aparecer según la distribución D"
+
+===================================================
+SECCION: Conceptos previos
 ===================================================
 
 BOOSTING
@@ -25,6 +35,125 @@ learners ?" ya que si la respuesta es "si" entonces significa de que cualquier w
 puede ser boosteado. Esto es importante dado que siempre es mas facil crear WL, en cambio es
 mucho mas complejo crear SL.
 
-===================================================
-        SECCION: Tipos de Boosting
-===================================================
+==================================================================
+SECCION: DIFERENCIAS Y SIMILITUDES ENTRE ALGORITMOS DE BOOSTING
+==================================================================
+
+Boosting es una familia de algoritmos que convierten aprendices débiles en fuertes mediante
+combinación iterativa. Todos comparten la idea central de entrenar secuencialmente, donde cada
+nuevo aprendiz se enfoca en los errores de los anteriores.
+
+--- ADABOOST (Adaptive Boosting) ---
+- El más famoso y pionero
+- Utiliza función de pérdida EXPONENCIAL: e^{-f(x)h(x)}
+- Actualiza pesos: aumenta peso de instancias mal clasificadas exponencialmente
+    - Asigna pesos a los aprendices: α_t = ½ ln((1-ε_t)/ε_t)
+- Muy efectivo pero sensible a ruido (los outliers reciben pesos demasiado altos)
+    - Funciona bien con datos limpios
+
+--- LOGITBOOST (Logistic boosting, perdida logaritmica) ---
+- Usa pérdida LOGÍSTICA en lugar de exponencial: ln(1 + e^{-2f(x)h(x)})
+- Modela probabilidades en lugar de solo clasificación
+- Más robusto estadísticamente
+- Menos sensible a outliers que AdaBoost
+- Actualiza pesos de forma más suave
+
+--- LPBOOST (Linear Programming Boosting) ---
+- Enfoque de OPTIMIZACIÓN mediante programación lineal
+- Formula el problema como minimización con restricciones
+- Encuentra la combinación óptima de pesos para los aprendices
+- Usa generación de columnas para manejar muchos aprendices débiles
+- Más costoso computacionalmente pero teóricamente óptimo
+NOTA: programacion lineal es lo que se da en "Investigacion de operaciones I". La solucion se
+hace con metodos numericos y aproximacion.
+
+--- MADABOOST ---
+- Modificación de AdaBoost para ser resistente al RUIDO
+- Limita el crecimiento máximo de los pesos: min(1, producto de pesos)
+- Evita que outliers dominen el proceso de entrenamiento
+- Más conservador en la actualización de pesos
+
+--- BROWNBOOST ---
+- Basado en movimiento BROWNIANO
+- Modela el boosting como proceso estocástico
+- "Se rinde" con instancias demasiado difíciles (posiblemente ruido)
+- Tolerante al ruido por diseño
+- Usa función error (erf) en la pérdida
+
+--- ROBUSTBOOST ---
+- Mejora de BrownBoost
+- Busca maximizar el MARGEN de clasificación
+- Usa proceso Ornstein-Uhlenbeck en lugar de movimiento browniano
+- Empuja márgenes hacia un valor objetivo θ
+- Más agresivo en mejorar la calidad de las predicciones
+
+--- ADABOOST.M1 (Multiclase) ---
+- Extensión directa de AdaBoost para múltiples clases
+- Requiere que aprendices base tengan error < 50% en multiclase (fuerte requisito)
+- Misma filosofía que AdaBoost pero con clasificadores multiclase
+
+--- SAMME (Multiclase) ---
+- Mejora de AdaBoost.M1
+- Ajuste en el cálculo de pesos: α_t = ½ ln((1-ε_t)/ε_t) + ln(|Y|-1)
+- Relaja el requisito de error de los aprendices base
+- Derivado de minimización de pérdida exponencial multiclase
+
+--- ADABOOST.MH (Multiclase) ---
+- Estrategia UNO-vs-REST
+- Entrena un clasificador binario por clase
+- Combina las salidas reales (no solo clasificaciones)
+- Selecciona la clase con valor de confianza más alto
+
+--- ADABOOST.M2 (Multiclase) ---
+- Estrategia UNO-vs-UNO
+- Minimiza una pseudo-pérdida
+- Considera pares de clases en lugar de clases individuales
+- Más complejo pero potencialmente más preciso
+
+--- FILTERBOOST ---
+- Usa pérdida logarítmica como LogitBoost
+- Actualización de pesos suave y acotada
+- Diseñado específicamente para tolerancia al ruido
+- Los pesos nunca exceden 1
+
+--- GENTLEBOOST ---
+- Variante suave de AdaBoost
+- Usa regresión por mínimos cuadrados en cada iteración
+- Más estable numéricamente
+- Menos agresivo en la actualización de pesos
+
+--- L2BOOST ---
+- Usa pérdida L2 (cuadrática) en lugar de exponencial
+- Minimiza el error cuadrático medio
+- Mejor para problemas de regresión
+- Más sensible a outliers que pérdidas logarítmicas
+
+SIMILITUDES GENERALES:
+- Todos entrenan aprendices secuencialmente
+- Todos combinan múltiples aprendices débiles
+- Todos ajustan pesos de instancias basados en error
+- Todos buscan mejorar iterativamente el performance
+- Todos pueden sufrir sobreajuste si los aprendices base son muy complejos
+
+DIFERENCIAS CLAVE:
+1. Función de pérdida: exponencial (AdaBoost), logística (LogitBoost), L2 (L2Boost)
+2. Estrategia multiclase: directa (M1), ajustada (SAMME), uno-vs-rest (MH), uno-vs-uno (M2)
+3. Tolerancia al ruido: sensible (AdaBoost), resistente (MadaBoost, BrownBoost, RobustBoost)
+4. Enfoque matemático: adaptativo (AdaBoost), optimización (LPBoost), estocástico (BrownBoost)
+5. Complejidad computacional: baja (AdaBoost), media (LogitBoost), alta (LPBoost)
+
+EVOLUCIÓN:
+AdaBoost (1995) → LogitBoost (2000) → LPBoost (2002) → Variantes robustas (2000s) → Extensiones
+multiclase (2000s)
+
+RECOMENDACIONES:
+- Datos limpios: AdaBoost o LogitBoost
+- Datos ruidosos: MadaBoost o BrownBoost
+- Multiclase: SAMME o AdaBoost.MH
+- Precisión máxima: LPBoost (con costo computacional)
+- Estabilidad numérica: GentleBoost o LogitBoost
+
+Todos los algoritmos de boosting comparten la filosofía de que "la unión hace la fuerza", pero
+difieren en cómo miden el error, cómo actualizan los pesos y cómo combinan los aprendices. La
+elección depende del problema específico, la presencia de ruido y los recursos computacionales
+disponibles.

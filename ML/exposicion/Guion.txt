@@ -1,0 +1,436 @@
+==============================================
+INTRODUCCION: el concepto de boosting
+==============================================
+
+El boosting se refiere a una familia de algoritmos que son capaces de convertir "aprendedores
+debiles" (apenas mejores que adivinar aleatoriamente) en "aprendedores fuertes" (predicciones
+casi perfectas).
+
+El boosting surge como respuesta a la siguiente pregunta teorica propuesta por Kearns y Valian
+en 1989: "Acaso dos clases de complejidad de problemas, los fuertemente aprendibles (faciles de
+aprender) y los debilmente aprendibles (dificiles de aprender), son iguales ?". Schapire
+comprobo en 1990 que la respuesta era "Si", y su demostracion fue una construcccion, es decir,
+el boosting.
+
+El proceso y mecanismo del boosting es bastante sencillo. Para ello se siguen los siguientes
+pasos de forma iterativa:
+
+Configuración inicial: Partimos de un espacio de instancias X y una distribución de datos
+inicial D₁ (que usualmente es uniforme sobre el conjunto de entrenamiento). La función objetivo
+es f.
+
+Iteración para t = 1, 2, ..., T:
+- a. Entrenar un aprendiz débil: Se entrena un clasificador débil h_t usando la distribución de
+  datos actual D_t.
+- b. Calcular el error: Se calcula el error ε_t del clasificador h_t bajo la distribución D_t.
+- c. Calcular el peso del clasificador: Se asigna un peso α_t al clasificador h_t based on su
+  error. La regla general es que un clasificador con menor error recibe mayor peso en la
+  votación final. (NO CONTEMPLADO en la demostracion, pero COMUN en TODOS los ALGORITMOS de
+  BOOSTING)
+- d. Actualizar la distribución: Se deriva una nueva distribución D_{t+1} from D_t para la
+  siguiente iteración. 
+  La clave de la actualización es:
+    * Aumentar el peso de las instancias mal clasificadas por h_t.
+    * Disminuir el peso de las instancias correctamente clasificadas por h_t.  Esto fuerza al
+      próximo aprendiz débil h_{t+1} a concentrarse en los ejemplos que resultaron más
+      difíciles para los clasificadores anteriores.
+
+Clasificador final combinado: Después de T iteraciones, los clasificadores débiles se combinan
+en un clasificador fuerte H(x) mediante una votación ponderada por sus confianzas α_t: H(x) =
+sign( Σ_{t=1 to T} α_t * h_t(x) )
+
+Ideemos un ejemplo: si contamos con un espacio muestra D, el cual contara con 3 datos de
+entrenamiento; una funcion de etiqueta real F(X), donde X son las muestras del espacio
+muestral D; y definimos que queremos hacer una clasificacion binaria sobre los datos del
+espacio muestral. Si tomamos un weak learner el cual es apenas mejor que adivinar
+aleatoriamente la clasificacion correcta, y suponemos de que este tendra un 50% de
+probabilidades de acertar el resultado correcto.
+
+Luego de realizar el entrenamiento del learner anterior, si calculamos su tasa de error,
+podemos entonces recalcular un nuevo espacio muestral, dandole mas peso a las muestras que este
+learner respondio mal, para luego con este nuevo espacio muestral poder volver a entrenar un
+nuevo learner. Este nuevo espacio muestral "obliga" al nuevo learner a concentrarse mas en los
+errores del primer learner. Si repetimos el proceso una vez mas, podemos generar un tercer
+learner que corrija los errores del segundo learner.
+
+Luego, con esta serie de learner, podemos luego combinar los resultados de sus predicciones y
+habremos convertido nuestra serie de weak learners en un strong learner, ya que en nuestro
+sistema siempre al menos dos de los learners elegiran la respuesta correcta de la
+clasificacion.
+
+==============================================
+ADABOOST. ALGORITMO
+==============================================
+La demostracion original de Schapire no es un algoritmo, puesto que no contemplaba ciertas
+cuestiones como: "Como combinar los outputs?" o "Como reajustar la distribucion?". Era
+simplemente un marco para el diseno de posteriores algoritmos.
+
+El algoritmo mas influyente en el ambito de boosting es sin duda alguna el ADABOOST, el cual es
+un algoritmo de boosting para clasificacion binaria.
+
+UNa de las versiones del algoritmo de ADABOOST es el propuesto por Friedman y colaboradores en
+el año 2000. Esta version trata de minimizar la funcion de PERDIDA EXPONENCIAL:
+- Lexp = funcion de perdida exponencial
+- h = el learner o clasificador
+- D = el espacio muestral o datos de entrenamiento
+- EL SIMBOLO "~" se lee como "distribuido según" o "extraído de". Es notación estándar en
+  probabilidad.
+- Ex~D[e^{-f(x)h(x)}] significa: "Calcular el promedio de e^{-f(x)h(x)} para todos los x que
+  pueden aparecer según la distribución D"
+- f(x) = funcion de etiqueta real (el resultado real que debe tener la prediccion).
+- h(x) = el resultado de la clasificacion del learner
+- exp(alpha) = e^alpha, es la funcion exponencial
+- el "if error > 0.5 then break" es un mecanismo de seguridad para evitar utilizar un
+  clasificador demasiado malo. Esto significa que el clasificador es literalmente peor que el
+  azar. 
+  * Que sea < 0.5 sigifica de que es ligeramente mejor que lanzar una moneda e,  = 0.5
+    siginifica de que es igual que lanzar una moneda al aire.
+  * La fórmula para actualizar la distribución de pesos D_t se vuelve inestable matemáticamente
+    cuando ε_t se acerca a 0.5 o lo supera. El factor de normalización Z_t puede dejar de poder
+    corregir los valores de la distribución.
+
+El signo de la suma final de las preducciones de los learners con su respectivo peso nos da el
+resultado final de la clasificacion.
+
+Para el algoritmo de ADABOOST se utiliza la perdida exponencial porque es una solucion simple y
+elegante que permite dividir el espacio minimizando el error de clasificacion.
+
+La forma de determimnar el peso es resolviendo al ecuacion de perdida exponencial de modo de
+que se minimize. Si resolvemos mediante algebra y calculamos las probabilidades, entonces
+derivamos de que la expresion que calcula el peso que minimiza dicha perdida es:
+alpha = 1/2 ln ((1-et) / et).
+
+Traducción de la demostracion larguisima: “El mejor clasificador débil no es el que minimiza
+cualquier parametro, sino el que minimiza el error de clasificación bajo los nuevos pesos Dt.
+Eso significa de que AdaBoost no es “heurístico”.
+
+Esto tambien nos ayuda a calcular la funcion de ajuste de la nueva distribucion muestral:
+- Cada elemento de la nueva distribucion Dt+1 = el mismo elemento en Dt multiplicado por la
+  perdida exponencial, dividido por el promedio de la perdida exponencial de cada elemento de
+  la distribucion Dt.
+
+Figura comparativa para un boosting para resolver XOR:
+- No se puede hacer un solo clasificador lineal que parta completamente el espacio. Entonces lo
+  que se hace es combinar 3 clasificadores debiles en 3 rondas de boosting, logrando asi
+  obtener un clasificador fuerte. En total, el algoritmo cuenta con 8 clasificadores debiles
+  de donde elegir, donde dichos clasificadores son funciones tontas de umbral. En cada ronda el
+  algoritmo elige el clasificador que minimiza la perdida exponencial.
+- Este es un ejemplo tonto, pero segun el tipo de datos y el espacio muestral el metodo de
+  boosting puede ser mas eficiente, por ejemplo, que calcular otro tipo de clasificador basado
+  en arboles de decision, u otros clasificadores no lineales mas complejos.
+
+Figura comparativa de clasificacion de datos de 3 datasets gaussianos:
+- Figura A, un clasificador lineal basado en 10 clasificadores debiles de arboles de decision
+
+DISCREPANCIAS con la TEORIA
+Freund and Schapire demostraron en 1997 que el error combinado de los learners, esta acotado
+superiormente, es decir, que se garantiza que nunca sera mayor a cierto valor, por la siguiente
+formula: 
+    PONER IMGEN DE FORMULA
+
+Donde Yt es llamado el "edge".
+- El edge mide qué tan mejor es un clasificador débil que un clasificador aleatorio.
+    * γt = 0.5 − ϵt
+    * y > 0, mejor que el azar
+    * y = 0, igual que el azar
+
+Ademas, dada la naturaleza del ADABOOST de disminuir las cotas de error de manera exponencial,
+demostraron de que la cantidad de rondas de boosting necesarias para que la cota de error
+tienda a 0 esta acotada por la siguiente formula:
+    PONER IMGEN DE FORMULA
+Donde se asume que el edge de los learners siempre tiende a disminuir con cada nueva iteracion.
+
+Por tanto, al definir estos dos margenes, Freund y Schapire demostraron que el error de
+generalizacion (es decir, la cota de error para datos nuevos) esta acotada superiormente por:
+    PONER IMGEN DE FORMULA
+Es decir, que dicha cota de error depende tanto de la complejidad de los learners como de la
+cantidad de rondas de entrenamiento que se realizan.
+
+Esto implica de que ADABOOST deberia de sobreajustar (aprenderse de memoria los casos de
+entrenamiento), haciendo que el error de generalizacion empeore a partir de cierta cantidad de
+rondas de entrenamiento, y aun mas si es que los learners debiles contienen cierta complejidad.
+
+Sin embargo, en la practica esto no parece ser asi, dado que ADABOOST rara vez parece llegar a
+sobreajustar. Los resultados empiricos muestran de que ADABOOST sigue disminuyendo el error de
+generalizacion, por mas de que el error de entrenamiento ya llego a 0. Este fenomeno parece
+contradecir a los modelos teoricos.
+
+La teoría de Schapire et al. (1998) mostró que:
+    FORMULA DE MARGENES LOCA
+
+Donde los margenes se calculan como:
+    FORMULA DE MARGENES menos loca
+El margen es una medida de "que tan seguro" esta un clasificador de su respuesta. Los valores
+van de -1 a +1, cuanto mayor sear el margen, mas seguro se encuentra el clasificador.
+
+Lo que ocurre con ADABOOST es que por mas de que la cota de error de entrenamiento ya llego a
+0, el algoritmo sigue aumentando los margenes de los ejemplos, es decir, aunque ya clasifica
+bien el 100% de ejemplos, el clasificador cada vez esta mas seguro de sus decisiones.
+
+==============================================
+LOGITBOOST. ALGORITMO
+==============================================
+Pese a que ADABOOST parece una solucion elegante, para los estadisticos no lo es. Para ello se
+ideo el algoritmo de boosting llamado LOGITBOOST.
+
+AdaBoost utiliza como función de pérdida la llamada "pérdida exponencial": 
+Lexp(H) = Ex~D[ e^(-f(x)H(x)) ]
+
+Esta pérdida es una cota superior diferenciable de la pérdida 0/1 que mide errores de
+clasificación. La elección de esta pérdida es conveniente porque permite una optimización más
+sencilla, pero tiene la desventaja de ser muy sensible a valores atipicos.
+
+El algoritmo LogitBoost surge como alternativa, proponiendo utilizar en vez de la pérdida
+exponencial la pérdida logística o log-loss, definida como:
+
+    Llog(H) = Ex~D[ ln( 1 + e^(-2 f(x) H(x)) ) ]
+
+Esta función de pérdida proviene del modelo de regresión logística, y
+corresponde al "negative log-likelihood" de una distribución Bernoulli. 
+
+La probabilidad estimada de que la etiqueta verdadera sea +1 se define como:
+    P(f(x) = 1 | x) = e^(H(x)) / ( e^(H(x)) + e^(-H(x)) )
+
+De este modo, LogitBoost puede interpretarse como un método de REGRESION LOGISTICA ADITIVA.
+
+PROCESO DEL ALGORITMO
+1. Inicialización:
+   - Se empieza con H0(x) = 0 (clasificador combinado vacío).
+   - El objetivo inicial y0(x) = f(x).
+2. En cada ronda t = 1 ... T:
+   - a. Calcular probabilidades con la función logística (sigmoide): 
+        pt(x) = 1 / (1 + e^(-2 H_{t-1}(x)) )
+   - b. Construir un "pseudo-target" yt(x) a partir de pt(x): 
+        yt(x) = ( f(x) - pt(x) ) / ( pt(x) (1 - pt(x)) )
+   - c. Definir pesos de cada ejemplo: Dt(x) = pt(x) (1 - pt(x))
+   - d. Entrenar un learner base ht(x) con mínimos cuadrados ponderados usando { yt(x), Dt(x) }
+   - e. Actualizar el clasificador combinado: Ht(x) = H_{t-1}(x) + (1/2) * ht(x)
+3. Clasificador final: H(x) = sign( Σ_{t=1 to T} ht(x) )
+
+DIFERENCIAS CON ADABOOST
+- AdaBoost optimiza la pérdida exponencial.
+- LogitBoost optimiza la perdida logística, que es más robusta a valores atipicos y se
+  interpreta directamente como un modelo de regresión logística.
+
+Ambos algoritmos son instancias de un marco más general: **gradient boosting con funciones de
+pérdida sustitutas (surrogate loss)**.
+
+INTERPRETACION GENERAL
+Friedman (2000) mostró que AdaBoost no es más que un método de optimización: un procedimiento
+de descenso de gradiente en el espacio de funciones con una función de pérdida surrogate
+específica (la exponencial). 
+
+En este sentido:
+- AdaBoost = gradient boosting con pérdida exponencial.
+- LogitBoost = gradient boosting con pérdida logística.
+- L2Boost = gradient boosting con pérdida cuadrática (L2).
+
+La elección de la función de pérdida surrogate es lo que diferencia a estos algoritmos. Todas
+ellas buscan una pérdida consistente, es decir, que minimizar la surrogate loss produzca una
+solución óptima (Bayesiana) para la pérdida real de clasificación 0/1.
+
+==============================================
+LPBOOST. ALGORITMO
+==============================================
+
+Una visión alternativa del boosting consiste en formularlo como un problema de **optimización
+matemática**. En lugar de ver el boosting solo como un proceso de actualización de
+distribuciones y sumas aditivas de clasificadores débiles (como en AdaBoost), se puede plantear
+como un problema de **programación lineal** para calcular directamente los pesos de los weak
+learners.
+
+La idea básica parte de definir un modelo aditivo compuesto por clasificadores débiles h ∈ H
+con pesos α_h. Para cada ejemplo de entrenamiento x_i se define una pérdida ξ_i, de modo que la
+suma de coeficientes α_h y pérdidas ξ_i esté acotada por un valor B. Esta cota B refleja la
+**complejidad del modelo**: si el modelo es demasiado complejo (muchos weak learners o con gran
+peso), la generalización empeora. Si se mantiene controlada, se puede demostrar una cota
+superior para el error de generalización.
+
+En resumen:
+- α_h ≥ 0 → pesos de los clasificadores débiles.
+- ξ_i ≥ 0 → pérdidas asociadas a cada ejemplo de entrenamiento.
+- C → parámetro de regularización que controla cuánto "permitimos" que los errores ξ_i crezcan.
+- B → cota global de complejidad.
+
+PROBLEMA DE OPTIMIZACION
+El problema puede formularse de dos maneras equivalentes:
+- 1. Forma primal (MINIMIZACION):
+   - Minimizar B sujeto a que todos los ejemplos estén correctamente clasificados con cierto
+     margen (permitiendo errores controlados ξ_i).
+   - Esto asegura que el modelo sea lo menos complejo posible, sin dejar de ajustarse a los
+     datos.
+- 2. Forma dual (MAXIMIZACION):
+   - En lugar de trabajar directamente con los α_h, se optimiza sobre una distribución de pesos
+     w_i sobre los ejemplos.
+   - Cada weak learner h_j debe satisfacer una restricción del tipo: Σ w_i y_i h_j(x_i) ≤ β.
+   - Esto significa que se busca el clasificador débil que maximiza la ventaja (edge) bajo la
+     distribución w.
+
+En la práctica, T (el número total de weak learners posibles) puede ser muy grande, lo que
+haría imposible resolver el problema directamente. La solución es usar un método de **column
+generation**:
+- Se comienza con una distribución w_i uniforme (w_i = 1/m).
+- Se busca el weak learner que más viola las restricciones.
+- Se añade este weak learner al conjunto activo de columnas.
+- Se repite el proceso hasta que ya no haya violaciones, alcanzando la solución óptima.
+
+Este procedimiento define el algoritmo LPBoost (Demiriz et al., 2002).
+
+COMPARACION CON ADABOOST
+- LPBoost busca explícitamente un clasificador con el máximo margen posible, formulado como un
+  problema de programación lineal.
+- AdaBoost, en cambio, ajusta pesos de manera iterativa minimizando una pérdida exponencial.
+- En cuanto a rendimiento, no se observan ventajas claras de LPBoost frente a AdaBoost en su
+  versión básica.
+- Sin embargo, una versión mejorada, "entropy regularized LPBoost" (Warmuth et al., 2008),
+  muestra resultados más robustos y frecuentemente supera a AdaBoost.
+
+OBSERVACIONES TEORICAS
+El enfoque estadístico de boosting (minimización de una función de pérdida suplente) es muy
+popular en la comunidad de estadística, pero deja algunas preguntas abiertas:
+- ¿Por qué AdaBoost parece tan resistente al sobreajuste en la práctica, a pesar de lo que
+  predicen las cotas teóricas?
+- AdaBoost se diseñó como un algoritmo de clasificación que minimiza el error de clasificación,
+  pero la visión estadística se centra en la minimización de funciones de pérdida alternativas
+  (como log-loss o exp-loss). Estas dos metas no siempre coinciden.
+- Según Mease y Wyner (2008), una visión completa de boosting debe incluir no solo la
+  optimización, sino también la "naturaleza de aprendizaje paso a paso" y el efecto
+  empírico de reducción de varianza.
+
+En conclusión, LPBoost aporta un marco formal basado en programación lineal que garantiza
+márgenes máximos, pero en la práctica su ventaja sobre AdaBoost básico no es clara, salvo en
+variantes mejoradas con regularización adicional.
+
+----------------- TODO: cambiar y releer desde aca ----------------------
+==============================================
+ADABOOST. EXTENSIÓN MULTICLASE (Sección 2.5)
+==============================================
+
+En problemas reales no siempre hay solo dos clases; p. ej. dígitos 0..9.  A continuación se
+resumen las extensiones y las fórmulas matemáticas aparecidas en la sección.
+
+SAMME (Zhu et al., 2006)
+- Mejora de AdaBoost.M1 para multiclasificación. Ajusta el peso α_t de
+  cada weak learner con la fórmula:
+
+    α_t = ln( (1 - ε_t) / ε_t ) + ln( |Y| - 1 )    (ecuación 2.31)
+
+  donde:
+    * ε_t = error (0/1-loss) del weak learner en la ronda t.
+    * |Y| = número de clases.
+
+  Explicación de la fórmula:
+    - En el caso binario la parte ln((1-ε)/ε) es la que usamos para
+      ponderar clasificadores según su error.
+    - Al añadir ln(|Y|-1) se compensa el "azar" en un problema con más
+      clases: con más clases, acertar por casualidad es menos probable,
+      por eso hay un término extra que ajusta la magnitud de α_t.
+
+Resultado teórico relacionado:
+- Minimizar la pérdida exponencial multiclase conduce al clasificador que
+  maximiza la probabilidad a posteriori; es decir, el óptimo satisface:
+
+    sign(h*(x)) = arg max_{y ∈ Y} P(y | x)    (ecuación 2.32)
+
+  Interpretación: el predictor óptimo (bajo esa pérdida) asigna la clase
+  con mayor probabilidad condicional.
+
+Descomposición en problemas binarios
+- One-vs-Rest (OvR): entrenas |Y| clasificadores binarios (cada uno:
+  "es clase i o no"). Para combinar, puedes tomar la clase con mayor
+  score real H_y(x):
+
+    H(x) = arg max_{y ∈ Y} H_y(x)    (ecuación 2.33)
+
+- One-vs-One (OvO): entrenas |Y|(|Y|-1)/2 clasificadores (cada uno
+  distingue entre pares). Los resultados se combinan por voto, coupling,
+  o estructuras como DAGs (Figura 2.11).
+
+==============================================
+TOLERANCIA AL RUIDO (Sección 2.6)
+==============================================
+
+Problema con AdaBoost clásico:
+- AdaBoost usa la pérdida exponencial, lo que hace que ejemplos
+  repetidamente mal clasificados (p. ej. por etiqueta errónea) vean sus
+  pesos crecer de forma exponencial y dominen el entrenamiento.
+
+Regla de actualización estándar de AdaBoost (recordatorio):
+    D_{t+1}(x) ∝ D_t(x) * exp( - α_t * h_t(x) * f(x) )    (ecuación 2.34)
+
+Explicación:
+  - D_t(x): peso de la instancia x en la ronda t.
+  - h_t(x): predicción del weak learner t (±1).
+  - f(x): etiqueta verdadera (±1).
+  - Si h_t(x) = f(x) → exponent = -α_t → factor < 1 → peso disminuye.
+  - Si h_t(x) ≠ f(x) → exponent = +α_t → factor > 1 → peso aumenta.
+  - Para instancias con etiqueta equivocada, el producto de estos
+    factores puede crecer sin límite, sobreenfocando ruido.
+
+MadaBoost (Domingo & Watanabe, 2000)
+- Idea: limitar el crecimiento de pesos. Regla (forma conceptual):
+    D_{t+1}(x) = ( D_1(x) / Z'_t ) * min( 1, ∏_{i=1..t} exp( -α_i h_i(x) f(x) ) )
+    (ecuación 2.35)
+
+Explicación:
+  - Se calcula el producto exponencial como en AdaBoost, pero si el
+    resultado supera 1 (o un umbral), se acota con min(1,...).
+  - Así, un ejemplo ruidoso no puede escalar indefinidamente su peso.
+
+FilterBoost (Bradley & Schapire, 2008)
+- En vez de exp-loss usa la log-loss (pérdida logística). De la
+  aproximación (Taylor) surge una regla de pesos del tipo:
+    D_t(x) = D(x) / ( Z_t * (1 + exp( f(x) * H_{t-1}(x) )) )    (ecuación 2.38)
+
+Explicación:
+  - H_{t-1}(x) es la suma ponderada previa.
+  - Si H_{t-1}(x) tiene gran magnitud y coincide con f(x) (ejemplo
+    bien clasificado con confianza), exp(f H) es grande y el denominador
+    aumenta → peso pequeño.
+  - Si H_{t-1}(x) es grande pero opuesto a f(x) (ejemplo duro), el peso
+    no crece de forma explosiva como en la exponencial pura. El límite
+    superior implícito evita crecimientos desbocados.
+
+BBM / BROWNBOOST / ROBUSTBOOST
+- BBM (Boosting-By-Majority): algoritmo iterativo con tolerancia al ruido,
+  pero exige parámetros previamente conocidos.
+- BROWNBOOST (Freund, 2001): deriva de una pérdida conectada con
+  movimiento browniano; su weighting function asigna máximo peso cuando
+  el margen negativo coincide con cierto "tiempo restante", y disminuye
+  si el margen es mucho peor o mucho mejor que ese punto. Intuitivamente
+  "se rinde" con algunos ejemplos muy duros (probable ruido).
+  Fórmula generadora (forma conceptual de la pérdida):
+    bmp(H) ≈ E_x [ - exp( -( f(x) H_{t-1}(x) + c - t ) / c ) * f(x) h(x) ]
+    (ecuación aproximada 2.41/2.42)
+
+  y de allí se deriva una regla de pesos que no crece indefinidamente:
+    D_t(x) ∝ D(x) * exp( - ( f(x) H_{t-1}(x) + c - t )^2 / c ) / Z_t
+    (ecuación 2.43, forma conceptual)
+
+- ROBUSTBOOST (Freund, 2009): mejora BrownBoost usando un proceso
+  Ornstein–Uhlenbeck (media-reverting). El objetivo es empujar los
+  márgenes normalizados por encima de un objetivo θ. La regla de pesos
+  toma la forma:
+    D_t(x) ∝ D(x) * exp( - ( f(x) H_{t-1}(x) - μ(t) )^2 / (2 σ(t)^2) ) / Z_t
+    (ecuación 2.46, forma conceptual)
+
+  donde μ(t) y σ(t) evolucionan en el tiempo para acercar la media al
+  margen objetivo θ.
+
+Interpretación general de las fórmulas de peso (comparación)
+- AdaBoost: factor multiplicativo exp(±α) → crecimiento/descrecimiento
+  sin límite si el ejemplo es persistente en fallar.
+- MadaBoost/FilterBoost/BrownBoost/RobustBoost: introducen factores de
+  corte o denominadores que **acotan** cuánto puede crecer el peso de
+  una instancia, evitando sobreajustar ruido.
+
+==============================================
+RESUMEN FINAL (intuición)
+==============================================
+- El problema central en tolerancia al ruido es que la actualización exponencial de AdaBoost
+  favorece demasiado a ejemplos persistente mal clasificados (que pueden ser ruido).
+- Las variantes cambian la función de pérdida (exponencial → log), acotan multiplicadores
+  exponenciales o usan weighting functions basadas en gaussianas/brownianas para limitar la
+  influencia de outliers.
+- Las fórmulas mostradas describen exactamente cómo se calcula el nuevo peso D_{t+1}(x) en cada
+  variante y por qué eso controla la robustez.

@@ -1,0 +1,3 @@
+Lo que se tiene que hacer en el parcial 2 es agarrar el ejercicio de Kaggle que me asigno el
+profesor y escribir un informe/paper sobre el anlisis del dataset, la eleccion de la
+arquitectura y algoritmos que se van a usar para resolver el ejercicio.

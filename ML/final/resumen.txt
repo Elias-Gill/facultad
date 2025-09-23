@@ -1,0 +1,2 @@
+Aqui se va a hacer la implementacion y escritura de un informe tecnico del ejercicio propuesto
+y explicado en el parcial 2.

@@ -1,3 +1,113 @@
 Lo que se tiene que hacer en el parcial 2 es agarrar el ejercicio de Kaggle que me asigno el
-profesor y escribir un informe/paper sobre el anlisis del dataset, la eleccion de la
-arquitectura y algoritmos que se van a usar para resolver el ejercicio.
+profesor y escribir un informe/paper y exposicion sobre el anlisis del dataset, la eleccion de
+la arquitectura y algoritmos que se van a usar para resolver el ejercicio.
+
+Alumno:             ELIAS SEBASTIAN GILL QUINTANA	
+Dia de exposicion:  **21 DE OCTUBRE**.
+Tema 3:             "https://www.kaggle.com/competitions/hull-tactical-market-prediction"
+
+COSAS CLAVE QUE PONER:
+- Definir que librerias, paginas y de donde se encuentran las librerias de los algoritmos que
+  vamos a usar
+- Definir la arquitectura de la solucion, diagramas y demas.
+- Definir los algoritmos, los tipos de aprendizaje y demas. Hacer un mini marco teorico con el
+  desarrollo de eso.
+- Hablar sobre el dataset, ver las cosas que puedo sacar, limpiar y los elementos que mi
+  modelo va a tener en cuenta.
+- Disenar la etapa de entrenamiento, la cantidad de ciclos, como dividir el dataset y demas.
+- Supongo que hablar un poco de las metricas que puedo llegar a usar para medir la evaluacion
+  de mi algoritmo ?.
+
+=========================================
+    DESCRIPCION DEL PROBLEMA
+=========================================
+
+Tu tarea es predecir los rendimientos del mercado bursátil representados por el exceso de
+rendimientos del S&P 500 mientras gestionas restricciones de volatilidad. Tu trabajo pondrá a
+prueba la Hipótesis del Mercado Eficiente y desafiará los principios comunes de las finanzas
+personales.
+
+Este concurso te pide que construyas un modelo que prediga el exceso de rendimientos e incluya
+una estrategia de apuestas diseñada para superar al S&P 500 manteniéndose dentro de una
+restricción de volatilidad del 120%. Proporcionaremos datos diarios que combinan información
+pública del mercado con nuestro conjunto de datos propietario, dándote la materia prima para
+descubrir patrones que la mayoría pasa por alto.
+
+A diferencia de muchos desafíos de Kaggle, esto no es solo un ejercicio teórico. Los modelos
+que construyas aquí podrían ser valiosos en estrategias de inversión en vivo.
+
+_EVALUACION:_
+
+La métrica del concurso es una variante del ratio de Sharpe que penaliza las estrategias que
+asumen significativamente más volatilidad que el mercado subyacente o no logran superar el
+rendimiento del mercado.
+
+_ARCHIVO DE ENVÍO:_
+
+Para cada día de negociación, debes predecir una asignación óptima de fondos para mantener el
+S&P500. Dado que se permite cierto apalancamiento, el rango válido cubre de 0 a 2.
+
+_REQUISITOS DEL CÓDIGO:_
+
+- Los envíos deben realizarse a través de Notebooks
+- Tiempo de ejecución <= 8 horas para CPU y GPU
+- Acceso a Internet deshabilitado
+- Se permiten datos externos públicos y gratuitos, incluidos modelos preentrenados
+
+=========================================
+    DATASET - TEST.CSV y TRAIN.CSV
+=========================================
+
+Este concurso te desafía a predecir los rendimientos diarios del índice S&P 500 utilizando un
+conjunto personalizado de características de datos del mercado.
+
+La competencia procederá en dos fases:
+- 1. Una fase de entrenamiento de modelos con un conjunto de prueba de seis meses de datos
+históricos.  
+- 2. Una fase de pronóstico con un conjunto de prueba que se recopilará después del cierre de
+los envíos.
+
+TRAIN.CSV
+Datos históricos del mercado. La cobertura se remonta a décadas. Espera ver
+*valores faltantes* extensos al principio.
+
+El archivo contiene:
+-  *date_id*                        - Un identificador para un día de negociación.
+-  _M*_                             - Características de Dinámica de Mercado/Técnicas.
+-  _E*_                             - Características Macroeconómicas.      
+-  _I*_                             - Características de Tasas de Interés.
+-  _P*_                             - Características de Precio/Valoración.
+-  _V*_                             - Características de Volatilidad.
+-  _S*_                             - Características de Sentimiento.
+-  _MOM*_                           - Características de Momentum.
+-  _D*_                             - Características Dummy/Binarias.
+-  *forward_returns*                - Los rendimientos de comprar el S&P 500 y venderlo un
+                                      día después. Solo conjunto de entrenamiento.
+-  *risk_free_rate*                 - La tasa de fondos federales. Solo conjunto de entrenamiento.
+-  *market_forward_excess_returns*  - Rendimientos forward relativos a las expectativas. Solo
+   conjunto de entrenamiento.
+
+TEST.CSV
+Un conjunto de prueba simulado que representa la estructura del conjunto de prueba
+no visto.
+
+El archivo contiene:
+-  *date_id*
+-  *[nombre_característica]* - Las columnas de características son las mismas que en
+   train.csv.
+-  *is_scored* - Si esta fila está incluida en el cálculo de la métrica de evaluación.
+-  *lagged_forward_returns* - Los rendimientos forward, proporcionados con un retraso de un
+   día.
+-  *lagged_risk_free_rate* - La tasa de fondos federales, proporcionada con un retraso de un
+   día.
+-  *lagged_market_forward_excess_returns* - Rendimientos forward relativos a las expectativas,
+   proporcionados con un retraso de un día.
+
+kaggle_evaluation/ - Archivos utilizados por la API de evaluación.
+
+_Resumen del Dataset:_
+- Archivos: 13
+- Tamaño:   12.39 MB
+- Columnas: 197
+- Tipos:    py, csv, proto
+- Licencia: Sujeta a las Reglas de la Competencia

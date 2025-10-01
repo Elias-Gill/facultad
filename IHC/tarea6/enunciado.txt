@@ -1,0 +1,7 @@
+ENUNCIADO
+1. Ver la sección de vídeos de la plataforma Figma (Ver enlace)
+2. Hacer el  Check App según Brief
+3. Exportar el archivo con el formato: NombreAlumno_Tarea02
+4. Entregarlo por Educa
+	
+_File:_ Check-App_brief.pdf

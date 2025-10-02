@@ -1,0 +1,12 @@
+FECHA: 06/10  
+TEMA: Parte V - La tercera vía, las prácticas técnicas del aprendizaje continuo y
+experimentación  
+LIBRO: The Devops Handboock. 2nd Edition.
+    _Capítulo 19:_ Permitir e Inyectar el Aprendizaje en el Trabajo Diario  
+
+Integrantes:  
+- Fabrizio Rejala  
+- Enzo Vidallet  
+- Alexander Rojas  
+- Elias Gill  
+- Marcos Flores  

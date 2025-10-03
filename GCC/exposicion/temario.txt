@@ -1,4 +1,4 @@
-FECHA: 06 Octubre
+FECHA: 06 de Octubre
 TEMA:  _Parte V_ - La tercera vía, las prácticas técnicas del aprendizaje continuo y
        experimentación  
        _Capítulo 19:_ Permitir e Inyectar el Aprendizaje en el Trabajo Diario.
@@ -6,14 +6,14 @@ LIBRO: The Devops Handboock. 2nd Edition.
 
 Integrante        | Tema  
 ------------------|--------
-Fabrizio Rejala   |
+Fabrizio Rejala   | 6 y 7
 Enzo Vidallet     | 4 y 5
-alexander Rojas   |
+alexander Rojas   | 8 y 9
 Elias Gill        | 1 y 10
 Marcos Flores     | 2 y 3
 
 ================================================================================
-TEMA: Organizaciones resilientes y aprendizaje continuo
+TEMA 1: Organizaciones resilientes y aprendizaje continuo
 FUENTE: Ejemplo AWS US-East & Netflix (2011)
 ================================================================================
 
@@ -66,7 +66,7 @@ fallas y la práctica constante pueden integrar el aprendizaje en el trabajo dia
 convirtiendo los errores en la base misma de la mejora continua.
 
 ================================================================================
-TEMA: Establecer una Cultura Justa de Aprendizaje
+TEMA 2: Establecer una Cultura Justa de Aprendizaje
 ================================================================================
 
 CONCEPTO PRINCIPAL:
@@ -108,7 +108,7 @@ ofrecen oportunidades de ejercitarse frente a los problemas inevitables que surg
 complejos, reforzando la capacidad organizacional de aprender y adaptarse.
 
 ================================================================================
-TEMA: Programar Retrospectivas tras Accidentes
+TEMA 3: Programar Retrospectivas tras Accidentes
 ================================================================================
 
 CONCEPTO PRINCIPAL:
@@ -163,7 +163,7 @@ transformar los errores en conocimiento, fortalecer la resiliencia de los sistem
 una cultura donde la mejora del trabajo sea más importante que el trabajo mismo.
 
 ================================================================================
-TEMA: Publicar Retrospectivas de Manera Amplia y Aprendizaje Continuo
+TEMA 4: Publicar Retrospectivas de Manera Amplia y Aprendizaje Continuo
 ================================================================================
 
 CONCEPTO PRINCIPAL:
@@ -216,7 +216,7 @@ organización convierta incidentes y errores en motores de innovación, confianz
 continua.
 
 ================================================================================
-TEMA: Disminuir la Tolerancia a Incidentes para Detectar Señales de Falla Débiles
+TEMA 5: Disminuir la Tolerancia a Incidentes para Detectar Señales de Falla Débiles
 ================================================================================
 
 CONCEPTO PRINCIPAL:  
@@ -255,7 +255,7 @@ débiles, podemos evitar que problemas incipientes se conviertan en fallos grave
 tiempo, cultivar una cultura que convierta cada desviación en oportunidad de aprendizaje.
 
 ================================================================================
-TEMA: Redefinir el Fracaso y Fomentar la Toma de Riesgos Calculados
+TEMA 6: Redefinir el Fracaso y Fomentar la Toma de Riesgos Calculados
 ================================================================================
 
 CONCEPTO PRINCIPAL:  
@@ -286,7 +286,7 @@ ser una amenaza para la organización, es el mecanismo mediante el cual se alcan
 real. Por eso, castigar los fallos equivale a sofocar la posibilidad misma de transformación.
 
 ================================================================================
-TEMA: Inyección de Fallas en Producción para Habilitar Resiliencia y Aprendizaje
+TEMA 7: Inyección de Fallas en Producción para Habilitar Resiliencia y Aprendizaje
 ================================================================================
 
 CONCEPTO PRINCIPAL:  
@@ -321,7 +321,7 @@ fallos convierte lo extraordinario en algo manejable y predecible, aumentando la
 aprendizaje y adaptación de la organización.
 
 ================================================================================
-TEMA: Instituir Game Days para Ensayar Fallas
+TEMA 8: Instituir Game Days para Ensayar Fallas
 ================================================================================
 
 CONCEPTO PRINCIPAL:  
@@ -359,7 +359,7 @@ la mejora continua de sistemas y procesos.
 
 ================================================================================
 CASO DE ESTUDIO: caso CSG
-TEMA: Transformar una Interrupción en una Oportunidad de Aprendizaje en CSG
+TEMA 9: Transformar una Interrupción en una Oportunidad de Aprendizaje en CSG
 ================================================================================
 
 CONCEPTO PRINCIPAL:  
@@ -406,7 +406,7 @@ aprendizajes sobre cómo realizan su trabajo, cambiando su cultura y sin culpar 
 individuo o equipo.
 
 ================================================================================
-TEMA: Conclusión
+TEMA 10: Conclusión
 ================================================================================
 
 CONCEPTO PRINCIPAL:  

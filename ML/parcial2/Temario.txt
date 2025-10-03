@@ -72,19 +72,19 @@ Datos históricos del mercado. La cobertura se remonta a décadas. Espera ver
 *valores faltantes* extensos al principio.
 
 El archivo contiene:
--  *date_id*                        - Un identificador para un día de negociación.
--  _M*_                             - Características de Dinámica de Mercado/Técnicas.
--  _E*_                             - Características Macroeconómicas.      
--  _I*_                             - Características de Tasas de Interés.
--  _P*_                             - Características de Precio/Valoración.
--  _V*_                             - Características de Volatilidad.
--  _S*_                             - Características de Sentimiento.
--  _MOM*_                           - Características de Momentum.
--  _D*_                             - Características Dummy/Binarias.
--  *forward_returns*                - Los rendimientos de comprar el S&P 500 y venderlo un
+-  *date_id*                        : Un identificador para un día de negociación.
+-  _M*_                             : Características de Dinámica de Mercado/Técnicas.
+-  _E*_                             : Características Macroeconómicas.      
+-  _I*_                             : Características de Tasas de Interés.
+-  _P*_                             : Características de Precio/Valoración.
+-  _V*_                             : Características de Volatilidad.
+-  _S*_                             : Características de Sentimiento.
+-  _MOM*_                           : Características de Momentum.
+-  _D*_                             : Características Dummy/Binarias.
+-  *forward_returns*                : Los rendimientos de comprar el S&P 500 y venderlo un
                                       día después. Solo conjunto de entrenamiento.
--  *risk_free_rate*                 - La tasa de fondos federales. Solo conjunto de entrenamiento.
--  *market_forward_excess_returns*  - Rendimientos forward relativos a las expectativas. Solo
+-  *risk_free_rate*                 : La tasa de fondos federales. Solo conjunto de entrenamiento.
+-  *market_forward_excess_returns*  : Rendimientos forward relativos a las expectativas. Solo
    conjunto de entrenamiento.
 
 TEST.CSV

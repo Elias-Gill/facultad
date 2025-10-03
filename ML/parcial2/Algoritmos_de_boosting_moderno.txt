@@ -1,0 +1,72 @@
+================================================================================
+CATEGORIA: BOOSTING BASADO EN ARBOLES DE DECISION (LOS MAS POPULARES)
+================================================================================
+
+SUBCATEGORIA: Algoritmos de Gradient Boosting "Puros"
+*GBM* (Gradient Boosting Machine): 
+El fundamento teórico original de Friedman. Muchas implementaciones modernas se basan en esto.
+
+*XGBoost* (eXtreme Gradient Boosting): 
+El que popularizó el enfoque moderno.
+_Características clave:_ Paralelización, poda de árboles, manejo de valores faltantes, regularización L1/L2.
+_Ventaja:_ Velocidad y rendimiento excepcionales.
+
+SUBCATEGORIA: Algoritmos con Enfoques en el Gradiente  
+*LightGBM* (Light Gradient Boosting Machine):
+- _Innovación:_ Usa histogram-based algorithms y GOSS (Gradient-based One-Side Sampling).
+- _Ventaja:_ Mucho más rápido que XGBoost, especialmente con grandes volúmenes de datos.
+- _Ideal para:_ Datasets muy grandes.
+
+*CatBoost* (Categorical Boosting):
+- _Innovación:_ Manejo nativo de variables categóricas sin necesidad de one-hot encoding.
+- _Característica:_ Ordered boosting para evitar target leakage.
+- _Ventaja:_ Excelente rendimiento out-of-the-box con datos que tienen muchas categorías.
+
+================================================================================
+CATEGORIA: ALGORITMOS TEORICAMENTE INTERESANTES (MENOS COMUNES PERO POTENTES)
+================================================================================
+
+SUBCATEGORIA: Boosting Basado en Programación Lineal
+-  _Column Generation Boosting:_ Formulación de boosting como problema de optimización lineal.
+-  _TotalBoost:_ Variante que mejora la generalización mediante optimización de márgenes.
+
+SUBCATEGORIA: Enfoques Estadísticamente Robustos
+Gradient Boosting con Funciones de Pérdida Robustas:
+-  _Huber Loss:_ Para regresión con outliers.
+-  _Quantile Loss:_ Para modeling de cuantiles.  
+-  _Custom Loss Functions:_ Adaptables a problemas específicos.
+
+================================================================================
+CATEGORIA: IMPLEMENTACIONES ESPECIFICAS POR LENGUAJE
+================================================================================
+
+SUBCATEGORIA: En Python
+*XGBoost*: `xgboost` library
+*LightGBM*: `lightgbm` library  
+*CatBoost*: `catboost` library
+*scikit-learn*: `GradientBoostingClassifier`/`GradientBoostingRegressor`
+
+SUBCATEGORIA: En R
+*gbm*: Implementación clásica
+*xgboost*: Misma librería que Python
+*lightgbm*: Misma librería que Python  
+*h2o*: Implementación distribuida
+
+================================================================================
+COMPARACION RAPIDA DE LOS 3 PRINCIPALES MODERNOS:
+================================================================================
+
+|   Algoritmo   | Fortalezas                                | Mejor Use Case
+|---------------|-------------------------------------------|---------------
+| **XGBoost**   | Balance perfecto velocidad/performance    | Problemas generales, competencias
+| **LightGBM**  | Velocidad extrema, memoria eficiente      | Datasets muy grandes (>100K filas)
+| **CatBoost**  | Manejo de categorías, poco preprocessing  | Datasets con muchas variables categóricas
+
+================================================================================
+TENDENCIAS ACTUALES EN BOOSTING:
+================================================================================
+
+*AutoML*: Los mejores frameworks usan estos algoritmos como base
+*Ensembles de Ensembles*: Combinar XGBoost + LightGBM + CatBoost  
+*Bayesian Optimization*: Para hyperparameter tuning automático
+*Distributed Computing*: Implementaciones para clusters

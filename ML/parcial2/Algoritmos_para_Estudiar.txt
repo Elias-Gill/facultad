@@ -1,0 +1,260 @@
+=========================================
+ALGORITMOS PRINCIPALES A INVESTIGAR
+=========================================
+
+1. GRADIENT BOOSTING MACHINES (GBM)
+--------------------------------------------------
+- XGBoost (Extreme Gradient Boosting)
+- LightGBM (Light Gradient Boosting Machine)
+- CatBoost
+
+CARACTERÍSTICAS:
+- Alto rendimiento en datos tabulares
+- Manejo automático de valores missing
+- Robustez ante overfitting
+- Importancia de características integrada
+
+PARÁMETROS CLAVE:
+- learning_rate: 0.01-0.1
+- n_estimators: 100-2000
+- max_depth: 3-8
+- subsample: 0.8-1.0
+- colsample_bytree: 0.8-1.0
+
+CONSIDERACIONES:
+- Sensible a hyperparámetros
+- Requiere feature engineering adecuado
+- Buen manejo de relaciones no lineales
+
+2. RANDOM FOREST
+--------------------------------------------------
+- Ensemble de árboles de decisión
+- Método de bagging
+
+CARACTERÍSTICAS:
+- Robusto a overfitting
+- Menos sensible a hyperparámetros
+- Buen performance out-of-the-box
+
+PARÁMETROS CLAVE:
+- n_estimators: 100-500
+- max_depth: 5-20
+- min_samples_split: 2-10
+- min_samples_leaf: 1-4
+
+CONSIDERACIONES:
+- Puede ser computacionalmente costoso
+- Menos interpretable que árbol único
+- Bueno para baseline models
+
+3. REDES NEURONALES RECURRENTES (RNN)
+--------------------------------------------------
+- LSTM (Long Short-Term Memory)
+- GRU (Gated Recurrent Units)
+- Bidireccionales
+
+CARACTERÍSTICAS:
+- Captura dependencias temporales
+- Manejo de secuencias largas
+- Memoria a largo plazo
+
+PARÁMETROS CLAVE:
+- units: 50-200
+- layers: 2-4
+- dropout: 0.2-0.5
+- sequence_length: 10-60 días
+
+CONSIDERACIONES:
+- Requiere mucho data
+- Computacionalmente intensivo
+- Sensible a inicialización
+
+4. MODELOS DE REGRESIÓN LINEAL AVANZADOS
+--------------------------------------------------
+- LASSO (L1 Regularization)
+- Ridge (L2 Regularization)
+- Elastic Net (combinación L1 + L2)
+
+CARACTERÍSTICAS:
+- Regularización para evitar overfitting
+- Feature selection automática (LASSO)
+- Estabilidad numérica
+
+PARÁMETROS CLAVE:
+- alpha: 0.001-1.0
+- l1_ratio: 0.1-0.9 (Elastic Net)
+
+CONSIDERACIONES:
+- Asume relaciones lineales
+- Bueno como baseline
+- Interpretable
+
+5. SVM PARA REGRESIÓN (SVR)
+--------------------------------------------------
+- Support Vector Regression
+- Kernel methods
+
+CARACTERÍSTICAS:
+- Efectivo en espacios de alta dimensión
+- Robustos a outliers
+- Múltiples kernels disponibles
+
+PARÁMETROS CLAVE:
+- C: 0.1-10
+- epsilon: 0.01-0.1
+- kernel: 'rbf', 'linear', 'poly'
+
+CONSIDERACIONES:
+- Computacionalmente costoso en datasets grandes
+- Sensible a escala de features
+
+6. ENSEMBLE METHODS
+--------------------------------------------------
+- Voting Regressors
+- Stacking
+- Blending
+
+CARACTERÍSTICAS:
+- Combina fortalezas de múltiples modelos
+- Reduce varianza
+- Mejora generalización
+
+PARÁMETROS CLAVE:
+- meta-learner selection
+- weights para voting
+- cross-validation strategy
+
+CONSIDERACIONES:
+- Complejidad aumentada
+- Risk of overfitting si no se valida bien
+
+7. TRANSFORMERS PARA SERIES TEMPORALES
+--------------------------------------------------
+- Time Series Transformers
+- Attention mechanisms
+
+CARACTERÍSTICAS:
+- Captura dependencias de largo alcance
+- Arquitectura state-of-the-art
+- Paralelización eficiente
+
+PARÁMETROS CLAVE:
+- attention_heads: 4-16
+- hidden_layers: 4-12
+- sequence_length: 30-90
+
+CONSIDERACIONES:
+- Muy complejo para datasets pequeños
+- Requiere expertise en deep learning
+
+=========================================
+TIPOS DE APRENDIZAJE
+=========================================
+
+APRENDIZAJE SUPERVISADO:
+- Regresión: predecir forward_returns continuos
+- Clasificación: dirección del mercado (opcional)
+
+APRENDIZAJE POR REFUERZO (AVANZADO):
+- Optimización de estrategias de trading
+- Maximizar Sharpe ratio
+
+SEMI-SUPERVISADO:
+- Aprovechar datos no etiquetados en test.csv
+
+=========================================
+CONSIDERACIONES ESPECÍFICAS PARA TRADING
+=========================================
+
+PREVENCIÓN DE DATA LEAKAGE:
+- Walk-forward validation
+- No shuffle temporal
+- Cuidado con look-ahead bias
+
+FEATURE ENGINEERING:
+- Technical indicators
+- Lag features
+- Rolling statistics
+- Volatility measures
+
+VALIDACIÓN TEMPORAL:
+- Time Series Split
+- Expanding window
+- Rolling window
+
+METRÍCAS ESPECIALIZADAS:
+- Sharpe ratio modificado
+- Maximum drawdown
+- Calmar ratio
+- Hit rate
+- Profit factor
+
+=========================================
+RECOMENDACIONES DE ESTUDIO POR PRIORIDAD
+=========================================
+
+NIVEL 1 (ESENCIAL):
+1. XGBoost / LightGBM
+2. Random Forest
+3. Regularized Linear Models
+
+NIVEL 2 (AVANZADO):
+1. LSTM para series temporales
+2. Ensemble methods
+3. Hyperparameter optimization
+
+NIVEL 3 (EXPERTO):
+1. Transformers para series temporales
+2. Reinforcement learning
+3. Bayesian optimization
+
+=========================================
+ENFOQUE RECOMENDADO PARA EL PROYECTO
+=========================================
+
+FASE 1: BASELINE
+- EDA y preprocessing
+- Random Forest + Linear Models
+- Validación temporal básica
+
+FASE 2: OPTIMIZACIÓN
+- Gradient Boosting (XGBoost/LightGBM)
+- Feature engineering avanzado
+- Hyperparameter tuning
+
+FASE 3: AVANZADO (SI TIEMPO)
+- LSTM para capturar dependencias temporales
+- Ensemble de mejores modelos
+- Backtesting riguroso
+
+RECURSOS DE ESTUDIO:
+- Documentación oficial de scikit-learn
+- Papers originales de XGBoost, LightGBM
+- Libros: "Advances in Financial Machine Learning"
+- Tutoriales Kaggle sobre time series prediction
+
+=========================================
+LIBRERÍAS PRINCIPALES
+=========================================
+
+SCIKIT-LEARN:
+- RandomForest, Linear Models, SVM
+- Preprocessing, model selection
+
+XGBOOST:
+- Implementación optimizada de GBM
+
+LIGHTGBM:
+- Gradient boosting eficiente
+
+TENSORFLOW/KERAS:
+- Redes neuronales, LSTM, Transformers
+
+PYTORCH:
+- Redes neuronales (alternativa)
+
+PROPHET (OPCIONAL):
+- Series temporales de Facebook
+
+STATSMODELS:
+- Análisis estadístico, ARIMA

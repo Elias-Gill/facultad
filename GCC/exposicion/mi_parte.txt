@@ -1,0 +1,76 @@
+================================================================================
+TEMA 1: Organizaciones resilientes y aprendizaje continuo
+================================================================================
+
+INFORMACION COMPLETA:
+Trabajar dentro de sistemas complejos implica que nunca podremos anticipar todas las
+consecuencias de nuestras acciones. Esto conduce a accidentes inesperados, incluso cuando se
+utilizan herramientas preventivas como checklists o runbooks. Para desenvolverse de manera
+segura en este tipo de entornos, las organizaciones deben desarrollar la capacidad de
+autodiagnosticarse y mejorar de manera continua, detectando problemas, resolviéndolos y
+difundiendo sus soluciones en toda la estructura. De esta manera surge un sistema dinámico de
+aprendizaje que permite comprender los errores y traducir ese conocimiento en acciones que
+prevengan su repetición futura. Según Steven Spear, las organizaciones resilientes son aquellas
+que pueden “sanarse a sí mismas”, porque responden a crisis de manera constante y no
+excepcional, y es precisamente esa capacidad de respuesta lo que las vuelve fiables.
+
+*AWS US-East y Netflix (2011):*
+El 21 de abril de 2011 una zona completa de disponibilidad en Amazon Web Services,
+correspondiente a la región US-East, sufrió una caída masiva que dejó fuera de servicio a
+prácticamente todas las organizaciones que dependían de ella, entre ellas Reddit y Quora. Sin
+embargo, Netflix no se vio afectada, lo que generó sorpresa y especulación sobre un supuesto
+trato preferencial por parte de Amazon. La propia compañía aclaró que la verdadera razón estaba
+en las decisiones de diseño arquitectónico que habían tomado desde 2009.
+
+Hasta 2008 el servicio de streaming de Netflix funcionaba sobre una aplicación monolítica en
+J2EE, alojada en uno de sus centros de datos. A partir de 2009 se replanteó todo el sistema
+para hacerlo nativo de la nube, ejecutado por completo en la infraestructura pública de Amazon
+y preparado para resistir fallas de gran escala. Uno de los objetivos explícitos de este
+rediseño fue asegurar la continuidad del servicio incluso si una zona entera de AWS dejaba de
+funcionar, tal como sucedió años después. Para cumplir con esto adoptaron una arquitectura de
+componentes débilmente acoplados, con tiempos de espera estrictos y mecanismos de corte
+(circuit breakers) que evitaban que la falla de una parte afectara a todo el sistema. El diseño
+contemplaba además la degradación controlada: en situaciones de alta carga, en lugar de mostrar
+recomendaciones personalizadas, se recurría a contenido estático o en caché, reduciendo la
+necesidad de cómputo intensivo sin interrumpir la experiencia del usuario.
+
+A estas decisiones arquitectónicas se sumó una práctica radical: la introducción de Chaos
+Monkey, un servicio que simulaba fallas apagando de manera aleatoria servidores de producción.
+El propósito era acostumbrar a los equipos a convivir con un nivel constante de fallas en la
+nube, forzando a que todos los servicios fueran capaces de recuperarse de manera automática,
+sin intervención humana. Cuando se implementó inicialmente, Chaos Monkey provocó caídas y
+errores imprevistos en producción, pero esa era precisamente la intención: descubrir
+debilidades y corregirlas durante horarios de trabajo normales, para no dejar las contingencias
+para situaciones de emergencia.
+
+El resultado fue un servicio progresivamente más resiliente y una organización que aprendía en
+cada iteración. Netflix logró no solo robustecer sus sistemas frente a la competencia, sino
+también consolidar una cultura interna donde los fallos no eran castigados sino asumidos como
+oportunidades de aprendizaje. El caso de Chaos Monkey demuestra cómo la inyección deliberada de
+fallas y la práctica constante pueden integrar el aprendizaje en el trabajo diario,
+convirtiendo los errores en la base misma de la mejora continua.
+
+RESUMEN:
+Los sistemas complejos inevitablemente generan accidentes inesperados. Las organizaciones
+resilientes desarrollan capacidad de autodiagnóstico y mejora continua, creando un sistema
+dinámico de aprendizaje que previene la repetición de errores. Netflix demostró esta capacidad
+durante la caída de AWS US-East (2011) mediante una arquitectura cloud diseñada para resistir
+fallas masivas y herramientas como Chaos Monkey, que inyecta fallas aleatorias en producción
+para fortalecer la resiliencia y fomentar una cultura de aprendizaje.
+
+================================================================================
+TEMA 10: Conclusión
+================================================================================
+
+Para crear una cultura justa que facilite el aprendizaje organizacional,
+es fundamental *recontextualizar los llamados errores*. Cuando se manejan correctamente, las
+fallas inherentes a sistemas complejos pueden generar un entorno dinámico de aprendizaje, donde
+todos los involucrados se sienten seguros de aportar ideas y observaciones, y donde los equipos
+se recuperan más rápidamente de proyectos que no alcanzan los resultados esperados.
+
+Las *retrospectivas* y la *inyección de fallas en producción* refuerzan una cultura en la que
+todos deben sentirse cómodos y responsables de identificar y aprender de los errores. Además,
+al reducir de manera efectiva la cantidad de accidentes, la organización puede disminuir su
+tolerancia y seguir descubriendo señales débiles de fallo, ampliando así su capacidad de
+aprendizaje continuo. Como destaca Peter Senge, “la única ventaja competitiva sostenible es la
+capacidad de una organización para aprender más rápido que la competencia.”

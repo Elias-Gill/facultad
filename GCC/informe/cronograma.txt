@@ -2,18 +2,16 @@
 INFORMACION IMPORTANTE PARA APUNTES E INFORME
 ================================================================================
 
-*ENFOQUE GCC*: Para cada charla, pregúntate:
+*ENFOQUE GCC* (preguntate):
 - ¿Qué _infraestructura_ necesitaría un centro de cómputo para implementar esta solución?
 - ¿Qué _riesgos de TI_ se mitigan o introducen con esta tecnología?
 - ¿Qué _modelos de gestión_ o _estándares_ se mencionan?
 
-*TOMA DE NOTAS*: Registra:
+*TOMA DE NOTAS* (anota):
 - Nombres completos de autores e instituciones
 - Tecnologías de infraestructura específicas
 - Estándares o modelos mencionados (Risk IT, MAGERIT, IPv6, Microservicios)
 - Detalles sobre implementación práctica
-
-*FECHA LÍMITE*: 14 de noviembre de 2025
 
 ================================================================================
 HORARIO ORGANIZADO POR FECHA Y HORA - CHARLAS RELEVANTES PARA GCC

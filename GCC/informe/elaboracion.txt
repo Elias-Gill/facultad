@@ -1,0 +1,29 @@
+===================================================
+INDICADORES PARA LA ELABORACION DEL INFORME
+===================================================
+
+*Indicadores de evaluacion*
+- El informe debe demostrar un análisis profundo de los temas, superando la mera descripción.
+- Se valorará la calidad de redacción y el respeto por las reglas gramaticales y ortográficas.
+- El informe debe presentarse en la fecha establecida.
+
+Cada participante debe elaborar un escrito formal que documente la
+experiencia
+
+*Estructura requerida*
+- Introducción: Breve descripción del congreso, fechas y objetivos de la participación.
+- Sesiones Asistidas y Temas Principales: Listado de conferencias y trabajos presenciados
+  (citando autores y temas específicos.
+- Análisis de Vínculo con Gestión de Centro de Cómputo (GCC): Desarrollo _exhaustivo_ de al
+  menos _tres temas_ presenciados, explicando cómo se relacionan con la infraestructura, la
+  seguridad, la administración de la red, o la gestión operativa del centro de cómputo. Ej.:
+  Analizar la configuración y puesta a punto de IPv6 en el contexto de la gestión de
+  direcciones IP en el centro.
+- Conclusiones y Aprendizajes: Reflexión personal sobre los conocimientos adquiridos y cómo
+  estos amplían o complementan la materia GCC.
+- Referencias: Incluir la bibliografía consultada o los sitios visitados, además de citar las
+  ponencias a las que se asistió.
+- Anexos: Material adicional que considere relevante y evidencias fotográficas de
+  participación.
+
+*FECHA LÍMITE*: 14 de noviembre de 2025

@@ -1,0 +1,117 @@
+================================================================================
+INFORMACION IMPORTANTE PARA APUNTES E INFORME
+================================================================================
+
+*ENFOQUE GCC*: Para cada charla, pregúntate:
+- ¿Qué _infraestructura_ necesitaría un centro de cómputo para implementar esta solución?
+- ¿Qué _riesgos de TI_ se mitigan o introducen con esta tecnología?
+- ¿Qué _modelos de gestión_ o _estándares_ se mencionan?
+
+*TOMA DE NOTAS*: Registra:
+- Nombres completos de autores e instituciones
+- Tecnologías de infraestructura específicas
+- Estándares o modelos mencionados (Risk IT, MAGERIT, IPv6, Microservicios)
+- Detalles sobre implementación práctica
+
+*FECHA LÍMITE*: 14 de noviembre de 2025
+
+================================================================================
+HORARIO ORGANIZADO POR FECHA Y HORA - CHARLAS RELEVANTES PARA GCC
+================================================================================
+
+JUEVES 09 DE OCTUBRE
+| HORA        | AULA    | CHARLA                                                                 |
+|-------------|---------|------------------------------------------------------------------------|
+| 16:00-17:00 | Magna 1 | CONFERENCIA: Uso ético de la Inteligencia Artificial                   |
+| 17:40-18:00 | Magna 1 | Arquitectura de Microservicios: Revisión Sistemática de la Literatura  |
+| 17:40-18:00 | 19      | Auditoría de la Propiedad Intelectual del Software                     |
+| 19:00       | Magna 1 | CONFERENCIA: El poder de los Algoritmos: hombre y desafío de la IA     |
+
+VIERNES 10 DE OCTUBRE
+| HORA        | AULA    | CHARLA                                                                       |
+|-------------|-------- |----------------------------------------------------------------------------- |
+| 15:00-15:20 | 7       | Implementación de Modelo para gestión de riesgos de TI con Risk IT y MAGERIT |
+| 15:40-16:00 | 7       | Protocolo de Internet Versión 6 (IPv6): Configuración y puesta a punto       |
+| 16:00-16:20 | 7       | Diseño de Simulador de Tráfico en Redes Elásticas Multicore                  |
+| 16:40-17:00 | Magna 1 | Arquitecturas de Red y Seguridad para Sistemas Web Hospitalarios con IA      |
+| 16:40-17:00 | 7       | Simulador Inteligente para migración de recursos en Sistemas Distribuidos    |
+| 17:00-17:20 | 7       | Optimización escalable del tráfico urbano con almacenamiento verificable     |
+| 17:20-17:40 | 7       | Digital Twin Network en IIoT: short systematic review                        |
+| 19:00       | Magna 1 | CONFERENCIA: Importancia del blockchain en criptomonedas y soluciones        |
+
+================================================================================
+INFORMACION DETALLADA DE CHARLAS RELEVANTES
+================================================================================
+
+JUEVES 09 OCTUBRE - 16:00 a 17:00
+CHARLA:         Uso etico de la Inteligencia Artificial
+TIPO:           Conferencia Magistral Internacional
+CONFERENCISTA:  Prof. Dr. Fernando Perez Tellez
+INSTITUCION:    Universidad Tecnologica de Dublin, Irlanda
+ENFOQUE GCC:    Gobernanza de IA, aspectos eticos, estrategia organizacional
+
+JUEVES 09 OCTUBRE - 17:40 a 18:00
+CHARLA:         Arquitectura de Microservicios: Revision Sistematica de la Literatura
+AUTORES:        Alfonso Fernandez, Carolina Gonzalez, Ariel Fernandez, Matias Casco, Fernando Husiin
+INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Arquitectura de sistemas, microservicios, infraestructura cloud
+
+JUEVES 09 OCTUBRE - 17:40 a 18:00
+CHARLA:         Auditoria de la Propiedad Intelectual del Software
+AUTORES:        Diego Tadeo Gonzalez Quiroz, Horacio Legal
+INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Auditoria TI, gestion de activos, propiedad intelectual
+
+JUEVES 09 OCTUBRE - 19:00
+CHARLA:         El poder de los Algoritmos: hombre y desafio de la Inteligencia Artificial
+CONFERENCISTA:  Prof. Dr. Luca Carlo Cernuzzi
+TIPO:           Conferencia Magistral
+ENFOQUE GCC:    Algoritmos, gestion estrategica, desafios tecnologicos
+
+VIERNES 10 OCTUBRE - 15:00 a 15:20
+CHARLA:         Implementacion de Modelo para gestion de riesgos de TI con Risk IT y MAGERIT
+AUTOR:          Carlos Adolfo Macedo Martinez
+INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Gestion de riesgos, estandares Risk IT y MAGERIT, PyMes
+
+VIERNES 10 OCTUBRE - 15:40 a 16:00
+CHARLA:         Protocolo de Internet Version 6 (IPv6): Configuracion y puesta a punto
+AUTOR:          Bernardo Neftalf Ricardo Bogarin Lugo
+INSTITUCION:    Universidad Americana
+ENFOQUE GCC:    Infraestructura de red, protocolos IPv6, configuracion
+
+VIERNES 10 OCTUBRE - 16:00 a 16:20
+CHARLA:         Diseno de Simulador de Trafico en Redes Elasticas Multicore
+AUTORES:        Aramy Patricia Rolon Cardenas, Enrique Javier Davalos
+INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Redes elasticas, simulacion, analisis de desempeno
+
+VIERNES 10 OCTUBRE - 16:40 a 17:00
+CHARLA:         Arquitecturas de Red y Seguridad para Sistemas Web Hospitalarios con IA
+AUTORES:        Maximo Villamayor, Luis Cubilla, Edgar H. Ayala-Britez, Diego P. Pinto-Roa
+INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Seguridad de red, sistemas criticos, arquitectura hospitalaria
+
+VIERNES 10 OCTUBRE - 16:40 a 17:00
+CHARLA:         Simulador Inteligente para migracion de recursos en Sistemas Distribuidos
+AUTORES:        Sicila Maris Gerzel, David Luis La Red Martinez, Agostini Federico
+INSTITUCION:    Universidad Nacional del Chaco Austral
+ENFOQUE GCC:    Sistemas distribuidos, migracion de recursos, optimizacion
+
+VIERNES 10 OCTUBRE - 17:00 a 17:20
+CHARLA:         Optimizacion escalable del trafico urbano con almacenamiento verificable
+AUTORES:        Kevin M. Galeano, Maria J. Duarte, Marcos D. Villagra, Derlis O. Gregor
+INSTITUCION:    Facultad de Ingenieria, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Optimizacion escalable, ciudades inteligentes, despliegues
+
+VIERNES 10 OCTUBRE - 17:20 a 17:40
+CHARLA:         Digital Twin Network en IIoT: short systematic review
+AUTORES:        Deysi Natalia Leguizamon Correa, Pedro Pablo Cespedes Sanchez, Diego Pedro Pinto Roa
+INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
+ENFOQUE GCC:    Digital Twin, IIoT, tecnologias emergentes
+
+VIERNES 10 OCTUBRE - 19:00
+CHARLA:         Importancia del blockchain en criptomonedas y soluciones empresariales
+CONFERENCISTA:  Prof. Dr. Marcos Villagra
+TIPO:           Conferencia Magistral
+ENFOQUE GCC:    Blockchain, infraestructura segura, soluciones empresariales

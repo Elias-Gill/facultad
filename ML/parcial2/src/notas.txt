@@ -11,6 +11,9 @@ requiere un poco mas de ajuste de sus parametros.
 regresion basada en kernel. Todos los modelos de estas categorias son extremadamente costosos
 en tiempo de procesamiento y memoria.
 
+*No se usa K-Fold aleatorio* en series temporales financieras porque rompe la dependencia
+temporal de los datos.
+
 ===============================================
 PIPELINE: PREDICCIÓN Y CONTROL DE VOLATILIDAD
 ===============================================

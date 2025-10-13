@@ -2,9 +2,9 @@ Lo que se tiene que hacer en el parcial 2 es agarrar el ejercicio de Kaggle que 
 profesor y escribir un informe/paper y exposicion sobre el anlisis del dataset, la eleccion de
 la arquitectura y algoritmos que se van a usar para resolver el ejercicio.
 
-Alumno:             ELIAS SEBASTIAN GILL QUINTANA	
-Dia de exposicion:  *21 DE OCTUBRE*.
-Tema 3:             "https://www.kaggle.com/competitions/hull-tactical-market-prediction"
+Alumno:      ELIAS SEBASTIAN GILL QUINTANA	
+Exposicion:  *21 DE OCTUBRE*.
+Tema 3:      "https://www.kaggle.com/competitions/hull-tactical-market-prediction"
 
 COSAS CLAVE QUE PONER:
 - Definir que librerias, paginas y de donde se encuentran las librerias de los algoritmos que

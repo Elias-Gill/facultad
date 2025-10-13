@@ -1,0 +1,97 @@
+================================================================================
+CATEGORIA: MODELOS LINEALES Y REGULARIZADOS
+================================================================================
+
+SUBCATEGORIA: Regresiones Simples y Penalizadas
+*Regresión Lineal*: 
+Modelo básico que sirve como baseline. Permite interpretar la importancia de cada característica.
+
+*Ridge Regression*:
+- Fundamento: Regularización L2 para evitar sobreajuste.
+- Ventaja: Estable con muchas variables correlacionadas.
+- Ideal para: Datasets con muchas características y ruido.
+
+*Lasso Regression*:
+- Fundamento: Regularización L1 que induce sparsity en los coeficientes.
+- Ventaja: Selección automática de variables relevantes.
+- Ideal para: Datos de alta dimensionalidad.
+
+*ElasticNet*:
+- Fundamento: Combina L1 y L2.
+- Ventaja: Balance entre selección de variables y estabilidad.
+- Ideal para: Situaciones donde algunas características son redundantes y otras importantes.
+
+================================================================================
+CATEGORIA: MODELOS DE SERIES TEMPORALES
+================================================================================
+
+SUBCATEGORIA: Modelos Clásicos
+*AR, ARIMA, SARIMA*:
+- Fundamento: Capturan dependencia temporal y estacionalidad.
+- Ventaja: Interpretables y eficientes en computación.
+- Ideal para: Datos financieros con patrones temporales.
+
+*Prophet*:
+- Fundamento: Modelo aditivo con tendencia y estacionalidad.
+- Ventaja:_ Manejo fácil de missing data y outliers.
+- Ideal para:_ Series con cambios estacionales y tendencia no lineal.
+
+================================================================================
+CATEGORIA: REDES NEURONALES
+================================================================================
+
+SUBCATEGORIA: Redes Densas y Recurrentes
+*MLP (Multilayer Perceptron)*:
+- Fundamento: Captura relaciones no lineales entre características.
+- Ventaja: Rápido de entrenar con tamaño moderado.
+- Ideal para: Datos tabulares con muchas características heterogéneas.
+
+*RNN / LSTM*:
+- Fundamento: Captura dependencias temporales en series de datos.
+- Ventaja: Adecuado para secuencias y momentum del mercado.
+- Ideal para: Datos financieros diarios con correlaciones entre días consecutivos.
+
+================================================================================
+CATEGORIA: TRANSFORMERS PARA SERIES TEMPORALES
+================================================================================
+
+SUBCATEGORIA: Transformers Ligeros
+*Time Series Transformer / Informer*:
+- Fundamento: Modela relaciones temporales y multivariables simultáneamente.
+- Ventaja: Capta patrones complejos y dependencia a largo plazo.
+- Ideal para: Series temporales con múltiples features y relaciones complejas.
+
+================================================================================
+CATEGORIA: CLUSTERING Y REGIMES DE MERCADO
+================================================================================
+
+SUBCATEGORIA: Agrupación y Modelado por Clúster
+*K-Means / Clustering Jerárquico*:
+- Fundamento: Agrupa días con características similares.
+- Ventaja: Permite entrenar modelos especializados por cluster.
+- Ideal para: Capturar regímenes de mercado distintos.
+
+================================================================================
+CATEGORIA: MODELOS BAYESIANOS
+================================================================================
+
+SUBCATEGORIA: Regresiones Probabilísticas
+*Bayesian Ridge Regression*:
+- Fundamento: Introduce incertidumbre en las predicciones.
+- Ventaja: Permite gestionar riesgo y volatilidad.
+- Ideal para: Estrategias que necesitan control de volatilidad explícito.
+
+*Gaussian Process Regression*:
+- Fundamento: Modelos no paramétricos con predicción probabilística.
+- Ventaja: Captura relaciones complejas y varianza de predicción.
+- Ideal para: Series temporales con patrones difíciles de modelar linealmente.
+
+================================================================================
+CATEGORIA: OPTIMIZACION DE PORTAFOLIO
+================================================================================
+
+SUBCATEGORIA: Asignación Condicional a Predicciones
+*Optimización basada en Forecasts*:
+- Fundamento: Usa predicciones de rendimientos para asignar capital.
+- Ventaja: Permite cumplir restricciones de volatilidad.
+- Ideal para: Combinar modelos predictivos ligeros con asignación de riesgo.

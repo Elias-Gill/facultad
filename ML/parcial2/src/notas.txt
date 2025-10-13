@@ -1,0 +1,77 @@
+SOLUCION PROPUESTA:
+Quiero usar el modelo LightBM + ElasticNet con GARCH para simular el momentum del mercado. La
+solucion de Kaggle lo que hace es tener un tercer modelo mas el cual es el de XGBoost.
+
+Ademas, quiero tener de opcionar el agregar como tercer modelo un modelo rapido y simple como
+lo es ARIMA, el cual captura interacciones temporales entre los datos que los otros modelos
+posiblemente puedan omitir, ademas de que su costo computacional es bastante bajo, solo que
+requiere un poco mas de ajuste de sus parametros.
+
+*Modelos descartados:* los basados en regresion probabilistica (gaussiana o bayesiana), y
+regresion basada en kernel. Todos los modelos de estas categorias son extremadamente costosos
+en tiempo de procesamiento y memoria.
+
+===============================================
+PIPELINE: PREDICCIÓN Y CONTROL DE VOLATILIDAD
+===============================================
+
+         ┌──────────────────────────────────────────┐
+         │              DATOS DE ENTRADA            │
+         │ (M*, E*, I*, P*, V*, S*, MOM*, D*, etc.) │
+         └──────────────────────────────────────────┘
+                              │
+                              ▼
+         ┌──────────────────────────────────────────┐
+         │   PREPROCESAMIENTO Y FEATURE ENGINEERING │
+         │ - Imputación de valores faltantes        │
+         │ - Normalización / Escalado               │
+         │ - Creación de lags y rolling features    │
+         │ - División temporal (train / test)       │
+         └──────────────────────────────────────────┘
+                              │
+                              ▼
+┌──────────────────────┐                ┌────────────────────┐
+│   MODELO 1:          │                │   MODELO 2:        │
+│   ElasticNet (L1/L2) │                │   LightGBM         │
+│ - Captura relaciones │                │ - Captura efectos  │
+│   lineales y sparsos │                │   no lineales      │
+└──────────────────────┘                └────────────────────┘
+           │                                     │
+           └──────────────┬──────────────────────┘
+                          ▼
+         ┌───────────────────────────────────────────┐
+         │  COMBINADOR / META-MODELO (STACKING)      │
+         │ - Promedio ponderado o regresión meta     │
+         │ - Obtiene la PREDICCIÓN DE RETORNO (ŷ_t)  │
+         └───────────────────────────────────────────┘
+                          │
+                          ▼
+         ┌───────────────────────────────────────────┐
+         │   MODELO DE VOLATILIDAD (GARCH / EGARCH)  │
+         │ - Estima σ̂_t = volatilidad esperada       │
+         │ - Basado en retornos o residuales previos │
+         └───────────────────────────────────────────┘
+                          │
+                          ▼
+         ┌──────────────────────────────────────────┐
+         │   MÓDULO DE ASIGNACIÓN DE CAPITAL        │
+         │ - Escala la posición según riesgo:       │
+         │     w_t = f(ŷ_t / σ̂_t)                   │
+         │ - Limita 0 ≤ w_t ≤ 2                     │
+         │ - Garantiza volatilidad ≤ 120%           │
+         └──────────────────────────────────────────┘
+                          │
+                          ▼
+         ┌──────────────────────────────────────────┐
+         │     PREDICCIÓN FINAL Y EVALUACIÓN        │
+         │ - Rendimiento ajustado por riesgo        │
+         │ - Ratio de Sharpe modificado (métrica)   │
+         │ - Comparación con S&P 500                │
+         └──────────────────────────────────────────┘
+
+RESUMEN CONCEPTUAL DEL FLUJO: 1. Las *features* del mercado alimentan dos modelos complementarios (ElasticNet y LightGBM).
+2. Sus predicciones se combinan para obtener un *forecast* de retornos esperados.
+3. Paralelamente, un modelo GARCH estima la volatilidad condicional del mercado.
+4. La asignación de capital se ajusta dinámicamente en función de esa volatilidad, garantizando
+   que la estrategia no supere el límite de riesgo permitido.
+5. La evaluación se realiza con la métrica basada en Sharpe ajustado por volatilidad.

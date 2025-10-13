@@ -1,0 +1,207 @@
+================================================================================
+TITULO: Estrategia de Predicción de Rendimientos del S&P 500 con ElasticNet + XGBoost + GARCH
+================================================================================
+
+VISION GENERAL DEL ENFOQUE TECNICO Y OPERATIVO
+
+Este documento describe un enfoque exhaustivo para construir un modelo de predicción de
+rendimientos diarios del S&P 500 integrando:
+
+- ElasticNet para selección de features e interpretabilidad.
+- XGBoost para capturar no linealidades y relaciones complejas.
+- Un módulo GARCH para estimación de volatilidad condicional y control de asignación de
+  capital.
+- Meta-modelo Ridge para combinar predicciones de los modelos base.
+- Posibilidad de integrar ARIMA como tercer modelo para pruebas adicionales de series
+  temporales.
+
+El enfoque está orientado a la implementación práctica con consideración de recursos
+computacionales limitados y control de volatilidad en las asignaciones.
+
+PREPARACION Y EDA (EXPLORACION INICIAL)
+
+1. Cargar CSVs de entrenamiento y prueba.
+2. Revisar tipos de datos, densidad temporal, valores faltantes y correlaciones.
+3. Documentar periodos con datos incompletos y decidir si se imputan o eliminan filas.
+4. Verificar estacionalidad y outliers en *forward_returns* y features clave.
+5. Calcular estadísticas de ventana móvil para identificar regímenes de mercado.
+6. Guardar gráficos y tablas de resumen en el notebook para análisis visual.
+
+LIMPIEZA Y TRATAMIENTO DE VALORES FALTANTES
+
+- Imputar NaNs sistemáticos al inicio usando forward-fill/backfill o mediana calculada en
+  ventana temporal.
+- Para NaNs dispersos, imputar usando mediana basada únicamente en el conjunto de entrenamiento
+  previo.
+- Mantener indicadores binarios de missing si la ausencia de datos es predictiva.
+- No usar columnas objetivo para imputar features.
+- Evitar filtrado que introduzca información futura.
+
+INGENIERIA DE FEATURES (FEATURE ENGINEERING)
+
+- Lags explícitos de features clave y *forward_returns*.
+- Estadísticas rolling: mean, std, skewness, kurtosis (ventanas 5, 10, 21 días).
+- Ratios y normalización por volatilidad: feature_scaled = feature / rolling_std(feature).
+- Momentum y reversión: diferencias entre medias móviles, cruces.
+- Estimadores de volatilidad: rolling std, Parkinson, Garman-Klass, realized volatility.
+- Interacciones de señales: multiplicación de features relevantes.
+- Indicadores técnicos simples: RSI, ATR.
+- Normalización cross-sectional por día (percentiles/ranking).
+- Dummificación de features categóricas si existen (día de la semana, mes).
+
+PARTICIONADO TEMPORAL Y VALIDACION
+
+- Rolling / walk-forward validation: entrenamiento en [t0, t1], validación en [t1+1, t2].
+- Expanding window con validación por bloques.
+- No usar K-fold aleatorio.
+- Evaluar estabilidad de métricas a lo largo del tiempo.
+
+ESCALADO Y PREPROCESADO PARA MODELOS
+
+- ElasticNet requiere escalado (StandardScaler: media 0, std 1).
+- XGBoost puede usar escalado consistente o variables originales.
+- Ajustar scalers únicamente sobre entrenamiento de cada ventana.
+
+================================================================================
+TITULO: Configuracion de modelos
+================================================================================
+
+ELASTICNET: CONFIGURACION Y PARAMETROS
+
+- alpha: magnitud de penalización (λ).
+- l1_ratio: mezcla L1/L2 (0 = Ridge, 1 = Lasso).
+- max_iter: suficiente para convergencia.
+- normalize: si no se usa pipeline con scaler.
+- Estrategia práctica: RandomizedSearchCV o grid pequeño para l1_ratio ∈ {0.1,0.3,0.5,0.7,1.0},
+  alpha log-uniform [1e-5,1e0].
+- Validación temporal para cada combinación.
+
+XGBOOST: CONFIGURACION Y PARAMETROS
+
+- learning_rate (eta) 0.01–0.1
+- n_estimators 100–1000 con early_stopping
+- max_depth 3–8
+- subsample 0.6–1.0
+- colsample_bytree 0.4–0.8
+- reg_alpha/reg_lambda para regularización
+- objective='reg:squarederror'
+- Priorizar learning_rate pequeño con n_estimators moderado.
+- RandomizedSearch sobre max_depth, subsample, colsample_bytree, reg_alpha/reg_lambda.
+
+# Stacking / combinación de predicciones
+
+- Blending con meta-modelo Ridge entrenado sobre predicciones OOF (out-of-fold) usando
+  validación temporal.
+- Meta-features: [pred_enet_oof, pred_xgb_oof], posibilidad de incluir volatilidad estimada.
+- Meta-modelo lineal simple para combinar predicciones y limitar riesgo de sobreajuste.
+
+GARCH: ESTIMACION DE VOLATILIDAD CONDICIONAL
+
+- Modelos GARCH(p,q) o EGARCH/TGARCH para capturar asimetrías.
+- Se ajusta sobre rendimientos históricos o sobre residuos del meta-modelo.
+- Forecast de volatilidad a 1 día para ajustar asignación de capital.
+- Actualización rolling periódica para mantener adaptabilidad sin recalcular cada día.
+
+Lógica de asignación de capital con control de volatilidad
+- Convertir forecast de retorno ŷ_t y forecast de volatilidad σ̂_t en peso w_t ∈ [0,2].
+- Estrategias:
+  - Apalancamiento basado en Sharpe objetivo: w_t = clip(k * ŷ_t / σ̂_t, 0,2)
+  - Match a volatilidad objetivo: w_t = clip(base_signal * target_vol / σ̂_t, 0,2)
+- Suavizado de cambios: EWMA sobre w_t, limitación de cambio diario máximo.
+- Considerar costos de transacción y liquidez.
+
+================================================================================
+TITULO: Backtesting y evaluacion
+================================================================================
+
+- Simulación día a día: cálculo de features, predicción base, meta-modelo, forecast GARCH,
+  asignación w_t, P&L.
+- Métricas: retorno acumulado, anualizado, volatilidad, modified Sharpe, drawdown máximo,
+  Calmar ratio, turnover, hit rate.
+- Uso de múltiples ventanas rolling para robustez.
+
+HIPERPARAMETROS Y TUNING SUGERIDOS
+
+*ElasticNet:*
+- alpha: 1e-5 a 1e0
+- l1_ratio: 0.1 a 0.9
+
+*XGBoost:*
+- learning_rate: 0.01 a 0.1
+- max_depth: 3 a 7
+- subsample: 0.6 a 1.0
+- colsample_bytree: 0.4 a 0.9
+- reg_alpha: 0 a 1
+- reg_lambda: 0.5 a 5
+
+*GARCH:*
+- p,q: 1,1 o pruebas 1,2
+- dist: normal o student-t
+
+ASIGNACION:
+- k (scaling): calibrar para volatilidad objetivo
+- smoothing λ: 0.85–0.98
+- max_change diario: 0.05–0.2
+
+PREVENCION DE OVERFITTING Y FUGAS
+- No usar información futura.
+- OOF stacking temporal.
+- Monitorizar estabilidad de coeficientes (ElasticNet) y feature importance (XGBoost).
+- Regularización para evitar memorizar ruido.
+
+INTERPRETABILIDAD Y SELECCION DE FEATURES
+- Coeficientes de ElasticNet para selección inicial.
+- XGBoost importance o SHAP para entender aportes de cada feature.
+- Reducir dimensionalidad si hay features redundantes.
+
+COSTES DE TRANSACCION Y SLIPPAGE
+- Modelo simple: coste = c * |Δw_t| * notional
+- Ajustar fricción realista, incluso fracciones de 0.01% por trade pueden impactar resultados.
+
+IMPLEMENTACION Y PRODUCCION
+- Serializar modelos y scalers (joblib/pickle).
+- Guardar logs y metadatos: versiones, features, fecha, seed.
+- Monitorizar drift, error, turnover, volatilidad ex-post.
+- Reentrenar si métricas se desvían.
+
+REPRODUCIBILIDAD
+- Fijar seeds en numpy, scikit-learn, XGBoost.
+- Guardar snapshots de datasets y semilla de entrenamiento.
+
+ASPECTOS COMPUTACIONALES Y OPTIMIZACIONES
+- Reducir tamaño de search de hiperparámetros.
+- Selección de features previa.
+- Early stopping para XGBoost.
+- Reentrenamientos periódicos en vez de diarios si el coste es alto.
+- Paralelizar donde sea posible.
+
+RIESGOS Y LIMITACIONES PRINCIPALES
+- Señales débiles y frágiles en el tiempo.
+- Forecast de volatilidad puede fallar en eventos extremos.
+- Overfitting en ensamble si stacking no se valida correctamente.
+
+CHECKLIST OPERATIVO ANTES DE ENVIAR / ENTREGAR
+- Validación temporal correcta.
+- Pipelines serializables.
+- Control de volatilidad probado en backtests out-of-sample.
+- Reporte de métricas por ventana, curvas de equity, drawdowns y turnover.
+- Documentación de parámetros clave y calibración de k y target_vol.
+
+RESUMEN DE MODELOS Y PIPELINE
+1. Preprocesado y feature engineering.
+2. Entrenamiento de ElasticNet.
+3. Entrenamiento de XGBoost.
+4. Predicciones OOF y construcción de meta-modelo (Ridge).
+5. Forecast de volatilidad con GARCH/EGARCH.
+6. Cálculo de asignación de capital w_t con smoothing y límites.
+7. Simulación de backtesting día a día.
+8. Ajuste de hiperparámetros iterativo y control de riesgos.
+9. Opcional: pruebas con ARIMA como modelo adicional para capturar series temporales.
+
+CONCLUSION
+El pipeline ElasticNet + XGBoost + meta-modelo Ridge + GARCH proporciona un balance entre
+interpretabilidad, captación de no linealidades y control de volatilidad. La clave no es solo
+elegir buenos modelos, sino construir procesos robustos de imputación, generación de lags,
+validación temporal, stacking temporal, forecast de volatilidad y asignación con control de
+riesgo. ARIMA se puede integrar opcionalmente para exploración de patrones temporales
+adicionales.

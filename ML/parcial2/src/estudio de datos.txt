@@ -1,0 +1,246 @@
+
+Informe detallado de análisis táctico de datos
+Fuente: tactical_data_analysis.pdf
+
+1) Resumen ejecutivo
+El conjunto de datos contiene 8,990 observaciones y 98 columnas. El análisis exploratorio
+muestra: alta tasa de valores ausentes en columnas específicas; la variable objetivo calculada
+('excess_return' = forward_returns - risk_free_rate) presenta colas pesadas y no sigue una
+distribución normal; existe 'volatility clustering' (periodos con alta y baja varianza); la
+autocorrelación de retornos es débil a lags cortos, lo que limita ganancias por reglas simples
+basadas en retornos previos. Estos hallazgos condicionan la elección de preprocesamiento,
+selección de características, modelos a probar y métricas de evaluación.
+
+2) Datos y preparación inicial
+- Origen y forma: el CSV original fue cargado y reducido en memoria con técnicas automáticas de
+  downcasting. Se reportó una reducción de memoria del ~52.9% tras el ajuste de tipos. El
+  dataset inicial quedó con 8,990 filas y 97–98 columnas tras indexar por 'date_id'.
+- Variables de interés: 'forward_returns', 'risk_free_rate', 'market_forward_excess_returns' y
+  la variable construida 'excess_return'. Se trabajará con 'excess_return' como target
+  principal.
+
+3) Calidad de datos y ausencias
+- Distribución de nulos: hay columnas con proporciones altas de nulos. Las 5 con mayor
+  proporción son E7 (77.52%), V10 (67.29%), S3 (63.77%), M1 (61.70%) y M14 (61.62%). Esto
+  obliga a estrategias de imputación selectiva o descarte de columnas según su relevancia.
+- Dinámica temporal de ausencias: el análisis muestra intervalos con mayor y menor completitud.
+  El punto a partir del cual al menos 95% de las features están completas fue determinado
+  dinámicamente en date_id = 5540. Filtrando desde ahí hacia adelante queda un subconjunto con
+  3,450 filas y 98 columnas. Esto sugiere trabajar con dos modos: (A) modelo sobre toda la
+  serie con imputaciones robustas; (B) modelo entrenado sólo desde start_id para minimizar
+  imputaciones. Implicación operativa: si decide usar el periodo
+  completo, aplicar imputación basada en forward/backward fill más validación temporal
+  estricta. Si usa periodo filtrado, ganarás calidad de datos a costa de menor cantidad de
+  observaciones y posible sesgo temporal.
+
+4) Análisis de la variable objetivo
+- Construcción: 'excess_return' = forward_returns - risk_free_rate. Gráficas comparativas con
+  la variable procesada sugieren que la versión provista está winsorizada; la versión calculada
+  es más fundamental.
+- Distribución: pruebas de normalidad muestran rechazo nítido de normalidad. Jarque-Bera y
+  D'Agostino presentan p-values << 0.05; la distribución tiene colas pesadas y asimetría. Esto
+  implica que asumir errores gaussianos en modelos lineales simples no es válido sin
+  transformaciones o modelado robusto.
+- Comportamiento temporal: se observa volatilidad agrupada (clustering). La serie acumulada
+  muestra episodios de crisis bien conocidos (p. ej. 2000, 2008, 2020). La autocorrelación
+  (ACF/PACF) a lags cortos es cercana a cero, lo que es consistente con mercados eficientes en
+  horizontes diarios. Implicaciones: modelos que dependan de errores
+  normales o de alta autocorrelación de retornos perecen inadecuados. Hay que preferir técnicas
+  robustas a colas pesadas y modelos que capturen heteroscedasticidad temporal como GARCH o
+  modelos basados en series latentes. Para modelos supervisados, usar pérdidas robustas (Huber,
+  quantile) o transformar el objetivo (rank, buckets, log-odds si se clasifican señales).
+
+5) Análisis de características y correlaciones
+- Estructura de grupos: las columnas se agrupan por prefijo en categorías D, E, I, M, P, S, V y
+  MOM. La generación de series por grupos muestra comportamiento diverso entre conjuntos de
+  features.
+- Correlaciones con target: las correlaciones Pearson con 'excess_return' son en general bajas.
+  Las top correlaciones absolutas incluyeron M4 (~0.0665), V13 (~0.0624), M1 (~0.0463), S5, S2,
+  etc. Incluso las mayores correlaciones son muy pequeñas. El propio
+  'market_forward_excess_returns' y variables derivadas del target aparecen top por
+  construcción. Interpretación: señales lineales simples son débiles. Las
+  features individuales aportan poco en términos de correlación lineal con el target.
+  Probablemente el signal esté disperso en combinaciones no lineales o en interacciones
+  temporales. Esto sugiere:
+  - usar modelos no lineales (árboles, ensembles, NN).
+  - crear características derivadas (lags, medias móviles, volatilidad histórica, indicadores
+    compuestos).
+  - aplicar reducción dimensional con criterio de información o modelos regulares (L1, PCA,
+    autoencoders) para evitar sobreajuste.
+
+6) Heatmaps y dependencia interna
+- Mapas de correlación por grupo muestran patrones locales de correlación entre features del
+  mismo prefijo. Algunos grupos presentan bloques de alta correlación que indican redundancia.
+  Implicación: se recomienda agrupar o colapsar variables redundantes.
+  Posibles acciones: agregación por componente principal por grupo, selección basada en
+  importancia en modelos iniciales, o clustering de features seguido de representación por
+  centroides.
+
+7) Observaciones estadísticas clave
+- Normalidad: rechazada. No usar tests o modelos que asuman normalidad sin comprobar
+  transformaciones.
+- Autocorrelación: débil en retornos diarios. Evitar modelos que dependan únicamente de lags
+  simples del target.
+- Volatilidad: presente en forma de clustering. Modelos heteroscedásticos o features que
+  capturen varianza histórica son relevantes.
+- Missingness: concentrada en ciertos campos y tiempos. Estrategia de manejo de NaNs debe ser
+  explícita y evaluada por impacto.
+
+8) Recomendaciones de preprocesamiento (ordenadas por prioridad)
+1. Decidir ámbito temporal: usar todo el historial con imputación o usar periodo desde
+   start_id=5540 para evitar imputaciones extensas.
+2. Imputación:
+   - Para features con patrón temporal claro: forward-fill / backward-fill con ventanas
+     limitadas.
+   - Para features con many-missing (>50%): considerar descarte o imputación por modelo (KNN,
+     regresión o MICE) si son informativas.
+3. Ingeniería de features:
+   - Crear lags relevantes y rolling statistics (mean, std, skewness) para ventanas:
+     1,3,5,10,20 días.
+   - Añadir medidas de volatilidad (rolling std, realized vol).
+   - Interacciones entre grupos (p. ej. M*V).
+   - Normalizar/scalear features por ventana o por z-score con look-ahead evitado.
+4. Selección y reducción:
+   - Filtrado por importancia usando modelos robustos (Random Forest, LightGBM) con validación
+     temporal.
+   - PCA o autoencoder por grupos para reducir redundancia.
+5. Modelos sugeridos:
+   - Modelos que manejen no linealidad: LightGBM/CatBoost/XGBoost.
+   - Modelos secuenciales con memoria: LSTM/Temporal CNN, pero con cuidado por cantidad de
+     datos.
+   - Modelos probabilísticos/volatilidad: GARCH para modelar varianza condicional como input o
+     meta-modelo.
+6. Métricas y objetivos:
+   - Para regresión: MAE, RMSE, y pérdidas robustas. Considerar métricas orientadas a utilidad
+     económica (Sharpe, Sortino) en backtests.
+   - Para señal / clasificación: accuracy por chunk, precision/recall en colas, e indicadores
+     de retorno acumulado y drawdown.
+
+9) Estrategia de evaluación y validación
+- Validación temporal estricta. Usar backtests por walk-forward. Mantener ventana de
+  entrenamiento creciente o deslizante y evaluar rendimiento fuera de muestra.
+- Evitar fugas de información. Todas las imputaciones y cálculos deben ser causally correctos
+  respecto a la fecha de predicción.
+- Evaluar robustez por subperiodos (pre-2008, 2008, 2020) dado que la volatilidad y estructura
+  cambian.
+
+10) Limitaciones del análisis y riesgos
+- Ausencia de información semántica sobre el significado económico de cada feature. Sin
+  etiquetas claras, la interpretación de la importancia es limitada.
+- Valores nulos altos en columnas clave pueden inducir sesgos si se imputan de manera agresiva.
+- Correlaciones bajas no implican ausencia de señal compleja. La señal puede residir en
+  combinaciones no lineales o en dinámicas de volatilidad.
+- Resultados basados en Pearson no capturan relaciones no lineales ni dependencias temporales
+  complejas.
+
+11) Próximos pasos operativos sugeridos
+- Preparar un pipeline reproducible que incluya: ingestión, imputación causal, generación de
+  lags y rolling features, selección inicial de variables, modelado con LightGBM + calibración
+  de pérdida robusta y backtest walk-forward.
+- Probar un modelo simple de referencia (baseline): por ejemplo, un LightGBM con features de
+  lags y volatilidad, validación temporal y selección por SHAP.
+- Paralelamente, estimar GARCH sobre returns y usar su output (varianza condicional) como
+  feature para el modelo ML.
+- Documentar cada decisión de imputación y cada transformación para trazabilidad.
+
+12) Conclusión
+Los datos muestran características típicas de series financieras: colas pesadas, volatilidad
+agrupada y baja autocorrelación de retornos diarios. Las señales lineales son débiles. El
+enfoque práctico es combinar ingeniería de características temporales con modelos no lineales y
+estrategias rigurosas de validación temporal. La calidad de resultados dependerá fuertemente de
+la estrategia de imputación y de la capacidad para extraer interacciones y señales no lineales.
+
+Anexo: cifras clave extraídas del análisis original
+- Filas: 8,990. 
+- Columnas: 98. 
+- Punto dinámico de inicio con >=95% 
+- Completitud: date_id = 5540.
+
+Dataset filtrado desde start_id: 
+- 3,450 filas. 
+- Top-nulos: E7 (77.52%), 
+- V10 (67.29%), 
+- S3 (63.77%), 
+- M1 (61.70%), 
+- M14 (61.62%). 
+- Jarque-Bera y normality tests: p-values << 0.05, normalidad rechazada. 
+- Top correlaciones absolutas con el target son pequeñas (M4 ~0.0665, V13 ~0.0624).
+
+Fin del informe.
+
+==============================================================================
+Sección: Explicación de métricas y su significado operativo
+==============================================================================
+
+1) Porcentaje de valores nulos (% NaN)
+Mide la proporción de datos faltantes en cada columna. Sirve para decidir qué variables imputar
+o eliminar. Alta proporción implica bajo valor informativo o riesgo de sesgo si se rellena
+incorrectamente. Guía la estrategia de limpieza de datos y selección de variables.
+
+2) Reducción de memoria (%)
+Indica la eficiencia de la conversión de tipos y la optimización del dataset. Reduce consumo de
+recursos y acelera la carga y entrenamiento del modelo sin alterar la información. Es una
+métrica de ingeniería, no de calidad estadística.
+
+3) Normalidad (pruebas Jarque-Bera, D’Agostino)
+Evalúan si la distribución del target o features sigue una distribución normal. Rechazo de
+normalidad implica colas pesadas y sesgos, lo cual afecta la elección de modelos estadísticos y
+la validez de supuestos gaussianos. Si no hay normalidad, se recomiendan modelos robustos o
+transformaciones.
+
+4) Autocorrelación (ACF, PACF)
+Mide dependencia temporal del target. 
+Baja autocorrelación sugiere comportamiento cercano al azar (mercados eficientes). 
+Alta autocorrelación permite usar modelos ARIMA, RNN o reglas basadas en memoria.
+
+5) Clustering de volatilidad
+Detecta periodos consecutivos de alta o baja varianza. 
+Es típico en datos financieros y justifica usar modelos heteroscedásticos (GARCH, EGARCH). 
+Permite incorporar la volatilidad como feature o ajustar intervalos de predicción dinámicos.
+
+6) Correlación lineal con el target (Pearson)
+Mide fuerza y dirección de la relación lineal entre cada feature y la variable objetivo.
+Correlaciones bajas indican que no hay señales lineales simples y se requieren modelos no
+lineales o interacciones complejas.
+
+7) Matriz de correlación (heatmap)
+Visualiza redundancia entre variables. 
+Bloques de alta correlación indican duplicación de información. 
+Sirve para aplicar reducción dimensional (PCA, agrupamiento) y evitar sobreajuste.
+
+8) Pérdida de completitud temporal
+Identifica a partir de qué punto temporal las variables están casi completas (≥95%). 
+Ayuda a definir el rango de datos más limpio para entrenamiento. 
+Reduce ruido y mejora estabilidad de validación temporal.
+
+Conclusión:
+Cada métrica tiene un propósito distinto: calidad de datos, estructura estadística, relaciones
+entre variables o dinámica temporal. Juntas, orientan cómo preparar los datos (imputación,
+selección, transformación) y elegir los modelos más adecuados (lineales, no lineales o
+secuenciales).
+
+Usa un stack mixto. Combina modelos que capturen no linealidad, interacciones, memoria temporal
+y dinámica de volatilidad. Explico qué incluir, por qué y cómo ensamblarlo sin ser escueto.
+
+============================================================
+Configuraciones y hyperparametros sugeridos (iniciales)
+============================================================
+
+- LightGBM: num_leaves 31–127, learning_rate 0.01–0.05, n_estimators 500–3000, max_depth 6–12,
+subsample 0.6–0.9, colsample_bytree 0.3–0.8.
+- GARCH: GARCH(1,1) y EGARCH si hay asimetría. Usa var condicional como feature y para ajustar
+  pesos de predicción.
+- Ridge: alpha 0.1–10 (ajustar con CV temporal).
+- ElasticNet
+   - alpha=0.1,          # fuerza total de regularización
+   - l1_ratio=0.5,       # mezcla equilibrada entre L1 y L2
+   - fit_intercept=True, # mantiene término constante
+   - normalize=False,    # desactiva normalización interna si escalas antes
+   - precompute=False,   # no usar matrices precomputadas (consume mucha RAM)
+   - max_iter=10000,     # asegura convergencia estable
+   - tol=1e-4,           # tolerancia de parada razonable
+   - warm_start=False,   # entrena desde cero cada vez
+   - positive=False,     # permite pesos negativos (importante en datos financieros)
+   - selection='random', # selección aleatoria para convergencia más rápida
+   - copy_X=True         # mantiene copia limpia de X
+

@@ -8,7 +8,7 @@ Este documento describe un enfoque exhaustivo para construir un modelo de predic
 rendimientos diarios del S&P 500 integrando:
 
 - ElasticNet para selección de features e interpretabilidad.
-- XGBoost para capturar no linealidades y relaciones complejas.
+- LightGBM para capturar no linealidades y relaciones complejas.
 - Un módulo GARCH para estimación de volatilidad condicional y control de asignación de
   capital.
 - Meta-modelo Ridge para combinar predicciones de los modelos base.
@@ -59,7 +59,7 @@ PARTICIONADO TEMPORAL Y VALIDACION
 ESCALADO Y PREPROCESADO PARA MODELOS
 
 - ElasticNet requiere escalado (StandardScaler: media 0, std 1).
-- XGBoost puede usar escalado consistente o variables originales.
+- LightGBM puede usar escalado consistente o variables originales.
 - Ajustar scalers únicamente sobre entrenamiento de cada ventana.
 
 ================================================================================
@@ -77,19 +77,26 @@ ELASTICNET: CONFIGURACION Y PARAMETROS
 - Validación temporal para cada combinación.
 
 XGBOOST: CONFIGURACION Y PARAMETROS
+- objective: regression,            # equivale a reg:squarederror
+- boosting_type: gbdt,              # gradient boosting estándar
+- learning_rate: 0.01–0.1,          # igual que XGBoost eta
+- n_estimators: 100–1000,           # número total de árboles
+- num_leaves: 15–255,               # controla la complejidad real del árbol
+- max_depth: 3–8,                   # tope de profundidad (igual que XGB)
+- subsample: 0.6–1.0,               # equivale a subsample (filas)
+- colsample_bytree: 0.4–0.8,        # igual que XGBoost
+- min_child_samples: 20–100,        # similar a min_child_weight
+- reg_alpha: 0–10,                  # L1 regularization
+- reg_lambda: 0–10,                 # L2 regularization
+- metric: "rmse",                   # error cuadrático medio
+- early_stopping_round: 50,         # si usas validación
+- feature_fraction: 0.4–0.8,        # alias de colsample_bytree
+- bagging_fraction: 0.6–1.0,        # alias de subsample
+- bagging_freq: 1,                  # frecuencia del bagging
+- verbosity: -1,                    # silencia logs
+- random_state: 42
 
-- learning_rate (eta) 0.01–0.1
-- n_estimators 100–1000 con early_stopping
-- max_depth 3–8
-- subsample 0.6–1.0
-- colsample_bytree 0.4–0.8
-- reg_alpha/reg_lambda para regularización
-- objective='reg:squarederror'
-- Priorizar learning_rate pequeño con n_estimators moderado.
-- RandomizedSearch sobre max_depth, subsample, colsample_bytree, reg_alpha/reg_lambda.
-
-# Stacking / combinación de predicciones
-
+STACKING:
 - Blending con meta-modelo Ridge entrenado sobre predicciones OOF (out-of-fold) usando
   validación temporal.
 - Meta-features: [pred_enet_oof, pred_xgb_oof], posibilidad de incluir volatilidad estimada.
@@ -126,13 +133,9 @@ HIPERPARAMETROS Y TUNING SUGERIDOS
 - alpha: 1e-5 a 1e0
 - l1_ratio: 0.1 a 0.9
 
-*XGBoost:*
-- learning_rate: 0.01 a 0.1
-- max_depth: 3 a 7
-- subsample: 0.6 a 1.0
-- colsample_bytree: 0.4 a 0.9
-- reg_alpha: 0 a 1
-- reg_lambda: 0.5 a 5
+L2 → suaviza. Ideal para evitar que todos los pesos crezcan.
+L1 → simplifica. Elimina variables y mejora interpretabilidad.
+L1 + L2 (ElasticNet) → mezcla ambos efectos; útil cuando hay muchas features correlacionadas
 
 *GARCH:*
 - p,q: 1,1 o pruebas 1,2
@@ -165,13 +168,13 @@ IMPLEMENTACION Y PRODUCCION
 - Reentrenar si métricas se desvían.
 
 REPRODUCIBILIDAD
-- Fijar seeds en numpy, scikit-learn, XGBoost.
+- Fijar seeds en numpy, scikit-learn.
 - Guardar snapshots de datasets y semilla de entrenamiento.
 
 ASPECTOS COMPUTACIONALES Y OPTIMIZACIONES
 - Reducir tamaño de search de hiperparámetros.
 - Selección de features previa.
-- Early stopping para XGBoost.
+- Early stopping para LightGBM.
 - Reentrenamientos periódicos en vez de diarios si el coste es alto.
 - Paralelizar donde sea posible.
 
@@ -190,7 +193,7 @@ CHECKLIST OPERATIVO ANTES DE ENVIAR / ENTREGAR
 RESUMEN DE MODELOS Y PIPELINE
 1. Preprocesado y feature engineering.
 2. Entrenamiento de ElasticNet.
-3. Entrenamiento de XGBoost.
+3. Entrenamiento de LightGBM.
 4. Predicciones OOF y construcción de meta-modelo (Ridge).
 5. Forecast de volatilidad con GARCH/EGARCH.
 6. Cálculo de asignación de capital w_t con smoothing y límites.
@@ -199,7 +202,7 @@ RESUMEN DE MODELOS Y PIPELINE
 9. Opcional: pruebas con ARIMA como modelo adicional para capturar series temporales.
 
 CONCLUSION
-El pipeline ElasticNet + XGBoost + meta-modelo Ridge + GARCH proporciona un balance entre
+El pipeline ElasticNet + LightGBM + meta-modelo Ridge + GARCH proporciona un balance entre
 interpretabilidad, captación de no linealidades y control de volatilidad. La clave no es solo
 elegir buenos modelos, sino construir procesos robustos de imputación, generación de lags,
 validación temporal, stacking temporal, forecast de volatilidad y asignación con control de

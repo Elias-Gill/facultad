@@ -1,0 +1,4 @@
+*Heterocedasticidad*: En estadística se dice que un modelo de regresión lineal presenta
+heterocedasticidad cuando la varianza de los errores no es constante en todas las observaciones
+realizadas. Esto implica el incumplimiento de una de las hipótesis básicas sobre las que se
+asienta el modelo de regresión lineal. Se ve mejor con los graficos.

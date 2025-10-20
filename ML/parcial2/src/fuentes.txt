@@ -1,3 +1,6 @@
 Mucho chatgpt
 https://www.insightbig.com/post/garch-vs-ml-models-vs-anns-which-one-for-volatility-prediction
 
+https://www.kaggle.com/code/samoilovmikhail/hull-tactical-data-analysis
+
+

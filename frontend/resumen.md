@@ -1,4 +1,5 @@
 # Angular
+
 Angular divide una aplicación en piezas claras:
 módulos, componentes, servicios y rutas.
 Todo vive dentro de `src/`.
@@ -34,6 +35,50 @@ Comandos para generar partes específicas:
 Para estudiar de forma enfocada:
 estructura de carpetas, función de cada archivo principal, decorators más usados, flujo de
 datos, binding, lifecycle hooks, sistema de módulos y router, y manejo básico del CLI.
+
+Un **módulo** (NgModule) agrupa partes de la app:
+componentes, pipes, servicios.
+Define qué cosas pertenecen a ese módulo y qué cosas exporta.
+Cada app tiene al menos `AppModule`.
+
+Un **componente** es una combinación de tres partes:
+una plantilla HTML, un archivo TypeScript con lógica y un archivo de estilos opcional.
+El componente no tiene un “spec.ts” para lógica; ese archivo es solo para tests unitarios.
+La lógica del componente está en el `.ts`.
+
+Un componente típico:
+`component.ts` lógica, propiedades, métodos, bindings `component.html` HTML de la vista
+`component.scss|css` estilos del componente `component.spec.ts` solo para tests, no para
+lógica
+
+El HTML y CSS son de ese componente, no de todo el módulo.
+Un módulo puede tener muchos componentes.
+
+Las **rutas** no van en cada módulo por defecto.
+Hay dos enfoques:
+
+1. Una app pequeña tiene un solo archivo de rutas:
+   `app-routing.module.ts`.
+2. Una app grande divide rutas por módulos (lazy loading).
+   Cada módulo puede tener su propio `module-routing.ts`, pero solo si eliges esa estructura.
+
+Cómo funciona realmente el routing:
+El `AppRoutingModule` define URLs y qué componente cargar.
+Si un módulo se carga en lazy-loading, entonces ese módulo tiene un archivo de rutas propio,
+pero esto no es obligatorio.
+
+Resumiendo bien el modelo:
+
+Un **módulo** contiene:
+• componentes • servicios • pipes • imports/exports • opcionalmente un routing propio (solo si
+quieres lazy loading)
+
+Un **componente** contiene:
+• `.ts` con la lógica • `.html` con la vista • `.scss`/`.css` con estilos • `.spec.ts` solo
+para tests
+
+El **routing** está centralizado en `app-routing.module.ts` o distribuido por módulos si usas
+lazy loading.
 
 # Flutter
 

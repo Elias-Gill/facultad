@@ -13,7 +13,7 @@ experiencia
 *Estructura requerida*
 - Introducción: Breve descripción del congreso, fechas y objetivos de la participación.
 - Sesiones Asistidas y Temas Principales: Listado de conferencias y trabajos presenciados
-  (citando autores y temas específicos.
+  (citando autores y temas específicos).
 - Análisis de Vínculo con Gestión de Centro de Cómputo (GCC): Desarrollo _exhaustivo_ de al
   menos _tres temas_ presenciados, explicando cómo se relacionan con la infraestructura, la
   seguridad, la administración de la red, o la gestión operativa del centro de cómputo. Ej.:

@@ -49,8 +49,8 @@ INSTITUCION:    Universidad Tecnologica de Dublin, Irlanda
 ENFOQUE GCC:    Gobernanza de IA, aspectos eticos, estrategia organizacional
 
 JUEVES 09 OCTUBRE - 17:40 a 18:00
-CHARLA:         Arquitectura de Microservicios: Revision Sistematica de la Literatura
 AUTORES:        Alfonso Fernandez, Carolina Gonzalez, Ariel Fernandez, Matias Casco, Fernando Husiin
+CHARLA:         Arquitectura de Microservicios: Revision Sistematica de la Literatura
 INSTITUCION:    Facultad Politecnica, Universidad Nacional de Asuncion
 ENFOQUE GCC:    Arquitectura de sistemas, microservicios, infraestructura cloud
 

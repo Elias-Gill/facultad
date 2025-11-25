@@ -1,0 +1,95 @@
+=========================================================================
+SECCION: Introduccion
+=========================================================================
+
+La tercera edicion del Congreso Paraguayo de informatica organizado por la Universidad Nacional del Este, 
+se desarrollo los dias 9 y 10 de octubre, presentando ejes tematicos relacionados con el mundo
+de la informatica, algunos de los cuales fueron: Informatica en la practica, inteligencia
+artifical, redes e infraestructura de comunicaciones, etc.
+
+La participacion a dicho congreso por parte del alumnado de la Materia "Gestion de Centros de
+Computo", tuvo como objetivos el ampliar los conocimientos de los participantes (alumnos)
+acerca de las nuevas investigaciones y su repercusino en el ambito de la gestion de centros de
+computos. Asi tambien, el eje central de dicha participacion busca que los alumnos comprendan
+mejor las funciones que conlleva el administrar recursos tecnologicos (parece que es muy
+redundnate lo que acabo de decir).
+
+Un breve cronograma de las sesiones mas importantes que cuentan con relacion a la materia:
+
+=========================================================================
+SECCION: Sesiones Asistidas y Temas Principales
+=========================================================================
+
+Las conferencias a las cuales el autor de este informe asistio personalmente fueron las
+siguientes:
+
+---  *DIA 09 DE OCTUBRE* ---
+
+1- TEMA: Realidad Aumentada para la prevención del abuso infantil: estudio de viabilidad,
+   eficacia y recomendaciones a partir del estado del arte
+   AUTORES: Ever Perez, Fabrizio Kawabata, Gerardo Riveros, Cristian Cappo (Facultad
+   Politécnica, Universidad Nacional de Asunción)
+   JUEVES 09 OCTUBRE - 17:00 a 17:20
+
+2- TEMA: Diseño e implementación de un compilador educativo interactivo para facilitar el
+   aprendizaje de los principios de traducción de lenguajes
+   AUTORES: Sebastián Celano, Sol Agüero, Marcos Torres, Fabricio Lin, Gerardo Riveros
+   (Universidad Americana) 
+   JUEVES 09 OCTUBRE - 17:20 a 17:40 (me retire a las 17:20 por fallas tecnicas de los
+   expositores)
+
+3- TEMA: Arquitectura de Microservicios: Revisión Sistemática de la Literatura
+   AUTORES: Alfonso Fernandez, Carolina Gonzalez, Ariel Fernandez, Matias Casco, Fernando
+   Husiin (Facultad Politecnica, Universidad Nacional de Asuncion)
+   JUEVES 09 OCTUBRE - 17:40 a 18:00
+   _Enfoque gcc:_ Arquitectura de sistemas, microservicios, infraestructura cloud
+
+4- TEMA: Sistema de Red de Sensores Inalámbricos para el 
+   Monitoreo de la Calidad del Agua en Cauces 
+   Hídricos del Departamento de Canindeyú 
+   AUTORES: Daniel Omar Romero, Nazario Luis Ayala Frasnelli, Antonio David Ruiz Diaz Medina,
+   Rodrigo Javier Martínez Meza, Ángel Gustavo Heimann Fernández, Gloria Marcela Ortiz Benítez
+   (Universidad Nacional de Canindeyú
+   JUEVES 09 OCTUBRE - 17:20 a 17:40 (retrasada, comenzo a las 17:35)
+
+5- CONFERENCIA: El poder de los Algoritmos: el hombre y el desafío de la Inteligencia Artificial 
+   EXPOSITOR: Prof. Dr. Luca Carlo Cernuzzi (Presidente del Centro de Ingeniería para la
+   Investigación, Desarrollo e Innovación Tecnológica - CIDIT) 
+   JUEVES 09 OCTUBRE - 19:00  
+   _Enfoque gcc:_ Algoritmos, gestion estrategica, desafios tecnologicos
+
+
+---  *DIA 10 DE OCTUBRE* ---
+
+6- TEMA: CodeScan-AI: Detección de Errores de Seguridad en Fragmentos de Código Generados por IA 
+   AUTORES: Enzo Sebastián Vidallet Monges, Gustavo Sosa-Cabrera (Facultad Politécnica,
+   Universidad Nacional de Asunción) 
+   VIERNES 10 OCTUBRE- 15:40 a 16:00 
+
+7- TEMA: Diseno de Simulador de Trafico en Redes Elasticas Multicore
+   AUTORES: Aramy Patricia Rolon Cardenas, Enrique Javier Davalos (Facultad Politecnica,
+   Universidad Nacional de Asuncion)
+   VIERNES 10 OCTUBRE - 16:00 a 16:20
+   _Enfoque gcc:_ Redes elasticas, simulacion, analisis de desempeno
+
+8- TEMA: Optimizacion escalable del trafico urbano con almacenamiento verificable
+   AUTORES: Kevin M. Galeano, Maria J. Duarte, Marcos D. Villagra, Derlis O. Gregor
+   INSTITUCION: Facultad de Ingenieria, Universidad Nacional de Asuncion
+   VIERNES 10 OCTUBRE - 17:00 a 17:20
+   _Enfoque gcc:_ Optimizacion escalable, ciudades inteligentes, despliegues
+
+=========================================================================
+SECCION: Análisis del vínculo de los temas con el ambito de la Gestión de Centros de Cómputo
+=========================================================================
+
+=========================================================================
+SECCION: Conclusiones y Aprendizajes
+=========================================================================
+
+=========================================================================
+SECCION: Referencias (bibliografía consultada y ponencias asistidas).
+=========================================================================
+
+=========================================================================
+SECCION: Anexos
+=========================================================================

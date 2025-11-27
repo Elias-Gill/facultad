@@ -2,10 +2,10 @@
 SECCION: Introduccion
 =========================================================================
 
-La tercera edicion del Congreso Paraguayo de informatica organizado por la Universidad Nacional del Este, 
-se desarrollo los dias 9 y 10 de octubre, presentando ejes tematicos relacionados con el mundo
-de la informatica, algunos de los cuales fueron: Informatica en la practica, inteligencia
-artifical, redes e infraestructura de comunicaciones, etc.
+La tercera edicion del Congreso Paraguayo de informatica organizado por la Universidad Nacional
+del Este, se desarrollo los dias 9 y 10 de octubre, presentando ejes tematicos relacionados con
+el mundo de la informatica, algunos de los cuales fueron: Informatica en la practica,
+inteligencia artifical, redes e infraestructura de comunicaciones, etc.
 
 La participacion a dicho congreso por parte del alumnado de la Materia "Gestion de Centros de
 Computo", tuvo como objetivos el ampliar los conocimientos de los participantes (alumnos)
@@ -82,14 +82,218 @@ siguientes:
 SECCION: Análisis del vínculo de los temas con el ambito de la Gestión de Centros de Cómputo
 =========================================================================
 
-=========================================================================
-SECCION: Conclusiones y Aprendizajes
-=========================================================================
+*NOTE*: que lenguaje de mierda que usa chatgpt
+
+----------------------------------------------------------------------------------------------
+
+TEMA: Arquitectura de Microservicios: Revisión Sistemática de la Literatura
+AUTORES: Alfonso Fernandez, Carolina Gonzalez, Ariel Fernandez, Matias Casco, Fernando
+Husiin (Facultad Politecnica, Universidad Nacional de Asuncion)
+JUEVES 09 OCTUBRE - 17:40 a 18:00
+
+La presentacion “Arquitectura de Microservicios: Revisión Sistemática de la Literatura”,
+impulsada por investigadores de la Facultad Politécnica de la Universidad Nacional de Asunción
+(Alfonso Fernández, Carolina González, Ariel Fernández, Matías Casco y Fernando Husiin), tuvo
+como objetivo principal exponer el estado del arte mundial sobre microservicios en un contexto
+local donde la enseñanza universitaria sigue anclada casi exclusivamente en arquitecturas
+monolíticas.
+
+Los autores detallaron el contenido concreto que emergió del análisis exhaustivo de más de 650
+textos leídos íntegramente —artículos científicos y empresariales, 69 revisiones previas y 30
+libros—, y estructuraron sus hallazgos de la siguiente manera.
+
+Partieron por la definición formal de arquitectura de software según Bass y Clements (2021)
+para luego centrarse en la comparación directa entre monolitos y microservicios: las ventajas
+de uno resultan ser las desventajas del otro, destacando la escalabilidad independiente y la
+resiliencia parcial de los microservicios frente a la simplicidad de despliegue y la
+consistencia fuerte de los monolitos.
+
+De allí surgieron los patrones más recurrentes en la literatura: API Gateway como punto único
+de entrada, el patrón Saga para gestionar transacciones distribuidas sin bloqueos globales,
+Service Mesh e inyección mediante Sidecar para observabilidad y funcionalidades transversales,
+y Backend for Frontend (BFF) adaptado a clientes específicos. Precisamente para profundizar en
+estos patrones, recomendaron el libro “Software Architecture in Practice”, 4ª edición de Len
+Bass, como referencia práctica esencial.
+
+En cuanto a tecnologías, las más citadas y consolidadas son Spring Boot como framework
+principal, Docker y Podman para contenedorización, e Istio como service mesh predominante.
+
+La conclusión más contundente del análisis fue que, a pesar del entusiasmo generalizado, la
+mayoría de proyectos pequeños y medianos obtienen una relación costo-beneficio claramente
+superior con arquitecturas monolíticas; los microservicios solo justifican su complejidad
+adicional cuando existen equipos de desarrollo independientes y una alta frecuencia real de
+despliegues.
+
+Este contenido tiene implicaciones directas y muy concretas en la Gestión del Centro de
+Cómputo:
+
+- La adopción de los patrones expuestos (API Gateway + Saga + Service Mesh) obligaría a
+  rediseñar por completo la infraestructura actual. Pasaríamos de servidores monolíticos
+  pesados a clústers de nodos commodity corriendo Docker o Podman, lo que permite densidades de
+  50-100 servicios por máquina física en lugar de uno solo. El próximo ciclo de renovación de
+  hardware ya no debería centrarse en un único servidor “bestia” sino en decenas de nodos
+  idénticos y baratos, preparando el terreno para orquestadores como Kubernetes o Nomad. Este
+  cambio hace viable pasar de un datacenter centralizado y costoso a varios sitios distribuidos
+  más pequeños (por ejemplo, uno por facultad o sede regional) porque la tolerancia a fallos
+  locales y la replicación automática compensan la latencia.
+
+- En gestión operativa diaria, los despliegues dejarían de ser eventos traumáticos nocturnos
+  que paralizan todo el sistema. Cada microservicio se actualiza de forma independiente, pero
+  eso exige herramientas complejas como: registro snapshots, pipelines CI/CD, límites estrictos
+  de recursos por contenedor y monitoreo distribuido. Sin ellas, la complejidad que la charla
+  señala como “desventaja subestimada” se convierte en un problema para el equipo de
+  desarrollo.
+
+- En seguridad y estrategia a largo plazo, estos patrones empujan inevitablemente hacia
+  entornos híbridos o cloud-native. Un nuevo servicio de matrícula o de biblioteca digital se
+  puede levantar en minutos en AWS o Azure, pero multiplica los vectores de ataque.
+
+----------------------------------------------------------------------------------------------
+
+CONFERENCIA: El poder de los Algoritmos: el hombre y el desafío de la Inteligencia Artificial 
+EXPOSITOR: Prof. Dr. Luca Carlo Cernuzzi (Presidente del Centro de Ingeniería para la
+Investigación, Desarrollo e Innovación Tecnológica - CIDIT) 
+JUEVES 09 OCTUBRE - 19:00  
+
+La conferencia “El poder de los Algoritmos: el hombre y el desafío de la Inteligencia
+Artificial”, dictada por el Prof. Dr. Luca Carlo Cernuzzi (presidente del CIDIT), fue una
+reflexión no técnica sobre la evolución explosiva de la IA en la última década. Cernuzzi
+explicó que el verdadero detonante no fue solo la arquitectura Transformer (2017), sino la
+conjunción de tres factores: poder computacional masivo (principalmente GPUs), cantidades
+obscenas de datos gracias a la masificación de internet y el abandono del intento de copiar el
+cerebro humano para pasar a modelos puramente estadísticos que aprenden patrones a partir de
+billones de ejemplos. Definió inteligencia como “la capacidad de aprender y tomar decisiones
+basadas en ese aprendizaje”, y mostró cómo hoy esa definición la cumplen sistemas que procesan
+lenguaje natural, visión artificial, recomendación personalizada y machine learning en general.
+
+El eje central fue el impacto social y ético: habló de la “tiranía de los datos”, de la pérdida
+de gusto por aprender, de la renuncia al pensamiento crítico cuando delegamos decisiones a
+algoritmos, y de los riesgos legales y de protección de datos personales. Insistió en que el
+desafío no es tecnológico sino antropológico y llamó a experimentar con coraje, pero con
+responsabilidad, porque esta revolución beneficiará a muchos y dejará vulnerables a otros,
+especialmente niños y adultos mayores. Cerró mencionando el proyecto GuaranIA como ejemplo
+local de uso positivo de la IA para preservar y digitalizar el guaraní.
+
+Este contenido tiene consecuencias directas y urgentes en la Gestión del Centro de Cómputo:
+
+En infraestructura y capacidad de cómputo, la explosión de modelos grandes obliga al centro a
+repensar completamente la inversión en hardware. Ya no basta con CPUs tradicionales y
+almacenamiento estándar: entrenar o incluso ejecutar inferencia de modelos medianos (Llama 70B,
+Mistral, etc.) requiere clústers de GPUs o TPUs.
+
+En gestión operativa y estrategia institucional, la conferencia nos fuerza a crear dos líneas
+paralelas: una de experimentación rápida (sandbox con acceso a GPUs para investigadores) y otra
+de uso responsable (capacitación obligatoria en ética de IA para todo el personal técnico y
+directivo, auditorías de sesgos en los modelos que alojemos y protocolos claros para el
+proyecto GuaranIA y similares). Si no lo hacemos, el centro quedará rezagado.
+
+----------------------------------------------------------------------------------------------
+
+TEMA: Optimizacion escalable del trafico urbano con almacenamiento verificable
+AUTORES: Kevin M. Galeano, Maria J. Duarte, Marcos D. Villagra, Derlis O. Gregor
+INSTITUCION: Facultad de Ingenieria, Universidad Nacional de Asuncion
+VIERNES 10 OCTUBRE - 17:00 a 17:20
+
+La presentacion “Optimización escalable del tráfico urbano con almacenamiento verificable”,
+presentada por Kevin M. Galeano, María J. Duarte, Marcos D. Villagra y Derlis O. Gregor
+(FI-UNA, financiado por CONACYT), mostró un sistema real desplegable en intersecciones urbanas:
+una unidad por semáforo equipada con cámara, procesador con GPU integrada y software de visión
+artificial que detecta vehículos en tiempo real, aplica inferencia difusa Mamdani para
+clasificar congestión y recalcula dinámicamente los tiempos de verde/rojo. Las unidades se
+comunican entre sí y con un orquestador central que coordena la estrategia global.
+
+Lo innovador fue la capa de persistencia y trazabilidad: los datos de simulación (generados con
+SUMO), métricas de flujo y decisiones de sincronización se empaquetan en JSON, se almacenan en
+IPFS como almacenamiento distribuido inmutable y sus hashes (CIDs) se anclan en una red
+BlockDAG descentralizada, garantizando que cualquier decisión tomada por el sistema sea
+auditable, inalterable y verificable años después, incluso si algún nodo físico desaparece o es
+manipulado.
+
+Desde la perspectiva de la GCC, este tipo de arquitectura deja al descubierto varios aspectos
+clave. En primer lugar, exige poner en marcha y sostener un conjunto de sistemas que dependen
+unos de otros, los cuales pueden estar repartidos en diferentes máquinas o incluso en distintos
+puntos del mapa. Además, obliga a contar con mecanismos sólidos de supervisión que permitan
+seguir de cerca el comportamiento general: indicadores de eficiencia, consumo de recursos,
+retrasos en las comunicaciones y rapidez en las respuestas de cada parte del ecosistema.
+
+Otro elemento central es la convivencia entre equipos convencionales —como servidores físicos y
+motores de bases de datos— y soluciones basadas en almacenamiento distribuido junto con redes
+donde la información queda registrada de forma permanente. Esto introduce desafíos adicionales
+en cuanto a protección, manejo de identidades digitales y administración de llaves
+criptográficas.
+
+Si llevamos esta idea a un entorno real de una metrópoli conectada, el centro encargado del
+procesamiento podría gestionar los nodos de IPFS, los puntos de entrada hacia la red BlockDAG,
+las máquinas destinadas a simulaciones y también los tableros de supervisión usados por los
+organismos oficiales. Esto supone un avance notable con respecto a los centros tradicionales
+que solo se ocupan de páginas o servicios web más simples, y deja claro hacia qué dirección
+evoluciona el límite de lo posible en el ámbito tecnológico.
 
 =========================================================================
 SECCION: Referencias (bibliografía consultada y ponencias asistidas).
 =========================================================================
 
+- Bass, L., Clements, P., & Kazman, R. (2021). *Software architecture in practice* (4ª ed.).
+  Addison-Wesley.
+
+- Cernuzzi, L. C. (2025). El poder de los algoritmos: el hombre y el desafío de la inteligencia
+  artificial. Conferencia magistral presentada en el III Congreso Paraguayo de Informática
+  (ConParInf 2025), Asunción, Paraguay.
+
+- Fernández, A., González, C., Fernández, A., Casco, M., & Husiin, F. (2025). Arquitectura de
+  microservicios: Revisión sistemática de la literatura. Trabajo presentado en el III Congreso
+  Paraguayo de Informática (ConParInf 2025), Asunción, Paraguay.
+
+- Galeano, K. M., Duarte, M. J., Villagra, M. D., & Gregor, D. O. (2025). Optimización
+  escalable del tráfico urbano con almacenamiento verificable. Trabajo presentado en el III
+  Congreso Paraguayo de Informática (ConParInf 2025), Asunción, Paraguay.
+
+- Pérez, E., Kawabata, F., Riveros, G., & Cappo, C. (2025). Realidad aumentada para la
+  prevención del abuso infantil: estudio de viabilidad, eficacia y recomendaciones a partir del
+  estado del arte. Trabajo presentado en el III Congreso Paraguayo de Informática (ConParInf
+  2025), Asunción, Paraguay.
+
+- Romero, D. O., Ayala Frasnelli, N. L., Ruiz Díaz Medina, A. D., Martínez Meza, R. J., Heimann
+  Fernández, Á. G., & Ortiz Benítez, G. M. (2025). Sistema de red de sensores inalámbricos para
+  el monitoreo de la calidad del agua en cauces hídricos del Departamento de Canindeyú. Trabajo
+  presentado en el III Congreso Paraguayo de Informática (ConParInf 2025), Asunción, Paraguay.
+
+- Rolón Cárdenas, A. P., & Dávalos, E. J. (2025). Diseño de simulador de tráfico en redes
+  elásticas multicore. Trabajo presentado en el III Congreso Paraguayo de Informática
+  (ConParInf 2025), Asunción, Paraguay.
+
+- Vidallet Monges, E. S., & Sosa-Cabrera, G. (2025). CodeScan-AI: Detección de errores de
+  seguridad en fragmentos de código generados por IA. Trabajo presentado en el III Congreso
+  Paraguayo de Informática (ConParInf 2025), Asunción, Paraguay.
+
+- Celano, S., Agüero, S., Torres, M., Lin, F., & Riveros, G. (2025). Diseño e implementación de
+  un compilador educativo interactivo para facilitar el aprendizaje de los principios de
+  traducción de lenguajes. Trabajo presentado en el III Congreso Paraguayo de Informática
+  (ConParInf 2025), Asunción, Paraguay.
+
 =========================================================================
-SECCION: Anexos
+SECCION: Conclusiones y Aprendizajes
 =========================================================================
+
+El ConParInf 2025 mostró que la gestión de un centro de cómputo debe anticiparse a tendencias
+que ya están llegando a Paraguay:
+
+Las arquitecturas de microservicios obligan a repensar la infraestructura, dejando de comprar
+servidores monolíticos caros y pasar a nodos ligeros con contenedores, porque permiten
+despliegues rápidos y escalabilidad real sin paralizar todo el sistema.
+
+La IA ya no es opcional: el centro necesita GPUs y almacenamiento masivo para ejecutar
+modelos localmente y evitar filtrar datos sensibles a nubes externas.
+
+El almacenamiento verificable con IPFS y BlockDAG es una solución barata y práctica para
+hacer inmutables los logs de red, accesos y cámaras, algo que resuelve problemas reales de
+auditoría que tenemos hoy.
+
+Los sistemas de sensores inalámbricos (como el de calidad del agua en Canindeyú) demuestran
+que podemos gestionar cientos de dispositivos IoT remotos con bajo consumo y conectividad
+limitada, modelo directamente aplicable a monitoreo de temperatura y humedad en nuestros
+racks o sensores de presencia en edificios.
+
+Herramientas como CodeScan-AI para detectar vulnerabilidades en código generado por IA nos
+recuerdan que el centro debe incorporar escáneres automáticos de seguridad en los pipelines
+de desarrollo internos.

@@ -1,0 +1,13 @@
+Instrucciones:
+1. Presentar nuevamente el problema
+2. Presentar el estado del arte
+3. Presentar los modelos utilizados
+4. Presentar el esquema experimental
+5. Presentar los resultados
+6. Presentar las conclusiones y trabajo futuro
+
+Todo en 35 minutos.
+
+Entregables:
+- PPTX con la presentacion
+- Codigo fuente de la implementacion (notebook jupyter compatible con Kaggle)

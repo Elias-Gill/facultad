@@ -11,3 +11,6 @@ Todo en 35 minutos.
 Entregables:
 - PPTX con la presentacion
 - Codigo fuente de la implementacion (notebook jupyter compatible con Kaggle)
+
+Para leer:
+- https://www.kaggle.com/code/lauvfpitipak/hull-tactical-market-prediction

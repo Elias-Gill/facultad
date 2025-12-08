@@ -14,6 +14,15 @@
 ║ Días evaluados     ║     8990   ║       8990    ║               8990     ║
 ╚════════════════════╩════════════╩═══════════════╩════════════════════════╝
 
+Al incorporar ARIMA como modelo de prediccion
+
+Métrica                 | Sin ARIMA | Con ARIMA | Ganancia
+------------------------|-----------|-----------|-----------
+Retorno anualizado      | 15.33%    | 15.32%    | -0.01%
+Volatilidad anualizada  | 8.25%     | 8.22%     | -0.03% ↓
+Sharpe Ratio            | 1.8586    | 1.8625    | +0.0039 ↑
+Sharpe Ajustado         | 1.8586    | 1.8625    | +0.21% ↑
+
 TU MODELO ES:
 → 2.1× MEJOR que Hull Tactical en Sharpe ajustado
 → 7–8× MEJOR que ARIMA en Sharpe

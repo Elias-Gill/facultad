@@ -153,5 +153,29 @@ joblib.dump(
     "final_model.pkl",
 )
 
-print("Modelo final guardado - ahora predice directamente posición [0-2]")
-print("Sharpe esperado en validación: probablemente > 1.5 (antes tenías < 0.8)")
+# Imprimir resumen de parámetros finales importantes para la presentación
+
+print("\n=== Resumen de entrenamiento final ===")
+print(f"Features usadas: {len(features)}")
+print(f"ElasticNet final:")
+print(f"  - Mejor alpha: {final_enet.alpha_:.6f}")
+print(f"  - Mejor l1_ratio: {final_enet.l1_ratio_}")
+print(f"  - Número de iteraciones: {final_enet.n_iter_}")
+
+print("\nLightGBM final:")
+params_lgb = final_lgb.params
+print(f"  - learning_rate: {params_lgb.get('learning_rate', 'N/A')}")
+print(f"  - num_leaves: {params_lgb.get('num_leaves', 'N/A')}")
+print(f"  - max_depth: {params_lgb.get('max_depth', 'N/A')}")
+print(f"  - min_data_in_leaf: {params_lgb.get('min_data_in_leaf', 'N/A')}")
+print(f"  - feature_fraction: {params_lgb.get('feature_fraction', 'N/A')}")
+print(f"  - bagging_fraction: {params_lgb.get('bagging_fraction', 'N/A')}")
+print(f"  - bagging_freq: {params_lgb.get('bagging_freq', 'N/A')}")
+print(f"  - Número de boosting rounds: {final_lgb.current_iteration()}")
+
+print("\nMeta modelo RidgeCV:")
+print(f"  - Alphas probados: {meta_model.alphas}")
+print(f"  - Mejor alpha: {meta_model.alpha_}")
+print(f"  - Coeficientes: ENet = {meta_model.coef_[0]:.4f}, LGB = {meta_model.coef_[1]:.4f}")
+
+print("Modelo final guardado")
